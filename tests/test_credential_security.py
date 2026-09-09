@@ -10,7 +10,10 @@ def test_clean_text_passes() -> None:
 
 
 def test_detects_jwt() -> None:
-    text = "token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_Xgt0K3Sttl9bZJYe3J6o"
+    head = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9"
+    payload = "eyJzdWIiOiIxMjM0NTY3ODkwIn0"
+    sig = "dozjgNryP4J3jVmNHl0w5N_Xgt0K3Sttl9bZJYe3J6o"
+    text = f"token: {head}.{payload}.{sig}"
     findings = scan_for_secrets(text)
     assert any(f.kind == "jwt" for f in findings)
 

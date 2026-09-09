@@ -8,8 +8,8 @@ from causal_mind.utils.manifest import (
     write_manifest,
 )
 from causal_mind.utils.splits import (
-    SubjectSplit,
     SplitViolations,
+    SubjectSplit,
     check_temporal_crossing,
     make_subject_disjoint_split,
     repeated_splits,

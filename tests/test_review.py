@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from pathlib import Path
 
@@ -21,19 +21,20 @@ def make_task(task_id: str, **kwargs) -> TaskSpec:
 
 
 def test_no_review_records(tmp_path: Path) -> None:
-    queue = TaskQueue(tmp_path / "tasks")
+    TaskQueue(tmp_path / "tasks")
     records = pending_review_records(tmp_path / "tasks", tmp_path)
     assert records == []
 
 
 def test_review_approve_with_report(tmp_path: Path) -> None:
     queue = TaskQueue(tmp_path / "tasks")
-    (tmp_path / "tasks" / "T1.yaml").write_text(
+    (tmp_path / "tasks" / "queue" / "T1.yaml").write_text(
         yaml.safe_dump(make_task("T1", deliverables=["reports/x.md"]).model_dump()),
         encoding="utf-8",
     )
     queue.claim_next("w")
     queue.transition("T1", "review")
+    (tmp_path / "reports").mkdir(parents=True, exist_ok=True)
     (tmp_path / "reports" / "x.md").write_text("result\n", encoding="utf-8")
     report_dir = tmp_path / "reports" / "agents" / "w"
     report_dir.mkdir(parents=True)
@@ -53,7 +54,7 @@ def test_review_approve_with_report(tmp_path: Path) -> None:
 
 def test_review_kill(tmp_path: Path) -> None:
     queue = TaskQueue(tmp_path / "tasks")
-    (tmp_path / "tasks" / "T2.yaml").write_text(
+    (tmp_path / "tasks" / "queue" / "T2.yaml").write_text(
         yaml.safe_dump(make_task("T2").model_dump()), encoding="utf-8"
     )
     queue.claim_next("w")
@@ -70,7 +71,7 @@ def test_review_kill(tmp_path: Path) -> None:
 
 def test_review_missing_deliverable_iterates(tmp_path: Path) -> None:
     queue = TaskQueue(tmp_path / "tasks")
-    (tmp_path / "tasks" / "T3.yaml").write_text(
+    (tmp_path / "tasks" / "queue" / "T3.yaml").write_text(
         yaml.safe_dump(make_task("T3", deliverables=["reports/missing.md"]).model_dump()),
         encoding="utf-8",
     )
@@ -83,3 +84,4 @@ def test_review_missing_deliverable_iterates(tmp_path: Path) -> None:
     records = pending_review_records(tmp_path / "tasks", tmp_path)
     assert records[0].decision == "ITERATE"
     assert "missing" in records[0].follow_up or "missing" in records[0].rationale
+

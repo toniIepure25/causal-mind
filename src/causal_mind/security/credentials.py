@@ -12,7 +12,10 @@ SECRET_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("github-token", re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}\b")),
     ("ssh-key-file-ref", re.compile(r"\bid_ed25519\b|\bid_rsa\b")),
     ("kubeconfig-ref", re.compile(r"\bkubeconfig\b.*\byaml\b", re.IGNORECASE)),
-    ("generic-api-key", re.compile(r"(?i)\b(api[_-]?key|secret|token)\b\s*[:=]\s*['\"][A-Za-z0-9._\-]{16,}['\"]")),
+    (
+        "generic-api-key",
+        re.compile(r"(?i)\b(api[_-]?key|secret|token)\b\s*[:=]\s*['\"][A-Za-z0-9._\-]{16,}['\"]"),
+    ),
 )
 
 

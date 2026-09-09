@@ -4,7 +4,6 @@ import hashlib
 import json
 import platform
 import subprocess
-import sys
 from datetime import UTC, datetime
 from pathlib import Path
 

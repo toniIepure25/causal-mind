@@ -98,7 +98,8 @@ def drain_review_records(queue_root: Path, records: list[ReviewRecord]) -> None:
 
 def _review_task(repo_root: Path, task) -> ReviewRecord:
     reports = _reports_for_task(repo_root, task.id)
-    report_text = "\n\n".join(path.read_text(encoding="utf-8", errors="replace") for path in reports)
+    parts = [path.read_text(encoding="utf-8", errors="replace") for path in reports]
+    report_text = "\n\n".join(parts)
     deliverables = tuple(task.deliverables)
     present_deliverables = tuple(
         d for d in deliverables if (repo_root / d).exists()
@@ -115,7 +116,7 @@ def _review_task(repo_root: Path, task) -> ReviewRecord:
             task_id=task.id,
             worker=task.assigned_worker,
             decision="ITERATE",
-            rationale="Worker report records a harness/endpoint failure; rerun after health is stable.",
+            rationale="Worker report records a harness/endpoint failure; rerun after stable.",
             follow_up=f"Retry {task.title} after Qwen health is stable.",
             output_kind=_classify_output_kind(deliverables),
             reviewer_findings=tuple(findings),
@@ -180,7 +181,7 @@ def _review_task(repo_root: Path, task) -> ReviewRecord:
             task_id=task.id,
             worker=task.assigned_worker,
             decision="ITERATE",
-            rationale="Code/test output requires explicit diff review plus relevant tests before approval.",
+            rationale="Code/test output requires diff review plus tests before approval.",
             follow_up=f"Run diff review and relevant tests for {task.title}.",
             output_kind=_classify_output_kind(deliverables),
             reviewer_findings=tuple(findings),

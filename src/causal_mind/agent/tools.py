@@ -19,7 +19,7 @@ DENY_PATTERNS: tuple[str, ...] = (
     r"ssh\s",
     r"scp\s",
     r"sudo\s",
-    r"rm\s+(-[a-z]*\s+)*-[a-z]*r[a-z]*\s+(/|~|\$HOME)",
+    r"\brm\s+(-[a-z]+\s+)*-[a-z]*r[a-z]*\s+(/|~|\$HOME)(\s|$)",
     r"\.runai",
     r"\.runai-proxy",
     r"\.ssh",
@@ -75,15 +75,16 @@ def _check_command(command: str, workdir: Path) -> None:
             target = match.group(1)
             if target.startswith(workdir.resolve().as_posix()):
                 continue
-            if target in {"/dev/null", "/dev/stdout", "/dev/stderr"}:
-                continue
-            if target.startswith(("/tmp/", "/var/tmp/")):
+            if target.startswith("/dev/"):
                 continue
             raise ToolError(f"command touches path outside workdir: {target}")
 
 
 def run_bash(command: str, workdir: Path, timeout: int = DEFAULT_TIMEOUT) -> ToolResult:
-    _check_command(command, workdir)
+    try:
+        _check_command(command, workdir)
+    except ToolError as exc:
+        return ToolResult(ok=False, output=str(exc))
     env_path = (
         "/home/jovyan/work/.local/bin:"
         "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -110,7 +111,10 @@ def run_bash(command: str, workdir: Path, timeout: int = DEFAULT_TIMEOUT) -> Too
 
 
 def run_read(path: str, workdir: Path, max_chars: int = 20000) -> ToolResult:
-    target = _resolve_within(workdir, path)
+    try:
+        target = _resolve_within(workdir, path)
+    except ToolError as exc:
+        return ToolResult(ok=False, output=str(exc))
     if not target.is_file():
         return ToolResult(ok=False, output=f"not a file: {path}")
     text = target.read_text(encoding="utf-8", errors="replace")
@@ -118,14 +122,21 @@ def run_read(path: str, workdir: Path, max_chars: int = 20000) -> ToolResult:
 
 
 def run_write(path: str, content: str, workdir: Path) -> ToolResult:
-    target = _resolve_within(workdir, path)
+    try:
+        target = _resolve_within(workdir, path)
+    except ToolError as exc:
+        return ToolResult(ok=False, output=str(exc))
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(content, encoding="utf-8")
-    return ToolResult(ok=True, output=f"wrote {len(content)} chars to {path}", changed_files=(path,))
+    message = f"wrote {len(content)} chars to {path}"
+    return ToolResult(ok=True, output=message, changed_files=(path,))
 
 
 def run_edit(path: str, old_string: str, new_string: str, workdir: Path) -> ToolResult:
-    target = _resolve_within(workdir, path)
+    try:
+        target = _resolve_within(workdir, path)
+    except ToolError as exc:
+        return ToolResult(ok=False, output=str(exc))
     if not target.is_file():
         return ToolResult(ok=False, output=f"not a file: {path}")
     text = target.read_text(encoding="utf-8")
@@ -133,13 +144,17 @@ def run_edit(path: str, old_string: str, new_string: str, workdir: Path) -> Tool
     if count == 0:
         return ToolResult(ok=False, output=f"old_string not found in {path}")
     if count > 1:
-        return ToolResult(ok=False, output=f"old_string found {count} times in {path}; be more specific")
+        message = f"old_string found {count} times in {path}; be more specific"
+        return ToolResult(ok=False, output=message)
     target.write_text(text.replace(old_string, new_string, 1), encoding="utf-8")
     return ToolResult(ok=True, output=f"edited {path}", changed_files=(path,))
 
 
 def run_grep(pattern: str, workdir: Path, path: str = ".", max_results: int = 50) -> ToolResult:
-    base = _resolve_within(workdir, path)
+    try:
+        base = _resolve_within(workdir, path)
+    except ToolError as exc:
+        return ToolResult(ok=False, output=str(exc))
     regex = re.compile(pattern)
     hits: list[str] = []
     targets = [base] if base.is_file() else sorted(p for p in base.rglob("*") if p.is_file())

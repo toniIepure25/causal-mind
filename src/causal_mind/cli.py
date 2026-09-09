@@ -6,8 +6,8 @@ import sys
 from pathlib import Path
 
 from causal_mind.orchestrator.coordinator import run_coordinator_once
-from causal_mind.orchestrator.qwen_client import QwenClient
 from causal_mind.orchestrator.queue import TaskQueue
+from causal_mind.orchestrator.qwen_client import QwenClient
 from causal_mind.orchestrator.review import (
     drain_review_records,
     pending_review_records,
@@ -48,7 +48,8 @@ def _task(args: argparse.Namespace) -> int:
     queue = TaskQueue(_queue_root(root))
     if args.action == "list":
         for task in queue.list_tasks():
-            print(f"{task.state:<8} {task.id:<16} worker={task.assigned_worker or '-':<12} {task.title}")
+            worker = task.assigned_worker or "-"
+            print(f"{task.state:<8} {task.id:<16} worker={worker:<12} {task.title}")
         return 0
     if args.action == "claim":
         task = queue.claim_next(args.worker)

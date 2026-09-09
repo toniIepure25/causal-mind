@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import time
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
@@ -78,7 +77,8 @@ class QwenToolLoopAgent:
         error: str | None = None
         cycles = 0
 
-        for cycles in range(1, self.config.max_cycles + 1):
+        for _ in range(self.config.max_cycles):
+            cycles += 1
             response = self._chat_with_retry(messages)
             if response is None:
                 stop_reason = "endpoint_error"

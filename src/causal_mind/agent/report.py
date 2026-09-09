@@ -55,7 +55,9 @@ with your Decision line.
 """.strip()
 
 
-def write_agent_report(report_root: Path, worker: str, task_id: str, result: AgentRunResult) -> Path:
+def write_agent_report(
+    report_root: Path, worker: str, task_id: str, result: AgentRunResult
+) -> Path:
     report_dir = report_root / "agents" / worker
     report_dir.mkdir(parents=True, exist_ok=True)
     path = report_dir / f"{task_id}.md"

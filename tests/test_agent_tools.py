@@ -5,7 +5,6 @@ from pathlib import Path
 import pytest
 
 from causal_mind.agent.tools import (
-    ToolError,
     execute_tool,
     run_bash,
     run_edit,
@@ -71,8 +70,8 @@ def test_bash_denies_outside_rm(workdir: Path) -> None:
     assert "outside workdir" in result.output
 
 
-def test_bash_allows_tmp(workdir: Path) -> None:
-    result = run_bash("rm -rf /tmp/cm-test-ok && echo done", workdir)
+def test_bash_allows_read_outside(workdir: Path) -> None:
+    result = run_bash("cat /etc/hostname", workdir)
     assert result.ok
 
 

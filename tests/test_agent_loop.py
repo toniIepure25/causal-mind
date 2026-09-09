@@ -6,7 +6,7 @@ from typing import Any
 import pytest
 
 from causal_mind.agent.loop import AgentConfig, QwenToolLoopAgent
-from causal_mind.orchestrator.qwen_client import QwenClient, QwenError
+from causal_mind.orchestrator.qwen_client import QwenError
 
 
 class MockClient:
@@ -47,12 +47,13 @@ def workdir(tmp_path: Path) -> Path:
 
 
 def make_agent(workdir: Path, client: MockClient, **config) -> QwenToolLoopAgent:
-    config = config or {}
+    merged = {"max_cycles": 10}
+    merged.update(config)
     return QwenToolLoopAgent(
         worker="test",
         workdir=workdir,
         client=client,  # type: ignore[arg-type]
-        config=AgentConfig(max_cycles=10, **config),
+        config=AgentConfig(**merged),
         system_prompt="test system",
     )
 
@@ -77,12 +78,12 @@ def test_tool_loop_executes_and_finishes(workdir: Path) -> None:
     result = agent.run("read notes", task_id="T2")
     assert result.stop_reason == "completed"
     assert result.cycles == 2
-    assert "hello" not in result.report_text or True  # report contains final answer
     assert "Decision: GO" in result.report_text
 
 
 def test_max_cycles_guard(workdir: Path) -> None:
-    client = MockClient([{"tool_calls": [tool_call("bash", {"command": "echo hi"})]} for _ in range(50)])
+    script = [{"tool_calls": [tool_call("bash", {"command": "echo hi"})]} for _ in range(50)]
+    client = MockClient(script)
     agent = make_agent(workdir, client, max_cycles=5)
     result = agent.run("loop forever", task_id="T3")
     assert result.stop_reason == "max_cycles" or result.stop_reason == "repeated_command"
