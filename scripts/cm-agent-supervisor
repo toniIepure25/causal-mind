@@ -1,0 +1,231 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BASE_REPO="${CM_BASE_REPO:-/home/jovyan/work/causal-mind}"
+WORKTREE_ROOT="${CM_WORKTREE_ROOT:-/home/jovyan/work/worktrees/causal-mind}"
+RUN_DIR="${CM_AGENT_RUN_DIR:-$BASE_REPO/orchestration/logs}"
+PID_DIR="$RUN_DIR/pids"
+LOG_DIR="$RUN_DIR/supervisors"
+SLEEP_SECONDS="${CM_AGENT_SLEEP_SECONDS:-60}"
+COORDINATOR_SLEEP_SECONDS="${CM_COORDINATOR_SLEEP_SECONDS:-300}"
+REVIEW_SLEEP_SECONDS="${CM_REVIEW_SLEEP_SECONDS:-120}"
+
+WORKERS=(researcher data forecasting causal reviewer)
+
+usage() {
+    cat <<'EOF'
+usage: scripts/cm-agent-supervisor {start|stop|status|restart} [worker...]
+
+Starts one persistent supervisor per Causal Mind worker. Each supervisor repeatedly
+invokes scripts/cm-agent-loop against the worker worktree while sharing the central
+task queue and reports directory from the base repo.
+
+A coordinator loop (planning cycles) and a review-drain loop are also managed.
+EOF
+}
+
+selected_workers() {
+    if [ "$#" -gt 0 ]; then
+        printf '%s\n' "$@"
+    else
+        printf '%s\n' "${WORKERS[@]}"
+    fi
+}
+
+pid_file() {
+    printf '%s/%s.pid\n' "$PID_DIR" "$1"
+}
+
+log_file() {
+    printf '%s/%s.log\n' "$LOG_DIR" "$1"
+}
+
+is_running() {
+    local pid="$1"
+    [ -n "$pid" ] && kill -0 "$pid" >/dev/null 2>&1
+}
+
+start_coordinator() {
+    local pidfile logfile pid
+    mkdir -p "$PID_DIR" "$LOG_DIR"
+    pidfile="$(pid_file coordinator)"
+    logfile="$(log_file coordinator)"
+
+    if [ -f "$pidfile" ]; then
+        pid="$(cat "$pidfile")"
+        if is_running "$pid"; then
+            echo "coordinator already running pid=$pid log=$logfile"
+            return 0
+        fi
+    fi
+
+    CM_SUP_BASE="$BASE_REPO" \
+    CM_SUP_SLEEP="$COORDINATOR_SLEEP_SECONDS" \
+    nohup bash -c '
+set -u
+while true; do
+    printf "%s worker=coordinator launching plan\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    cd "$CM_SUP_BASE" || exit 1
+    PYTHONPATH="$CM_SUP_BASE/src" "$CM_SUP_BASE/.venv/bin/python" -m causal_mind.cli coordinator run
+    status=$?
+    printf "%s worker=coordinator plan_exit=%s sleeping=%ss\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$status" "$CM_SUP_SLEEP"
+    sleep "$CM_SUP_SLEEP"
+done
+' >>"$logfile" 2>&1 &
+
+    pid=$!
+    printf '%s\n' "$pid" >"$pidfile"
+    echo "coordinator started pid=$pid log=$logfile"
+}
+
+start_reviewer_drain() {
+    local pidfile logfile pid
+    mkdir -p "$PID_DIR" "$LOG_DIR"
+    pidfile="$(pid_file review-drain)"
+    logfile="$(log_file review-drain)"
+
+    if [ -f "$pidfile" ]; then
+        pid="$(cat "$pidfile")"
+        if is_running "$pid"; then
+            echo "review-drain already running pid=$pid log=$logfile"
+            return 0
+        fi
+    fi
+
+    CM_SUP_BASE="$BASE_REPO" \
+    CM_SUP_SLEEP="$REVIEW_SLEEP_SECONDS" \
+    nohup bash -c '
+set -u
+while true; do
+    printf "%s worker=review-drain launching drain\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    cd "$CM_SUP_BASE" || exit 1
+    PYTHONPATH="$CM_SUP_BASE/src" "$CM_SUP_BASE/.venv/bin/python" -m causal_mind.cli review drain
+    status=$?
+    printf "%s worker=review-drain drain_exit=%s sleeping=%ss\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$status" "$CM_SUP_SLEEP"
+    sleep "$CM_SUP_SLEEP"
+done
+' >>"$logfile" 2>&1 &
+
+    pid=$!
+    printf '%s\n' "$pid" >"$pidfile"
+    echo "review-drain started pid=$pid log=$logfile"
+}
+
+stop_named() {
+    local name="$1"
+    local pidfile pid
+    pidfile="$(pid_file "$name")"
+    if [ ! -f "$pidfile" ]; then
+        echo "$name stopped"
+        return 0
+    fi
+    pid="$(cat "$pidfile")"
+    if is_running "$pid"; then
+        kill "$pid"
+        echo "$name stopping pid=$pid"
+    else
+        echo "$name stale pid=$pid"
+    fi
+    rm -f "$pidfile"
+}
+
+status_named() {
+    local name="$1"
+    local pidfile pid=""
+    pidfile="$(pid_file "$name")"
+    [ -f "$pidfile" ] && pid="$(cat "$pidfile")"
+    if is_running "$pid"; then
+        echo "$name RUNNING pid=$pid log=$(log_file "$name")"
+    else
+        echo "$name STOPPED log=$(log_file "$name")"
+    fi
+}
+
+start_worker() {
+    local worker="$1"
+    local repo="$WORKTREE_ROOT/$worker"
+    local pidfile logfile pid
+
+    if [ ! -d "$repo/.git" ] && [ ! -f "$repo/.git" ]; then
+        echo "missing worktree for $worker: $repo (run scripts/create_agent_worktrees.sh)" >&2
+        return 1
+    fi
+
+    mkdir -p "$PID_DIR" "$LOG_DIR"
+    pidfile="$(pid_file "$worker")"
+    logfile="$(log_file "$worker")"
+
+    if [ -f "$pidfile" ]; then
+        pid="$(cat "$pidfile")"
+        if is_running "$pid"; then
+            echo "$worker already running pid=$pid log=$logfile"
+            return 0
+        fi
+    fi
+
+    CM_SUP_BASE="$BASE_REPO" \
+    CM_SUP_REPO="$repo" \
+    CM_SUP_WORKER="$worker" \
+    CM_SUP_SLEEP="$SLEEP_SECONDS" \
+    nohup bash -c '
+set -u
+while true; do
+    printf "%s worker=%s launching loop\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$CM_SUP_WORKER"
+    CM_BASE_REPO="$CM_SUP_BASE" \
+    CM_REPO="$CM_SUP_REPO" \
+    CM_WORKDIR="$CM_SUP_REPO" \
+    CM_QUEUE_ROOT="$CM_SUP_BASE/orchestration/tasks" \
+    CM_REPORT_ROOT="$CM_SUP_BASE/reports" \
+    PYTHONPATH="$CM_SUP_REPO/src" \
+    "$CM_SUP_BASE/.venv/bin/python" -m causal_mind.cli agent loop "$CM_SUP_WORKER"
+    status=$?
+    printf "%s worker=%s loop_exit=%s sleeping=%ss\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$CM_SUP_WORKER" "$status" "$CM_SUP_SLEEP"
+    sleep "$CM_SUP_SLEEP"
+done
+' >>"$logfile" 2>&1 &
+
+    pid=$!
+    printf '%s\n' "$pid" >"$pidfile"
+    echo "$worker started pid=$pid log=$logfile"
+}
+
+stop_worker() {
+    stop_named "$1"
+}
+
+status_worker() {
+    status_named "$1"
+}
+
+main() {
+    local command="${1:-}"
+    shift || true
+
+    case "$command" in
+        start)
+            selected_workers "$@" | while read -r worker; do start_worker "$worker"; done
+            if [ "$#" -eq 0 ]; then start_coordinator; start_reviewer_drain; fi
+            ;;
+        stop)
+            selected_workers "$@" | while read -r worker; do stop_worker "$worker"; done
+            if [ "$#" -eq 0 ]; then stop_named coordinator; stop_named review-drain; fi
+            ;;
+        status)
+            selected_workers "$@" | while read -r worker; do status_worker "$worker"; done
+            if [ "$#" -eq 0 ]; then status_named coordinator; status_named review-drain; fi
+            ;;
+        restart)
+            selected_workers "$@" | while read -r worker; do stop_worker "$worker"; start_worker "$worker"; done
+            if [ "$#" -eq 0 ]; then stop_named coordinator; start_coordinator; stop_named review-drain; start_reviewer_drain; fi
+            ;;
+        -h|--help|help|"")
+            usage
+            ;;
+        *)
+            usage >&2
+            return 2
+            ;;
+    esac
+}
+
+main "$@"

@@ -1,0 +1,24 @@
+# Compute profile for the Causal Mind pod.
+gpu:
+  name: NVIDIA A100-SXM4-40GB
+  count: 1
+  memory_gb: 40
+  cuda_driver: "12.8"
+  torch: "2.11.0+cu128"
+cpu:
+  logical_cores_visible: 256
+  container_limit: 16
+memory:
+  visible_gb: 1024
+  container_limit_gb: 100
+storage:
+  persistent: /home/jovyan/work   # NFS PVC, 100+ TB free
+  ephemeral_warning: >
+    Never fill / or /tmp with caches; export TMPDIR/PIP_CACHE_DIR/XDG_CACHE_HOME/
+    HF_HOME/TORCH_HOME/UV_CACHE_DIR under /home/jovyan/work.
+qwen:
+  base_url: http://127.0.0.1:18000/v1
+  model: Qwen/Qwen3.8-27B-FP8
+  context_limit: 262144
+  output_limit: 32768
+  concurrency_policy: start 1-2 workers; probe 1/2/4/6 before scaling

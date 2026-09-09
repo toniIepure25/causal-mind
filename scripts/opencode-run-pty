@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CM_ROOT="${CM_ROOT:-/home/jovyan/work/causal-mind}"
+OPENCODE_BIN="${OPENCODE_BIN:-$CM_ROOT/.home/.opencode/bin/opencode}"
+OPENCODE_HOME="${OPENCODE_HOME:-$CM_ROOT/.home}"
+
+cd "$CM_ROOT"
+export HOME="$OPENCODE_HOME"
+
+mkdir -p "$HOME"
+git config --global --get-all safe.directory | grep -Fx "$CM_ROOT" >/dev/null 2>&1 \
+  || git config --global --add safe.directory "$CM_ROOT"
+
+if [ -t 1 ]; then
+  exec "$OPENCODE_BIN" run "$@"
+fi
+
+if command -v script >/dev/null 2>&1; then
+  quoted=()
+  for arg in "$@"; do
+    quoted+=("$(printf "%q" "$arg")")
+  done
+  exec script -q -e -c "$(printf "%q " "$OPENCODE_BIN" run "${quoted[@]}")" /dev/null
+fi
+
+echo "opencode-run-pty requires a TTY or the util-linux 'script' command" >&2
+exit 127

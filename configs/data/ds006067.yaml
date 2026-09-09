@@ -1,0 +1,19 @@
+# ds006067 configuration. STATUS: audit pending (CM-1). Values below are
+# placeholders and MUST be replaced by the authoritative audit before any download.
+dataset: ds006067
+source: https://openneuro.org/datasets/ds006067
+status: audit-pending
+subjects: null
+runs_per_subject: null
+tr_s: null
+transcript:
+  format: null
+  word_timestamps: null
+  thought_boundaries: null
+annotations:
+  psychological_dimensions: null
+license: null
+footprint_gb: null
+subset_policy:
+  first_download: 2 subjects, 1 run each
+  expand_after_gate: A

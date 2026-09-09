@@ -1,0 +1,40 @@
+# Thought State v0 (CM-2).
+# Each field is tagged: observed | annotated | model-derived | latent.
+version: 0
+fields:
+  semantic:
+    tag: model-derived
+    source: frozen sentence encoder (to be selected in CM-2)
+    dim: null
+  topic:
+    tag: model-derived
+    source: topic model over thought events (to be fit in CM-2)
+    dim: null
+  temporality:
+    tag: annotated
+    source: dataset annotation (past/present/future orientation) if present, else null
+  self_relevance:
+    tag: annotated
+    source: dataset annotation if present, else null
+  affect:
+    tag: model-derived
+    source: valence/arousal scorer (frozen)
+  episodic_memory:
+    tag: annotated
+    source: dataset annotation if present, else null
+  goal_directedness:
+    tag: annotated
+    source: dataset annotation if present, else null
+  confidence:
+    tag: latent
+    source: not directly observed; proxy from linguistic markers (documented)
+  control:
+    tag: latent
+    source: not directly observed; proxy from pause structure / self-monitoring markers
+  neural_latent:
+    tag: latent
+    source: CM-6 ladder R1 (parcellation features), lag-audited
+assembly:
+  event_unit: thought event (ADR-001)
+  neural_link_rule: sample assigned to event covering its mid-point
+  missing_policy: null imputation with a missingness flag per field (never drop events)
