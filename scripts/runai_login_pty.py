@@ -2,7 +2,6 @@ import os
 import pty
 import re
 import select
-import sys
 import time
 
 RUNAI = "/home/jovyan/work/causal-mind-v2/.runai-cli/bin/runai"
