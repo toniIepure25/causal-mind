@@ -1,0 +1,36 @@
+id: SMOKE-FORECASTING-001
+title: 'Smoke: baseline B0/B1 implementation'
+hypothesis: null
+objective: "Implement the two simplest next-thought baselines in src/causal_mind/forecasting/baselines.py:\
+  \ - b0_marginal(categories: list[str]) -> dict[str, float]: the empirical\n  distribution\
+  \ over categories (marginal baseline).\n- b1_previous(categories: list[str]) ->\
+  \ str | None: predict the next category\n  as the current (last) category (previous-state\
+  \ baseline); None if empty.\nPure Python with type hints and a module docstring\
+  \ explaining the baseline ladder B0-B5. Then write docs/smoke/forecasting-smoke.md\
+  \ (under 150 words) summarizing the API. Then run: python -m pytest tests/test_task_queue.py\
+  \ -q to prove the environment works from your worktree.\n"
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 15m
+allowed_paths:
+- src/causal_mind/forecasting/
+- docs/smoke/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests:
+- tests/test_task_queue.py
+success_criteria:
+- baselines.py implements b0_marginal and b1_previous with type hints
+- docs/smoke/forecasting-smoke.md exists
+- pytest run passes from the worktree
+failure_criteria:
+- missing functions or failing pytest
+deliverables:
+- src/causal_mind/forecasting/baselines.py
+- docs/smoke/forecasting-smoke.md
+assigned_worker: forecasting
+state: review

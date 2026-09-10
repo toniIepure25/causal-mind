@@ -1,0 +1,31 @@
+id: SMOKE-CAUSAL-001
+title: 'Smoke: candidate DAG sketch'
+hypothesis: null
+objective: "Write docs/smoke/causal-smoke.md (under 300 words) with: 1. A minimal\
+  \ candidate directed graph for spontaneous-thought dynamics with\n   exactly 5 nodes\
+  \ (e.g., thought_history, semantic_context, neural_state,\n   goal_state, next_thought)\
+  \ as an ASCII diagram.\n2. Two conditional independencies that this graph implies\
+  \ and that are\n   plausibly testable on ds006067-style data.\n3. One causal claim\
+  \ that is NOT identifiable from a single observational\n   dataset, with the reason\
+  \ (e.g., unmeasured confounding / no intervention).\n"
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 10m
+allowed_paths:
+- docs/smoke/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests: []
+success_criteria:
+- 5-node diagram present
+- 2 testable CIs + 1 unidentifiable claim with reason
+failure_criteria:
+- missing sections or causal overclaim
+deliverables:
+- docs/smoke/causal-smoke.md
+assigned_worker: causal
+state: review

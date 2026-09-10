@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CM_BASE_REPO="${CM_BASE_REPO:-/home/jovyan/work/causal-mind}"
+CM_REPO="${CM_REPO:-$CM_BASE_REPO}"
+
+cd "$CM_REPO"
+export PYTHONPATH="$CM_REPO/src:${PYTHONPATH:-}"
+export UV_CACHE_DIR="${UV_CACHE_DIR:-/home/jovyan/work/.uv-cache}"
+exec "$CM_BASE_REPO/.venv/bin/python" -m causal_mind.cli agent once "$@"

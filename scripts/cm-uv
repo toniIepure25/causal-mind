@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export PATH="/home/jovyan/work/.local/bin:$PATH"
+CM_BASE_REPO="${CM_BASE_REPO:-/home/jovyan/work/causal-mind}"
+export UV_CACHE_DIR="${UV_CACHE_DIR:-/home/jovyan/work/.uv-cache}"
+
+if [ ! -d ".venv" ] && [ -d "$CM_BASE_REPO/.venv" ]; then
+  export UV_PROJECT_ENVIRONMENT="${UV_PROJECT_ENVIRONMENT:-$CM_BASE_REPO/.venv}"
+fi
+
+exec uv "$@"

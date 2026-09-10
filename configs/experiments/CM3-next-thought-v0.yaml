@@ -1,0 +1,20 @@
+# CM-3 first next-thought experiment definition.
+exp_id: CM3-NEXT-V0
+hypothesis: H1
+question: Is the next thought event predictable from thought history above B0-B4?
+primary_dimension: cognitive_category
+secondary_dimensions: [topic, temporality, valence, self_relevance]
+baselines: [B0_marginal, B1_previous, B2_markov, B3_semantic_nn, B4_participant_history]
+models: [category_ngram, gru_category]
+split:
+  type: subject-disjoint
+  repeated_splits: 5
+  holdout: reserved (evaluated once)
+seeds: [0, 1, 2, 3, 4]
+metrics: [accuracy, log_loss, macro_f1, permutation_pvalue, bootstrap_ci95]
+gates: [B, C]
+success: model beats B2 and B4 with subject-level permutation p < 0.05 on >= 4/5 splits
+failure: no model beats B2/B4 significantly on the frozen split
+notes: >
+  No final-holdout evaluation until the frozen protocol is confirmed and the
+  reviewer has signed off on the split definition.

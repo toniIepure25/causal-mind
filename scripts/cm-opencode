@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="${1:-$(pwd)}"
+if [ "$#" -gt 0 ]; then
+  shift
+fi
+
+CM_ROOT="${CM_ROOT:-/home/jovyan/work/causal-mind}"
+RUNAI_BIN="$CM_ROOT/.runai-cli/bin/runai"
+OPENCODE_BIN="$CM_ROOT/.home/.opencode/bin/opencode"
+SUPERVISOR="$CM_ROOT/scripts/qwen_tunnel_supervisor.sh"
+MODEL_ID="Qwen/Qwen3.8-27B-FP8"
+BASE_URL="http://127.0.0.1:18000/v1"
+
+echo "[cm-opencode] project: $PROJECT_DIR"
+
+echo "[cm-opencode] checking private ingress route"
+if command -v nc >/dev/null 2>&1; then
+  nc -z -w 3 10.130.240.221 443
+else
+  timeout 3 bash -c 'exec 3<>/dev/tcp/10.130.240.221/443'
+fi
+
+echo "[cm-opencode] checking Run:ai auth"
+if ! "$RUNAI_BIN" auth get-token -o plaintext >/dev/null 2>&1; then
+  echo "[cm-opencode] Run:ai login required"
+  "$RUNAI_BIN" login sso
+fi
+
+echo "[cm-opencode] starting tunnel supervisor"
+"$SUPERVISOR" start
+
+echo "[cm-opencode] waiting for Qwen endpoint"
+deadline=$((SECONDS + 90))
+until curl -fsS "$BASE_URL/models" 2>/dev/null | grep -F "$MODEL_ID" >/dev/null; do
+  if [ "$SECONDS" -gt "$deadline" ]; then
+    echo "[cm-opencode] Qwen endpoint did not become healthy within 90s" >&2
+    "$SUPERVISOR" status || true
+    exit 1
+  fi
+  sleep 3
+done
+
+echo "[cm-opencode] Qwen endpoint healthy"
+export HOME="$CM_ROOT/.home"
+exec "$OPENCODE_BIN" "$PROJECT_DIR" "$@"

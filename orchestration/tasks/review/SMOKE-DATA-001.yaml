@@ -1,0 +1,31 @@
+id: SMOKE-DATA-001
+title: 'Smoke: data audit plan'
+hypothesis: null
+objective: 'Write docs/smoke/data-smoke.md describing the minimal audit steps for
+  OpenNeuro ds006067 before any download: which metadata to verify (subjects, runs,
+  TR, transcript format, word timestamps, thought boundaries, annotations, license),
+  what the manifest must record (paths, SHA-256, version, footprint), and the minimal-subset
+  download policy. Do not download anything. Keep under 300 words.
+
+  '
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 10m
+allowed_paths:
+- docs/smoke/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests: []
+success_criteria:
+- docs/smoke/data-smoke.md exists with audit steps + manifest fields
+- no downloads performed
+failure_criteria:
+- missing file or network download attempted
+deliverables:
+- docs/smoke/data-smoke.md
+assigned_worker: data
+state: review
