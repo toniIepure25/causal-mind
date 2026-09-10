@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${1:-/home/jovyan/work/worktrees/causal-mind}"
+export GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=safe.directory GIT_CONFIG_VALUE_0=*
+
+ROOT="${1:-/home/jovyan/work/worktrees/causal-mind-v2}"
 REPO="$(git rev-parse --show-toplevel)"
 
 mkdir -p "$ROOT"

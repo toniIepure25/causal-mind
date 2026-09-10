@@ -266,6 +266,8 @@ def _to_task(item: dict[str, object], seen: set[str]) -> TaskSpec | None:
 
 def _run(repo_root: Path, command: list[str]) -> str:
     try:
+        if command and command[0] == "git":
+            command = ["git", "-c", "safe.directory=*", *command[1:]]
         result = subprocess.run(command, cwd=repo_root, capture_output=True, text=True, timeout=30)
         return result.stdout.strip()
     except (subprocess.SubprocessError, OSError):
