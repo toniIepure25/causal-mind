@@ -2,13 +2,16 @@
 
 ## Current stage
 
-Phase 0/1: infrastructure validated, epistemic seal frozen, dataset audit starting.
+Phase 1: infrastructure validated, all six agents smoke-tested, epistemic seal frozen,
+dataset audit starting.
 
 ## Validated results
 
 - L0: Qwen endpoint `Qwen/Qwen3.8-27B-FP8` reachable at `http://127.0.0.1:18000/v1`
-  (chat + tool calls), tunnel supervisor self-heals.
-- L0: task queue claim locking, worktree isolation, agent harness smoke tests.
+  (chat + tool calls); tunnel supervisor self-heals (direct port-forward, no Caddy).
+- L0: task queue claim locking, worktree isolation, agent harness.
+- L0: all six agents (orchestrator, researcher, data, forecasting, causal, reviewer)
+  completed independent smoke tasks end-to-end (SMOKE-*-001, all reviewed and done).
 
 ## Failed hypotheses
 
@@ -20,14 +23,15 @@ Phase 0/1: infrastructure validated, epistemic seal frozen, dataset audit starti
   transcripts, timestamps, annotations, license, footprint); minimal-subset download;
   manifest + checksums.
 - CM-0: finalize epistemic seal docs; freeze split definitions once subject count known.
-- Phase C: smoke-test all six agents with small independent tasks.
 
 ## Blockers
 
-- **Contingency (not currently blocking):** Run:ai CLI token expires 2026-09-10;
-  refresh token should auto-renew. If it does not, a human must run
-  `runai login remote-browser` in the pod (exact steps in
-  `docs/runbooks/qwen_tunnel.md`).
+- **Token lifecycle:** Run:ai CLI tokens expire ~daily; refresh tokens do NOT auto-renew
+  in the CLI. When the token expires, a human must complete
+  `runai login remote-browser` (open URL, paste code). Runbook:
+  `docs/runbooks/qwen_tunnel.md`. The pod-side helper
+  `scripts/runai_login_pty.py` stages the flow and waits for the code in
+  `/tmp/runai-code.txt`.
 
 ## Next gates
 
@@ -36,15 +40,28 @@ Phase 0/1: infrastructure validated, epistemic seal frozen, dataset audit starti
 
 ## Key commit hashes
 
-- (initial commit pending)
+- `307770b` rebuild at jovyan-owned root + smoke results
+- `807e458` scripts pointed at v2 root, safe.directory for git-on-NFS
 
 ## Exact reproducibility commands
 
 ```bash
-# on the pod
-cd /home/jovyan/work/causal-mind
+# on the pod, via SSH as jovyan (sidecar netns)
+cd /home/jovyan/work/causal-mind-v2
 scripts/qwen_tunnel_supervisor.sh status
-scripts/cm-uv run cm status
-scripts/cm-uv run pytest
-scripts/cm-uv run ruff check .
+.venv/bin/python -m causal_mind.cli status
+.venv/bin/python -m pytest
+.venv/bin/python -m ruff check src tests scripts
 ```
+
+## Environment notes
+
+- Working root: `/home/jovyan/work/causal-mind-v2` (jovyan-owned). The original
+  `/home/jovyan/work/causal-mind` is a frozen root-owned snapshot (NFS ownership split).
+- Worktrees: `/home/jovyan/work/worktrees/causal-mind-v2/<worker>`.
+- All git commands need `safe.directory=*` (NFS maps ownership to uid 65534);
+  scripts and the planner set this automatically.
+- The SSH session runs in a sidecar network namespace: the main container's
+  127.0.0.1:18000 is NOT visible there. The tunnel supervisor binds the port-forward
+  inside the SSH netns; the cluster gateway is reachable directly via
+  `cisco-ai-pod.cc-demos.com` (no Caddy needed).

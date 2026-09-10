@@ -53,7 +53,8 @@ causal-mind/
 - Pod: `orchestraiq-jupyter` (Kubernetes namespace `runai-romania-dev`), user `jovyan`.
 - GPU: 1x NVIDIA A100-SXM4-40GB, CUDA 12.8 driver, PyTorch cu128.
 - Persistent storage: NFS PVC at `/home/jovyan/work` (100+ TB free).
-- Project root on pod: `/home/jovyan/work/causal-mind`.
+- Project root on pod: `/home/jovyan/work/causal-mind-v2` (worktrees under
+  `/home/jovyan/work/worktrees/causal-mind-v2/`).
 - LLM endpoint: `Qwen/Qwen3.8-27B-FP8` via local OpenAI-compatible port-forward at
   `http://127.0.0.1:18000/v1` (Run:ai workload `qwen38-27b12`, see
   `docs/runbooks/qwen_tunnel.md`).

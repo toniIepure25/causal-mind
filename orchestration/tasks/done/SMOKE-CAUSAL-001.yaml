@@ -28,4 +28,4 @@ failure_criteria:
 deliverables:
 - docs/smoke/causal-smoke.md
 assigned_worker: causal
-state: review
+state: done

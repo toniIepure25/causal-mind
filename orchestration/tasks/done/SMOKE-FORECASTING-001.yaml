@@ -33,4 +33,4 @@ deliverables:
 - src/causal_mind/forecasting/baselines.py
 - docs/smoke/forecasting-smoke.md
 assigned_worker: forecasting
-state: review
+state: done

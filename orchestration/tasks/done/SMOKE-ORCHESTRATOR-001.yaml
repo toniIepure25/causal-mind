@@ -27,5 +27,5 @@ failure_criteria:
 - protocol violation or missing fields
 deliverables:
 - docs/smoke/orchestrator-smoke.md
-assigned_worker: null
-state: queue
+assigned_worker: orchestrator
+state: done

@@ -2,8 +2,9 @@
 
 ## Global rules
 
-- Project root (pod): `/home/jovyan/work/causal-mind`. Worktrees under
-  `/home/jovyan/work/worktrees/causal-mind/<worker>`.
+- Project root (pod): `/home/jovyan/work/causal-mind-v2`. Worktrees under
+  `/home/jovyan/work/worktrees/causal-mind-v2/<worker>`. The original
+  `/home/jovyan/work/causal-mind` is a frozen root-owned snapshot (NFS ownership split).
 - Never print, commit, or log passwords, API keys, bearer tokens, SSH keys, Run:ai
   authentication, Kubernetes secrets, or any token-bearing file.
 - Agents must not read `/home/jovyan/.runai`, `/home/jovyan/.runai-proxy`, SSH keys,

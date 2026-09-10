@@ -28,4 +28,4 @@ failure_criteria:
 deliverables:
 - docs/smoke/reviewer-smoke.md
 assigned_worker: reviewer
-state: review
+state: done

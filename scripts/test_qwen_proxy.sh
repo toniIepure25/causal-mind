@@ -1,40 +1,38 @@
 #!/usr/bin/env bash
 set -u
 
-cd /home/jovyan/work/causal-mind || exit 1
+cd /home/jovyan/work/causal-mind-v2 || exit 1
 mkdir -p orchestration/logs
 
-ps -u jovyan -o pid,args \
-  | awk '/[C]addyfile.runai|[w]orkspace port-forward qwen38-27b12/{print $1}' \
-  | xargs -r kill 2>/dev/null || true
+PORT="${1:-18001}"
+BASE="http://127.0.0.1:$PORT/v1"
 
-nohup .caddy/bin/caddy run \
-  --config /home/jovyan/.runai-proxy/Caddyfile.runai \
-  --adapter caddyfile \
-  > orchestration/logs/caddy_test.log 2>&1 &
-caddy_pid=$!
+cleanup() {
+  [ -n "${pf_pid:-}" ] && kill "$pf_pid" 2>/dev/null || true
+}
+trap cleanup EXIT
 
-sleep 2
+# If the supervised endpoint is already healthy, just verify it.
+if curl -fsS http://127.0.0.1:18000/v1/models 2>/dev/null | grep -F "Qwen/Qwen3.8-27B-FP8" >/dev/null; then
+  echo "---MODELS (supervised endpoint)---"
+  curl -fsS http://127.0.0.1:18000/v1/models || true
+  echo
+  exit 0
+fi
 
+echo "---starting temporary port-forward on $PORT---"
 nohup .runai-cli/bin/runai \
-  --config-path /home/jovyan/.runai-proxy \
-  --config-file config.json \
   workspace port-forward qwen38-27b12 \
   -p romania-dev \
-  --port 18000:8000 \
+  --port "$PORT:8000" \
   --address localhost \
   > orchestration/logs/pf_proxy_test.log 2>&1 &
 pf_pid=$!
 
-sleep 12
+sleep 15
 
 echo "---MODELS---"
-curl -fsS http://127.0.0.1:18000/v1/models || true
+curl -fsS "$BASE/models" || true
 echo
 echo "---PFLOG---"
 sed -n '1,100p' orchestration/logs/pf_proxy_test.log || true
-echo "---CADDYLOG---"
-sed -n '1,80p' orchestration/logs/caddy_test.log || true
-
-kill "$pf_pid" 2>/dev/null || true
-kill "$caddy_pid" 2>/dev/null || true

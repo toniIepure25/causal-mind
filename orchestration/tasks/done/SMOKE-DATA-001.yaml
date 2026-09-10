@@ -28,4 +28,4 @@ failure_criteria:
 deliverables:
 - docs/smoke/data-smoke.md
 assigned_worker: data
-state: review
+state: done

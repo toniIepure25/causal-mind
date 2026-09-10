@@ -3,7 +3,7 @@
 Raw data is **never** committed to git. All data lives on the pod PVC.
 
 ```
-/home/jovyan/work/causal-mind/data/
+/home/jovyan/work/causal-mind-v2/data/
   raw/          downloaded dataset files (git-ignored)
   derivatives/  processed features, parcellations, embeddings (git-ignored)
   cache/        encoder caches, HF caches (git-ignored)
