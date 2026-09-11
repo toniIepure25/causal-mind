@@ -28,10 +28,10 @@ import numpy as np
 DEFAULT_DATA_ROOT = Path("/home/jovyan/work/causal-mind-v2/data/raw/ds006067")
 
 _MNI = "space-MNI152NLin2009cAsym"
-BOLD_REL = f"derivatives/{{sub}}/func/{{sub}}_task-thinkaloud_{_MNI}_desc-preproc_bold.nii.gz"
-BOLD_JSON_REL = f"derivatives/{{sub}}/func/{{sub}}_task-thinkaloud_{_MNI}_desc-preproc_bold.json"
-CONF_REL = "derivatives/{sub}/func/{sub}_task-thinkaloud_desc-confounds_timeseries.tsv"
-T1W_REL = "derivatives/{sub}/anat/{sub}_desc-preproc_T1w.nii.gz"
+BOLD_REL = f"{{sub}}/func/{{sub}}_task-thinkaloud_{_MNI}_desc-preproc_bold.nii.gz"
+BOLD_JSON_REL = "{sub}/func/{sub}_task-thinkaloud_bold.json"
+CONF_REL = f"{{sub}}/func/{{sub}}_task-thinkaloud_{_MNI}_confounds_timeseries.tsv"
+T1W_REL = "{sub}/anat/{sub}_T1w.nii.gz"
 EVENTS_REL = "{sub}/func/{sub}_task-thinkaloud_events.tsv"
 
 
