@@ -1,28 +1,18 @@
-# ds006067 (ThinkAloud) — dataset manifest (CM-1)
-# Provenance: OpenNeuro public S3 bucket "openneuro.org", prefix "ds006067/".
-# Pinned to v2.0.0. Audited 2026-09-11 (no bulk download; see docs/datasets/ds006067_audit.md).
-# Reproducible audit: data/scripts/audit_ds006067.py
-
 dataset_id: ds006067
 name: ThinkAloud
 version: v2.0.0
 doi: 10.18112/openneuro.ds006067.v2.0.0
 license: CC0
-bids_version: "1.7.0"
+bids_version: 1.7.0
 task: thinkaloud
-citation: >-
-  Su, Li, Born, Honey, Chen, Lee, 2025. Neural dynamics of spontaneous memory recall
-  and future thinking in the continuous flow of thoughts. Nat Commun 16, 6433.
-  doi:10.1038/s41467-025-61807-w
-
+citation: Su, Li, Born, Honey, Chen, Lee, 2025. Neural dynamics of spontaneous memory recall and future
+  thinking in the continuous flow of thoughts. Nat Commun 16, 6433. doi:10.1038/s41467-025-61807-w
 source:
-  bucket: openneuro.org            # from openneuro.org/crn/config.js -> AWS_S3_PUBLIC_BUCKET
+  bucket: openneuro.org
   base_url: https://s3.amazonaws.com/openneuro.org/
   prefix: ds006067/
-  note: >-
-    api.openneuro.org is NXDOMAIN and /crn/ REST paths 404 from the pod; the public S3
-    bucket is the authoritative file-level source.
-
+  note: api.openneuro.org is NXDOMAIN and /crn/ REST paths 404 from the pod; the public S3 bucket is the
+    authoritative file-level source.
 acquisition:
   tr_s: 1.5
   n_volumes: 400
@@ -32,64 +22,124 @@ acquisition:
   multiband_accel: 4
   flip_angle: 52
   slice_thickness_mm: 2
-  pe_direction: "j-"
-  field_maps: [dir-AP_epi.json, dir-PA_epi.json]
-
+  pe_direction: j-
+  field_maps:
+  - dir-AP_epi.json
+  - dir-PA_epi.json
 subjects:
   count: 118
-  demographics_file: participants.tsv   # columns: participant_id, age, sex
-  # full id list reproduced by data/scripts/audit_ds006067.py
-
+  demographics_file: participants.tsv
 transcript:
-  file_pattern: "sub-{s}/func/sub-{s}_task-thinkaloud_events.tsv"
-  columns: [onset, duration, transcript]
+  file_pattern: sub-{s}/func/sub-{s}_task-thinkaloud_events.tsv
+  columns:
+  - onset
+  - duration
+  - transcript
   time_units: seconds
-  time_zero: "onset=0 <-> BOLD volume 1"
+  time_zero: onset=0 <-> BOLD volume 1
   granularity: sentence/thought-level
   word_level_timestamps: false
   topic_or_category_labels: false
-  example_n_thoughts: {sub-001: 65}
-
+  example_n_thoughts:
+    sub-001: 65
 raw_imaging:
-  native_bold_in_public_s3: false     # 404; sub-XXX/func has only events.tsv
-  native_anat_in_public_s3: false     # sub-XXX/anat empty
-  note: >-
-    Raw native-space BOLD/anat NIfTI are not served in the public S3 prefix. The usable
-    BOLD is the fMRIPrep MNI-space preprocessed derivative (below).
-
+  native_bold_in_public_s3: false
+  native_anat_in_public_s3: false
+  note: Raw native-space BOLD/anat NIfTI are not served in the public S3 prefix. The usable BOLD is the
+    fMRIPrep MNI-space preprocessed derivative (below).
 derivatives:
   root: derivatives/
   total_files: 50098
   total_size_gb: 224.75
   usable_bold:
-    file_pattern: >-
-      derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+    file_pattern: derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
     space: MNI152NLin2009cAsym
     tr_s: 1.5
     n_volumes: 400
-    size_mb_per_subject: [771, 791]
+    size_mb_per_subject:
+    - 771
+    - 791
   confounds:
-    file_pattern: "derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_desc-confounds_timeseries.tsv"
+    file_pattern: derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_desc-confounds_timeseries.tsv
   preproc_t1w:
-    file_pattern: "derivatives/sub-{s}/anat/sub-{s}_desc-preproc_T1w.nii.gz"
-
+    file_pattern: derivatives/sub-{s}/anat/sub-{s}_desc-preproc_T1w.nii.gz
 footprint:
-  raw_metadata_and_transcripts: {files: 129, size: "~1 MB"}
-  derivatives: {files: 50098, size_gb: 224.75}
-  total: {files: 50227, size_gb: 224.75}
-
+  raw_metadata_and_transcripts:
+    files: 129
+    size: ~1 MB
+  derivatives:
+    files: 50098
+    size_gb: 224.75
+  total:
+    files: 50227
+    size_gb: 224.75
 minimal_subset:
-  purpose: "validate BIDS structure, transcript parsing, timestamp alignment, fMRI + derivative loading, thought-event construction"
-  subjects: [sub-001, sub-005]
+  purpose: validate BIDS structure, transcript parsing, timestamp alignment, fMRI + derivative loading,
+    thought-event construction
+  subjects:
+  - sub-001
+  - sub-005
   estimated_size_gb: 1.6
   files_per_subject:
-    - "sub-{s}/func/sub-{s}_task-thinkaloud_events.tsv"
-    - "derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
-    - "derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_desc-confounds_timeseries.tsv"
-    - "derivatives/sub-{s}/anat/sub-{s}_desc-preproc_T1w.nii.gz"
+  - sub-{s}/func/sub-{s}_task-thinkaloud_events.tsv
+  - derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+  - derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_desc-confounds_timeseries.tsv
+  - derivatives/sub-{s}/anat/sub-{s}_desc-preproc_T1w.nii.gz
   global_files:
-    - participants.tsv
-    - dataset_description.json
-    - task-thinkaloud_bold.json
-
-fetched: {}   # populated by CM1-SUBSET-001 with per-file size + sha256 + source URL
+  - participants.tsv
+  - dataset_description.json
+  - task-thinkaloud_bold.json
+fetched:
+  date: '2026-09-11'
+  dest: /home/jovyan/work/causal-mind-v2/data/raw/ds006067
+  subjects:
+  - sub-001
+  - sub-005
+  n_files: 11
+  total_bytes: 1599819229
+  wall_time_s: 96.4
+  files:
+  - path: participants.tsv
+    size: 1557
+    sha256: 520d9c0b5d649259fb0be5a211b12fa2944c8f23504e450223c04982e6f3fa23
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/participants.tsv
+  - path: dataset_description.json
+    size: 605
+    sha256: a8314497244135295b53f32a3f3f4765b7872f5e5ed5a3d41c771796f75a41f8
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/dataset_description.json
+  - path: task-thinkaloud_bold.json
+    size: 425
+    sha256: e244008db1cb8168d33fe7f9440d85d80b288f5db1bd47bb4fbb866576c9a975
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/task-thinkaloud_bold.json
+  - path: sub-001/func/sub-001_task-thinkaloud_events.tsv
+    size: 7405
+    sha256: 1880fcb1fd612ca832daa55fa728c51aa5de68fe1228628ba65d1f833667c88c
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/sub-001/func/sub-001_task-thinkaloud_events.tsv
+  - path: derivatives/sub-001/func/sub-001_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+    size: 771374821
+    sha256: 52c72996946001bda6c767f0cbcad923b53649cb458b61bd0455473759f05a24
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/derivatives/sub-001/func/sub-001_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+  - path: derivatives/sub-001/func/sub-001_task-thinkaloud_desc-confounds_timeseries.tsv
+    size: 2094416
+    sha256: 04fbbd4e86a4524c2d1f685e2bdcf89cf00f6601ec6a274c76b6620bffbbd5ef
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/derivatives/sub-001/func/sub-001_task-thinkaloud_desc-confounds_timeseries.tsv
+  - path: derivatives/sub-001/anat/sub-001_desc-preproc_T1w.nii.gz
+    size: 17411691
+    sha256: 9358c8436aa36e677791fdaeb9e654915cf89361fdf3c8184f112139962df8e9
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/derivatives/sub-001/anat/sub-001_desc-preproc_T1w.nii.gz
+  - path: sub-005/func/sub-005_task-thinkaloud_events.tsv
+    size: 12352
+    sha256: 6d1a88e9925f03b369662bcb172155b330ae4c0cb972a766d47d67a53c31e2ae
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/sub-005/func/sub-005_task-thinkaloud_events.tsv
+  - path: derivatives/sub-005/func/sub-005_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+    size: 790999446
+    sha256: bf4477999a475c3f3508e03856d9117c869bf83f48774eb71c1af2fc8a716a27
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/derivatives/sub-005/func/sub-005_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+  - path: derivatives/sub-005/func/sub-005_task-thinkaloud_desc-confounds_timeseries.tsv
+    size: 2041790
+    sha256: ba3d7c1ed37156c9cdd38f3fa7930041332bf287135fe7fc051a099a32e381cf
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/derivatives/sub-005/func/sub-005_task-thinkaloud_desc-confounds_timeseries.tsv
+  - path: derivatives/sub-005/anat/sub-005_desc-preproc_T1w.nii.gz
+    size: 15874721
+    sha256: 60fa7e0ec9da1265b16af00de203b77b3c0c471340498e4084014df59a2bd453
+    url: https://s3.amazonaws.com/openneuro.org/ds006067/derivatives/sub-005/anat/sub-005_desc-preproc_T1w.nii.gz
