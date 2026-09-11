@@ -1,0 +1,28 @@
+# ds006067 minimal-subset download config (CM1-SUBSET-001)
+# Reproducible via: python3 data/scripts/download_ds006067.py --subjects sub-001 sub-005
+dataset_id: ds006067
+version: v2.0.0
+bucket: openneuro.org
+base_url: https://s3.amazonaws.com/openneuro.org/ds006067/
+dest: /home/jovyan/work/causal-mind-v2/data/raw/ds006067
+subjects: [sub-001, sub-005]
+derivatives: true
+fetched:
+  date: "2026-09-11"
+  n_files: 11
+  total_bytes: 1599819229
+  wall_time_s: 96.4
+files_per_subject:
+  - "{sub}/func/{sub}_task-thinkaloud_events.tsv"
+  - "derivatives/{sub}/func/{sub}_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+  - "derivatives/{sub}/func/{sub}_task-thinkaloud_desc-confounds_timeseries.tsv"
+  - "derivatives/{sub}/anat/{sub}_desc-preproc_T1w.nii.gz"
+global_files:
+  - participants.tsv
+  - dataset_description.json
+  - task-thinkaloud_bold.json
+notes: >-
+  Raw native BOLD/anat are not in public S3; the usable BOLD is the fMRIPrep
+  MNI152NLin2009cAsym preprocessed derivative. Per-file sha256 + size + URL are
+  recorded in data/manifests/ds006067_manifest.yaml (fetched:) and
+  data/raw/ds006067/_download_manifest.json.
