@@ -1,0 +1,95 @@
+# ds006067 (ThinkAloud) — dataset manifest (CM-1)
+# Provenance: OpenNeuro public S3 bucket "openneuro.org", prefix "ds006067/".
+# Pinned to v2.0.0. Audited 2026-09-11 (no bulk download; see docs/datasets/ds006067_audit.md).
+# Reproducible audit: data/scripts/audit_ds006067.py
+
+dataset_id: ds006067
+name: ThinkAloud
+version: v2.0.0
+doi: 10.18112/openneuro.ds006067.v2.0.0
+license: CC0
+bids_version: "1.7.0"
+task: thinkaloud
+citation: >-
+  Su, Li, Born, Honey, Chen, Lee, 2025. Neural dynamics of spontaneous memory recall
+  and future thinking in the continuous flow of thoughts. Nat Commun 16, 6433.
+  doi:10.1038/s41467-025-61807-w
+
+source:
+  bucket: openneuro.org            # from openneuro.org/crn/config.js -> AWS_S3_PUBLIC_BUCKET
+  base_url: https://s3.amazonaws.com/openneuro.org/
+  prefix: ds006067/
+  note: >-
+    api.openneuro.org is NXDOMAIN and /crn/ REST paths 404 from the pod; the public S3
+    bucket is the authoritative file-level source.
+
+acquisition:
+  tr_s: 1.5
+  n_volumes: 400
+  run_duration_s: 600
+  scanner: Philips
+  site: Kennedy Krieger Institute
+  multiband_accel: 4
+  flip_angle: 52
+  slice_thickness_mm: 2
+  pe_direction: "j-"
+  field_maps: [dir-AP_epi.json, dir-PA_epi.json]
+
+subjects:
+  count: 118
+  demographics_file: participants.tsv   # columns: participant_id, age, sex
+  # full id list reproduced by data/scripts/audit_ds006067.py
+
+transcript:
+  file_pattern: "sub-{s}/func/sub-{s}_task-thinkaloud_events.tsv"
+  columns: [onset, duration, transcript]
+  time_units: seconds
+  time_zero: "onset=0 <-> BOLD volume 1"
+  granularity: sentence/thought-level
+  word_level_timestamps: false
+  topic_or_category_labels: false
+  example_n_thoughts: {sub-001: 65}
+
+raw_imaging:
+  native_bold_in_public_s3: false     # 404; sub-XXX/func has only events.tsv
+  native_anat_in_public_s3: false     # sub-XXX/anat empty
+  note: >-
+    Raw native-space BOLD/anat NIfTI are not served in the public S3 prefix. The usable
+    BOLD is the fMRIPrep MNI-space preprocessed derivative (below).
+
+derivatives:
+  root: derivatives/
+  total_files: 50098
+  total_size_gb: 224.75
+  usable_bold:
+    file_pattern: >-
+      derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+    space: MNI152NLin2009cAsym
+    tr_s: 1.5
+    n_volumes: 400
+    size_mb_per_subject: [771, 791]
+  confounds:
+    file_pattern: "derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_desc-confounds_timeseries.tsv"
+  preproc_t1w:
+    file_pattern: "derivatives/sub-{s}/anat/sub-{s}_desc-preproc_T1w.nii.gz"
+
+footprint:
+  raw_metadata_and_transcripts: {files: 129, size: "~1 MB"}
+  derivatives: {files: 50098, size_gb: 224.75}
+  total: {files: 50227, size_gb: 224.75}
+
+minimal_subset:
+  purpose: "validate BIDS structure, transcript parsing, timestamp alignment, fMRI + derivative loading, thought-event construction"
+  subjects: [sub-001, sub-005]
+  estimated_size_gb: 1.6
+  files_per_subject:
+    - "sub-{s}/func/sub-{s}_task-thinkaloud_events.tsv"
+    - "derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz"
+    - "derivatives/sub-{s}/func/sub-{s}_task-thinkaloud_desc-confounds_timeseries.tsv"
+    - "derivatives/sub-{s}/anat/sub-{s}_desc-preproc_T1w.nii.gz"
+  global_files:
+    - participants.tsv
+    - dataset_description.json
+    - task-thinkaloud_bold.json
+
+fetched: {}   # populated by CM1-SUBSET-001 with per-file size + sha256 + source URL
