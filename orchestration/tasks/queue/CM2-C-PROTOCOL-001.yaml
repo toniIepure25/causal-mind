@@ -1,0 +1,23 @@
+id: CM2-C-PROTOCOL-001
+title: 'CM-2C: freeze prospective evaluation protocol + seal subject-disjoint split'
+objective: >-
+  Define and SEAL (hash-persist) the subject-disjoint train/val/test split before
+  any result is inspected; define the primary metric per target; specify bootstrap
+  CI and permutation/null protocol. No random thought-level row split.
+owner: orchestrator
+dependencies: [CM2-A-DATA-001]
+resource_class: cpu
+expected_runtime: 60m
+allowed_paths: [src/causal_mind/eval/, tests/, docs/protocol/]
+forbidden_paths: [.runai, .ssh, .env, data/raw/]
+success_criteria:
+- subject-disjoint split defined and sealed (hash persisted before results)
+- primary metric per target defined before final comparison
+- bootstrap CI + permutation/null protocol specified
+- no random thought-level row split
+failure_criteria:
+- split chosen after inspecting results
+- any random row split on temporal data
+deliverables: [src/causal_mind/eval/protocol.py, docs/protocol/cm2_frozen_protocol.md, tests/test_protocol_seal.py]
+assigned_worker: causal
+state: queue

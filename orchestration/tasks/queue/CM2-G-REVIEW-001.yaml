@@ -1,0 +1,22 @@
+id: CM2-G-REVIEW-001
+title: 'CM-2G: red-team falsification + independent reproduction (closure gate)'
+objective: >-
+  Actively try to falsify the CM-2 result: inspect future-label, embedding, topic,
+  timestamp, overlap, participant, transform, adjacency, segmentation, speech-
+  shortcut, duplicate-utterance, and candidate-pool leakage; independently
+  reproduce the winning result; issue GO/BLOCK.
+owner: orchestrator
+dependencies: [CM2-F-ANALYSES-001]
+resource_class: cpu
+expected_runtime: 120m
+allowed_paths: [docs/datasets/, reports/]
+forbidden_paths: [.runai, .ssh, .env, data/raw/]
+success_criteria:
+- all listed leakage mechanisms inspected
+- winning result independently reproduced
+- explicit GO/BLOCK
+failure_criteria:
+- an unresolved leakage mechanism explains the result
+deliverables: [docs/datasets/cm2_redteam_review.md]
+assigned_worker: reviewer
+state: queue

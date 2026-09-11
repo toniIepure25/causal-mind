@@ -1,0 +1,25 @@
+id: CM2-A-ONTOLOGY-001
+title: 'CM-2A: ThoughtStateV1 ontology + per-field provenance'
+objective: >-
+  Classify every candidate thought-state dimension as observed/annotated/derived/
+  model-inferred/unavailable; build ThoughtStateV1 from only defensible dimensions;
+  keep original annotations separate from learned embeddings; document per-field
+  provenance; never treat model-inferred labels as ground truth.
+owner: orchestrator
+dependencies: [CM2-A-DATA-001]
+resource_class: cpu
+expected_runtime: 90m
+allowed_paths: [src/causal_mind/data/, src/causal_mind/thought/, tests/, docs/datasets/]
+forbidden_paths: [.runai, .ssh, .env, data/raw/]
+success_criteria:
+- every candidate dimension classified
+- ThoughtStateV1 built from defensible dimensions only
+- original annotations preserved separately from learned embeddings
+- per-field provenance documented
+- model-inferred labels not treated as ground truth
+failure_criteria:
+- LLM/model labels silently used as ground truth
+- provenance missing for any field
+deliverables: [src/causal_mind/thought/state_v1.py, docs/datasets/thoughtstate_v1_provenance.md, tests/test_thoughtstate_v1.py]
+assigned_worker: data
+state: queue

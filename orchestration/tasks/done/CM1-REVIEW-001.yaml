@@ -1,0 +1,45 @@
+id: CM1-REVIEW-001
+title: 'CM-1: red-team review and closure gate for ds006067 data audit'
+hypothesis: null
+objective: 'You are the Validation / Red-Team reviewer. Audit the CM-1 data work (CM1-AUDIT,
+  CM1-SUBSET, CM1-LOADER) before the milestone is closed. Read docs/datasets/ds006067_audit.md,
+  docs/datasets/ds006067_alignment.md, data/manifests/ds006067_manifest.yaml, data/scripts/download_ds006067.py,
+  data/scripts/ds006067_download.yaml, src/causal_mind/data/ds006067.py, and tests/test_ds006067_loader.py.
+  Independently re-verify the pinned dataset version against the OpenNeuro API. Specifically
+  hunt for: dataset-version mismatch; incorrect transcript-to-fMRI alignment (time
+  zero, units, clock, run offset); hidden preprocessing assumptions; use of derived
+  annotations that could leak future information (e.g. labels computed over the whole
+  run used to predict an earlier point); subject/session leakage risks in any split
+  helper; artifacts caused by speech production (volume pulses, motion, mouth); and
+  whether the dataset actually supports NEXT-THOUGHT prospective evaluation (are there
+  future thought events to predict, with clean temporal ordering?). Run the loader
+  tests yourself to confirm they pass. Write your findings to docs/datasets/ds006067_review.md
+  with a clear verdict. End your final answer with a line ''Decision: GO'' (milestone
+  may close) or ''Decision: BLOCK'' followed by a numbered list of blocking issues.
+  Do not modify code; review only.'
+owner: orchestrator
+dependencies:
+- CM1-LOADER-001
+resource_class: cpu
+expected_runtime: 45m
+allowed_paths:
+- docs/datasets/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+- data/raw/
+required_tests:
+- tests/test_ds006067_loader.py
+success_criteria:
+- docs/datasets/ds006067_review.md written with explicit verdict
+- 'final answer ends with ''Decision: GO'' or ''Decision: BLOCK'''
+- loader tests independently re-run
+failure_criteria:
+- no explicit decision line
+- blocking issues not enumerated
+deliverables:
+- docs/datasets/ds006067_review.md
+assigned_worker: reviewer
+state: done

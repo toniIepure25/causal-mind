@@ -1,0 +1,54 @@
+id: CM1-SUBSET-001
+title: 'CM-1: acquire minimal ds006067 subset + checksums/provenance'
+hypothesis: null
+objective: 'Using the pinned version and minimal-subset file list from data/manifests/ds006067_manifest.yaml
+  (produced by CM1-AUDIT-001), download the SMALLEST subset sufficient to validate:
+  BIDS structure, one or two subjects, transcript parsing, timestamp alignment, fMRI
+  loading, derivative loading, and thought-event construction. Do NOT download the
+  full dataset. Download raw BIDS files (BOLD + sidecars + anat for the chosen subjects)
+  and, if available, the matching fMRIPrep/FreeSurfer derivative files for those subjects,
+  plus all transcript/annotation sidecar files. Store under the CENTRAL data dir /home/jovyan/work/causal-mind-v2/data/raw/ds006067/
+  (git-ignored; this absolute path is outside your workdir, so fetch files with bash/curl/python,
+  not the file tools). Write a reproducible download script data/scripts/download_ds006067.py
+  (argparse: --subjects, --derivatives, --dest [default /home/jovyan/work/causal-mind-v2/data/raw/ds006067],
+  idempotent, prints a file manifest) and a data/scripts/ds006067_download.yaml config
+  capturing the exact pinned version, subject list, and file list actually fetched.
+  After download, compute SHA-256 for every fetched file and record per-file size
+  + sha256 + source URL into data/manifests/ds006067_manifest.yaml (a ''fetched:''
+  section). Record total bytes downloaded and wall time. If the OpenNeuro S3/API is
+  unreachable or a file 404s, record the exact error and which files are missing;
+  do not fabricate. Keep the subset as small as possible while still covering one
+  full subject end-to-end.'
+owner: orchestrator
+dependencies:
+- CM1-AUDIT-001
+resource_class: cpu
+expected_runtime: 60m
+allowed_paths:
+- data/scripts/
+- data/manifests/
+- data/raw/
+- docs/datasets/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests:
+- data/scripts/download_ds006067.py runs idempotently for the pinned subset
+success_criteria:
+- minimal subset present under data/raw/ds006067/ covering >=1 full subject (BOLD+sidecars+anat)
+  plus transcripts/annotations
+- download script + config committed and reproducible
+- every fetched file has size + sha256 + source URL in the manifest
+- total bytes + wall time recorded
+failure_criteria:
+- full dataset downloaded
+- missing checksums for fetched files
+- fabricated file list
+deliverables:
+- data/scripts/download_ds006067.py
+- data/scripts/ds006067_download.yaml
+- data/manifests/ds006067_manifest.yaml (updated with fetched section)
+assigned_worker: data
+state: done

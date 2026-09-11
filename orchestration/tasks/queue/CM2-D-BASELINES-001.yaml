@@ -1,0 +1,23 @@
+id: CM2-D-BASELINES-001
+title: 'CM-2D: strong non-neural baselines B0-B7'
+objective: >-
+  Implement B0 marginal, B1 previous-state, B2 Markov, B3 n-gram, B4 semantic
+  persistence, B5 semantic NN transition, B6 participant-history (leakage-safe),
+  B7 frozen history retrieval; evaluate all under the frozen protocol; persist
+  scores with seeds.
+owner: orchestrator
+dependencies: [CM2-B-PROSPECTIVE-001]
+resource_class: cpu
+expected_runtime: 120m
+allowed_paths: [src/causal_mind/forecast/, tests/]
+forbidden_paths: [.runai, .ssh, .env, data/raw/]
+success_criteria:
+- all of B0-B7 implemented
+- every baseline evaluated under the frozen protocol
+- baseline scores persisted with seeds
+failure_criteria:
+- a baseline uses test-subject information
+- a baseline is missing
+deliverables: [src/causal_mind/forecast/baselines.py, tests/test_baselines.py]
+assigned_worker: forecasting
+state: queue
