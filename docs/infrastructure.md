@@ -41,19 +41,22 @@ export UV_CACHE_DIR=/home/jovyan/work/.uv-cache
 - Model: `Qwen/Qwen3.8-27B-FP8` (Run:ai workload `qwen38-27b12`, project
   `romania-dev`), OpenAI-compatible API.
 - Local endpoint: `http://127.0.0.1:18000/v1` (port-forward of workload port 8000).
-- Chain: `127.0.0.1:18000` -> runai CLI port-forward -> Caddy `127.0.0.1:19080` ->
-  cluster ingress `10.130.240.221` (SNI `cisco-ai-pod.cc-demos.com`).
-- Auth: runai CLI token under `/home/jovyan/.runai` (pod home, NOT on the PVC); proxy
-  copy under `/home/jovyan/.runai-proxy`. Never printed, never committed.
+- Chain: `127.0.0.1:18000` -> runai CLI port-forward -> cluster gateway
+  `cisco-ai-pod.cc-demos.com` (10.130.240.221) directly. No Caddy (the SSH session's
+  netns resolves the gateway hostname; see runbook for the netns split).
+- Auth: runai CLI token under `/home/jovyan/.runai` (pod home, NOT on the PVC).
+  Never printed, never committed. Tokens expire ~daily; re-auth is a human step
+  (`scripts/runai_login_pty.py`, see runbook).
 - Supervisor: `scripts/qwen_tunnel_supervisor.sh {start|stop|status}` — health-checks
-  `/v1/models` every 5 s and restarts the port-forward on failure.
+  `/v1/models` every 10 s and restarts the port-forward on failure. Must be started
+  from the SSH session (sidecar netns).
 - Runbook: `docs/runbooks/qwen_tunnel.md`.
 
 ## Tooling
 
 - uv 0.12.5 at `/home/jovyan/work/.local/bin/uv` (shared, read-only reuse OK).
 - OpenCode 1.18.19 at `.home/.opencode/bin/opencode` (project-local copy).
-- runai CLI 2.116.10 at `.runai-cli/bin/runai`; Caddy 2.11.4 at `.caddy/bin/caddy`.
+- runai CLI 2.116.10 at `.runai-cli/bin/runai`.
 - git 2.43 (NFS: use `git -c safe.directory=*`).
 
 ## Network

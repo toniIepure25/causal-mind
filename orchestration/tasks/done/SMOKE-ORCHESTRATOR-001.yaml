@@ -1,0 +1,31 @@
+id: SMOKE-ORCHESTRATOR-001
+title: 'Smoke: next-task proposal'
+hypothesis: null
+objective: 'Read docs/hypotheses.md and docs/validation_protocol.md, then write docs/smoke/orchestrator-smoke.md
+  (under 250 words) proposing the first three real tasks the coordinator should queue
+  after the smoke tests pass. For each: id (CM1-xxx style), title, milestone (from
+  the MILESTONES list in src/causal_mind/orchestrator/planner.py), one-line objective,
+  and which worker owns it. They must respect the frozen validation protocol and the
+  "audit before download" policy.
+
+  '
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 10m
+allowed_paths:
+- docs/smoke/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests: []
+success_criteria:
+- 3 tasks with id/title/milestone/owner, protocol-respecting
+failure_criteria:
+- protocol violation or missing fields
+deliverables:
+- docs/smoke/orchestrator-smoke.md
+assigned_worker: orchestrator
+state: done

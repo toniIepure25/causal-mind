@@ -21,7 +21,7 @@ scripts/cm-agent-supervisor stop
 Each supervisor loops: claim next task for its worker -> run the agent tool loop in the
 worker's worktree -> write report -> transition task to review -> sleep.
 
-Worktrees: `/home/jovyan/work/worktrees/causal-mind/<worker>` (created by
+Worktrees: `/home/jovyan/work/worktrees/causal-mind-v2/<worker>` (created by
 `scripts/create_agent_worktrees.sh`).
 
 ## Queue controls

@@ -90,9 +90,22 @@ class QwenToolLoopAgent:
             content = message.get("content") or ""
 
             if not tool_calls:
-                final_content = content
-                stop_reason = "completed"
-                break
+                if content.strip():
+                    final_content = content
+                    stop_reason = "completed"
+                    break
+                # Empty final message: nudge the model to continue.
+                messages.append({"role": "assistant", "content": ""})
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": (
+                            "Your last message was empty. Continue the task, or end with "
+                            "your final answer including the Decision line."
+                        ),
+                    }
+                )
+                continue
 
             assistant_entry: dict[str, object] = {"role": "assistant", "content": content}
             if tool_calls:

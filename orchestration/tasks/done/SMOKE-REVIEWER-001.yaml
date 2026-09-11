@@ -1,0 +1,31 @@
+id: SMOKE-REVIEWER-001
+title: 'Smoke: leakage risk list'
+hypothesis: null
+objective: 'Write docs/smoke/reviewer-smoke.md (under 300 words) listing the top 5
+  leakage risks specific to next-thought prediction on fMRI + transcript data (e.g.,
+  temporal leakage via future text, subject leakage via shared participants, BOLD
+  hemodynamic lag misuse, duplicate transcript samples, session-identity shortcut).
+  For each: one line on the risk and one line on the specific check that would catch
+  it.
+
+  '
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 10m
+allowed_paths:
+- docs/smoke/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests: []
+success_criteria:
+- 5 risks, each with a concrete detection check
+failure_criteria:
+- fewer than 5 risks or no checks
+deliverables:
+- docs/smoke/reviewer-smoke.md
+assigned_worker: reviewer
+state: done

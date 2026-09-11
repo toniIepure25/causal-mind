@@ -1,0 +1,32 @@
+id: SMOKE-RESEARCHER-001
+title: 'Smoke: researcher literature scan'
+hypothesis: null
+objective: 'Write docs/smoke/researcher-smoke.md listing the three closest public
+  research threads to "predicting the next spontaneous thought from fMRI plus transcript"
+  (e.g., mind-wandering prediction, naturalistic fMRI semantic decoding, thought dynamics/sequence
+  modeling). One or two sentences per thread: what it establishes and its main limitation
+  for our goal. Keep under 300 words. Do not download anything and do not invent citations
+  beyond well-known dataset/paper names.
+
+  '
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 10m
+allowed_paths:
+- docs/smoke/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests: []
+success_criteria:
+- docs/smoke/researcher-smoke.md exists with 3 named threads
+- under 300 words, no fabricated citations
+failure_criteria:
+- fabricated citations or missing file
+deliverables:
+- docs/smoke/researcher-smoke.md
+assigned_worker: researcher
+state: done

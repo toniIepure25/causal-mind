@@ -29,7 +29,7 @@ def _report_root(root: Path) -> Path:
     return Path(os.environ.get("CM_REPORT_ROOT", root / "reports"))
 
 
-def _status() -> int:
+def _status(args: argparse.Namespace) -> int:
     root = _repo_root()
     status = collect_research_status(root, _queue_root(root))
     print(f"gpu:   {status.gpu_status}")
@@ -138,7 +138,7 @@ def _review(args: argparse.Namespace) -> int:
     return 0
 
 
-def _qwen() -> int:
+def _qwen(args: argparse.Namespace) -> int:
     client = QwenClient()
     if client.health():
         print(f"qwen healthy: {client.model} @ {client.base_url}")
