@@ -1,14 +1,18 @@
 """ThoughtStateV1 -- the first CAUSAL MIND thought-state representation.
 
-Scientific honesty (CM-2A): ds006067 provides ONLY transcript text + timing
-(onset/duration). It has NO psychological annotations (no topic labels, no
-word-level timestamps, no affect/temporality/self-relevance/etc.). Therefore:
+Dual-source provenance (CM-2A, OSF pivot):
+  * MRI source       : OpenNeuro ds006067 v2.0.0 (neuroimaging only)
+  * Behavioral source: OSF project a56rm (transcripts, timestamps, ratings)
 
-* DIRECTLY OBSERVED  : transcript, onset, duration
+Field provenance:
+* DIRECTLY OBSERVED  : transcript, onset, duration, topic (prompt),
+                       observed_category (OSF 1-5)
 * DERIVED (deterministic, no future info): offset, n_words, n_chars
 * MODEL INFERRED     : semantic embedding (frozen MiniLM), coarse category
                        (K-means on the embedding, fit on TRAIN subjects only)
-* UNAVAILABLE        : every ground-truth psychological dimension
+* MODEL INFERRED (GPT): the 14 sentence-level psychological ratings
+                       (8 emotion + 6 sensory/modal), aggregated per thought.
+                       Validated against human raters on an 18-subject subset.
 
 Model-inferred fields are NEVER treated as ground truth; they are clearly
 labeled and kept separate from the directly-observed transcript.
@@ -19,26 +23,33 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
+# The 14 GPT-rated psychological dimensions (model-inferred).
+RATING_DIMS = (
+    "emotional_intensity", "joy", "sadness", "fear", "anger", "disgust",
+    "surprise", "anxiety", "vision", "audition", "olfaction", "gustation",
+    "somatosensation", "interoception",
+)
+
 # Provenance class for every ThoughtStateV1 field.
 PROVENANCE: dict[str, str] = {
+    # directly observed (OSF a56rm sentence-level transcript)
     "transcript": "directly_observed",
     "onset": "directly_observed",
     "duration": "directly_observed",
+    "topic": "directly_observed",            # the prompt the subject thought about
+    "observed_category": "directly_observed",  # OSF category (1-5)
+    # derived (deterministic, no future info)
     "offset": "derived_deterministic",
     "n_words": "derived_deterministic",
     "n_chars": "derived_deterministic",
-    "embedding": "model_inferred",          # frozen MiniLM, no fitting
-    "category": "model_inferred",           # K-means on embedding, fit on train only
-    # Candidate dimensions that are UNAVAILABLE in ds006067 (no annotation):
-    "temporality": "unavailable",
-    "self_relevance": "unavailable",
-    "episodic_past": "unavailable",
-    "future_oriented": "unavailable",
-    "affect_valence": "unavailable",
-    "goal_directedness": "unavailable",
-    "social_content": "unavailable",
-    "task_relatedness": "unavailable",
+    # model inferred
+    "embedding": "model_inferred",           # frozen MiniLM, no fitting
+    "category": "model_inferred",            # K-means on embedding, fit on train only
 }
+# The 14 GPT-rated dimensions are model-inferred (GPT-generated); the
+# 18-subject validation subset has human raters cross-checking them.
+for _d in RATING_DIMS:
+    PROVENANCE[_d] = "model_inferred_gpt"
 
 # Fields safe to use as PREDICTIVE FEATURES for thought t+1 (no future info).
 # Note: gap_to_next / boundary-to-next are deliberately EXCLUDED (they use t+1).
@@ -52,6 +63,9 @@ class ThoughtState:
     onset: float
     duration: float
     transcript: str
+    topic: str | None = None
+    observed_category: int | None = None
+    ratings: dict[str, float] = field(default_factory=dict)
     offset: float = field(init=False)
     n_words: int = field(init=False)
     n_chars: int = field(init=False)
@@ -64,17 +78,17 @@ class ThoughtState:
         self.n_chars = len(self.transcript)
 
 
-def _field(ev, key: str):
+def _get(ev, key: str, default=None):
     if isinstance(ev, dict):
-        return ev[key]
-    return getattr(ev, key)
+        return ev.get(key, default)
+    return getattr(ev, key, default)
 
 
 def states_from_events(subject: str, events: list) -> list[ThoughtState]:
     """Build ThoughtState objects from loader events (no embeddings yet).
 
-    ``events`` is a list of dicts or objects with onset/duration/transcript,
-    in time order.
+    ``events`` is a list of dicts or objects with onset/duration/transcript
+    (and optionally topic/observed_category/ratings), in time order.
     """
     out: list[ThoughtState] = []
     for i, ev in enumerate(events):
@@ -82,9 +96,12 @@ def states_from_events(subject: str, events: list) -> list[ThoughtState]:
             ThoughtState(
                 subject=subject,
                 index=i,
-                onset=float(_field(ev, "onset")),
-                duration=float(_field(ev, "duration")),
-                transcript=str(_field(ev, "transcript")),
+                onset=float(_get(ev, "onset")),
+                duration=float(_get(ev, "duration")),
+                transcript=str(_get(ev, "transcript")),
+                topic=_get(ev, "topic"),
+                observed_category=_get(ev, "observed_category"),
+                ratings=dict(_get(ev, "ratings", {}) or {}),
             )
         )
     return out

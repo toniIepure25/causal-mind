@@ -65,13 +65,15 @@ def corpus(states_by_sub) -> baselines.TrainCorpus:
 # --- ThoughtStateV1 -------------------------------------------------------- #
 def test_provenance_covers_all_fields():
     for f in ("transcript", "onset", "duration", "offset", "n_words", "n_chars",
-              "embedding", "category"):
+              "embedding", "category", "topic", "observed_category"):
         assert f in state_v1.PROVENANCE
     assert state_v1.PROVENANCE["transcript"] == "directly_observed"
+    assert state_v1.PROVENANCE["topic"] == "directly_observed"
+    assert state_v1.PROVENANCE["observed_category"] == "directly_observed"
     assert state_v1.PROVENANCE["embedding"] == "model_inferred"
     assert state_v1.PROVENANCE["category"] == "model_inferred"
-    for unavailable in ("temporality", "affect_valence", "social_content"):
-        assert state_v1.PROVENANCE[unavailable] == "unavailable"
+    for d in state_v1.RATING_DIMS:
+        assert state_v1.PROVENANCE[d] == "model_inferred_gpt"
 
 
 def test_feature_fields_exclude_future():

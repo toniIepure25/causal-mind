@@ -8,11 +8,24 @@ task: thinkaloud
 citation: Su, Li, Born, Honey, Chen, Lee, 2025. Neural dynamics of spontaneous memory recall and future
   thinking in the continuous flow of thoughts. Nat Commun 16, 6433. doi:10.1038/s41467-025-61807-w
 source:
-  bucket: openneuro.org
-  base_url: https://s3.amazonaws.com/openneuro.org/
-  prefix: ds006067/
-  note: api.openneuro.org is NXDOMAIN and /crn/ REST paths 404 from the pod; the public S3 bucket is the
-    authoritative file-level source.
+  dual_source: true
+  mri:
+    name: OpenNeuro ds006067 v2.0.0
+    bucket: openneuro.org
+    base_url: https://s3.amazonaws.com/openneuro.org/
+    prefix: ds006067/
+    provides: neuroimaging (BOLD, anat, confounds, field maps)
+    note: api.openneuro.org is NXDOMAIN and /crn/ REST paths 404 from the pod; the public S3 bucket is the
+      authoritative file-level source. S3 was in an outage during CM-2 (no longer a CM-2 blocker;
+      still required for CM-5 neural analyses).
+  behavioral:
+    name: OSF project a56rm ("Think aloud behavioral data")
+    url: https://osf.io/a56rm/
+    api: https://api.osf.io/v2/nodes/a56rm/
+    provides: word/sentence transcripts, timestamps, sentence-level psychological ratings,
+      questionnaires, generation/preprocessing/validation code
+    note: Authoritative BEHAVIORAL source for CM-2. Raw files preserved immutable under
+      data/raw/osf/...; normalized derived thought events under data/derived/thought_events/.
 acquisition:
   tr_s: 1.5
   n_volumes: 400
@@ -30,18 +43,35 @@ subjects:
   count: 118
   demographics_file: participants.tsv
 transcript:
-  file_pattern: sub-{s}/func/sub-{s}_task-thinkaloud_events.tsv
-  columns:
-  - onset
-  - duration
-  - transcript
-  time_units: seconds
-  time_zero: onset=0 <-> BOLD volume 1
-  granularity: sentence/thought-level
-  word_level_timestamps: false
-  topic_or_category_labels: false
-  example_n_thoughts:
-    sub-001: 65
+  source: OSF a56rm (behavioral)
+  sentence_level:
+    file_pattern: data/raw/osf/data/transcripts_and_timestamps/sentence_level/sub-{s}_transcripts.xlsx
+    columns: [Transcribed Sentence, Start Time, End Time, category, topic, thoughtID]
+    time_units: seconds
+    time_zero: seconds relative to acquisition of the first functional-image volume
+    granularity: sentence (grouped by thoughtID into thoughts)
+    coverage: 118/118 subjects
+  word_level:
+    file_pattern: data/raw/osf/data/transcripts_and_timestamps/word_level/sub-{s}_timestamps.xlsx
+    columns: [Transcribed Word, Start Time, End Time]
+    coverage: 102/118 subjects
+  ratings:
+    gpt_generated:
+      file_pattern: data/raw/osf/data/sentence_level_ratings/gpt_generated/sub-{s}.xlsx
+      dimensions: 14 (8 emotion + 6 sensory/modal)
+      provenance: model_inferred_gpt
+      coverage: 118/118 subjects
+    human_validation:
+      file_pattern: data/raw/osf/data/sentence_level_ratings/human_validation/Rater{1-4}/sub-{s}.xlsx
+      raters: 4
+      provenance: human_annotated
+      coverage: 18/118 subjects (validation subset)
+  derived:
+    file_pattern: data/derived/thought_events/sub-{s}_thoughts.tsv
+    granularity: thought (grouped by thoughtID)
+    example_n_thoughts:
+      sub-001: 28
+      sub-005: 70
 raw_imaging:
   native_bold_in_public_s3: false
   native_anat_in_public_s3: false

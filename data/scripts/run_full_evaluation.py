@@ -21,32 +21,24 @@ from pathlib import Path
 
 import numpy as np
 
-from causal_mind.data import ds006067 as L
+from causal_mind.data import osf_a56rm
 from causal_mind.eval import analyses, protocol
 from causal_mind.forecast import baselines, models
 from causal_mind.thought import encode, prospective, state_v1
 
-ROOT = Path("/home/jovyan/work/causal-mind-v2/data/raw/ds006067")
 OUT = Path("/home/jovyan/work/causal-mind-v2/reports")
 N_CLUSTERS = 16
 SEED = 20260911
 MIN_SUBJECTS = 100
 
 
-def _subjects_with_transcripts(all_subs: list[str]) -> list[str]:
-    return [s for s in all_subs
-            if (ROOT / s / "func" / f"{s}_task-thinkaloud_events.tsv").exists()]
-
-
 def main() -> int:
     t0 = time.time()
-    part = (ROOT / "participants.tsv").read_text().strip().split("\n")
-    all_subs = [ln.split("\t")[0] for ln in part[1:] if ln.strip()]
-    subs = _subjects_with_transcripts(all_subs)
-    print(f"[cm2] subjects with transcripts: {len(subs)}/{len(all_subs)}")
+    subs = osf_a56rm.all_subjects()
+    print(f"[cm2] subjects with derived thought events: {len(subs)}")
     if len(subs) < MIN_SUBJECTS:
-        print(f"[cm2] NOT ENOUGH DATA ({len(subs)} < {MIN_SUBJECTS}); S3 likely still down. "
-              f"Re-run after the fetch completes.")
+        print(f"[cm2] NOT ENOUGH DATA ({len(subs)} < {MIN_SUBJECTS}); "
+              f"run data/scripts/build_thought_events.py after the OSF fetch.")
         return 2
 
     # 1. load + embed + categories
@@ -54,7 +46,7 @@ def main() -> int:
     enc = encode.MiniLMEncoder()
     states_by_sub: dict[str, list] = {}
     for s in subs:
-        st = state_v1.states_from_events(s, L.load_events(s))
+        st = state_v1.states_from_events(s, osf_a56rm.load_thought_events(s))
         state_v1.embed_states(st, enc)
         states_by_sub[s] = st
     n_thoughts = sum(len(v) for v in states_by_sub.values())

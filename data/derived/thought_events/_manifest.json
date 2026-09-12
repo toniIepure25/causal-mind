@@ -1,0 +1,713 @@
+{
+  "n_subjects": 118,
+  "subjects": [
+    {
+      "subject": "sub-001",
+      "n_thoughts": 28,
+      "rating_source": "gpt_generated",
+      "file": "sub-001_thoughts.tsv"
+    },
+    {
+      "subject": "sub-002",
+      "n_thoughts": 50,
+      "rating_source": "gpt_generated",
+      "file": "sub-002_thoughts.tsv"
+    },
+    {
+      "subject": "sub-004",
+      "n_thoughts": 61,
+      "rating_source": "gpt_generated",
+      "file": "sub-004_thoughts.tsv"
+    },
+    {
+      "subject": "sub-005",
+      "n_thoughts": 70,
+      "rating_source": "gpt_generated",
+      "file": "sub-005_thoughts.tsv"
+    },
+    {
+      "subject": "sub-006",
+      "n_thoughts": 46,
+      "rating_source": "gpt_generated",
+      "file": "sub-006_thoughts.tsv"
+    },
+    {
+      "subject": "sub-007",
+      "n_thoughts": 40,
+      "rating_source": "gpt_generated",
+      "file": "sub-007_thoughts.tsv"
+    },
+    {
+      "subject": "sub-009",
+      "n_thoughts": 69,
+      "rating_source": "gpt_generated",
+      "file": "sub-009_thoughts.tsv"
+    },
+    {
+      "subject": "sub-010",
+      "n_thoughts": 58,
+      "rating_source": "gpt_generated",
+      "file": "sub-010_thoughts.tsv"
+    },
+    {
+      "subject": "sub-011",
+      "n_thoughts": 29,
+      "rating_source": "gpt_generated",
+      "file": "sub-011_thoughts.tsv"
+    },
+    {
+      "subject": "sub-012",
+      "n_thoughts": 79,
+      "rating_source": "gpt_generated",
+      "file": "sub-012_thoughts.tsv"
+    },
+    {
+      "subject": "sub-013",
+      "n_thoughts": 62,
+      "rating_source": "gpt_generated",
+      "file": "sub-013_thoughts.tsv"
+    },
+    {
+      "subject": "sub-014",
+      "n_thoughts": 53,
+      "rating_source": "gpt_generated",
+      "file": "sub-014_thoughts.tsv"
+    },
+    {
+      "subject": "sub-016",
+      "n_thoughts": 50,
+      "rating_source": "gpt_generated",
+      "file": "sub-016_thoughts.tsv"
+    },
+    {
+      "subject": "sub-017",
+      "n_thoughts": 46,
+      "rating_source": "gpt_generated",
+      "file": "sub-017_thoughts.tsv"
+    },
+    {
+      "subject": "sub-018",
+      "n_thoughts": 34,
+      "rating_source": "gpt_generated",
+      "file": "sub-018_thoughts.tsv"
+    },
+    {
+      "subject": "sub-019",
+      "n_thoughts": 36,
+      "rating_source": "gpt_generated",
+      "file": "sub-019_thoughts.tsv"
+    },
+    {
+      "subject": "sub-020",
+      "n_thoughts": 52,
+      "rating_source": "gpt_generated",
+      "file": "sub-020_thoughts.tsv"
+    },
+    {
+      "subject": "sub-021",
+      "n_thoughts": 65,
+      "rating_source": "gpt_generated",
+      "file": "sub-021_thoughts.tsv"
+    },
+    {
+      "subject": "sub-023",
+      "n_thoughts": 32,
+      "rating_source": "gpt_generated",
+      "file": "sub-023_thoughts.tsv"
+    },
+    {
+      "subject": "sub-024",
+      "n_thoughts": 34,
+      "rating_source": "gpt_generated",
+      "file": "sub-024_thoughts.tsv"
+    },
+    {
+      "subject": "sub-025",
+      "n_thoughts": 58,
+      "rating_source": "gpt_generated",
+      "file": "sub-025_thoughts.tsv"
+    },
+    {
+      "subject": "sub-026",
+      "n_thoughts": 116,
+      "rating_source": "gpt_generated",
+      "file": "sub-026_thoughts.tsv"
+    },
+    {
+      "subject": "sub-027",
+      "n_thoughts": 82,
+      "rating_source": "gpt_generated",
+      "file": "sub-027_thoughts.tsv"
+    },
+    {
+      "subject": "sub-029",
+      "n_thoughts": 48,
+      "rating_source": "gpt_generated",
+      "file": "sub-029_thoughts.tsv"
+    },
+    {
+      "subject": "sub-031",
+      "n_thoughts": 91,
+      "rating_source": "gpt_generated",
+      "file": "sub-031_thoughts.tsv"
+    },
+    {
+      "subject": "sub-032",
+      "n_thoughts": 98,
+      "rating_source": "gpt_generated",
+      "file": "sub-032_thoughts.tsv"
+    },
+    {
+      "subject": "sub-033",
+      "n_thoughts": 58,
+      "rating_source": "gpt_generated",
+      "file": "sub-033_thoughts.tsv"
+    },
+    {
+      "subject": "sub-034",
+      "n_thoughts": 45,
+      "rating_source": "gpt_generated",
+      "file": "sub-034_thoughts.tsv"
+    },
+    {
+      "subject": "sub-035",
+      "n_thoughts": 41,
+      "rating_source": "gpt_generated",
+      "file": "sub-035_thoughts.tsv"
+    },
+    {
+      "subject": "sub-036",
+      "n_thoughts": 29,
+      "rating_source": "gpt_generated",
+      "file": "sub-036_thoughts.tsv"
+    },
+    {
+      "subject": "sub-037",
+      "n_thoughts": 30,
+      "rating_source": "gpt_generated",
+      "file": "sub-037_thoughts.tsv"
+    },
+    {
+      "subject": "sub-038",
+      "n_thoughts": 63,
+      "rating_source": "gpt_generated",
+      "file": "sub-038_thoughts.tsv"
+    },
+    {
+      "subject": "sub-039",
+      "n_thoughts": 33,
+      "rating_source": "gpt_generated",
+      "file": "sub-039_thoughts.tsv"
+    },
+    {
+      "subject": "sub-040",
+      "n_thoughts": 33,
+      "rating_source": "gpt_generated",
+      "file": "sub-040_thoughts.tsv"
+    },
+    {
+      "subject": "sub-041",
+      "n_thoughts": 51,
+      "rating_source": "gpt_generated",
+      "file": "sub-041_thoughts.tsv"
+    },
+    {
+      "subject": "sub-042",
+      "n_thoughts": 44,
+      "rating_source": "gpt_generated",
+      "file": "sub-042_thoughts.tsv"
+    },
+    {
+      "subject": "sub-043",
+      "n_thoughts": 73,
+      "rating_source": "gpt_generated",
+      "file": "sub-043_thoughts.tsv"
+    },
+    {
+      "subject": "sub-044",
+      "n_thoughts": 50,
+      "rating_source": "gpt_generated",
+      "file": "sub-044_thoughts.tsv"
+    },
+    {
+      "subject": "sub-045",
+      "n_thoughts": 39,
+      "rating_source": "gpt_generated",
+      "file": "sub-045_thoughts.tsv"
+    },
+    {
+      "subject": "sub-046",
+      "n_thoughts": 39,
+      "rating_source": "gpt_generated",
+      "file": "sub-046_thoughts.tsv"
+    },
+    {
+      "subject": "sub-047",
+      "n_thoughts": 52,
+      "rating_source": "gpt_generated",
+      "file": "sub-047_thoughts.tsv"
+    },
+    {
+      "subject": "sub-048",
+      "n_thoughts": 61,
+      "rating_source": "gpt_generated",
+      "file": "sub-048_thoughts.tsv"
+    },
+    {
+      "subject": "sub-049",
+      "n_thoughts": 66,
+      "rating_source": "gpt_generated",
+      "file": "sub-049_thoughts.tsv"
+    },
+    {
+      "subject": "sub-050",
+      "n_thoughts": 57,
+      "rating_source": "gpt_generated",
+      "file": "sub-050_thoughts.tsv"
+    },
+    {
+      "subject": "sub-051",
+      "n_thoughts": 42,
+      "rating_source": "gpt_generated",
+      "file": "sub-051_thoughts.tsv"
+    },
+    {
+      "subject": "sub-052",
+      "n_thoughts": 42,
+      "rating_source": "gpt_generated",
+      "file": "sub-052_thoughts.tsv"
+    },
+    {
+      "subject": "sub-053",
+      "n_thoughts": 30,
+      "rating_source": "gpt_generated",
+      "file": "sub-053_thoughts.tsv"
+    },
+    {
+      "subject": "sub-054",
+      "n_thoughts": 45,
+      "rating_source": "gpt_generated",
+      "file": "sub-054_thoughts.tsv"
+    },
+    {
+      "subject": "sub-055",
+      "n_thoughts": 87,
+      "rating_source": "gpt_generated",
+      "file": "sub-055_thoughts.tsv"
+    },
+    {
+      "subject": "sub-056",
+      "n_thoughts": 29,
+      "rating_source": "gpt_generated",
+      "file": "sub-056_thoughts.tsv"
+    },
+    {
+      "subject": "sub-057",
+      "n_thoughts": 59,
+      "rating_source": "gpt_generated",
+      "file": "sub-057_thoughts.tsv"
+    },
+    {
+      "subject": "sub-058",
+      "n_thoughts": 41,
+      "rating_source": "gpt_generated",
+      "file": "sub-058_thoughts.tsv"
+    },
+    {
+      "subject": "sub-059",
+      "n_thoughts": 36,
+      "rating_source": "gpt_generated",
+      "file": "sub-059_thoughts.tsv"
+    },
+    {
+      "subject": "sub-060",
+      "n_thoughts": 56,
+      "rating_source": "gpt_generated",
+      "file": "sub-060_thoughts.tsv"
+    },
+    {
+      "subject": "sub-061",
+      "n_thoughts": 33,
+      "rating_source": "gpt_generated",
+      "file": "sub-061_thoughts.tsv"
+    },
+    {
+      "subject": "sub-062",
+      "n_thoughts": 66,
+      "rating_source": "gpt_generated",
+      "file": "sub-062_thoughts.tsv"
+    },
+    {
+      "subject": "sub-064",
+      "n_thoughts": 118,
+      "rating_source": "gpt_generated",
+      "file": "sub-064_thoughts.tsv"
+    },
+    {
+      "subject": "sub-065",
+      "n_thoughts": 92,
+      "rating_source": "gpt_generated",
+      "file": "sub-065_thoughts.tsv"
+    },
+    {
+      "subject": "sub-066",
+      "n_thoughts": 78,
+      "rating_source": "gpt_generated",
+      "file": "sub-066_thoughts.tsv"
+    },
+    {
+      "subject": "sub-067",
+      "n_thoughts": 24,
+      "rating_source": "gpt_generated",
+      "file": "sub-067_thoughts.tsv"
+    },
+    {
+      "subject": "sub-068",
+      "n_thoughts": 42,
+      "rating_source": "gpt_generated",
+      "file": "sub-068_thoughts.tsv"
+    },
+    {
+      "subject": "sub-069",
+      "n_thoughts": 63,
+      "rating_source": "gpt_generated",
+      "file": "sub-069_thoughts.tsv"
+    },
+    {
+      "subject": "sub-070",
+      "n_thoughts": 47,
+      "rating_source": "gpt_generated",
+      "file": "sub-070_thoughts.tsv"
+    },
+    {
+      "subject": "sub-071",
+      "n_thoughts": 37,
+      "rating_source": "gpt_generated",
+      "file": "sub-071_thoughts.tsv"
+    },
+    {
+      "subject": "sub-072",
+      "n_thoughts": 29,
+      "rating_source": "gpt_generated",
+      "file": "sub-072_thoughts.tsv"
+    },
+    {
+      "subject": "sub-073",
+      "n_thoughts": 79,
+      "rating_source": "gpt_generated",
+      "file": "sub-073_thoughts.tsv"
+    },
+    {
+      "subject": "sub-074",
+      "n_thoughts": 69,
+      "rating_source": "gpt_generated",
+      "file": "sub-074_thoughts.tsv"
+    },
+    {
+      "subject": "sub-075",
+      "n_thoughts": 77,
+      "rating_source": "gpt_generated",
+      "file": "sub-075_thoughts.tsv"
+    },
+    {
+      "subject": "sub-076",
+      "n_thoughts": 52,
+      "rating_source": "gpt_generated",
+      "file": "sub-076_thoughts.tsv"
+    },
+    {
+      "subject": "sub-077",
+      "n_thoughts": 78,
+      "rating_source": "gpt_generated",
+      "file": "sub-077_thoughts.tsv"
+    },
+    {
+      "subject": "sub-078",
+      "n_thoughts": 79,
+      "rating_source": "gpt_generated",
+      "file": "sub-078_thoughts.tsv"
+    },
+    {
+      "subject": "sub-079",
+      "n_thoughts": 44,
+      "rating_source": "gpt_generated",
+      "file": "sub-079_thoughts.tsv"
+    },
+    {
+      "subject": "sub-080",
+      "n_thoughts": 53,
+      "rating_source": "gpt_generated",
+      "file": "sub-080_thoughts.tsv"
+    },
+    {
+      "subject": "sub-081",
+      "n_thoughts": 38,
+      "rating_source": "gpt_generated",
+      "file": "sub-081_thoughts.tsv"
+    },
+    {
+      "subject": "sub-082",
+      "n_thoughts": 34,
+      "rating_source": "gpt_generated",
+      "file": "sub-082_thoughts.tsv"
+    },
+    {
+      "subject": "sub-083",
+      "n_thoughts": 83,
+      "rating_source": "gpt_generated",
+      "file": "sub-083_thoughts.tsv"
+    },
+    {
+      "subject": "sub-084",
+      "n_thoughts": 73,
+      "rating_source": "gpt_generated",
+      "file": "sub-084_thoughts.tsv"
+    },
+    {
+      "subject": "sub-085",
+      "n_thoughts": 54,
+      "rating_source": "gpt_generated",
+      "file": "sub-085_thoughts.tsv"
+    },
+    {
+      "subject": "sub-086",
+      "n_thoughts": 50,
+      "rating_source": "gpt_generated",
+      "file": "sub-086_thoughts.tsv"
+    },
+    {
+      "subject": "sub-087",
+      "n_thoughts": 21,
+      "rating_source": "gpt_generated",
+      "file": "sub-087_thoughts.tsv"
+    },
+    {
+      "subject": "sub-088",
+      "n_thoughts": 29,
+      "rating_source": "gpt_generated",
+      "file": "sub-088_thoughts.tsv"
+    },
+    {
+      "subject": "sub-089",
+      "n_thoughts": 35,
+      "rating_source": "gpt_generated",
+      "file": "sub-089_thoughts.tsv"
+    },
+    {
+      "subject": "sub-090",
+      "n_thoughts": 95,
+      "rating_source": "gpt_generated",
+      "file": "sub-090_thoughts.tsv"
+    },
+    {
+      "subject": "sub-091",
+      "n_thoughts": 59,
+      "rating_source": "gpt_generated",
+      "file": "sub-091_thoughts.tsv"
+    },
+    {
+      "subject": "sub-092",
+      "n_thoughts": 30,
+      "rating_source": "gpt_generated",
+      "file": "sub-092_thoughts.tsv"
+    },
+    {
+      "subject": "sub-093",
+      "n_thoughts": 74,
+      "rating_source": "gpt_generated",
+      "file": "sub-093_thoughts.tsv"
+    },
+    {
+      "subject": "sub-094",
+      "n_thoughts": 71,
+      "rating_source": "gpt_generated",
+      "file": "sub-094_thoughts.tsv"
+    },
+    {
+      "subject": "sub-096",
+      "n_thoughts": 66,
+      "rating_source": "gpt_generated",
+      "file": "sub-096_thoughts.tsv"
+    },
+    {
+      "subject": "sub-097",
+      "n_thoughts": 59,
+      "rating_source": "gpt_generated",
+      "file": "sub-097_thoughts.tsv"
+    },
+    {
+      "subject": "sub-098",
+      "n_thoughts": 77,
+      "rating_source": "gpt_generated",
+      "file": "sub-098_thoughts.tsv"
+    },
+    {
+      "subject": "sub-099",
+      "n_thoughts": 43,
+      "rating_source": "gpt_generated",
+      "file": "sub-099_thoughts.tsv"
+    },
+    {
+      "subject": "sub-100",
+      "n_thoughts": 37,
+      "rating_source": "gpt_generated",
+      "file": "sub-100_thoughts.tsv"
+    },
+    {
+      "subject": "sub-101",
+      "n_thoughts": 40,
+      "rating_source": "gpt_generated",
+      "file": "sub-101_thoughts.tsv"
+    },
+    {
+      "subject": "sub-102",
+      "n_thoughts": 51,
+      "rating_source": "gpt_generated",
+      "file": "sub-102_thoughts.tsv"
+    },
+    {
+      "subject": "sub-103",
+      "n_thoughts": 38,
+      "rating_source": "gpt_generated",
+      "file": "sub-103_thoughts.tsv"
+    },
+    {
+      "subject": "sub-105",
+      "n_thoughts": 75,
+      "rating_source": "gpt_generated",
+      "file": "sub-105_thoughts.tsv"
+    },
+    {
+      "subject": "sub-106",
+      "n_thoughts": 47,
+      "rating_source": "gpt_generated",
+      "file": "sub-106_thoughts.tsv"
+    },
+    {
+      "subject": "sub-107",
+      "n_thoughts": 37,
+      "rating_source": "gpt_generated",
+      "file": "sub-107_thoughts.tsv"
+    },
+    {
+      "subject": "sub-108",
+      "n_thoughts": 56,
+      "rating_source": "gpt_generated",
+      "file": "sub-108_thoughts.tsv"
+    },
+    {
+      "subject": "sub-109",
+      "n_thoughts": 35,
+      "rating_source": "gpt_generated",
+      "file": "sub-109_thoughts.tsv"
+    },
+    {
+      "subject": "sub-110",
+      "n_thoughts": 19,
+      "rating_source": "gpt_generated",
+      "file": "sub-110_thoughts.tsv"
+    },
+    {
+      "subject": "sub-111",
+      "n_thoughts": 51,
+      "rating_source": "gpt_generated",
+      "file": "sub-111_thoughts.tsv"
+    },
+    {
+      "subject": "sub-112",
+      "n_thoughts": 71,
+      "rating_source": "gpt_generated",
+      "file": "sub-112_thoughts.tsv"
+    },
+    {
+      "subject": "sub-113",
+      "n_thoughts": 84,
+      "rating_source": "gpt_generated",
+      "file": "sub-113_thoughts.tsv"
+    },
+    {
+      "subject": "sub-114",
+      "n_thoughts": 55,
+      "rating_source": "gpt_generated",
+      "file": "sub-114_thoughts.tsv"
+    },
+    {
+      "subject": "sub-115",
+      "n_thoughts": 59,
+      "rating_source": "gpt_generated",
+      "file": "sub-115_thoughts.tsv"
+    },
+    {
+      "subject": "sub-116",
+      "n_thoughts": 55,
+      "rating_source": "gpt_generated",
+      "file": "sub-116_thoughts.tsv"
+    },
+    {
+      "subject": "sub-117",
+      "n_thoughts": 35,
+      "rating_source": "gpt_generated",
+      "file": "sub-117_thoughts.tsv"
+    },
+    {
+      "subject": "sub-118",
+      "n_thoughts": 74,
+      "rating_source": "gpt_generated",
+      "file": "sub-118_thoughts.tsv"
+    },
+    {
+      "subject": "sub-119",
+      "n_thoughts": 39,
+      "rating_source": "gpt_generated",
+      "file": "sub-119_thoughts.tsv"
+    },
+    {
+      "subject": "sub-120",
+      "n_thoughts": 48,
+      "rating_source": "gpt_generated",
+      "file": "sub-120_thoughts.tsv"
+    },
+    {
+      "subject": "sub-121",
+      "n_thoughts": 76,
+      "rating_source": "gpt_generated",
+      "file": "sub-121_thoughts.tsv"
+    },
+    {
+      "subject": "sub-122",
+      "n_thoughts": 72,
+      "rating_source": "gpt_generated",
+      "file": "sub-122_thoughts.tsv"
+    },
+    {
+      "subject": "sub-123",
+      "n_thoughts": 54,
+      "rating_source": "gpt_generated",
+      "file": "sub-123_thoughts.tsv"
+    },
+    {
+      "subject": "sub-124",
+      "n_thoughts": 54,
+      "rating_source": "gpt_generated",
+      "file": "sub-124_thoughts.tsv"
+    },
+    {
+      "subject": "sub-125",
+      "n_thoughts": 52,
+      "rating_source": "gpt_generated",
+      "file": "sub-125_thoughts.tsv"
+    },
+    {
+      "subject": "sub-126",
+      "n_thoughts": 93,
+      "rating_source": "gpt_generated",
+      "file": "sub-126_thoughts.tsv"
+    },
+    {
+      "subject": "sub-127",
+      "n_thoughts": 60,
+      "rating_source": "gpt_generated",
+      "file": "sub-127_thoughts.tsv"
+    }
+  ]
+}
