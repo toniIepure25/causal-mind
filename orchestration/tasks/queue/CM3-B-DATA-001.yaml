@@ -1,0 +1,20 @@
+id: CM3-B-DATA-001
+title: 'CM-3B: build multi-horizon sequence datasets (direct + trajectory); audit horizon-dependent missingness/length'
+objective: >-
+  CM-3B: build multi-horizon sequence datasets (direct + trajectory); audit horizon-dependent missingness/length
+owner: data
+dependencies: []
+resource_class: cpu
+expected_runtime: 120m
+allowed_paths: [src/causal_mind/, data/scripts/, data/manifests/, tests/, docs/protocol/, docs/research/, docs/review/, reports/]
+forbidden_paths: [.runai, .ssh, .env]
+success_criteria:
+- deliverables produced and ruff/pytest clean
+- no leakage (red-team GO for review tasks)
+failure_criteria:
+- leakage found and unexplained
+- protocol changed after outcomes
+deliverables:
+- src/causal_mind/thought/multihorizon.py
+- data/manifests/cm3_horizon_missingness.json
+state: done

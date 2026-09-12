@@ -1,0 +1,19 @@
+id: CM3-RESEARCH-001
+title: 'CM-3A: audit multi-step cognition / thought-dynamics literature; nearest competing claims on predictive horizon'
+objective: >-
+  CM-3A: audit multi-step cognition / thought-dynamics literature; nearest competing claims on predictive horizon
+owner: researcher
+dependencies: []
+resource_class: cpu
+expected_runtime: 120m
+allowed_paths: [src/causal_mind/, data/scripts/, data/manifests/, tests/, docs/protocol/, docs/research/, docs/review/, reports/]
+forbidden_paths: [.runai, .ssh, .env]
+success_criteria:
+- deliverables produced and ruff/pytest clean
+- no leakage (red-team GO for review tasks)
+failure_criteria:
+- leakage found and unexplained
+- protocol changed after outcomes
+deliverables:
+- docs/research/cm3_multi_step_literature.md
+state: done

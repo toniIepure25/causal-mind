@@ -2,16 +2,16 @@
 
 ## Project state
 
-`CM2_UNBLOCKED_OSF_BEHAVIORAL_SOURCE`
-(CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`. OpenNeuro S3 outage is no longer a CM-2
-blocker — behavioral data is sourced from OSF `a56rm`. OpenNeuro is still
-required for CM-5 neural analyses; the S3 retry is kept alive.)
+`CM3_PASS`
+(CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`. OpenNeuro S3 outage is
+no longer a CM-2/CM-3 blocker — behavioral data is sourced from OSF `a56rm`.
+OpenNeuro is still required for CM-5 neural analyses; the S3 retry is kept alive.)
 
 ## Current stage
 
-Phase 2: CM-1 (data) and CM-2 (non-neural thought-state + next-thought
-prediction) complete and pushed. Next: CM-2 iteration (optional) and CM-5
-(neural), which needs OpenNeuro.
+Phase 2: CM-1 (data), CM-2 (non-neural next-thought prediction), and CM-3
+(multi-step cognitive futures / Thought Predictive Horizon) complete and pushed.
+Next: CM-5 (neural), which needs OpenNeuro `ds006067` MRI.
 
 ## Validated results
 
@@ -29,52 +29,24 @@ prediction) complete and pushed. Next: CM-2 iteration (optional) and CM-5
   CIs), out-of-sample, subject-disjoint (83/18/17, sealed), prospective;
   permutation null p=0.0000; reproduced from a clean process. Effect is modest;
   category arm unvalidated; no causal claim. Red-team GO.
+- **CM-3 (L5):** cognitive history predicts **future** thought semantics T[t+h]
+  above the strongest frozen baseline at **every** event horizon h=1..10, with a
+  smooth monotonic decay of PredictiveGain (+0.0349 at h=1 → +0.0044 at h=10, all
+  95% CIs excluding 0). **TPH_semantic ≥ 10 thoughts (~2 min)** — a lower bound,
+  since the gain is still significant at the max tested horizon. Subject-disjoint
+  (83/18/17 sealed), reproduced exactly; survives time-shuffled, transition-destroyed,
+  and a stronger random-target null (p=0.0000). History depth saturates at k≈3;
+  the predictive window is ~2 min in wall-clock time. Effect modest; small test set
+  (n=17); no causal claim. Red-team GO.
 
 ## Failed hypotheses
 
-(none yet — CM-2 is a modest positive, not a null)
+(none yet — CM-2 and CM-3 are modest positives, not nulls)
 
 ## Active tasks
 
-- CM-2 iteration (optional, `CM2_ITERATE`): categorical head; GPT-rating features
-  beyond text; small GRU for non-linear headroom.
-- CM-5 (neural): requires OpenNeuro BOLD (S3 retry kept alive).
-
-## Blockers
-
-- **OpenNeuro S3 outage** (was blocking CM-2; now only blocks CM-5). Background
-  retry kept alive. Not a CM-2 blocker.
-- **Token lifecycle:** Run:ai CLI tokens expire ~daily; a human must complete
-  `runai login remote-browser` on expiry. Runbook: `docs/runbooks/qwen_tunnel.md`.
-
-## Next gates
-
-- GATE (CM-2 iteration): categorical arm + GPT-rating ablation.
-- GATE (CM-5): neural signal, once OpenNeuro BOLD is reachable.
-
-## Key commit hashes
-
-- `176670e` CM-1 complete (data audit, loader, red-team GO)
-- `7004d66` CM-2 OSF pivot (dual-source, OSF loader, ontology, integrity, amendment)
-- (CM-2 results + red-team + final report commit follows)
-
-## Exact reproducibility commands
-
-```bash
-# on the pod, via SSH as jovyan (sidecar netns)
-cd /home/jovyan/work/causal-mind-v2
-scripts/qwen_tunnel_supervisor.sh status
-.venv/bin/python -m pytest
-.venv/bin/python -m ruff check src tests data/scripts
-# CM-2 decisive run (deterministic, ~6 min):
-HF_HOME=/home/jovyan/work/.hf-home TRANSFORMERS_CACHE=/home/jovyan/work/.hf-home \
-  PYTHONPATH=src .venv/bin/python data/scripts/run_full_evaluation.py
-```
-
-## Environment notes
-
-- Working root: `/home/jovyan/work/causal-mind-v2` (jovyan-owned).
-- Behavioral data: `data/raw/osf/...` (immutable) → `data/derived/thought_events/...`.
-- All git commands need `safe.directory=*` (NFS maps ownership to uid 65534).
-- The SSH session runs in a sidecar network namespace; the tunnel supervisor binds
-  the port-forward inside the SSH netns.
+- CM-5 (neural): requires OpenNeuro `ds006067` MRI (S3 still down; retry kept alive).
+  Goal: link the thought-state / prospective signal to concurrent fMRI.
+- Optional CM-3 extensions (only if warranted): nonlinear/deep multi-horizon heads
+  (justified only if they beat the linear model on held-out data); finer TPH
+  resolution beyond h=10.
