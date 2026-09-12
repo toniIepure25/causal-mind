@@ -58,6 +58,11 @@ and 14 GPT-rated dimensions (not in the primary result).
 embedding. Selected on VAL (k=3, alpha=100, val 0.3493); final eval on TEST.
 **Test semantic: 0.3623 [0.3523, 0.3720].**
 
+**GRU capacity check:** a small GRU (k=3, 111k params, 30 epochs) scores
+**0.3357 [0.3236, 0.3483]** — *worse* than the linear model. No non-linear
+headroom; the linear transition is the right capacity for this data size
+(consistent with the history-depth curve saturating at k≈3).
+
 ## PRIMARY RESULTS
 
 - The model beats **every** baseline. vs. strongest (B2/B3 markov):
