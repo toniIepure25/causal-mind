@@ -1,0 +1,19 @@
+id: CM3-D-ANALYSES-001
+title: 'CM-3F/G/I/J: FPC(h), TPH (semantic/topic/psych), entropy vs horizon, history-depth x horizon matrix, branching'
+objective: >-
+  CM-3F/G/I/J: FPC(h), TPH (semantic/topic/psych), entropy vs horizon, history-depth x horizon matrix, branching
+owner: causal
+dependencies: []
+resource_class: cpu
+expected_runtime: 120m
+allowed_paths: [src/causal_mind/, data/scripts/, data/manifests/, tests/, docs/protocol/, docs/research/, docs/review/, reports/]
+forbidden_paths: [.runai, .ssh, .env]
+success_criteria:
+- deliverables produced and ruff/pytest clean
+- no leakage (red-team GO for review tasks)
+failure_criteria:
+- leakage found and unexplained
+- protocol changed after outcomes
+deliverables:
+- src/causal_mind/eval/horizon_analyses.py
+state: queue

@@ -1,0 +1,19 @@
+id: CM3-E-REVIEW-001
+title: 'CM-3K: red-team all future leakage (overlapping windows, h>1 Markov, teacher forcing, candidate-set, duration confound); time-shuffled + transition-destroyed nulls; reproduce'
+objective: >-
+  CM-3K: red-team all future leakage (overlapping windows, h>1 Markov, teacher forcing, candidate-set, duration confound); time-shuffled + transition-destroyed nulls; reproduce
+owner: reviewer
+dependencies: []
+resource_class: cpu
+expected_runtime: 120m
+allowed_paths: [src/causal_mind/, data/scripts/, data/manifests/, tests/, docs/protocol/, docs/research/, docs/review/, reports/]
+forbidden_paths: [.runai, .ssh, .env]
+success_criteria:
+- deliverables produced and ruff/pytest clean
+- no leakage (red-team GO for review tasks)
+failure_criteria:
+- leakage found and unexplained
+- protocol changed after outcomes
+deliverables:
+- docs/review/cm3_redteam_review.md
+state: queue

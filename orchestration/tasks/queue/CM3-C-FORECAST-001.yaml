@@ -1,0 +1,20 @@
+id: CM3-C-FORECAST-001
+title: 'CM-3C/D/E: direct-horizon + trajectory forecasts; extended baselines B0-B7 (h>1) + CM-2 linear as central baseline; linear multi-horizon model'
+objective: >-
+  CM-3C/D/E: direct-horizon + trajectory forecasts; extended baselines B0-B7 (h>1) + CM-2 linear as central baseline; linear multi-horizon model
+owner: forecasting
+dependencies: []
+resource_class: cpu
+expected_runtime: 120m
+allowed_paths: [src/causal_mind/, data/scripts/, data/manifests/, tests/, docs/protocol/, docs/research/, docs/review/, reports/]
+forbidden_paths: [.runai, .ssh, .env]
+success_criteria:
+- deliverables produced and ruff/pytest clean
+- no leakage (red-team GO for review tasks)
+failure_criteria:
+- leakage found and unexplained
+- protocol changed after outcomes
+deliverables:
+- src/causal_mind/forecast/multihorizon.py
+- src/causal_mind/forecast/baselines_h.py
+state: queue
