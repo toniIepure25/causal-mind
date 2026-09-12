@@ -17,4 +17,4 @@ failure_criteria:
 deliverables:
 - src/causal_mind/forecast/multihorizon.py
 - src/causal_mind/forecast/baselines_h.py
-state: queue
+state: done

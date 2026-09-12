@@ -16,4 +16,4 @@ failure_criteria:
 - protocol changed after outcomes
 deliverables:
 - docs/research/cm3_multi_step_literature.md
-state: queue
+state: done

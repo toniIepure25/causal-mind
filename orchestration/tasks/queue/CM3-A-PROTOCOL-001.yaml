@@ -17,4 +17,4 @@ failure_criteria:
 deliverables:
 - docs/protocol/cm3_frozen_protocol.md
 - data/manifests/cm3_protocol_seal.json
-state: queue
+state: done

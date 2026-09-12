@@ -17,4 +17,4 @@ failure_criteria:
 deliverables:
 - src/causal_mind/thought/multihorizon.py
 - data/manifests/cm3_horizon_missingness.json
-state: queue
+state: done

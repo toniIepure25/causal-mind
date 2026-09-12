@@ -16,4 +16,4 @@ failure_criteria:
 - protocol changed after outcomes
 deliverables:
 - src/causal_mind/eval/horizon_analyses.py
-state: queue
+state: done

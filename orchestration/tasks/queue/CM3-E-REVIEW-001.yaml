@@ -16,4 +16,4 @@ failure_criteria:
 - protocol changed after outcomes
 deliverables:
 - docs/review/cm3_redteam_review.md
-state: queue
+state: done
