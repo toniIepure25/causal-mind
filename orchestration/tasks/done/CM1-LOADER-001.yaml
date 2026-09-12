@@ -1,0 +1,54 @@
+id: CM1-LOADER-001
+title: 'CM-1: minimal ds006067 loader + temporal alignment + integrity tests'
+hypothesis: null
+objective: "Implement and test a minimal, dependency-light loader for the ds006067\
+  \ subset acquired by CM1-SUBSET-001 (under /home/jovyan/work/causal-mind-v2/data/raw/ds006067/).\
+  \ Create src/causal_mind/data/ds006067.py exposing a clean API that maps subject\
+  \ -> run -> BOLD timeline -> transcript/thought events -> annotations. It must make\
+  \ it possible to answer: (a) which thought event(s) overlap a given BOLD volume\
+  \ index/time; (b) which BOLD window corresponds to a given thought; (c) how HRF\
+  \ delays are (or are not) handled \u2014 document the convention and keep it explicit,\
+  \ do NOT silently convolve; (d) whether there are gaps/overlaps in the verbal report\
+  \ timeline; (e) whether word/sentence boundaries are reliable enough for prospective\
+  \ (NEXT) prediction. Use nibabel for nifti, numpy for arrays; parse BIDS sidecars\
+  \ (JSON) and the transcript/annotation files. Also implement tests/test_ds006067_loader.py\
+  \ with integrity checks: subject identity, run identity, monotonic timestamps, no\
+  \ duplicated event IDs, no impossible time ranges (start<end, within run duration),\
+  \ transcript/fMRI duration consistency, missing-annotation handling, deterministic\
+  \ parsing (same input -> same output, stable ordering), and subject-disjoint split\
+  \ compatibility (a helper that yields subject-disjoint train/val/test index sets).\
+  \ Run the new tests with the project venv and make them pass. Keep the loader read-only\
+  \ over the raw data (never modify data/raw). Document the alignment convention and\
+  \ any caveats in docs/datasets/ds006067_alignment.md."
+owner: orchestrator
+dependencies:
+- CM1-SUBSET-001
+resource_class: cpu
+expected_runtime: 60m
+allowed_paths:
+- src/causal_mind/data/
+- tests/
+- docs/datasets/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+- data/raw/
+required_tests:
+- tests/test_ds006067_loader.py
+success_criteria:
+- loader maps subject->run->BOLD timeline->thought events->annotations
+- temporal-alignment queries (a)-(e) answerable via the API
+- integrity tests present and passing
+- alignment convention documented
+failure_criteria:
+- tests fail or are skipped
+- raw data modified
+- silent HRF convolution without documentation
+deliverables:
+- src/causal_mind/data/ds006067.py
+- tests/test_ds006067_loader.py
+- docs/datasets/ds006067_alignment.md
+assigned_worker: null
+state: done

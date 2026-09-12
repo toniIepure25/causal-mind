@@ -1,0 +1,24 @@
+id: CM2-B-PROSPECTIVE-001
+title: 'CM-2B: strict prospective sample builder (history t -> t+1) + leakage tests'
+objective: >-
+  Build samples strictly of the form history-up-to-t -> predict t+1 (and t-k..t ->
+  t+1); guarantee no future transcript/annotation/timing/later-thought/held-out-
+  subject statistics; pass explicit future-leakage tests; document overlap handling.
+owner: orchestrator
+dependencies: [CM2-A-ONTOLOGY-001, CM2-C-PROTOCOL-001]
+resource_class: cpu
+expected_runtime: 90m
+allowed_paths: [src/causal_mind/thought/, src/causal_mind/eval/, tests/]
+forbidden_paths: [.runai, .ssh, .env, data/raw/]
+success_criteria:
+- samples strictly history-up-to-t -> t+1
+- no future information reachable from a sample
+- explicit future-leakage tests passing
+- overlapping-window handling documented
+failure_criteria:
+- any future information reachable from a sample
+- leakage test fails
+deliverables: [src/causal_mind/thought/prospective.py, tests/test_prospective_leakage.py]
+assigned_worker: data
+state: done
+result: strict prospective builder (thoughtID-grouped); leakage guard unit-verified

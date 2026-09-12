@@ -1,0 +1,2949 @@
+{
+  "project": {
+    "id": "a56rm",
+    "title": "Think aloud behavioral data"
+  },
+  "n_files": 437,
+  "n_folders": 21,
+  "total_bytes": 11081267,
+  "word_level": {
+    "count": 102,
+    "subjects": [
+      "sub-001",
+      "sub-002",
+      "sub-004",
+      "sub-005",
+      "sub-006",
+      "sub-007",
+      "sub-009",
+      "sub-010",
+      "sub-011",
+      "sub-012",
+      "sub-013",
+      "sub-014",
+      "sub-016",
+      "sub-017",
+      "sub-018",
+      "sub-019",
+      "sub-020",
+      "sub-021",
+      "sub-023",
+      "sub-024",
+      "sub-025",
+      "sub-026",
+      "sub-027",
+      "sub-029",
+      "sub-031",
+      "sub-032",
+      "sub-033",
+      "sub-034",
+      "sub-035",
+      "sub-036",
+      "sub-037",
+      "sub-038",
+      "sub-039",
+      "sub-040",
+      "sub-041",
+      "sub-042",
+      "sub-043",
+      "sub-044",
+      "sub-045",
+      "sub-046",
+      "sub-047",
+      "sub-048",
+      "sub-049",
+      "sub-050",
+      "sub-051",
+      "sub-052",
+      "sub-053",
+      "sub-054",
+      "sub-055",
+      "sub-056",
+      "sub-057",
+      "sub-058",
+      "sub-059",
+      "sub-060",
+      "sub-061",
+      "sub-062",
+      "sub-064",
+      "sub-065",
+      "sub-066",
+      "sub-067",
+      "sub-068",
+      "sub-069",
+      "sub-070",
+      "sub-071",
+      "sub-073",
+      "sub-074",
+      "sub-075",
+      "sub-076",
+      "sub-078",
+      "sub-080",
+      "sub-081",
+      "sub-082",
+      "sub-084",
+      "sub-085",
+      "sub-086",
+      "sub-087",
+      "sub-088",
+      "sub-089",
+      "sub-091",
+      "sub-093",
+      "sub-094",
+      "sub-097",
+      "sub-099",
+      "sub-101",
+      "sub-102",
+      "sub-106",
+      "sub-107",
+      "sub-108",
+      "sub-109",
+      "sub-110",
+      "sub-111",
+      "sub-114",
+      "sub-115",
+      "sub-116",
+      "sub-117",
+      "sub-120",
+      "sub-122",
+      "sub-123",
+      "sub-124",
+      "sub-125",
+      "sub-126",
+      "sub-127"
+    ]
+  },
+  "sentence_level": {
+    "count": 118,
+    "subjects": [
+      "sub-001",
+      "sub-002",
+      "sub-004",
+      "sub-005",
+      "sub-006",
+      "sub-007",
+      "sub-009",
+      "sub-010",
+      "sub-011",
+      "sub-012",
+      "sub-013",
+      "sub-014",
+      "sub-016",
+      "sub-017",
+      "sub-018",
+      "sub-019",
+      "sub-020",
+      "sub-021",
+      "sub-023",
+      "sub-024",
+      "sub-025",
+      "sub-026",
+      "sub-027",
+      "sub-029",
+      "sub-031",
+      "sub-032",
+      "sub-033",
+      "sub-034",
+      "sub-035",
+      "sub-036",
+      "sub-037",
+      "sub-038",
+      "sub-039",
+      "sub-040",
+      "sub-041",
+      "sub-042",
+      "sub-043",
+      "sub-044",
+      "sub-045",
+      "sub-046",
+      "sub-047",
+      "sub-048",
+      "sub-049",
+      "sub-050",
+      "sub-051",
+      "sub-052",
+      "sub-053",
+      "sub-054",
+      "sub-055",
+      "sub-056",
+      "sub-057",
+      "sub-058",
+      "sub-059",
+      "sub-060",
+      "sub-061",
+      "sub-062",
+      "sub-064",
+      "sub-065",
+      "sub-066",
+      "sub-067",
+      "sub-068",
+      "sub-069",
+      "sub-070",
+      "sub-071",
+      "sub-072",
+      "sub-073",
+      "sub-074",
+      "sub-075",
+      "sub-076",
+      "sub-077",
+      "sub-078",
+      "sub-079",
+      "sub-080",
+      "sub-081",
+      "sub-082",
+      "sub-083",
+      "sub-084",
+      "sub-085",
+      "sub-086",
+      "sub-087",
+      "sub-088",
+      "sub-089",
+      "sub-090",
+      "sub-091",
+      "sub-092",
+      "sub-093",
+      "sub-094",
+      "sub-096",
+      "sub-097",
+      "sub-098",
+      "sub-099",
+      "sub-100",
+      "sub-101",
+      "sub-102",
+      "sub-103",
+      "sub-105",
+      "sub-106",
+      "sub-107",
+      "sub-108",
+      "sub-109",
+      "sub-110",
+      "sub-111",
+      "sub-112",
+      "sub-113",
+      "sub-114",
+      "sub-115",
+      "sub-116",
+      "sub-117",
+      "sub-118",
+      "sub-119",
+      "sub-120",
+      "sub-121",
+      "sub-122",
+      "sub-123",
+      "sub-124",
+      "sub-125",
+      "sub-126",
+      "sub-127"
+    ]
+  },
+  "folders": [
+    {
+      "path": "/data/",
+      "id": "osfstorage/6997d71d5ff30c21c5655e58/"
+    },
+    {
+      "path": "/data/questionnaires/",
+      "id": "osfstorage/6997d73fec8cf3db66505a0d/"
+    },
+    {
+      "path": "/data/sentence_level_ratings/",
+      "id": "osfstorage/6997d74bc662646ca7656088/"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/",
+      "id": "osfstorage/699c8b79a96402186c9feec0/"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/",
+      "id": "osfstorage/6997d74bc662646ca765608a/"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/",
+      "id": "osfstorage/6998d944dfff782e68259f3c/"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/",
+      "id": "osfstorage/6998d96fed7747256f25a12d/"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/",
+      "id": "osfstorage/6998d9aca4cf6986cc259e28/"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/",
+      "id": "osfstorage/6998d9a5ed7747256f25a157/"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/",
+      "id": "osfstorage/6997d766e14a1e7c8a505b0b/"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/",
+      "id": "osfstorage/6997d766e14a1e7c8a505b0c/"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/",
+      "id": "osfstorage/6997d766e14a1e7c8a505b0d/"
+    },
+    {
+      "path": "/code/",
+      "id": "osfstorage/6997d78c9f67d84f2e5059d4/"
+    },
+    {
+      "path": "/code/fmri_preprocess/",
+      "id": "osfstorage/69a5e94f7e69d7884059cf64/"
+    },
+    {
+      "path": "/code/llm_rating/",
+      "id": "osfstorage/69a5e5b9a049aa869c59cd39/"
+    },
+    {
+      "path": "/code/llm_rating/config/",
+      "id": "osfstorage/69a5e5db7e69d7884059cc6b/"
+    },
+    {
+      "path": "/code/llm_rating/config/prompts/",
+      "id": "osfstorage/69a5e5f8c1d27bfaa9e7d326/"
+    },
+    {
+      "path": "/code/llm_rating/scripts/",
+      "id": "osfstorage/69a5e5e1ffa7f8ea62797919/"
+    },
+    {
+      "path": "/code/timestamps/",
+      "id": "osfstorage/69a5e89dc75264a84ae7d3ca/"
+    },
+    {
+      "path": "/code/timestamps/timestamps_Gentle/",
+      "id": "osfstorage/69a5eb69477d4ef58b7978b9/"
+    },
+    {
+      "path": "/code/timestamps/timestamps_WhisperX/",
+      "id": "osfstorage/69a5eb82a049aa869c59d14a/"
+    }
+  ],
+  "files": [
+    {
+      "path": "/data/questionnaires/Think_Aloud_Personality_Surveys.docx",
+      "name": "Think_Aloud_Personality_Surveys.docx",
+      "size": 33092,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6997d73fec8cf3db66505a0e"
+    },
+    {
+      "path": "/data/questionnaires/ThinkAloudQuestionnaires_preproc.csv",
+      "name": "ThinkAloudQuestionnaires_preproc.csv",
+      "size": 496722,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6997d73fec8cf3db66505a0f"
+    },
+    {
+      "path": "/data/questionnaires/ThinkAloudQuestionnaires_summary.csv",
+      "name": "ThinkAloudQuestionnaires_summary.csv",
+      "size": 19291,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6997d73fec8cf3db66505a10"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-019.xlsx",
+      "name": "sub-019.xlsx",
+      "size": 9778,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b952bd25ba620ee298e"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-023.xlsx",
+      "name": "sub-023.xlsx",
+      "size": 11430,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b979955975b589ff2e5"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-048.xlsx",
+      "name": "sub-048.xlsx",
+      "size": 13635,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b9783061bf1019fefe1"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-035.xlsx",
+      "name": "sub-035.xlsx",
+      "size": 11201,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b972bd25ba620ee2994"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-057.xlsx",
+      "name": "sub-057.xlsx",
+      "size": 13002,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafc0d5758701ee2a24"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-106.xlsx",
+      "name": "sub-106.xlsx",
+      "size": 11430,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafa96402186c9fef0a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-092.xlsx",
+      "name": "sub-092.xlsx",
+      "size": 9941,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0f94aa7e1e4fef22b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-100.xlsx",
+      "name": "sub-100.xlsx",
+      "size": 12753,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0087b7fb3a2ee28d9"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-067.xlsx",
+      "name": "sub-067.xlsx",
+      "size": 10699,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0ff33cafbcffef296"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-053.xlsx",
+      "name": "sub-053.xlsx",
+      "size": 12664,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b969955975b589ff2e1"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-043.xlsx",
+      "name": "sub-043.xlsx",
+      "size": 14882,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96baf86be58cfef156"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-116.xlsx",
+      "name": "sub-116.xlsx",
+      "size": 16334,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1cfddbb5e8dfef1ae"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-013.xlsx",
+      "name": "sub-013.xlsx",
+      "size": 14558,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b977132cfa1d8ee2b56"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-119.xlsx",
+      "name": "sub-119.xlsx",
+      "size": 13564,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baef94aa7e1e4fef228"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-060.xlsx",
+      "name": "sub-060.xlsx",
+      "size": 12695,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf9955975b589ff2ee"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-122.xlsx",
+      "name": "sub-122.xlsx",
+      "size": 11847,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb12bd25ba620ee29b5"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-117.xlsx",
+      "name": "sub-117.xlsx",
+      "size": 14869,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baec0d5758701ee2a23"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-099.xlsx",
+      "name": "sub-099.xlsx",
+      "size": 16458,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafa11d2e649a9feec8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-029.xlsx",
+      "name": "sub-029.xlsx",
+      "size": 13709,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b95b772e5c40b9ff122"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-065.xlsx",
+      "name": "sub-065.xlsx",
+      "size": 16162,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb083061bf1019feff4"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-020.xlsx",
+      "name": "sub-020.xlsx",
+      "size": 13262,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b957132cfa1d8ee2b48"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-077.xlsx",
+      "name": "sub-077.xlsx",
+      "size": 13623,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb083061bf1019feff2"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-027.xlsx",
+      "name": "sub-027.xlsx",
+      "size": 13923,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b95087b7fb3a2ee28b8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-014.xlsx",
+      "name": "sub-014.xlsx",
+      "size": 14427,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b95a96402186c9feede"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-025.xlsx",
+      "name": "sub-025.xlsx",
+      "size": 9790,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b95ff33cafbcffef27d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-017.xlsx",
+      "name": "sub-017.xlsx",
+      "size": 11284,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b95a11d2e649a9feeb0"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-036.xlsx",
+      "name": "sub-036.xlsx",
+      "size": 10317,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b95cfddbb5e8dfef199"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-016.xlsx",
+      "name": "sub-016.xlsx",
+      "size": 10532,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b9583061bf1019fefdd"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-032.xlsx",
+      "name": "sub-032.xlsx",
+      "size": 14400,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b952bd25ba620ee2991"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-042.xlsx",
+      "name": "sub-042.xlsx",
+      "size": 10235,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96b772e5c40b9ff125"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-021.xlsx",
+      "name": "sub-021.xlsx",
+      "size": 12329,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97a96402186c9feeec"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-037.xlsx",
+      "name": "sub-037.xlsx",
+      "size": 11027,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96ff33cafbcffef280"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-007.xlsx",
+      "name": "sub-007.xlsx",
+      "size": 13313,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96cfddbb5e8dfef19c"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-005.xlsx",
+      "name": "sub-005.xlsx",
+      "size": 16386,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b967132cfa1d8ee2b53"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-076.xlsx",
+      "name": "sub-076.xlsx",
+      "size": 11548,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb17132cfa1d8ee2b78"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-034.xlsx",
+      "name": "sub-034.xlsx",
+      "size": 13048,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b960b6e0a1f5f9ff023"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-055.xlsx",
+      "name": "sub-055.xlsx",
+      "size": 16306,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96f94aa7e1e4fef216"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-052.xlsx",
+      "name": "sub-052.xlsx",
+      "size": 12257,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96689cbd7e0dfef308"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-039.xlsx",
+      "name": "sub-039.xlsx",
+      "size": 11478,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96cfddbb5e8dfef19e"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-004.xlsx",
+      "name": "sub-004.xlsx",
+      "size": 11903,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96c0d5758701ee2a0c"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-010.xlsx",
+      "name": "sub-010.xlsx",
+      "size": 13399,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96087b7fb3a2ee28bc"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-045.xlsx",
+      "name": "sub-045.xlsx",
+      "size": 14455,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96cfddbb5e8dfef19f"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-124.xlsx",
+      "name": "sub-124.xlsx",
+      "size": 16817,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb10b6e0a1f5f9ff031"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-011.xlsx",
+      "name": "sub-011.xlsx",
+      "size": 12754,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b96baf86be58cfef159"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-049.xlsx",
+      "name": "sub-049.xlsx",
+      "size": 14503,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b979955975b589ff2e3"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-050.xlsx",
+      "name": "sub-050.xlsx",
+      "size": 12063,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97087b7fb3a2ee28bf"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-102.xlsx",
+      "name": "sub-102.xlsx",
+      "size": 13957,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf087b7fb3a2ee28d3"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-024.xlsx",
+      "name": "sub-024.xlsx",
+      "size": 12437,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97a96402186c9feee9"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-033.xlsx",
+      "name": "sub-033.xlsx",
+      "size": 13207,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97689cbd7e0dfef30b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-041.xlsx",
+      "name": "sub-041.xlsx",
+      "size": 11902,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97c0d5758701ee2a12"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-006.xlsx",
+      "name": "sub-006.xlsx",
+      "size": 13687,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97b772e5c40b9ff127"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-018.xlsx",
+      "name": "sub-018.xlsx",
+      "size": 10973,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97a11d2e649a9feeb3"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-040.xlsx",
+      "name": "sub-040.xlsx",
+      "size": 13057,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b972bd25ba620ee2996"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-051.xlsx",
+      "name": "sub-051.xlsx",
+      "size": 9952,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b9783061bf1019fefe0"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-038.xlsx",
+      "name": "sub-038.xlsx",
+      "size": 15334,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97c0d5758701ee2a14"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-009.xlsx",
+      "name": "sub-009.xlsx",
+      "size": 11812,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97f94aa7e1e4fef21a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-068.xlsx",
+      "name": "sub-068.xlsx",
+      "size": 12654,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bac7132cfa1d8ee2b6b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-031.xlsx",
+      "name": "sub-031.xlsx",
+      "size": 13621,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97689cbd7e0dfef314"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-012.xlsx",
+      "name": "sub-012.xlsx",
+      "size": 14654,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b977132cfa1d8ee2b57"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-026.xlsx",
+      "name": "sub-026.xlsx",
+      "size": 15776,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97a11d2e649a9feeb4"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-094.xlsx",
+      "name": "sub-094.xlsx",
+      "size": 13413,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8badff33cafbcffef28e"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-054.xlsx",
+      "name": "sub-054.xlsx",
+      "size": 11761,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97b772e5c40b9ff128"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-072.xlsx",
+      "name": "sub-072.xlsx",
+      "size": 11789,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bae689cbd7e0dfef32f"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-047.xlsx",
+      "name": "sub-047.xlsx",
+      "size": 12218,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b979955975b589ff2e6"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-056.xlsx",
+      "name": "sub-056.xlsx",
+      "size": 8021,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97f94aa7e1e4fef21b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-046.xlsx",
+      "name": "sub-046.xlsx",
+      "size": 12400,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97ff33cafbcffef284"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-044.xlsx",
+      "name": "sub-044.xlsx",
+      "size": 13226,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b97baf86be58cfef15e"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-071.xlsx",
+      "name": "sub-071.xlsx",
+      "size": 13255,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf83061bf1019fefee"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-064.xlsx",
+      "name": "sub-064.xlsx",
+      "size": 17348,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bad689cbd7e0dfef32d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-111.xlsx",
+      "name": "sub-111.xlsx",
+      "size": 13836,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf2bd25ba620ee29aa"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-118.xlsx",
+      "name": "sub-118.xlsx",
+      "size": 14182,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bad7132cfa1d8ee2b6d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-083.xlsx",
+      "name": "sub-083.xlsx",
+      "size": 14585,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bae087b7fb3a2ee28c8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-078.xlsx",
+      "name": "sub-078.xlsx",
+      "size": 16985,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baea11d2e649a9feec6"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-089.xlsx",
+      "name": "sub-089.xlsx",
+      "size": 11391,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf2bd25ba620ee29ab"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-073.xlsx",
+      "name": "sub-073.xlsx",
+      "size": 14913,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baea96402186c9fef06"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-107.xlsx",
+      "name": "sub-107.xlsx",
+      "size": 10769,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bae2bd25ba620ee29a8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-097.xlsx",
+      "name": "sub-097.xlsx",
+      "size": 12842,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baeb772e5c40b9ff12e"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-113.xlsx",
+      "name": "sub-113.xlsx",
+      "size": 16287,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf087b7fb3a2ee28ca"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-062.xlsx",
+      "name": "sub-062.xlsx",
+      "size": 11950,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf7132cfa1d8ee2b70"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-082.xlsx",
+      "name": "sub-082.xlsx",
+      "size": 11840,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf087b7fb3a2ee28cb"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-081.xlsx",
+      "name": "sub-081.xlsx",
+      "size": 8698,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafa96402186c9fef09"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-091.xlsx",
+      "name": "sub-091.xlsx",
+      "size": 14381,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf0b6e0a1f5f9ff02b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-090.xlsx",
+      "name": "sub-090.xlsx",
+      "size": 15223,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafcfddbb5e8dfef1a8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-098.xlsx",
+      "name": "sub-098.xlsx",
+      "size": 15731,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafb772e5c40b9ff130"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-085.xlsx",
+      "name": "sub-085.xlsx",
+      "size": 11679,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf83061bf1019feff0"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-070.xlsx",
+      "name": "sub-070.xlsx",
+      "size": 12669,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafc0d5758701ee2a29"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-110.xlsx",
+      "name": "sub-110.xlsx",
+      "size": 8698,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bafbaf86be58cfef171"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-079.xlsx",
+      "name": "sub-079.xlsx",
+      "size": 11882,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf7132cfa1d8ee2b73"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-096.xlsx",
+      "name": "sub-096.xlsx",
+      "size": 12620,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8baf0b6e0a1f5f9ff02c"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-069.xlsx",
+      "name": "sub-069.xlsx",
+      "size": 13278,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0cfddbb5e8dfef1a9"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-075.xlsx",
+      "name": "sub-075.xlsx",
+      "size": 15416,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0ff33cafbcffef292"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-103.xlsx",
+      "name": "sub-103.xlsx",
+      "size": 11720,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb02bd25ba620ee29b0"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-126.xlsx",
+      "name": "sub-126.xlsx",
+      "size": 15513,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0c0d5758701ee2a2b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-066.xlsx",
+      "name": "sub-066.xlsx",
+      "size": 13805,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0689cbd7e0dfef333"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-101.xlsx",
+      "name": "sub-101.xlsx",
+      "size": 12316,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0a11d2e649a9feeca"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-108.xlsx",
+      "name": "sub-108.xlsx",
+      "size": 11758,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0baf86be58cfef173"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-074.xlsx",
+      "name": "sub-074.xlsx",
+      "size": 13416,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0087b7fb3a2ee28d5"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-120.xlsx",
+      "name": "sub-120.xlsx",
+      "size": 12965,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1baf86be58cfef179"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-125.xlsx",
+      "name": "sub-125.xlsx",
+      "size": 12181,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0f94aa7e1e4fef22c"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-121.xlsx",
+      "name": "sub-121.xlsx",
+      "size": 12510,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0a96402186c9fef0d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-109.xlsx",
+      "name": "sub-109.xlsx",
+      "size": 8546,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0a11d2e649a9feecd"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-127.xlsx",
+      "name": "sub-127.xlsx",
+      "size": 11585,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0a96402186c9fef10"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-093.xlsx",
+      "name": "sub-093.xlsx",
+      "size": 14654,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb0689cbd7e0dfef336"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-058.xlsx",
+      "name": "sub-058.xlsx",
+      "size": 11282,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1c0d5758701ee2a2f"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-123.xlsx",
+      "name": "sub-123.xlsx",
+      "size": 10521,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1689cbd7e0dfef337"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-059.xlsx",
+      "name": "sub-059.xlsx",
+      "size": 12278,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb12bd25ba620ee29b4"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-114.xlsx",
+      "name": "sub-114.xlsx",
+      "size": 11125,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1087b7fb3a2ee28db"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-086.xlsx",
+      "name": "sub-086.xlsx",
+      "size": 14352,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb17132cfa1d8ee2b77"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-084.xlsx",
+      "name": "sub-084.xlsx",
+      "size": 12146,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1c0d5758701ee2a31"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-088.xlsx",
+      "name": "sub-088.xlsx",
+      "size": 11049,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1a96402186c9fef12"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-080.xlsx",
+      "name": "sub-080.xlsx",
+      "size": 12976,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1a11d2e649a9feecf"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-112.xlsx",
+      "name": "sub-112.xlsx",
+      "size": 13431,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1f94aa7e1e4fef230"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-087.xlsx",
+      "name": "sub-087.xlsx",
+      "size": 13795,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1ff33cafbcffef298"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-061.xlsx",
+      "name": "sub-061.xlsx",
+      "size": 9156,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1c0d5758701ee2a32"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-105.xlsx",
+      "name": "sub-105.xlsx",
+      "size": 14507,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb1087b7fb3a2ee28dc"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-115.xlsx",
+      "name": "sub-115.xlsx",
+      "size": 14534,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8bb12bd25ba620ee29b6"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-001.xlsx",
+      "name": "sub-001.xlsx",
+      "size": 10867,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b957132cfa1d8ee2b49"
+    },
+    {
+      "path": "/data/sentence_level_ratings/gpt_generated/sub-002.xlsx",
+      "name": "sub-002.xlsx",
+      "size": 11056,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8b957132cfa1d8ee2b50"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-106.xlsx",
+      "name": "sub-106.xlsx",
+      "size": 38406,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95bed7747256f25a114"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-068.xlsx",
+      "name": "sub-068.xlsx",
+      "size": 39223,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95b6a555d6043505a97"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-107.xlsx",
+      "name": "sub-107.xlsx",
+      "size": 37726,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95bdfff782e68259f4a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-019.xlsx",
+      "name": "sub-019.xlsx",
+      "size": 37290,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95b2a4b9fbb2c259ec2"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-061.xlsx",
+      "name": "sub-061.xlsx",
+      "size": 36712,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95bcb52646d40505cfd"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-058.xlsx",
+      "name": "sub-058.xlsx",
+      "size": 38455,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95a57fa46bd09c50a4d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-082.xlsx",
+      "name": "sub-082.xlsx",
+      "size": 38239,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95a16cbfd7ed8c50dc1"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-037.xlsx",
+      "name": "sub-037.xlsx",
+      "size": 38456,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95a2a4b9fbb2c259ec0"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-035.xlsx",
+      "name": "sub-035.xlsx",
+      "size": 38160,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95b16cbfd7ed8c50dc3"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-025.xlsx",
+      "name": "sub-025.xlsx",
+      "size": 13447,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95b70278669d9c50c01"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-057.xlsx",
+      "name": "sub-057.xlsx",
+      "size": 39363,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95ba4cf6986cc259e19"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-001.xlsx",
+      "name": "sub-001.xlsx",
+      "size": 38190,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95bc5b495675f505976"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-051.xlsx",
+      "name": "sub-051.xlsx",
+      "size": 37331,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95b70278669d9c50c02"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-034.xlsx",
+      "name": "sub-034.xlsx",
+      "size": 16508,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95bdfff782e68259f49"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-007.xlsx",
+      "name": "sub-007.xlsx",
+      "size": 39947,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95b1e980a14cac50ac5"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-009.xlsx",
+      "name": "sub-009.xlsx",
+      "size": 38490,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95ba4cf6986cc259e1b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-125.xlsx",
+      "name": "sub-125.xlsx",
+      "size": 38834,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95b57fa46bd09c50a4f"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater1/sub-018.xlsx",
+      "name": "sub-018.xlsx",
+      "size": 14568,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d95c16cbfd7ed8c50dc7"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-037.xlsx",
+      "name": "sub-037.xlsx",
+      "size": 39873,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9896a555d6043505a9e"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-019.xlsx",
+      "name": "sub-019.xlsx",
+      "size": 38438,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d989dfff782e68259f6d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-107.xlsx",
+      "name": "sub-107.xlsx",
+      "size": 38784,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d988a4cf6986cc259e21"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-082.xlsx",
+      "name": "sub-082.xlsx",
+      "size": 39426,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d986cee589eca45058e6"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-061.xlsx",
+      "name": "sub-061.xlsx",
+      "size": 37516,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d987cb52646d40505d1a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-057.xlsx",
+      "name": "sub-057.xlsx",
+      "size": 40875,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d98716cbfd7ed8c50de4"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-007.xlsx",
+      "name": "sub-007.xlsx",
+      "size": 41563,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d987cb52646d40505d1b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-051.xlsx",
+      "name": "sub-051.xlsx",
+      "size": 38385,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d98770278669d9c50c13"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-009.xlsx",
+      "name": "sub-009.xlsx",
+      "size": 39630,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9881e980a14cac50ad6"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-035.xlsx",
+      "name": "sub-035.xlsx",
+      "size": 39316,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d98857fa46bd09c50a57"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-058.xlsx",
+      "name": "sub-058.xlsx",
+      "size": 39775,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d98870278669d9c50c15"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-001.xlsx",
+      "name": "sub-001.xlsx",
+      "size": 39518,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d989a4cf6986cc259e23"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-106.xlsx",
+      "name": "sub-106.xlsx",
+      "size": 39633,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d989ed7747256f25a13b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-025.xlsx",
+      "name": "sub-025.xlsx",
+      "size": 37705,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9892a4b9fbb2c259ed8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-125.xlsx",
+      "name": "sub-125.xlsx",
+      "size": 40229,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d989cee589eca45058e9"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-034.xlsx",
+      "name": "sub-034.xlsx",
+      "size": 41273,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9899ddbb723ce5059f9"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-068.xlsx",
+      "name": "sub-068.xlsx",
+      "size": 40664,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d989c5b495675f50597d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater2/sub-018.xlsx",
+      "name": "sub-018.xlsx",
+      "size": 39522,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9891e980a14cac50ad8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-001.xlsx",
+      "name": "sub-001.xlsx",
+      "size": 39549,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d02a4b9fbb2c259ef7"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-068.xlsx",
+      "name": "sub-068.xlsx",
+      "size": 15383,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d2c5b495675f505985"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-034.xlsx",
+      "name": "sub-034.xlsx",
+      "size": 41316,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d01e980a14cac50ae2"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-125.xlsx",
+      "name": "sub-125.xlsx",
+      "size": 14761,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d1ed7747256f25a173"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-057.xlsx",
+      "name": "sub-057.xlsx",
+      "size": 15665,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d29ddbb723ce505a0f"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-007.xlsx",
+      "name": "sub-007.xlsx",
+      "size": 41624,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d1dfff782e68259f90"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-107.xlsx",
+      "name": "sub-107.xlsx",
+      "size": 13398,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d170278669d9c50c3a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-037.xlsx",
+      "name": "sub-037.xlsx",
+      "size": 13684,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d1dfff782e68259f91"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-018.xlsx",
+      "name": "sub-018.xlsx",
+      "size": 39496,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d19ddbb723ce505a08"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-082.xlsx",
+      "name": "sub-082.xlsx",
+      "size": 14417,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d157fa46bd09c50a6a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-035.xlsx",
+      "name": "sub-035.xlsx",
+      "size": 13881,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d1cb52646d40505d4f"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-058.xlsx",
+      "name": "sub-058.xlsx",
+      "size": 13954,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d224156fcb02505c20"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-009.xlsx",
+      "name": "sub-009.xlsx",
+      "size": 39802,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d12a4b9fbb2c259ef9"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-106.xlsx",
+      "name": "sub-106.xlsx",
+      "size": 14078,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d116cbfd7ed8c50e2c"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-025.xlsx",
+      "name": "sub-025.xlsx",
+      "size": 37804,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d170278669d9c50c3b"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-061.xlsx",
+      "name": "sub-061.xlsx",
+      "size": 11716,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d21e980a14cac50ae8"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-051.xlsx",
+      "name": "sub-051.xlsx",
+      "size": 12524,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d2cb52646d40505d52"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater4/sub-019.xlsx",
+      "name": "sub-019.xlsx",
+      "size": 38425,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9d270278669d9c50c3e"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-018.xlsx",
+      "name": "sub-018.xlsx",
+      "size": 11363,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9be2a4b9fbb2c259eee"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-082.xlsx",
+      "name": "sub-082.xlsx",
+      "size": 12165,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9be70278669d9c50c31"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-106.xlsx",
+      "name": "sub-106.xlsx",
+      "size": 11777,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bc6a555d6043505aa7"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-061.xlsx",
+      "name": "sub-061.xlsx",
+      "size": 9500,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bccb52646d40505d42"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-051.xlsx",
+      "name": "sub-051.xlsx",
+      "size": 10245,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9be57fa46bd09c50a63"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-009.xlsx",
+      "name": "sub-009.xlsx",
+      "size": 12205,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bcdfff782e68259f89"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-025.xlsx",
+      "name": "sub-025.xlsx",
+      "size": 10180,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bc16cbfd7ed8c50e17"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-035.xlsx",
+      "name": "sub-035.xlsx",
+      "size": 11626,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bea4cf6986cc259e31"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-058.xlsx",
+      "name": "sub-058.xlsx",
+      "size": 11616,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bb2a4b9fbb2c259ee7"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-037.xlsx",
+      "name": "sub-037.xlsx",
+      "size": 11349,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bc6a555d6043505aa4"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-125.xlsx",
+      "name": "sub-125.xlsx",
+      "size": 12523,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bced7747256f25a166"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-019.xlsx",
+      "name": "sub-019.xlsx",
+      "size": 10132,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bca4cf6986cc259e2a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-007.xlsx",
+      "name": "sub-007.xlsx",
+      "size": 13881,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bc2a4b9fbb2c259ee9"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-068.xlsx",
+      "name": "sub-068.xlsx",
+      "size": 13146,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bcdfff782e68259f87"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-034.xlsx",
+      "name": "sub-034.xlsx",
+      "size": 13376,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bc24156fcb02505bf7"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-001.xlsx",
+      "name": "sub-001.xlsx",
+      "size": 11309,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9beed7747256f25a16a"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-107.xlsx",
+      "name": "sub-107.xlsx",
+      "size": 11095,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9be16cbfd7ed8c50e1d"
+    },
+    {
+      "path": "/data/sentence_level_ratings/human_validation/Rater3/sub-057.xlsx",
+      "name": "sub-057.xlsx",
+      "size": 13422,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/6998d9bfed7747256f25a16d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-060_transcripts.xlsx",
+      "name": "sub-060_transcripts.xlsx",
+      "size": 12411,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873ff33cafbcffef181"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-070_transcripts.xlsx",
+      "name": "sub-070_transcripts.xlsx",
+      "size": 12253,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88722f9591da96fef09c"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-054_transcripts.xlsx",
+      "name": "sub-054_transcripts.xlsx",
+      "size": 11465,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887383061bf1019fef33"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-127_transcripts.xlsx",
+      "name": "sub-127_transcripts.xlsx",
+      "size": 11378,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88730b6e0a1f5f9fef96"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-085_transcripts.xlsx",
+      "name": "sub-085_transcripts.xlsx",
+      "size": 11528,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873d5501c340f9feebb"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-126_transcripts.xlsx",
+      "name": "sub-126_transcripts.xlsx",
+      "size": 15174,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873b772e5c40b9fefdb"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-094_transcripts.xlsx",
+      "name": "sub-094_transcripts.xlsx",
+      "size": 12976,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873519c62d9b0ee30b1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-114_transcripts.xlsx",
+      "name": "sub-114_transcripts.xlsx",
+      "size": 11046,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88730cbee48c8b9feeb5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-088_transcripts.xlsx",
+      "name": "sub-088_transcripts.xlsx",
+      "size": 10686,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873fb9e312ca4fef101"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-066_transcripts.xlsx",
+      "name": "sub-066_transcripts.xlsx",
+      "size": 13478,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872cfddbb5e8dfef0fe"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-074_transcripts.xlsx",
+      "name": "sub-074_transcripts.xlsx",
+      "size": 13251,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873cfddbb5e8dfef103"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-065_transcripts.xlsx",
+      "name": "sub-065_transcripts.xlsx",
+      "size": 15465,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88737132cfa1d8ee2a42"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-083_transcripts.xlsx",
+      "name": "sub-083_transcripts.xlsx",
+      "size": 14189,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873c0d5758701ee293f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-107_transcripts.xlsx",
+      "name": "sub-107_transcripts.xlsx",
+      "size": 10690,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873c0d5758701ee2940"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-102_transcripts.xlsx",
+      "name": "sub-102_transcripts.xlsx",
+      "size": 13636,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873689cbd7e0dfef21e"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-098_transcripts.xlsx",
+      "name": "sub-098_transcripts.xlsx",
+      "size": 15141,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88737132cfa1d8ee2a45"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-097_transcripts.xlsx",
+      "name": "sub-097_transcripts.xlsx",
+      "size": 12408,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873c0d5758701ee2941"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-112_transcripts.xlsx",
+      "name": "sub-112_transcripts.xlsx",
+      "size": 13010,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873fb9e312ca4fef102"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-100_transcripts.xlsx",
+      "name": "sub-100_transcripts.xlsx",
+      "size": 12372,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873519c62d9b0ee30b5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-113_transcripts.xlsx",
+      "name": "sub-113_transcripts.xlsx",
+      "size": 15575,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872cfddbb5e8dfef101"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-111_transcripts.xlsx",
+      "name": "sub-111_transcripts.xlsx",
+      "size": 13194,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88730512f0e70dee2e69"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-092_transcripts.xlsx",
+      "name": "sub-092_transcripts.xlsx",
+      "size": 9819,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887379c85e6de8fef0c5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-106_transcripts.xlsx",
+      "name": "sub-106_transcripts.xlsx",
+      "size": 11306,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887379c85e6de8fef0c9"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-080_transcripts.xlsx",
+      "name": "sub-080_transcripts.xlsx",
+      "size": 12756,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88712f9591da96fef095"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-077_transcripts.xlsx",
+      "name": "sub-077_transcripts.xlsx",
+      "size": 13359,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871c0d5758701ee2932"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-076_transcripts.xlsx",
+      "name": "sub-076_transcripts.xlsx",
+      "size": 11465,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871cfddbb5e8dfef0f8"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-115_transcripts.xlsx",
+      "name": "sub-115_transcripts.xlsx",
+      "size": 14072,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871fb9e312ca4fef0fc"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-086_transcripts.xlsx",
+      "name": "sub-086_transcripts.xlsx",
+      "size": 13856,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871d5501c340f9feeb3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-081_transcripts.xlsx",
+      "name": "sub-081_transcripts.xlsx",
+      "size": 8913,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887179c85e6de8fef0bf"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-091_transcripts.xlsx",
+      "name": "sub-091_transcripts.xlsx",
+      "size": 13672,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887183061bf1019fef29"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-103_transcripts.xlsx",
+      "name": "sub-103_transcripts.xlsx",
+      "size": 11360,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871b772e5c40b9fefd4"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-124_transcripts.xlsx",
+      "name": "sub-124_transcripts.xlsx",
+      "size": 16000,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887183061bf1019fef2a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-067_transcripts.xlsx",
+      "name": "sub-067_transcripts.xlsx",
+      "size": 10501,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871c0d5758701ee2933"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-084_transcripts.xlsx",
+      "name": "sub-084_transcripts.xlsx",
+      "size": 12102,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88710512f0e70dee2e60"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-101_transcripts.xlsx",
+      "name": "sub-101_transcripts.xlsx",
+      "size": 12145,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88717132cfa1d8ee2a39"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-116_transcripts.xlsx",
+      "name": "sub-116_transcripts.xlsx",
+      "size": 15417,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88712f9591da96fef097"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-119_transcripts.xlsx",
+      "name": "sub-119_transcripts.xlsx",
+      "size": 13003,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88710512f0e70dee2e61"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-072_transcripts.xlsx",
+      "name": "sub-072_transcripts.xlsx",
+      "size": 11428,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871d5501c340f9feeb4"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-125_transcripts.xlsx",
+      "name": "sub-125_transcripts.xlsx",
+      "size": 11786,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88717132cfa1d8ee2a3b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-082_transcripts.xlsx",
+      "name": "sub-082_transcripts.xlsx",
+      "size": 11384,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88719955975b589ff09f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-059_transcripts.xlsx",
+      "name": "sub-059_transcripts.xlsx",
+      "size": 11937,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871cfddbb5e8dfef0f9"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-108_transcripts.xlsx",
+      "name": "sub-108_transcripts.xlsx",
+      "size": 11571,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871d5501c340f9feeb5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-109_transcripts.xlsx",
+      "name": "sub-109_transcripts.xlsx",
+      "size": 8698,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88717132cfa1d8ee2a3a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-096_transcripts.xlsx",
+      "name": "sub-096_transcripts.xlsx",
+      "size": 12492,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871c0d5758701ee2934"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-120_transcripts.xlsx",
+      "name": "sub-120_transcripts.xlsx",
+      "size": 12437,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887283061bf1019fef2e"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-075_transcripts.xlsx",
+      "name": "sub-075_transcripts.xlsx",
+      "size": 14825,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887279c85e6de8fef0c1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-052_transcripts.xlsx",
+      "name": "sub-052_transcripts.xlsx",
+      "size": 11912,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872689cbd7e0dfef219"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-099_transcripts.xlsx",
+      "name": "sub-099_transcripts.xlsx",
+      "size": 15659,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88722f9591da96fef099"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-071_transcripts.xlsx",
+      "name": "sub-071_transcripts.xlsx",
+      "size": 12766,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872cfddbb5e8dfef0fc"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-061_transcripts.xlsx",
+      "name": "sub-061_transcripts.xlsx",
+      "size": 9225,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872b772e5c40b9fefd7"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-122_transcripts.xlsx",
+      "name": "sub-122_transcripts.xlsx",
+      "size": 12010,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871c0d5758701ee2936"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-087_transcripts.xlsx",
+      "name": "sub-087_transcripts.xlsx",
+      "size": 13119,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872cfddbb5e8dfef0fd"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-057_transcripts.xlsx",
+      "name": "sub-057_transcripts.xlsx",
+      "size": 12547,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88720cbee48c8b9feeb2"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-068_transcripts.xlsx",
+      "name": "sub-068_transcripts.xlsx",
+      "size": 12214,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88720b6e0a1f5f9fef93"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-110_transcripts.xlsx",
+      "name": "sub-110_transcripts.xlsx",
+      "size": 8791,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872519c62d9b0ee30ac"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-093_transcripts.xlsx",
+      "name": "sub-093_transcripts.xlsx",
+      "size": 14112,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872519c62d9b0ee30ad"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-090_transcripts.xlsx",
+      "name": "sub-090_transcripts.xlsx",
+      "size": 14908,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872b772e5c40b9fefd9"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-051_transcripts.xlsx",
+      "name": "sub-051_transcripts.xlsx",
+      "size": 9879,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88727132cfa1d8ee2a40"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-062_transcripts.xlsx",
+      "name": "sub-062_transcripts.xlsx",
+      "size": 11814,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887283061bf1019fef30"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-089_transcripts.xlsx",
+      "name": "sub-089_transcripts.xlsx",
+      "size": 11048,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873519c62d9b0ee30b0"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-118_transcripts.xlsx",
+      "name": "sub-118_transcripts.xlsx",
+      "size": 13826,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8873c0d5758701ee293c"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-117_transcripts.xlsx",
+      "name": "sub-117_transcripts.xlsx",
+      "size": 14156,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88732f9591da96fef09d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-073_transcripts.xlsx",
+      "name": "sub-073_transcripts.xlsx",
+      "size": 14581,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88727132cfa1d8ee2a41"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-121_transcripts.xlsx",
+      "name": "sub-121_transcripts.xlsx",
+      "size": 12448,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8872689cbd7e0dfef21b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-069_transcripts.xlsx",
+      "name": "sub-069_transcripts.xlsx",
+      "size": 12774,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88722f9591da96fef09a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-004_transcripts.xlsx",
+      "name": "sub-004_transcripts.xlsx",
+      "size": 11789,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8853cfddbb5e8dfef0de"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-024_transcripts.xlsx",
+      "name": "sub-024_transcripts.xlsx",
+      "size": 11927,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8854b772e5c40b9fefc3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-031_transcripts.xlsx",
+      "name": "sub-031_transcripts.xlsx",
+      "size": 13504,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856cfddbb5e8dfef0e3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-055_transcripts.xlsx",
+      "name": "sub-055_transcripts.xlsx",
+      "size": 15989,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871ff33cafbcffef17d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-013_transcripts.xlsx",
+      "name": "sub-013_transcripts.xlsx",
+      "size": 13745,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8855b772e5c40b9fefc5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-009_transcripts.xlsx",
+      "name": "sub-009_transcripts.xlsx",
+      "size": 11665,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8855689cbd7e0dfef205"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-005_transcripts.xlsx",
+      "name": "sub-005_transcripts.xlsx",
+      "size": 15635,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88557132cfa1d8ee2a04"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-017_transcripts.xlsx",
+      "name": "sub-017_transcripts.xlsx",
+      "size": 11061,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8855fb9e312ca4fef0eb"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-027_transcripts.xlsx",
+      "name": "sub-027_transcripts.xlsx",
+      "size": 13671,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8855cfddbb5e8dfef0e0"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-040_transcripts.xlsx",
+      "name": "sub-040_transcripts.xlsx",
+      "size": 12552,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8855ff33cafbcffef166"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-007_transcripts.xlsx",
+      "name": "sub-007_transcripts.xlsx",
+      "size": 12910,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88559955975b589ff05e"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-046_transcripts.xlsx",
+      "name": "sub-046_transcripts.xlsx",
+      "size": 12032,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88550cbee48c8b9feea0"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-034_transcripts.xlsx",
+      "name": "sub-034_transcripts.xlsx",
+      "size": 12580,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c885583061bf1019fef19"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-016_transcripts.xlsx",
+      "name": "sub-016_transcripts.xlsx",
+      "size": 10415,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88550512f0e70dee2e36"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-029_transcripts.xlsx",
+      "name": "sub-029_transcripts.xlsx",
+      "size": 13089,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8855c0d5758701ee2914"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-023_transcripts.xlsx",
+      "name": "sub-023_transcripts.xlsx",
+      "size": 11093,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88567132cfa1d8ee2a07"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-123_transcripts.xlsx",
+      "name": "sub-123_transcripts.xlsx",
+      "size": 10463,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887279c85e6de8fef0c2"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-019_transcripts.xlsx",
+      "name": "sub-019_transcripts.xlsx",
+      "size": 9709,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856b772e5c40b9fefc8"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-041_transcripts.xlsx",
+      "name": "sub-041_transcripts.xlsx",
+      "size": 11646,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c885683061bf1019fef1c"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-020_transcripts.xlsx",
+      "name": "sub-020_transcripts.xlsx",
+      "size": 12922,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88560b6e0a1f5f9fef80"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-006_transcripts.xlsx",
+      "name": "sub-006_transcripts.xlsx",
+      "size": 13080,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856689cbd7e0dfef207"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-050_transcripts.xlsx",
+      "name": "sub-050_transcripts.xlsx",
+      "size": 11889,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88569955975b589ff061"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-043_transcripts.xlsx",
+      "name": "sub-043_transcripts.xlsx",
+      "size": 14708,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856d5501c340f9feea9"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-048_transcripts.xlsx",
+      "name": "sub-048_transcripts.xlsx",
+      "size": 13058,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88567132cfa1d8ee2a08"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-049_transcripts.xlsx",
+      "name": "sub-049_transcripts.xlsx",
+      "size": 14335,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88560512f0e70dee2e3a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-025_transcripts.xlsx",
+      "name": "sub-025_transcripts.xlsx",
+      "size": 10069,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856ff33cafbcffef168"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-042_transcripts.xlsx",
+      "name": "sub-042_transcripts.xlsx",
+      "size": 10257,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856c0d5758701ee2918"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-038_transcripts.xlsx",
+      "name": "sub-038_transcripts.xlsx",
+      "size": 14574,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88569955975b589ff062"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-010_transcripts.xlsx",
+      "name": "sub-010_transcripts.xlsx",
+      "size": 12947,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88562f9591da96fef092"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-039_transcripts.xlsx",
+      "name": "sub-039_transcripts.xlsx",
+      "size": 11247,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88560cbee48c8b9feea3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-021_transcripts.xlsx",
+      "name": "sub-021_transcripts.xlsx",
+      "size": 12067,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c885679c85e6de8fef0b4"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-012_transcripts.xlsx",
+      "name": "sub-012_transcripts.xlsx",
+      "size": 14104,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856519c62d9b0ee309d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-045_transcripts.xlsx",
+      "name": "sub-045_transcripts.xlsx",
+      "size": 13721,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c885683061bf1019fef1d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-018_transcripts.xlsx",
+      "name": "sub-018_transcripts.xlsx",
+      "size": 10858,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88560512f0e70dee2e3b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-002_transcripts.xlsx",
+      "name": "sub-002_transcripts.xlsx",
+      "size": 11061,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88560b6e0a1f5f9fef81"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-047_transcripts.xlsx",
+      "name": "sub-047_transcripts.xlsx",
+      "size": 11848,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856fb9e312ca4fef0ed"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-026_transcripts.xlsx",
+      "name": "sub-026_transcripts.xlsx",
+      "size": 15410,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88567132cfa1d8ee2a0a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-011_transcripts.xlsx",
+      "name": "sub-011_transcripts.xlsx",
+      "size": 12398,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8856689cbd7e0dfef209"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-032_transcripts.xlsx",
+      "name": "sub-032_transcripts.xlsx",
+      "size": 14177,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88570cbee48c8b9feea7"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-037_transcripts.xlsx",
+      "name": "sub-037_transcripts.xlsx",
+      "size": 10837,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88570512f0e70dee2e3f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-014_transcripts.xlsx",
+      "name": "sub-014_transcripts.xlsx",
+      "size": 13705,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8857c0d5758701ee291c"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-044_transcripts.xlsx",
+      "name": "sub-044_transcripts.xlsx",
+      "size": 12623,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8857519c62d9b0ee30a2"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-033_transcripts.xlsx",
+      "name": "sub-033_transcripts.xlsx",
+      "size": 13044,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8857cfddbb5e8dfef0e7"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-064_transcripts.xlsx",
+      "name": "sub-064_transcripts.xlsx",
+      "size": 16743,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871b772e5c40b9fefd1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-079_transcripts.xlsx",
+      "name": "sub-079_transcripts.xlsx",
+      "size": 11644,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88719955975b589ff09d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-078_transcripts.xlsx",
+      "name": "sub-078_transcripts.xlsx",
+      "size": 16150,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871d5501c340f9feeb1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-105_transcripts.xlsx",
+      "name": "sub-105_transcripts.xlsx",
+      "size": 14073,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c887183061bf1019fef26"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-053_transcripts.xlsx",
+      "name": "sub-053_transcripts.xlsx",
+      "size": 12142,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871c0d5758701ee2930"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-056_transcripts.xlsx",
+      "name": "sub-056_transcripts.xlsx",
+      "size": 8180,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871fb9e312ca4fef0fa"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-058_transcripts.xlsx",
+      "name": "sub-058_transcripts.xlsx",
+      "size": 11031,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8871689cbd7e0dfef216"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-001_transcripts.xlsx",
+      "name": "sub-001_transcripts.xlsx",
+      "size": 10671,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c885583061bf1019fef17"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-035_transcripts.xlsx",
+      "name": "sub-035_transcripts.xlsx",
+      "size": 10982,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c8855519c62d9b0ee3099"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/sentence_level/sub-036_transcripts.xlsx",
+      "name": "sub-036_transcripts.xlsx",
+      "size": 13967,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c88579955975b589ff08f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-013_timestamps.xlsx",
+      "name": "sub-013_timestamps.xlsx",
+      "size": 39998,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0488c5a8986e7d16d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-051_timestamps.xlsx",
+      "name": "sub-051_timestamps.xlsx",
+      "size": 20832,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0eb2b99a7367974b0"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-115_timestamps.xlsx",
+      "name": "sub-115_timestamps.xlsx",
+      "size": 38105,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4fceb2b99a7367974ce"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-006_timestamps.xlsx",
+      "name": "sub-006_timestamps.xlsx",
+      "size": 35137,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0f822037153e7dd00"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-007_timestamps.xlsx",
+      "name": "sub-007_timestamps.xlsx",
+      "size": 44440,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d07530d6aec2e7d26f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-019_timestamps.xlsx",
+      "name": "sub-019_timestamps.xlsx",
+      "size": 21344,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d08bfb3ce97259cb2d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-114_timestamps.xlsx",
+      "name": "sub-114_timestamps.xlsx",
+      "size": 26534,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e4a0d182ad33797f39"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-011_timestamps.xlsx",
+      "name": "sub-011_timestamps.xlsx",
+      "size": 27349,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0d830b88f13e7dbc3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-016_timestamps.xlsx",
+      "name": "sub-016_timestamps.xlsx",
+      "size": 21419,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0c1d0a45e32797c94"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-081_timestamps.xlsx",
+      "name": "sub-081_timestamps.xlsx",
+      "size": 14165,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4ffa0d182ad33797f51"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-074_timestamps.xlsx",
+      "name": "sub-074_timestamps.xlsx",
+      "size": 38492,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d503a526f6716c797870"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-027_timestamps.xlsx",
+      "name": "sub-027_timestamps.xlsx",
+      "size": 32441,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0c1d0a45e32797c95"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-041_timestamps.xlsx",
+      "name": "sub-041_timestamps.xlsx",
+      "size": 31755,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d2a526f6716c79784f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-094_timestamps.xlsx",
+      "name": "sub-094_timestamps.xlsx",
+      "size": 24352,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d529cee7dbb18c060a1c"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-038_timestamps.xlsx",
+      "name": "sub-038_timestamps.xlsx",
+      "size": 50790,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0d830b88f13e7dbc2"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-039_timestamps.xlsx",
+      "name": "sub-039_timestamps.xlsx",
+      "size": 29249,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1a526f6716c79784a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-045_timestamps.xlsx",
+      "name": "sub-045_timestamps.xlsx",
+      "size": 41059,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1c1d0a45e32797c99"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-057_timestamps.xlsx",
+      "name": "sub-057_timestamps.xlsx",
+      "size": 36588,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1f822037153e7dd03"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-048_timestamps.xlsx",
+      "name": "sub-048_timestamps.xlsx",
+      "size": 37622,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1f6835b62d559d5b6"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-111_timestamps.xlsx",
+      "name": "sub-111_timestamps.xlsx",
+      "size": 35285,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d51b8bfb3ce97259cb67"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-037_timestamps.xlsx",
+      "name": "sub-037_timestamps.xlsx",
+      "size": 33845,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1a0d182ad33797f2d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-117_timestamps.xlsx",
+      "name": "sub-117_timestamps.xlsx",
+      "size": 34582,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d504f6835b62d559d5be"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-020_timestamps.xlsx",
+      "name": "sub-020_timestamps.xlsx",
+      "size": 36236,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1f822037153e7dd02"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-126_timestamps.xlsx",
+      "name": "sub-126_timestamps.xlsx",
+      "size": 34050,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e43682d5c343e7dce1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-024_timestamps.xlsx",
+      "name": "sub-024_timestamps.xlsx",
+      "size": 36617,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d185b3261d7ce7d16c"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-034_timestamps.xlsx",
+      "name": "sub-034_timestamps.xlsx",
+      "size": 43491,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1d5716f4a3b59d3c7"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-018_timestamps.xlsx",
+      "name": "sub-018_timestamps.xlsx",
+      "size": 29000,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1a526f6716c79784b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-080_timestamps.xlsx",
+      "name": "sub-080_timestamps.xlsx",
+      "size": 25176,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5a526f6716c797863"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-010_timestamps.xlsx",
+      "name": "sub-010_timestamps.xlsx",
+      "size": 32555,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d168575aed6459cb1b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-042_timestamps.xlsx",
+      "name": "sub-042_timestamps.xlsx",
+      "size": 26464,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1fa656e311959ce8f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-033_timestamps.xlsx",
+      "name": "sub-033_timestamps.xlsx",
+      "size": 39219,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1488c5a8986e7d170"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-012_timestamps.xlsx",
+      "name": "sub-012_timestamps.xlsx",
+      "size": 38967,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1a0d182ad33797f2e"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-014_timestamps.xlsx",
+      "name": "sub-014_timestamps.xlsx",
+      "size": 46833,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d17530d6aec2e7d272"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-025_timestamps.xlsx",
+      "name": "sub-025_timestamps.xlsx",
+      "size": 14582,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1d830b88f13e7dbc6"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-026_timestamps.xlsx",
+      "name": "sub-026_timestamps.xlsx",
+      "size": 41790,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1c1d0a45e32797c9a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-004_timestamps.xlsx",
+      "name": "sub-004_timestamps.xlsx",
+      "size": 28703,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1eb2b99a7367974b6"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-049_timestamps.xlsx",
+      "name": "sub-049_timestamps.xlsx",
+      "size": 42234,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d185b3261d7ce7d16d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-086_timestamps.xlsx",
+      "name": "sub-086_timestamps.xlsx",
+      "size": 40531,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e6d5716f4a3b59d3d3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-055_timestamps.xlsx",
+      "name": "sub-055_timestamps.xlsx",
+      "size": 44508,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1d9094ad75c59cb30"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-031_timestamps.xlsx",
+      "name": "sub-031_timestamps.xlsx",
+      "size": 28687,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d10bafd128c059cbfa"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-047_timestamps.xlsx",
+      "name": "sub-047_timestamps.xlsx",
+      "size": 32803,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d2c1d0a45e32797c9c"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-071_timestamps.xlsx",
+      "name": "sub-071_timestamps.xlsx",
+      "size": 39313,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4fc488c5a8986e7d187"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-035_timestamps.xlsx",
+      "name": "sub-035_timestamps.xlsx",
+      "size": 26200,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4cf3682d5c343e7dcd8"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-052_timestamps.xlsx",
+      "name": "sub-052_timestamps.xlsx",
+      "size": 33827,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1a0d182ad33797f2f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-021_timestamps.xlsx",
+      "name": "sub-021_timestamps.xlsx",
+      "size": 37417,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d2a526f6716c79784d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-005_timestamps.xlsx",
+      "name": "sub-005_timestamps.xlsx",
+      "size": 44507,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4cfd5716f4a3b59d3c1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-036_timestamps.xlsx",
+      "name": "sub-036_timestamps.xlsx",
+      "size": 28410,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d2eb2b99a7367974b7"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-124_timestamps.xlsx",
+      "name": "sub-124_timestamps.xlsx",
+      "size": 30532,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d51a828d100d7fe7d1c2"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-017_timestamps.xlsx",
+      "name": "sub-017_timestamps.xlsx",
+      "size": 26856,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4cfd830b88f13e7dbc0"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-056_timestamps.xlsx",
+      "name": "sub-056_timestamps.xlsx",
+      "size": 12824,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d2a0d182ad33797f32"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-009_timestamps.xlsx",
+      "name": "sub-009_timestamps.xlsx",
+      "size": 29291,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4cfeb2b99a7367974ad"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-032_timestamps.xlsx",
+      "name": "sub-032_timestamps.xlsx",
+      "size": 33377,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d1eb2b99a7367974b5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-053_timestamps.xlsx",
+      "name": "sub-053_timestamps.xlsx",
+      "size": 40139,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d07530d6aec2e7d26e"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-044_timestamps.xlsx",
+      "name": "sub-044_timestamps.xlsx",
+      "size": 35599,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0d5716f4a3b59d3c3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-107_timestamps.xlsx",
+      "name": "sub-107_timestamps.xlsx",
+      "size": 23466,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5828d100d7fe7d1a4"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-110_timestamps.xlsx",
+      "name": "sub-110_timestamps.xlsx",
+      "size": 14888,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d5008bfb3ce97259cb49"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-054_timestamps.xlsx",
+      "name": "sub-054_timestamps.xlsx",
+      "size": 31979,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d03682d5c343e7dcda"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-023_timestamps.xlsx",
+      "name": "sub-023_timestamps.xlsx",
+      "size": 30613,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0a526f6716c797847"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-050_timestamps.xlsx",
+      "name": "sub-050_timestamps.xlsx",
+      "size": 31926,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0eb2b99a7367974b1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-043_timestamps.xlsx",
+      "name": "sub-043_timestamps.xlsx",
+      "size": 34503,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0a0d182ad33797f2a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-002_timestamps.xlsx",
+      "name": "sub-002_timestamps.xlsx",
+      "size": 26504,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d13682d5c343e7dcdd"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-040_timestamps.xlsx",
+      "name": "sub-040_timestamps.xlsx",
+      "size": 39839,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0f9c2ef6f0de7d170"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-085_timestamps.xlsx",
+      "name": "sub-085_timestamps.xlsx",
+      "size": 30782,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e4eb2b99a7367974c1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-046_timestamps.xlsx",
+      "name": "sub-046_timestamps.xlsx",
+      "size": 38949,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d0dc98c6742e59cb24"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-029_timestamps.xlsx",
+      "name": "sub-029_timestamps.xlsx",
+      "size": 43924,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d00bafd128c059cbf7"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-064_timestamps.xlsx",
+      "name": "sub-064_timestamps.xlsx",
+      "size": 41734,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e3d5716f4a3b59d3ce"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-108_timestamps.xlsx",
+      "name": "sub-108_timestamps.xlsx",
+      "size": 26972,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e37530d6aec2e7d27a"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-101_timestamps.xlsx",
+      "name": "sub-101_timestamps.xlsx",
+      "size": 35572,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d505c1d0a45e32797cc1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-093_timestamps.xlsx",
+      "name": "sub-093_timestamps.xlsx",
+      "size": 37114,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e3828d100d7fe7d19e"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-058_timestamps.xlsx",
+      "name": "sub-058_timestamps.xlsx",
+      "size": 33480,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e38bfb3ce97259cb34"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-068_timestamps.xlsx",
+      "name": "sub-068_timestamps.xlsx",
+      "size": 37292,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e3a526f6716c797861"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-089_timestamps.xlsx",
+      "name": "sub-089_timestamps.xlsx",
+      "size": 29426,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e4828d100d7fe7d1a2"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-106_timestamps.xlsx",
+      "name": "sub-106_timestamps.xlsx",
+      "size": 30091,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e4c1d0a45e32797cb3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-061_timestamps.xlsx",
+      "name": "sub-061_timestamps.xlsx",
+      "size": 15578,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e48bfb3ce97259cb36"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-060_timestamps.xlsx",
+      "name": "sub-060_timestamps.xlsx",
+      "size": 30567,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5c1d0a45e32797cb5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-127_timestamps.xlsx",
+      "name": "sub-127_timestamps.xlsx",
+      "size": 27079,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5a0d182ad33797f3b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-070_timestamps.xlsx",
+      "name": "sub-070_timestamps.xlsx",
+      "size": 31440,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5dc98c6742e59cb31"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-065_timestamps.xlsx",
+      "name": "sub-065_timestamps.xlsx",
+      "size": 33234,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5eb2b99a7367974c4"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-066_timestamps.xlsx",
+      "name": "sub-066_timestamps.xlsx",
+      "size": 31220,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e568575aed6459cb20"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-087_timestamps.xlsx",
+      "name": "sub-087_timestamps.xlsx",
+      "size": 31075,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e57530d6aec2e7d282"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-091_timestamps.xlsx",
+      "name": "sub-091_timestamps.xlsx",
+      "size": 41440,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5eb2b99a7367974c5"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-062_timestamps.xlsx",
+      "name": "sub-062_timestamps.xlsx",
+      "size": 27053,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e5f822037153e7dd08"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-073_timestamps.xlsx",
+      "name": "sub-073_timestamps.xlsx",
+      "size": 36096,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e6dc98c6742e59cb34"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-078_timestamps.xlsx",
+      "name": "sub-078_timestamps.xlsx",
+      "size": 43770,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e7828d100d7fe7d1a7"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-059_timestamps.xlsx",
+      "name": "sub-059_timestamps.xlsx",
+      "size": 32711,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e7d9094ad75c59cb3b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-116_timestamps.xlsx",
+      "name": "sub-116_timestamps.xlsx",
+      "size": 33228,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4fcf9c2ef6f0de7d17d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-088_timestamps.xlsx",
+      "name": "sub-088_timestamps.xlsx",
+      "size": 32094,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4fdf822037153e7dd16"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-084_timestamps.xlsx",
+      "name": "sub-084_timestamps.xlsx",
+      "size": 28479,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4ffdc98c6742e59cb4d"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-099_timestamps.xlsx",
+      "name": "sub-099_timestamps.xlsx",
+      "size": 38957,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4ff828d100d7fe7d1b6"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-082_timestamps.xlsx",
+      "name": "sub-082_timestamps.xlsx",
+      "size": 25529,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d500d9094ad75c59cb49"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-069_timestamps.xlsx",
+      "name": "sub-069_timestamps.xlsx",
+      "size": 39453,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d503d9094ad75c59cb4b"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-076_timestamps.xlsx",
+      "name": "sub-076_timestamps.xlsx",
+      "size": 35972,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d504828d100d7fe7d1b8"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-067_timestamps.xlsx",
+      "name": "sub-067_timestamps.xlsx",
+      "size": 26272,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d50468575aed6459cb26"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-120_timestamps.xlsx",
+      "name": "sub-120_timestamps.xlsx",
+      "size": 38140,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d505f6835b62d559d5c1"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-097_timestamps.xlsx",
+      "name": "sub-097_timestamps.xlsx",
+      "size": 29378,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d51bc1d0a45e32797cc3"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-075_timestamps.xlsx",
+      "name": "sub-075_timestamps.xlsx",
+      "size": 37170,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d51f85b3261d7ce7d199"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-109_timestamps.xlsx",
+      "name": "sub-109_timestamps.xlsx",
+      "size": 14531,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d52ee15032ae8a060a38"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-102_timestamps.xlsx",
+      "name": "sub-102_timestamps.xlsx",
+      "size": 25862,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d53168575aed6459cb2f"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-001_timestamps.xlsx",
+      "name": "sub-001_timestamps.xlsx",
+      "size": 30668,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4d085b3261d7ce7d169"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-125_timestamps.xlsx",
+      "name": "sub-125_timestamps.xlsx",
+      "size": 30875,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e3eb2b99a7367974bf"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-122_timestamps.xlsx",
+      "name": "sub-122_timestamps.xlsx",
+      "size": 26966,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e468575aed6459cb1e"
+    },
+    {
+      "path": "/data/transcripts_and_timestamps/word_level/sub-123_timestamps.xlsx",
+      "name": "sub-123_timestamps.xlsx",
+      "size": 19928,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d4e4d5716f4a3b59d3d1"
+    },
+    {
+      "path": "/code/fMRI_validation.ipynb",
+      "name": "fMRI_validation.ipynb",
+      "size": 47438,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a793c40a5ca0b0657974d8"
+    },
+    {
+      "path": "/code/fmri_preprocess/thinkaloud_extra_preproc_volume.py",
+      "name": "thinkaloud_extra_preproc_volume.py",
+      "size": 4224,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5d0658f9e68c05be7da82"
+    },
+    {
+      "path": "/code/fmri_preprocess/run_fmriprep.sh",
+      "name": "run_fmriprep.sh",
+      "size": 545,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a78da7df76b4f977797a96"
+    },
+    {
+      "path": "/code/llm_rating/requirements.txt",
+      "name": "requirements.txt",
+      "size": 13,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e5ccc1d27bfaa9e7d300"
+    },
+    {
+      "path": "/code/llm_rating/config/dimensions.json",
+      "name": "dimensions.json",
+      "size": 4436,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a7204fecbae9b05be7d296"
+    },
+    {
+      "path": "/code/llm_rating/config/prompts/system_prompt.txt",
+      "name": "system_prompt.txt",
+      "size": 956,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e607ffa7f8ea62797921"
+    },
+    {
+      "path": "/code/llm_rating/config/prompts/dimension_wise_prompt.txt",
+      "name": "dimension_wise_prompt.txt",
+      "size": 719,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e607a1ccd14813e7d40f"
+    },
+    {
+      "path": "/code/llm_rating/config/examples_lite.json",
+      "name": "examples_lite.json",
+      "size": 3457,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a7204d7ac2e5409eba3db7"
+    },
+    {
+      "path": "/code/llm_rating/scripts/run_batch.sh",
+      "name": "run_batch.sh",
+      "size": 617,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e64affa7f8ea62797932"
+    },
+    {
+      "path": "/code/llm_rating/scripts/response_handler.py",
+      "name": "response_handler.py",
+      "size": 1075,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e64a7e69d7884059ccc9"
+    },
+    {
+      "path": "/code/llm_rating/scripts/convert_to_excel.py",
+      "name": "convert_to_excel.py",
+      "size": 4378,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e64b85b3261d7ce7d86e"
+    },
+    {
+      "path": "/code/llm_rating/scripts/prompt_generator.py",
+      "name": "prompt_generator.py",
+      "size": 1393,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e64b477d4ef58b797685"
+    },
+    {
+      "path": "/code/llm_rating/scripts/rate_transcript.py",
+      "name": "rate_transcript.py",
+      "size": 1825,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e64b11b315f6d8797d44"
+    },
+    {
+      "path": "/code/llm_rating/README.md",
+      "name": "README.md",
+      "size": 1679,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e616f06f361a31797788"
+    },
+    {
+      "path": "/code/timestamps/timestamps_Gentle/generate_script.py",
+      "name": "generate_script.py",
+      "size": 857,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e8c4a049aa869c59cfc0"
+    },
+    {
+      "path": "/code/timestamps/timestamps_Gentle/restructure_timestamps.py",
+      "name": "restructure_timestamps.py",
+      "size": 1702,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e8c47e69d7884059ceb0"
+    },
+    {
+      "path": "/code/timestamps/timestamps_Gentle/process_transcript.py",
+      "name": "process_transcript.py",
+      "size": 2087,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e8c5477d4ef58b7977ba"
+    },
+    {
+      "path": "/code/timestamps/timestamps_Gentle/README.md",
+      "name": "README.md",
+      "size": 1894,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5e8b7c1d27bfaa9e7d4d1"
+    },
+    {
+      "path": "/code/timestamps/timestamps_WhisperX/generate_script.py",
+      "name": "generate_script.py",
+      "size": 11647,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5ebb6f06f361a31797b42"
+    },
+    {
+      "path": "/code/timestamps/timestamps_WhisperX/README.md",
+      "name": "README.md",
+      "size": 2123,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5ebbc477d4ef58b7978ce"
+    },
+    {
+      "path": "/code/thinkaloud_questionnaire.ipynb",
+      "name": "thinkaloud_questionnaire.ipynb",
+      "size": 1711090,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/699c9011087b7fb3a2ee2b50"
+    },
+    {
+      "path": "/code/rating_validation.ipynb",
+      "name": "rating_validation.ipynb",
+      "size": 284077,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a0bf60ebd247cabe8aca78"
+    },
+    {
+      "path": "/code/MRI_quality_check.ipynb",
+      "name": "MRI_quality_check.ipynb",
+      "size": 159078,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69a5bf74589d195ea059d26d"
+    },
+    {
+      "path": "/code/README.md",
+      "name": "README.md",
+      "size": 2296,
+      "download": "https://files.us.osf.io/v1/resources/a56rm/providers/osfstorage/69b08b3edcfe623ff76e165c"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+id: CM2-RESEARCH-001
+title: 'CM-2: next-thought / spontaneous-thought forecasting literature audit'
+hypothesis: null
+objective: Audit the closest literature on next-thought, spontaneous-thought, and
+  stream-of-consciousness forecasting; propose defensible metrics and cross-check
+  the B0-B7 baseline taxonomy WITHOUT peeking at CM-2 held-out results.
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 45m
+allowed_paths:
+- docs/research/
+forbidden_paths:
+- .runai
+- .ssh
+- .env
+- data/raw/
+required_tests: []
+success_criteria:
+- closest literature summarized with citations
+- defensible metrics proposed without contaminating held-out outcomes
+- baseline taxonomy cross-checked against B0-B7
+failure_criteria:
+- metrics chosen by peeking at CM-2 results
+deliverables:
+- docs/research/cm2_next_thought_literature.md
+assigned_worker: null
+state: done
+result: literature audit written directly (agent stalled); docs/research/cm2_next_thought_literature.md

@@ -1,0 +1,23 @@
+id: CM2-A-DATA-001
+title: 'CM-2A: fetch all ds006067 transcripts + participants; extend loader to all subjects'
+objective: >-
+  Fetch all 118 subjects events.tsv + participants.tsv (transcripts only, tiny),
+  checksum them, and make the loader list/load any subject transcript. Must be
+  resumable and tolerant of OpenNeuro S3 flakiness.
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 90m
+allowed_paths: [data/scripts/, data/manifests/, src/causal_mind/data/, tests/]
+forbidden_paths: [.runai, .ssh, .env]
+success_criteria:
+- at least 100 subjects events.tsv + participants.tsv fetched and checksummed
+- loader lists all subjects and loads any transcript
+- fetch resumable and S3-flakiness-tolerant
+failure_criteria:
+- fewer than 100 subjects fetched
+- transcripts modified after fetch
+deliverables: [data/scripts/fetch_transcripts.py, data/manifests/ds006067_transcripts_manifest.yaml]
+assigned_worker: data
+state: done
+result: behavioral data sourced from OSF a56rm (OpenNeuro S3 outage); 118 subjects, integrity 10/10

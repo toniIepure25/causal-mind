@@ -1,0 +1,50 @@
+id: CM1-AUDIT-001
+title: 'CM-1: authoritative audit of OpenNeuro ds006067 (no bulk download)'
+hypothesis: null
+objective: 'Perform an authoritative audit of OpenNeuro dataset ds006067 using ONLY
+  the OpenNeuro API and public metadata (no bulk file downloads; small metadata JSON
+  files are fine). Verify every fact against the API; do NOT trust project assumptions.
+  Use: https://api.openneuro.org/v1/datasets/ds006067 (latest), /v1/datasets/ds006067/versions
+  (all versions), and the S3 listing https://s3.amazonaws.com/openneuro/ds006067/<version>/
+  (or the API snapshot endpoint) for file-level facts. Determine and record: exact
+  dataset version / snapshot to pin; license; number of subjects; sessions and runs
+  per subject; TR and full acquisition metadata (from BIDS sidecars you may fetch
+  individually); raw vs derivatives availability (fMRIPrep / FreeSurfer if present);
+  transcript files (format, location, one per run?); sentence-level timestamps; word-level
+  timestamps; thought boundaries; category/topic/psychological annotations; mapping
+  between transcript timestamps and BOLD volumes (time zero, units, clock); total
+  raw footprint (sum from S3 listing); derivatives footprint; and a minimal useful
+  subset (which subjects/files, expected size) sufficient to validate BIDS structure,
+  transcript parsing, timestamp alignment, fMRI loading, derivative loading, and thought-event
+  construction. Write docs/datasets/ds006067_audit.md (table of verified facts, each
+  with its source URL/endpoint; flag anything unverified explicitly) and data/manifests/ds006067_manifest.yaml
+  (dataset id, pinned version, license, subject list, per-run file lists for the minimal
+  subset, expected sizes, source URLs). Do not download any nifti or large file.'
+owner: orchestrator
+dependencies: []
+resource_class: cpu
+expected_runtime: 45m
+allowed_paths:
+- docs/datasets/
+- data/manifests/
+- data/scripts/
+forbidden_paths:
+- .runai
+- .runai-proxy
+- .ssh
+- .env
+required_tests: []
+success_criteria:
+- docs/datasets/ds006067_audit.md exists with every requested field verified against
+  a cited OpenNeuro endpoint, unverified items explicitly flagged
+- data/manifests/ds006067_manifest.yaml exists with pinned version, license, subjects,
+  minimal-subset file list and sizes
+- no nifti or large file downloaded
+failure_criteria:
+- facts stated without a source
+- bulk download attempted
+deliverables:
+- docs/datasets/ds006067_audit.md
+- data/manifests/ds006067_manifest.yaml
+assigned_worker: null
+state: done

@@ -1,0 +1,25 @@
+id: CM2-E-MODELS-001
+title: 'CM-2E: compact candidate forecasting models (simple first)'
+objective: >-
+  Implement ridge/linear, transition, and HMM/state-space baselines; add a small
+  GRU/LSTM only if warranted; use a frozen text encoder and cached embeddings;
+  match capacity to data size (no giant trainable LLM); select on val only, final
+  eval on the sealed test set.
+owner: orchestrator
+dependencies: [CM2-D-BASELINES-001]
+resource_class: gpu-light
+expected_runtime: 180m
+allowed_paths: [src/causal_mind/forecast/, tests/]
+forbidden_paths: [.runai, .ssh, .env, data/raw/]
+success_criteria:
+- ridge/linear, transition, HMM/state-space implemented
+- small GRU/LSTM only if warranted; frozen encoder; cached embeddings
+- capacity matched to data size
+- model selection on val only; final eval on sealed test
+failure_criteria:
+- test set used for model selection
+- over-capacity model for data size
+deliverables: [src/causal_mind/forecast/models.py, tests/test_models.py]
+assigned_worker: forecasting
+state: done
+result: LinearTransition (k=3, alpha=100) primary; GRUNext available

@@ -1,0 +1,23 @@
+id: CM2-F-ANALYSES-001
+title: 'CM-2F: critical analyses (immediate, added-history, semantic-vs-cat, cross-subject, history-depth, null)'
+objective: >-
+  Quantify (1) immediate predictability, (2) added historical information, (3)
+  semantic vs categorical predictability, (4) cross-subject generalization, (5)
+  history-depth curve, (6) permutation null control -- each with bootstrap CI,
+  permutation null, and effect sizes.
+owner: orchestrator
+dependencies: [CM2-E-MODELS-001]
+resource_class: gpu-light
+expected_runtime: 180m
+allowed_paths: [src/causal_mind/eval/, tests/, reports/]
+forbidden_paths: [.runai, .ssh, .env, data/raw/]
+success_criteria:
+- all six analyses quantified with bootstrap CI + permutation null + effect sizes
+- history-depth curve produced
+- null control destroys the effect appropriately
+failure_criteria:
+- result reported without uncertainty or null control
+deliverables: [src/causal_mind/eval/analyses.py, reports/cm2_analyses.md, tests/test_analyses.py]
+assigned_worker: causal
+state: done
+result: six analyses run; permutation p=0.0000
