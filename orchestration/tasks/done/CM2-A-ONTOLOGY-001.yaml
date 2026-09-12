@@ -22,4 +22,5 @@ failure_criteria:
 - provenance missing for any field
 deliverables: [src/causal_mind/thought/state_v1.py, docs/datasets/thoughtstate_v1_provenance.md, tests/test_thoughtstate_v1.py]
 assigned_worker: data
-state: queue
+state: done
+result: ThoughtStateV1 extended (topic, observed_category, 14 GPT ratings) with per-field provenance

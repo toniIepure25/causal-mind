@@ -89,8 +89,10 @@ def main() -> int:
     # 5. main model: linear transition, VAL-based selection over (k, alpha)
     print("[cm2] selecting main model on val...")
     def fit_lt(k: int, alpha: float):
-        Xk, Yk = models.build_xy(
-            prospective.build_prospective_samples(train_states, k=k), states_by_sub)
+        samples = []
+        for s in split.train:
+            samples.extend(prospective.build_prospective_samples(states_by_sub[s], k=k))
+        Xk, Yk = models.build_xy(samples, states_by_sub)
         return analyses.model_as_predictor(models.LinearTransition(k=k, alpha=alpha).fit(Xk, Yk))
 
     best = None
@@ -102,6 +104,10 @@ def main() -> int:
                 best = (val_score, k, alpha)
     val_score, best_k, best_alpha = best
     print(f"[cm2] selected k={best_k} alpha={best_alpha} (val sem={val_score:.4f})")
+
+    def fit_best(k: int):
+        return fit_lt(k, best_alpha)
+
     main_pred = fit_lt(best_k, best_alpha)
     main_sc = analyses.eval_predictor(main_pred, states_by_sub, test_subjects, best_k, corpus)
     results["main_model"] = {
@@ -116,13 +122,13 @@ def main() -> int:
         baselines.b0_marginal, baselines.b1_previous_state,
         states_by_sub, test_subjects, 1, corpus, SEED)
     results["A2_added_history"] = analyses.added_history(
-        fit_lt, states_by_sub, test_subjects, corpus, ks=(1, best_k), seed=SEED)
+        fit_best, states_by_sub, test_subjects, corpus, ks=(1, best_k), seed=SEED)
     results["A3_semantic_vs_categorical"] = analyses.semantic_vs_categorical(
         main_pred, states_by_sub, test_subjects, best_k, corpus, SEED)
     results["A4_cross_subject"] = analyses.cross_subject(
         main_pred, states_by_sub, test_subjects, best_k, corpus, SEED)
     results["A5_history_depth"] = analyses.history_depth_curve(
-        fit_lt, states_by_sub, test_subjects, corpus, ks=(1, 2, 3, 5, 8), seed=SEED)
+        fit_best, states_by_sub, test_subjects, corpus, ks=(1, 2, 3, 5, 8), seed=SEED)
     results["A6_permutation_null"] = analyses.permutation_null(
         main_pred, states_by_sub, test_subjects, best_k, corpus, n_null=200, seed=SEED)
 

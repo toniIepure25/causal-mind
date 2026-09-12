@@ -20,4 +20,5 @@ failure_criteria:
 - a baseline is missing
 deliverables: [src/causal_mind/forecast/baselines.py, tests/test_baselines.py]
 assigned_worker: forecasting
-state: queue
+state: done
+result: B0-B7 implemented; strongest B2/B3 markov 0.3265

@@ -19,4 +19,5 @@ failure_criteria:
 - transcripts modified after fetch
 deliverables: [data/scripts/fetch_transcripts.py, data/manifests/ds006067_transcripts_manifest.yaml]
 assigned_worker: data
-state: queue
+state: done
+result: behavioral data sourced from OSF a56rm (OpenNeuro S3 outage); 118 subjects, integrity 10/10

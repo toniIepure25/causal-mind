@@ -19,4 +19,5 @@ failure_criteria:
 - result reported without uncertainty or null control
 deliverables: [src/causal_mind/eval/analyses.py, reports/cm2_analyses.md, tests/test_analyses.py]
 assigned_worker: causal
-state: queue
+state: done
+result: six analyses run; permutation p=0.0000

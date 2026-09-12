@@ -21,4 +21,5 @@ failure_criteria:
 - over-capacity model for data size
 deliverables: [src/causal_mind/forecast/models.py, tests/test_models.py]
 assigned_worker: forecasting
-state: queue
+state: done
+result: LinearTransition (k=3, alpha=100) primary; GRUNext available

@@ -20,4 +20,5 @@ failure_criteria:
 - leakage test fails
 deliverables: [src/causal_mind/thought/prospective.py, tests/test_prospective_leakage.py]
 assigned_worker: data
-state: queue
+state: done
+result: strict prospective builder (thoughtID-grouped); leakage guard unit-verified

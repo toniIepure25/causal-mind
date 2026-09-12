@@ -19,4 +19,5 @@ failure_criteria:
 - an unresolved leakage mechanism explains the result
 deliverables: [docs/datasets/cm2_redteam_review.md]
 assigned_worker: reviewer
-state: queue
+state: done
+result: red-team GO; leakage-free; reproduced from clean process

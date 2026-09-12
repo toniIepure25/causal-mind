@@ -20,4 +20,5 @@ failure_criteria:
 - any random row split on temporal data
 deliverables: [src/causal_mind/eval/protocol.py, docs/protocol/cm2_frozen_protocol.md, tests/test_protocol_seal.py]
 assigned_worker: causal
-state: queue
+state: done
+result: frozen protocol + amendment 001; split 83/18/17 sealed 67505261...
