@@ -62,7 +62,7 @@ class FusionModel:
 
     def fit(self, X_behavior: np.ndarray, Y: np.ndarray,
             X_neural: np.ndarray | None = None,
-            X_nuisance: np.ndarray | None = None) -> "FusionModel":
+            X_nuisance: np.ndarray | None = None) -> FusionModel:
         self._behavior = _fit_ridge(X_behavior, Y, self.alpha)
         beh_hat = self._behavior.predict(X_behavior)
         residual = Y - beh_hat

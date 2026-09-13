@@ -8,16 +8,17 @@ control must collapse that incremental neural gain.
 from __future__ import annotations
 
 import numpy as np
-import pytest
 
-from causal_mind.neural.fusion import (FusionModel, incremental_neural_gain,
-                                       score_cosine)
-from causal_mind.neural.negative_controls import (ALL_CONTROLS, SubjectSample,
-                                                  nc1_subject_permute,
-                                                  nc2_temporal_shift,
-                                                  nc4_nuisance_only,
-                                                  nc5_neural_randomize,
-                                                  nc6_target_permute)
+from causal_mind.neural.fusion import FusionModel, incremental_neural_gain, score_cosine
+from causal_mind.neural.negative_controls import (
+    ALL_CONTROLS,
+    SubjectSample,
+    nc1_subject_permute,
+    nc2_temporal_shift,
+    nc4_nuisance_only,
+    nc5_neural_randomize,
+    nc6_target_permute,
+)
 
 N_SUBJ, N_PER, NB, NN, NC, DIM = 6, 60, 8, 10, 5, 32
 
