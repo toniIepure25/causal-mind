@@ -47,3 +47,4 @@ kubeconfig*
 *.kubeconfig
 worktrees/
 .qwen-setup/
+data/neural/
