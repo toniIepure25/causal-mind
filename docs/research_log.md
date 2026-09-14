@@ -53,3 +53,33 @@
   cycles), data (GO, 5), forecasting (GO, 9), causal (GO, 23 — re-run after the
   empty-message fix), reviewer (GO, 6), orchestrator (GO, 10). All six SMOKE tasks
   reviewed and drained to done.
+
+## 2026-09-14
+
+- **Handoff recovery (git).** Previous session lost to a model context limit.
+  Unpushed pod commits `ea69195` (CM-5A selective OpenNeuro acquisition +
+  real-data minimal smoke) and `5e88f72` (gitignore-data-neural) were preserved
+  in `/home/jovyan/work/cm5a_push.bundle` (base `9c59300`). Verified the bundle
+  on the pod, cloned GitHub main (`76066ac`), merged pod main `5e88f72` into it
+  (clean; no file overlap), and pushed. **GitHub main is now `a61753c`**; pod
+  main fast-forwarded to the same SHA via a sync bundle (the pod repo has no
+  GitHub remote by policy; pushes go through the workstation).
+- **Handoff integrity check.** 112/112 tests pass on the pod (the MiniLM
+  integration test needs `HF_HOME=/home/jovyan/work/.hf-home`); ruff clean.
+- **Pod recreation discovered.** The pod was recreated between sessions
+  (`orchestraiq-jupyter-ccd58f4b9-jbqtj`); the PVC is intact but the ephemeral
+  rootfs lost the system node install. Restored node v20.11.1 at
+  `/home/jovyan/work/.local/node` and reinstalled `@openneuro/cli@4.30.2` +
+  `node-fetch@2` + `mkdirp` into the gitignored
+  `causal-mind-v2/.tools/openneuro` (run with `NODE_PATH`).
+- **Neural data re-verification.** All six large sub-001/sub-005 files
+  (BOLD x2, confounds TSV x2, masks x2) re-hashed: all HASH_MATCH against the
+  annex keys in `data/manifests/cm5_minimal_neural_files.tsv`.
+- **OpenNeuro auth health.** Authenticated snapshot-tree API call succeeds
+  (dry-run of `scripts/cm5_fetch.js`); the URL-path identity guard remains
+  active (the known `bold.json` path-mismatch anomaly still reproduces and is
+  skipped). No credentials exposed.
+- **Next.** CM-5 MRI-eligible cohort: metadata-first audit of all 118 subjects
+  (availability + cheap confound/QC metadata only), freeze + hash-seal
+  outcome-independent eligibility criteria, project the frozen CM-3 split
+  (83/18/17), seal the cohort, verify storage, then acquire eligible BOLD only.
