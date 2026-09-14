@@ -1,0 +1,12 @@
+{
+  "mode": "real_data_minimal_smoke",
+  "subjects": [
+    "sub-001",
+    "sub-005"
+  ],
+  "n_event_rows": 211,
+  "m2_behavior_nuisance": 0.8847,
+  "m4_behavior_nuisance_neural": 0.8482,
+  "incremental_neural_gain": -0.0365,
+  "note": "N=2 smoke; NOT a scientific result. Validates the frozen HRF-safe pipeline runs end-to-end on real fMRIPrep MNI BOLD."
+}
