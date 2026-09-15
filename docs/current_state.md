@@ -2,10 +2,13 @@
 
 ## Project state
 
-`CM5A_REAL_DATA_SMOKE_PASS`
-(CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`. OpenNeuro access is
-RESTORED via authenticated selective acquisition; CM-5 proceeds to the
-MRI-eligible cohort definition, metadata-first and outcome-independent.)
+`CM5_NULL_NO_INCREMENTAL_NEURAL_VALUE`
+(CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 =
+`CM5_NULL`. OpenNeuro access RESTORED via authenticated selective acquisition.
+CM-5 decisive analysis complete: HRF-safe BOLD contains NO incremental
+prospective value for future thought beyond the frozen behavioral-history model
++ motion/speech confounds, across h=1,3,5,10 and the N1-N3 capacity ladder.
+A clean, red-team-validated null.)
 
 ## 2026-09-14 handoff recovery (git)
 
@@ -31,11 +34,12 @@ MRI-eligible cohort definition, metadata-first and outcome-independent.)
 
 ## Current stage
 
-Phase 2: CM-1 (data), CM-2 (non-neural next-thought prediction), and CM-3
-(multi-step cognitive futures / Thought Predictive Horizon) complete and pushed.
-CM-5 (neural) in progress: data-independent pipeline complete, real-data N=2
-smoke complete, MRI-eligible cohort definition starting (metadata-first audit
-of all 118 subjects).
+Phase 2: CM-1 (data), CM-2 (non-neural next-thought prediction), CM-3
+(multi-step cognitive futures / Thought Predictive Horizon), and CM-5 (neural)
+complete and pushed. CM-5 decisive result: a clean NULL — HRF-safe BOLD
+contains no incremental prospective value for future thought beyond the
+frozen behavioral-history model + motion/speech confounds (h=1,3,5,10;
+N1-N3 ladder; red-team GO).
 
 ## Validated results
 
@@ -79,7 +83,7 @@ of all 118 subjects).
   heads (justified only if they beat the linear model on held-out data); finer
   TPH resolution beyond h=10.
 
-## CM-5 (neural) — in progress, real-data smoke complete
+## CM-5 (neural) — COMPLETE: clean NULL (no incremental neural value)
 
 - **Status:** `CM5A_REAL_DATA_SMOKE_PASS`. OpenNeuro access restored via an
   authenticated selective acquisition route (API token configured on the pod,
@@ -104,7 +108,13 @@ of all 118 subjects).
   buffer); horizons h=1,3,5,10; models M0-M4; decisive contrast M4 vs M2 +
   mandatory residual test; negative controls NC1-NC6; subject-disjoint;
   subject-level inference (bootstrap/permutation); gates N0-N6.
-- **Next (authorized):** define the MRI-eligible cohort WITHOUT inspecting
+- **Decisive result (2026-09-14):** MRI-eligible cohort (106 subjects,
+  73/17/16 after F2 tSNR + alignment gates) acquired (87.5 GB BOLD,
+  hash-verified). IncrementalNeuralGain (M4-M2) negative at every horizon
+  (primary N2: -0.088/-0.085/-0.085/-0.090, CIs exclude 0, 0/16 positive);
+  N1~0/N3~-0.016/N2~-0.085 ladder; NC4->0; controls confirm no shortcut.
+  CM5_NULL_NO_INCREMENTAL_NEURAL_VALUE (claim C-005, L5 negative).
+- **Prior next (done):** define the MRI-eligible cohort WITHOUT inspecting
   neural prediction outcomes (criteria: data availability, file validity,
   temporal compatibility under B=6s/W=15s, imaging/motion QC, behavioral
   compatibility); download only cheap confound/QC metadata first; freeze +

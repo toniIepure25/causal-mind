@@ -48,3 +48,5 @@ kubeconfig*
 worktrees/
 .qwen-setup/
 data/neural/
+data/derived/cm5_features/
+data/atlases/

@@ -1,0 +1,108 @@
+{
+  "protocol": "cm5_mri_eligibility",
+  "amendment": "CM5-ELIG-1",
+  "amends": "docs/protocol/cm5_frozen_protocol.md#1",
+  "outcome_independent": true,
+  "attestation": {
+    "no_decisive_outcome_inspected": true,
+    "n2_smoke_status": "L0 pipeline validation, excluded from all eligibility/model/threshold decisions",
+    "n2_smoke_values": {"m2": 0.8847, "m4": 0.8482, "gain": -0.0365}
+  },
+  "constants": {
+    "dataset": "ds006067",
+    "snapshot": "2.0.0",
+    "fmriprep_version": "23.2.1",
+    "space": "MNI152NLin2009cAsym",
+    "tr_s": 1.5,
+    "n_volumes": 400,
+    "scan_duration_s": 600.0,
+    "hrf_safe_buffer_s": 6.0,
+    "neural_history_window_s": 15.0,
+    "n_nonsteady_volumes": 10,
+    "steady_state_onset_s": 36.0,
+    "min_usable_targets": 20
+  },
+  "criteria": {
+    "A_data_availability": {
+      "A1_bold": "present + retrievable via official OpenNeuro path with URL-path identity guard (url path == requested path AND resolved size == annex-key size)",
+      "A2_mask": "present",
+      "A3_confounds": "present + retrievable with URL-path identity guard",
+      "A4_metadata_json": "bold.json + confounds.json present (in-git)",
+      "A5_behavioral": "ThoughtStateV1 present, strictly monotonic start_time",
+      "A6_raw_events": "events.tsv present (MRI time base)",
+      "smooth4mm_required": false
+    },
+    "B_file_validity": {
+      "B1_n_volumes": 400,
+      "B2_core_confounds_no_missing_after_nonsteady": [
+        "framewise_displacement", "dvars", "std_dvars", "global_signal",
+        "csf", "white_matter", "tcompcor", "rmsd"
+      ],
+      "B3_nifti_post_acquisition": "readable, MNI space, TR=1.5, 400 volumes, finite, valid affine, valid mask"
+    },
+    "C_temporal": {
+      "C1_min_steady_state_targets": 20,
+      "target_rule": "start_time >= 36.0 AND start_time + duration <= 600.0",
+      "amendment": "AM-1 steady-state refinement (onset >= n_nonsteady*TR + B + W)"
+    },
+    "D_motion_qc": {
+      "structure": "OR",
+      "D1_mean_fd_max_mm": 1.0,
+      "D2_frac_vol_fd_gt_1mm_max": 0.50,
+      "D3_frac_vol_fd_gt_2mm_max": 0.25,
+      "fd_stats_exclude_first_n_volumes": 10,
+      "justification": {
+        "strict_screen_reference": "Power et al. 2018 (mean FD > 0.3 OR >10% vol FD > 0.5); Satterthwaite et al. 2013",
+        "strict_screen_exclusion_count": "83/117 (70.9%) - infeasible for speaking task",
+        "threshold_robustness": "any threshold in [0.9, 1.207) excludes the same single subject (sub-089)"
+      }
+    },
+    "E_behavioral": {
+      "E1": "transcript present, monotonic timestamps within scan, ThoughtStateV1 builds, no integrity failure"
+    }
+  },
+  "post_acquisition_gates": {
+    "applied": "after BOLD download, before feature extraction / decisive analysis",
+    "can_add_subjects": false,
+    "F1_nifti_validation": "per B3",
+    "F2_tsnr": {
+      "definition": "mean over brain-mask voxels of (volume-mean / volume-std), steady-state volumes",
+      "exclude_if": "tsnr < 2.0 OR tsnr < cohort 5th percentile",
+      "documentation": "sealed amendment before any decisive analysis"
+    }
+  },
+  "sensitivity_analyses": {
+    "S1_strict_motion_screen": "re-run M4-M2 after excluding mean FD > 0.3 OR >10% vol FD > 0.5",
+    "S2_top_decile_motion": "re-run M4-M2 after excluding top decile of mean FD",
+    "S3_per_horizon_counts": "report valid instances per horizon h=1,3,5,10 per subject"
+  },
+  "nuisance_set_m2_m4": {
+    "fmriprep_window_means": [
+      "framewise_displacement", "dvars", "std_dvars", "rmsd",
+      "global_signal", "csf", "white_matter",
+      "t_comp_cor_00", "t_comp_cor_01", "t_comp_cor_02", "t_comp_cor_03",
+      "t_comp_cor_04", "t_comp_cor_05", "t_comp_cor_06", "t_comp_cor_07",
+      "t_comp_cor_08", "t_comp_cor_09",
+      "c_comp_cor_00", "c_comp_cor_01", "c_comp_cor_02", "c_comp_cor_03",
+      "c_comp_cor_04", "c_comp_cor_05", "c_comp_cor_06", "c_comp_cor_07",
+      "c_comp_cor_08", "c_comp_cor_09", "c_comp_cor_10", "c_comp_cor_11",
+      "c_comp_cor_12", "c_comp_cor_13", "c_comp_cor_14", "c_comp_cor_15",
+      "c_comp_cor_16", "c_comp_cor_17", "c_comp_cor_18", "c_comp_cor_19"
+    ],
+    "speech_motor_from_events": [
+      "utterance_duration", "word_rate", "silence_interval", "speech_onset_lag"
+    ],
+    "nc4_same_nuisance_without_bold": true
+  },
+  "split_projection": {
+    "method": "project frozen CM-2/CM-3 split (seal 675052618750ea7f780c566230c47baabb983955b28bc35f49fe58d6c0408668) onto eligible set",
+    "new_split_permitted_only_if": "projected part < 5 subjects (not triggered)"
+  },
+  "exclusions": [
+    {"subject": "sub-002", "split": "train", "criterion": "A1/A3", "reason": "OpenNeuro API resolves all annexed derivatives to pointer objects; URL-path identity guard refused (re-tested live 2026-09-14, consistent)"},
+    {"subject": "sub-067", "split": "train", "criterion": "C1", "reason": "19 steady-state HRF-safe targets (< 20)"},
+    {"subject": "sub-087", "split": "test", "criterion": "C1", "reason": "19 steady-state HRF-safe targets (< 20)"},
+    {"subject": "sub-110", "split": "train", "criterion": "C1", "reason": "15 steady-state HRF-safe targets (< 20)"},
+    {"subject": "sub-089", "split": "train", "criterion": "D1", "reason": "mean FD 1.207 mm > 1.0 (37.2% vol FD>1.0, 11.8% vol FD>2.0)"}
+  ]
+}

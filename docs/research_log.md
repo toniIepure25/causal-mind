@@ -83,3 +83,40 @@
   (availability + cheap confound/QC metadata only), freeze + hash-seal
   outcome-independent eligibility criteria, project the frozen CM-3 split
   (83/18/17), seal the cohort, verify storage, then acquire eligible BOLD only.
+
+## 2026-09-14 — CM-5 decisive analysis: clean NULL (no incremental neural value)
+
+- **MRI-eligible cohort (outcome-independent).** Metadata-first audit of all
+  118 subjects (availability + confounds QC + HRF-safe target counts). Frozen
+  eligibility criteria (CM5-ELIG-1, hash-sealed): data availability (URL-path
+  identity guard), file validity, >=20 steady-state HRF-safe targets (AM-1:
+  onset>=36s), severe-motion screen (mean FD>1.0mm), behavioral compatibility.
+  Excluded: sub-002 (OpenNeuro pointer-object anomaly, guard-fire), sub-067/
+  087/110 (<20 targets), sub-089 (mean FD 1.207mm). Cohort 113 (79/18/16),
+  sealed (reports/cm5_cohort_seal.json).
+- **BOLD acquisition.** All 113 subjects' preproc BOLD + masks downloaded via
+  the guarded, hash-verified, resumable fetcher (226 files, 0 mismatches, 0
+  hash failures, 87.5 GB). Storage verified (87.5 GB vs ~102 TB free).
+- **Post-acquisition gates (pre-registered, outcome-independent).** F2 tSNR
+  gate excluded 6 (tSNR < 5th percentile; CM5-F2-TSNR-1). Cohort-level
+  N-GATE-1 alignment audit found sub-036 with 2 OSF thoughts lacking a raw MRI
+  event (CM5-ALIGN-1, excluded). Final cohort 106 (73/17/16).
+- **Decisive result (CM5_NULL).** IncrementalNeuralGain (M4-M2) is NEGATIVE at
+  every horizon h=1,3,5,10 for the primary N2 (Schaefer-400): -0.088/-0.085/
+  -0.085/-0.090 (95% CIs exclude 0; 0/16 test subjects positive). Capacity
+  ladder: N1 (7 nets) ~-0.001, N3 (PCA-50) ~-0.016, N2 (400) ~-0.085 — the
+  degradation scales with dimensionality (noise signature, not a real signal).
+  NC4 (nuisance-only) -> 0; NC1/2/3/5/6 preserve the negative gain (no
+  correspondence to destroy). M0=0.32 (behavior), M2=0.32, M4=0.23.
+- **Red-team: GO (conditional).** Fixed a CI-reporting bug (bootstrap_ci
+  returns mean,lo,hi) and removed a post-cutoff speech feature (lag-to-next-
+  onset). Confirmed no leakage (HRF-safe window, causal z-score, N3 fit on
+  train only), the negative gain is expected Ridge noise (linear per-dim cost),
+  and the null is strongest where power exists (N1/N3). Licensed claim is a
+  scoped negative L5 result; NOT licensed: "brain has no prospective info"
+  (underpowered for small high-dim effects), any causal/free-will claim.
+- **Reproducibility.** 112/112 tests pass; synthetic end-to-end (injected
+  neural signal) gives positive gain that collapses under all controls — the
+  pipeline can detect a real signal.
+- **Next.** Commit + push the CM-5 null. The neural incremental-value question
+  is answered (null) for this task/window/horizons/baseline.
