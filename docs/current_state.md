@@ -2,13 +2,20 @@
 
 ## Project state
 
-`CM5_NULL_NO_INCREMENTAL_NEURAL_VALUE`
-(CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 =
-`CM5_NULL`. OpenNeuro access RESTORED via authenticated selective acquisition.
-CM-5 decisive analysis complete: HRF-safe BOLD contains NO incremental
-prospective value for future thought beyond the frozen behavioral-history model
-+ motion/speech confounds, across h=1,3,5,10 and the N1-N3 capacity ladder.
-A clean, red-team-validated null.)
+`CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`
+(CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 = `CM5_NULL`;
+CM-6 = `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`. The project has moved from
+FORECAST to EXPLAIN/INTERVENE. CM-6A built an observational candidate SCM of
+thought dynamics: 0/84 candidate edges are causally identifiable (all blocked by
+unmeasured confounding incl. the per-subject GPT-rating baseline); the affect
+family's pooled skill is a between-subject GPT-baseline artifact (within-subject
+R^2 0.01-0.05). CM-6B audited public intervention datasets (best public test =
+ds005494; no public dataset tests voluntary redirection). CM-6D/E built the causal
+metrics + a counterfactual engine that refuses to label an unidentified
+counterfactual as causal. CM-6C/F/G/H/I designed the first own experiment
+(CM-6H pre-Oracle voluntary redirection) and gated THE ORACLE behind 6 unmet
+readiness criteria. Red-team: GO-WITH-CHANGES (all changes applied). No causal
+effect has been measured; no free-will claim.)
 
 ## 2026-09-14 handoff recovery (git)
 

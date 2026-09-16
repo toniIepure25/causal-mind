@@ -1,0 +1,1925 @@
+{
+  "name": "cm6_candidate_dynamic_cognitive_scm",
+  "structural_equation": "Z[t+1] = f(Z[t], Z[t-1:t-k], context[t], latent_U[t])",
+  "assumptions": [
+    "temporal precedence: antecedents at t, outcomes at t+1",
+    "ignorability given latent_U[t] (UNMET: latent_U[t] unmeasured)",
+    "no unmeasured confounding (UNMET: latent_U[t] is a common cause)",
+    "stationarity of the transition within a scan"
+  ],
+  "nodes": [
+    {
+      "name": "emotional_intensity_t",
+      "node_type": "affect",
+      "description": "emotional_intensity at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "emotional_intensity_t1",
+      "node_type": "affect",
+      "description": "emotional_intensity at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "joy_t",
+      "node_type": "affect",
+      "description": "joy at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "joy_t1",
+      "node_type": "affect",
+      "description": "joy at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "sadness_t",
+      "node_type": "affect",
+      "description": "sadness at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "sadness_t1",
+      "node_type": "affect",
+      "description": "sadness at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "fear_t",
+      "node_type": "affect",
+      "description": "fear at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "fear_t1",
+      "node_type": "affect",
+      "description": "fear at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "anger_t",
+      "node_type": "affect",
+      "description": "anger at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "anger_t1",
+      "node_type": "affect",
+      "description": "anger at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "disgust_t",
+      "node_type": "affect",
+      "description": "disgust at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "disgust_t1",
+      "node_type": "affect",
+      "description": "disgust at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "surprise_t",
+      "node_type": "affect",
+      "description": "surprise at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "surprise_t1",
+      "node_type": "affect",
+      "description": "surprise at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "anxiety_t",
+      "node_type": "affect",
+      "description": "anxiety at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "anxiety_t1",
+      "node_type": "affect",
+      "description": "anxiety at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "vision_t",
+      "node_type": "sensory_modal",
+      "description": "vision at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "vision_t1",
+      "node_type": "sensory_modal",
+      "description": "vision at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "audition_t",
+      "node_type": "sensory_modal",
+      "description": "audition at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "audition_t1",
+      "node_type": "sensory_modal",
+      "description": "audition at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "olfaction_t",
+      "node_type": "sensory_modal",
+      "description": "olfaction at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "olfaction_t1",
+      "node_type": "sensory_modal",
+      "description": "olfaction at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "gustation_t",
+      "node_type": "sensory_modal",
+      "description": "gustation at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "gustation_t1",
+      "node_type": "sensory_modal",
+      "description": "gustation at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "somatosensation_t",
+      "node_type": "sensory_modal",
+      "description": "somatosensation at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "somatosensation_t1",
+      "node_type": "sensory_modal",
+      "description": "somatosensation at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "interoception_t",
+      "node_type": "sensory_modal",
+      "description": "interoception at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "interoception_t1",
+      "node_type": "sensory_modal",
+      "description": "interoception at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "n_words_t",
+      "node_type": "linguistic",
+      "description": "n_words at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "n_words_t1",
+      "node_type": "linguistic",
+      "description": "n_words at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "duration_t",
+      "node_type": "linguistic",
+      "description": "duration at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "duration_t1",
+      "node_type": "linguistic",
+      "description": "duration at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "gap_t",
+      "node_type": "temporal",
+      "description": "gap at time t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "gap_t1",
+      "node_type": "temporal",
+      "description": "gap at time t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "semantic_state_t",
+      "node_type": "semantic_state",
+      "description": "embedding at t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "semantic_state_t1",
+      "node_type": "semantic_state",
+      "description": "embedding at t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "category_t",
+      "node_type": "category",
+      "description": "observed category at t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "category_t1",
+      "node_type": "category",
+      "description": "observed category at t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "topic_t",
+      "node_type": "topic",
+      "description": "topic at t",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "topic_t1",
+      "node_type": "topic",
+      "description": "topic at t+1",
+      "observed": true,
+      "time_indexed": true
+    },
+    {
+      "name": "latent_U_t",
+      "node_type": "latent_U",
+      "description": "unmeasured confounder at t",
+      "observed": false,
+      "time_indexed": true
+    }
+  ],
+  "edges": [
+    {
+      "src": "latent_U_t",
+      "dst": "emotional_intensity_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "emotional_intensity_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "joy_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "joy_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "sadness_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "sadness_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "fear_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "fear_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "anger_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "anger_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "disgust_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "disgust_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "surprise_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "surprise_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "anxiety_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "anxiety_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "vision_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "vision_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "audition_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "audition_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "olfaction_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "olfaction_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "gustation_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "gustation_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "somatosensation_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "somatosensation_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "interoception_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "interoception_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "n_words_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "n_words_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "duration_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "duration_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "gap_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "gap_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "semantic_state_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "semantic_state_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "category_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "category_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "topic_t",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "latent_U_t",
+      "dst": "topic_t1",
+      "label": "associational",
+      "justification": "unmeasured common cause (latent confounding)",
+      "metadata": {}
+    },
+    {
+      "src": "anger_t",
+      "dst": "anger_t1",
+      "label": "temporally_precedent",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.040; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.04010007021576212
+      }
+    },
+    {
+      "src": "anger_t",
+      "dst": "emotional_intensity_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.0209; incr_r2=0.002. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0015157701147400227,
+        "ci_p": 0.020873910623089964,
+        "ci_r_partial": -0.03721597249690923,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anger_t",
+      "dst": "gap_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=1.69e-06; incr_r2=-0.000. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.00012549003447559492,
+        "ci_p": 1.6864291616514038e-06,
+        "ci_r_partial": 0.07700915974849339,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "anger_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.0187; incr_r2=0.005. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0048807410634190695,
+        "ci_p": 0.018695125029959847,
+        "ci_r_partial": 0.03788060615523362,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "anxiety_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.155; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.15486375469254343
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "emotional_intensity_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.00119; incr_r2=0.008. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.00753927588133807,
+        "ci_p": 0.0011934629879772896,
+        "ci_r_partial": -0.05217695720149729,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "fear_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=4.44e-11; incr_r2=0.046. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.04586084008360569,
+        "ci_p": 4.4403813959092986e-11,
+        "ci_r_partial": 0.10578736973691197,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "gustation_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0176; incr_r2=-0.000. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0002718101784978666,
+        "ci_p": 0.017587483828588324,
+        "ci_r_partial": -0.03824487822756247,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "interoception_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0218; incr_r2=-0.010. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.010483946218647677,
+        "ci_p": 0.021786458664961206,
+        "ci_r_partial": 0.03695545401356682,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "sadness_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=2.66e-07; incr_r2=0.011. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.011100677142486082,
+        "ci_p": 2.655043631616394e-07,
+        "ci_r_partial": 0.08275239628869827,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "anxiety_t",
+      "dst": "vision_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.000836; incr_r2=0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.003324651930659228,
+        "ci_p": 0.0008360426487679096,
+        "ci_r_partial": -0.0537863278395247,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "audition_t",
+      "dst": "audition_t1",
+      "label": "not_identifiable",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=-0.007; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": -0.00722634907174502
+      }
+    },
+    {
+      "src": "audition_t",
+      "dst": "fear_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0149; incr_r2=-0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0034743526812807124,
+        "ci_p": 0.014904132548678062,
+        "ci_r_partial": 0.03921862066731045,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "audition_t",
+      "dst": "surprise_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.00121; incr_r2=0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0031515906839287844,
+        "ci_p": 0.0012062628064537506,
+        "ci_r_partial": 0.052128052634694035,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "disgust_t",
+      "dst": "disgust_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.053; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.053237389326237006
+      }
+    },
+    {
+      "src": "disgust_t",
+      "dst": "gustation_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=1.4e-08; incr_r2=0.011. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.010675330847685571,
+        "ci_p": 1.3971292123216017e-08,
+        "ci_r_partial": 0.0911865966514927,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "anger_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0277; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0011608695472629105,
+        "ci_p": 0.027680635092665273,
+        "ci_r_partial": -0.03547006079444198,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "anxiety_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.000829; incr_r2=-0.005. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.004614264802403123,
+        "ci_p": 0.0008286268086385995,
+        "ci_r_partial": -0.05382607168999815,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "duration_t1",
+      "label": "temporally_precedent",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.010; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.010223437171910321
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "emotional_intensity_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=8.09e-05; incr_r2=-0.005. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.005105299576352862,
+        "ci_p": 8.08953643700594e-05,
+        "ci_r_partial": 0.06344144240395752,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "gap_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0; incr_r2=0.214. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.21446219481708007,
+        "ci_p": 0.0,
+        "ci_r_partial": 0.8279176904534339,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "joy_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0461; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0012562898186975202,
+        "ci_p": 0.046060556174907674,
+        "ci_r_partial": 0.03213865256437733,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "n_words_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0; incr_r2=0.018. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.01799002494721824,
+        "ci_p": 0.0,
+        "ci_r_partial": 0.1606988157709432,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "duration_t",
+      "dst": "sadness_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.0315; incr_r2=0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0011019916198145019,
+        "ci_p": 0.03148229014442916,
+        "ci_r_partial": -0.03465138157799977,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "emotional_intensity_t",
+      "dst": "anger_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.0477; incr_r2=0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0026672882124965103,
+        "ci_p": 0.04772868716762413,
+        "ci_r_partial": -0.03189615846142611,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "emotional_intensity_t",
+      "dst": "audition_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0159; incr_r2=-0.007. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.007433083631733117,
+        "ci_p": 0.01592630807101747,
+        "ci_r_partial": 0.0388308010366153,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "emotional_intensity_t",
+      "dst": "disgust_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=2.07e-06; incr_r2=-0.005. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.005365367501014351,
+        "ci_p": 2.068383596398604e-06,
+        "ci_r_partial": -0.07634992048114034,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "emotional_intensity_t",
+      "dst": "emotional_intensity_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.053; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.05308478271055839
+      }
+    },
+    {
+      "src": "emotional_intensity_t",
+      "dst": "joy_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0; incr_r2=0.032. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.03198764679221899,
+        "ci_p": 0.0,
+        "ci_r_partial": 0.18808003493616102,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "fear_t",
+      "dst": "anger_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0284; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0010114834960801566,
+        "ci_p": 0.028424117366065982,
+        "ci_r_partial": -0.0353026517941795,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "fear_t",
+      "dst": "anxiety_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=1.02e-07; incr_r2=0.025. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.025080456423791753,
+        "ci_p": 1.0220572610464274e-07,
+        "ci_r_partial": 0.08557420343416089,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "fear_t",
+      "dst": "audition_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.021; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.000739743393344483,
+        "ci_p": 0.02096615062264795,
+        "ci_r_partial": 0.0371891937544017,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "fear_t",
+      "dst": "fear_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.089; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.08937821563586634
+      }
+    },
+    {
+      "src": "fear_t",
+      "dst": "gap_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0358; incr_r2=-0.000. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -6.744807354763793e-05,
+        "ci_p": 0.03575420599936452,
+        "ci_r_partial": 0.033827007564407784,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "fear_t",
+      "dst": "sadness_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.00575; incr_r2=0.004. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.003644550397304047,
+        "ci_p": 0.005748208389493081,
+        "ci_r_partial": 0.044481211880183114,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gap_t",
+      "dst": "anxiety_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0469; incr_r2=-0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.002641535135438855,
+        "ci_p": 0.04692974422819951,
+        "ci_r_partial": -0.03201139504026493,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gap_t",
+      "dst": "duration_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=4.14e-12; incr_r2=0.017. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.016753438758381867,
+        "ci_p": 4.141131881851834e-12,
+        "ci_r_partial": 0.11126124669071148,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gap_t",
+      "dst": "gap_t1",
+      "label": "temporally_precedent",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.007; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.007133734423519611
+      }
+    },
+    {
+      "src": "gap_t",
+      "dst": "n_words_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=7.77e-09; incr_r2=0.006. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.005836749065698976,
+        "ci_p": 7.771044030491225e-09,
+        "ci_r_partial": 0.09277838212031077,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gap_t",
+      "dst": "vision_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.027; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0007585338236925088,
+        "ci_p": 0.026995825717311295,
+        "ci_r_partial": 0.03562772339940455,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gustation_t",
+      "dst": "anxiety_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.00715; incr_r2=0.002. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0019041384080243917,
+        "ci_p": 0.007153634992985047,
+        "ci_r_partial": -0.04331980253045479,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gustation_t",
+      "dst": "disgust_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=4.49e-06; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0005297641779586915,
+        "ci_p": 4.4940612295985005e-06,
+        "ci_r_partial": 0.0737937172095582,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gustation_t",
+      "dst": "emotional_intensity_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.00337; incr_r2=0.004. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.003561550298685434,
+        "ci_p": 0.003371636013300927,
+        "ci_r_partial": 0.04721273412078277,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gustation_t",
+      "dst": "gustation_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.175; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.17498820052420627
+      }
+    },
+    {
+      "src": "gustation_t",
+      "dst": "joy_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.00064; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.000545354834537215,
+        "ci_p": 0.000639819254477203,
+        "ci_r_partial": 0.054968505576414944,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "gustation_t",
+      "dst": "vision_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.0393; incr_r2=0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0014805425099271297,
+        "ci_p": 0.039320225775695494,
+        "ci_r_partial": -0.03320091270909573,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "interoception_t",
+      "dst": "interoception_t1",
+      "label": "temporally_precedent",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.039; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.03932025714111609
+      }
+    },
+    {
+      "src": "interoception_t",
+      "dst": "somatosensation_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=1.43e-05; incr_r2=-0.005. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0046351485349869215,
+        "ci_p": 1.43457864842933e-05,
+        "ci_r_partial": 0.06980754828860124,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "joy_t",
+      "dst": "audition_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0203; incr_r2=-0.005. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.005236396384705078,
+        "ci_p": 0.020329725407906674,
+        "ci_r_partial": -0.03737608967913124,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "joy_t",
+      "dst": "emotional_intensity_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0; incr_r2=0.024. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.024173338973967784,
+        "ci_p": 0.0,
+        "ci_r_partial": 0.1598786884069336,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "joy_t",
+      "dst": "gap_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.00118; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0005505080344286872,
+        "ci_p": 0.0011820293279067862,
+        "ci_r_partial": -0.05222105333461652,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "joy_t",
+      "dst": "gustation_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.000942; incr_r2=-0.006. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.005950000975795344,
+        "ci_p": 0.0009420795711700958,
+        "ci_r_partial": 0.05325116175901677,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "joy_t",
+      "dst": "interoception_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.033; incr_r2=-0.007. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.006721642906835301,
+        "ci_p": 0.03298900936904281,
+        "ci_r_partial": -0.034350268884648816,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "joy_t",
+      "dst": "joy_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.192; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.1923855846773711
+      }
+    },
+    {
+      "src": "joy_t",
+      "dst": "vision_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.00534; incr_r2=-0.005. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.004682190472093173,
+        "ci_p": 0.005344791941626514,
+        "ci_r_partial": -0.04486200257454379,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "n_words_t",
+      "dst": "anger_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.049; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0005842746406934385,
+        "ci_p": 0.04901685448092197,
+        "ci_r_partial": 0.031713725697301326,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "n_words_t",
+      "dst": "anxiety_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.00779; incr_r2=-0.002. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0022413544743361546,
+        "ci_p": 0.007793955158861499,
+        "ci_r_partial": 0.042857498885480294,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "n_words_t",
+      "dst": "duration_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0; incr_r2=0.010. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.010078030962298201,
+        "ci_p": 0.0,
+        "ci_r_partial": 0.15905892449632836,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "n_words_t",
+      "dst": "emotional_intensity_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.00137; incr_r2=-0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0025966998550717157,
+        "ci_p": 0.0013658594508516586,
+        "ci_r_partial": -0.05155544742045662,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "n_words_t",
+      "dst": "gap_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0; incr_r2=0.008. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.007615007422032138,
+        "ci_p": 0.0,
+        "ci_r_partial": -0.1566393024895709,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "n_words_t",
+      "dst": "n_words_t1",
+      "label": "temporally_precedent",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.020; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.019589638687189326
+      }
+    },
+    {
+      "src": "olfaction_t",
+      "dst": "olfaction_t1",
+      "label": "not_identifiable",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.000; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.0
+      }
+    },
+    {
+      "src": "sadness_t",
+      "dst": "anxiety_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=5.51e-10; incr_r2=-0.004. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0037795927161241583,
+        "ci_p": 5.506077815908839e-10,
+        "ci_r_partial": 0.09965395856458675,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "sadness_t",
+      "dst": "fear_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.0479; incr_r2=0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.001122364877319093,
+        "ci_p": 0.04791628255191527,
+        "ci_r_partial": 0.03186933558292927,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "sadness_t",
+      "dst": "gap_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.000262; incr_r2=0.000. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.00014070169251256814,
+        "ci_p": 0.0002616016759746653,
+        "ci_r_partial": -0.0587673757713902,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "sadness_t",
+      "dst": "joy_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.000178; incr_r2=0.009. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.009040711800797907,
+        "ci_p": 0.0001777596208913934,
+        "ci_r_partial": 0.06034223349454132,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "sadness_t",
+      "dst": "sadness_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.070; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.06975026953242325
+      }
+    },
+    {
+      "src": "somatosensation_t",
+      "dst": "anxiety_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0394; incr_r2=-0.002. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.002193579527722034,
+        "ci_p": 0.03937331427516133,
+        "ci_r_partial": -0.03319196272894107,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "somatosensation_t",
+      "dst": "gap_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0447; incr_r2=-0.000. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.00016706130223131943,
+        "ci_p": 0.04467019720811427,
+        "ci_r_partial": 0.0323464822759074,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "somatosensation_t",
+      "dst": "interoception_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=2.13e-07; incr_r2=0.007. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.006892225424621312,
+        "ci_p": 2.128074092500043e-07,
+        "ci_r_partial": 0.08341448647349045,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "somatosensation_t",
+      "dst": "somatosensation_t1",
+      "label": "not_identifiable",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=-0.001; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": -0.0011339564809143
+      }
+    },
+    {
+      "src": "surprise_t",
+      "dst": "audition_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.00353; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0008790523923138949,
+        "ci_p": 0.0035266531925142175,
+        "ci_r_partial": 0.046987769703445904,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "surprise_t",
+      "dst": "emotional_intensity_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0307; incr_r2=-0.002. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0023299910869949425,
+        "ci_p": 0.03070647728319531,
+        "ci_r_partial": -0.03481127314893867,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "surprise_t",
+      "dst": "fear_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=2.1e-05; incr_r2=-0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0030348130299973075,
+        "ci_p": 2.0977236566244173e-05,
+        "ci_r_partial": 0.06845584272507999,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "surprise_t",
+      "dst": "interoception_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0208; incr_r2=-0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.0013870411615313216,
+        "ci_p": 0.020827611548766667,
+        "ci_r_partial": 0.037229452732879496,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "surprise_t",
+      "dst": "surprise_t1",
+      "label": "not_identifiable",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=-0.048; conditional=False. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": -0.047821127952318854
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "anxiety_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.00261; incr_r2=0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0026300715379440343,
+        "ci_p": 0.0026111577329199775,
+        "ci_r_partial": -0.048474991884261534,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "disgust_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.0139; incr_r2=-0.008. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.007868011792047325,
+        "ci_p": 0.013941892113638499,
+        "ci_r_partial": 0.039605730022116765,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "gap_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.000171; incr_r2=0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0010019747389048428,
+        "ci_p": 0.00017103676419982783,
+        "ci_r_partial": 0.06049734483375563,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "gustation_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.00781; incr_r2=0.004. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.004120224910434178,
+        "ci_p": 0.007809866793075493,
+        "ci_r_partial": -0.042846450496294416,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "joy_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=0.00167; incr_r2=-0.003. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.002613969751458667,
+        "ci_p": 0.0016703704544662745,
+        "ci_r_partial": -0.05061606777595303,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "somatosensation_t1",
+      "label": "conditionally_supported",
+      "justification": "audit=not_identifiable; conditional=True; marginal_p=0.0466; incr_r2=0.001. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": 0.0010125921848203046,
+        "ci_p": 0.04658156732341756,
+        "ci_r_partial": 0.0320621314859844,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "surprise_t1",
+      "label": "temporally_precedent",
+      "justification": "audit=not_identifiable; conditional=False; marginal_p=4.56e-06; incr_r2=-0.022. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": -0.021990034820575488,
+        "ci_p": 4.562039529254491e-06,
+        "ci_r_partial": 0.07374344360959671,
+        "lag1_skill_r2": null
+      }
+    },
+    {
+      "src": "vision_t",
+      "dst": "vision_t1",
+      "label": "conditionally_supported",
+      "justification": "AR edge; audit=not_identifiable; lag1_skill_r2=0.053; conditional=True. unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+      "metadata": {
+        "identifiable": false,
+        "audit_status": "not_identifiable",
+        "audit_reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+        "adjustment_set": null,
+        "incremental_r2": null,
+        "ci_p": null,
+        "ci_r_partial": null,
+        "lag1_skill_r2": 0.05252901801554166
+      }
+    }
+  ]
+}

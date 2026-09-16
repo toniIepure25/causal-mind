@@ -1,0 +1,7252 @@
+{
+ "meta": {
+  "n_subjects": 118,
+  "split": {
+   "train": [
+    "sub-115",
+    "sub-111",
+    "sub-125",
+    "sub-005",
+    "sub-051",
+    "sub-065",
+    "sub-080",
+    "sub-027",
+    "sub-037",
+    "sub-032",
+    "sub-119",
+    "sub-101",
+    "sub-029",
+    "sub-081",
+    "sub-067",
+    "sub-020",
+    "sub-066",
+    "sub-036",
+    "sub-004",
+    "sub-061",
+    "sub-011",
+    "sub-044",
+    "sub-117",
+    "sub-077",
+    "sub-100",
+    "sub-050",
+    "sub-092",
+    "sub-059",
+    "sub-097",
+    "sub-112",
+    "sub-013",
+    "sub-031",
+    "sub-054",
+    "sub-126",
+    "sub-103",
+    "sub-017",
+    "sub-057",
+    "sub-026",
+    "sub-048",
+    "sub-091",
+    "sub-098",
+    "sub-042",
+    "sub-024",
+    "sub-009",
+    "sub-120",
+    "sub-102",
+    "sub-083",
+    "sub-055",
+    "sub-122",
+    "sub-035",
+    "sub-041",
+    "sub-124",
+    "sub-094",
+    "sub-075",
+    "sub-019",
+    "sub-018",
+    "sub-108",
+    "sub-090",
+    "sub-006",
+    "sub-088",
+    "sub-089",
+    "sub-025",
+    "sub-053",
+    "sub-038",
+    "sub-093",
+    "sub-071",
+    "sub-001",
+    "sub-127",
+    "sub-014",
+    "sub-002",
+    "sub-084"
+   ],
+   "val": [
+    "sub-010",
+    "sub-121",
+    "sub-074",
+    "sub-064",
+    "sub-114",
+    "sub-078",
+    "sub-033",
+    "sub-086",
+    "sub-047",
+    "sub-062",
+    "sub-113",
+    "sub-096",
+    "sub-079",
+    "sub-068",
+    "sub-049",
+    "sub-012",
+    "sub-105",
+    "sub-046",
+    "sub-023",
+    "sub-085",
+    "sub-099",
+    "sub-076",
+    "sub-039",
+    "sub-087"
+   ],
+   "test": [
+    "sub-016",
+    "sub-106",
+    "sub-109",
+    "sub-043",
+    "sub-021",
+    "sub-072",
+    "sub-034",
+    "sub-082",
+    "sub-052",
+    "sub-069",
+    "sub-045",
+    "sub-116",
+    "sub-110",
+    "sub-058",
+    "sub-070",
+    "sub-073",
+    "sub-040",
+    "sub-007",
+    "sub-060",
+    "sub-123",
+    "sub-107",
+    "sub-056",
+    "sub-118"
+   ],
+   "seed": 0
+  },
+  "alpha": 0.05,
+  "max_lag": 3,
+  "cont_dims": [
+   "emotional_intensity",
+   "joy",
+   "sadness",
+   "fear",
+   "anger",
+   "disgust",
+   "surprise",
+   "anxiety",
+   "vision",
+   "audition",
+   "olfaction",
+   "gustation",
+   "somatosensation",
+   "interoception",
+   "n_words",
+   "duration",
+   "gap"
+  ],
+  "note": "OBSERVATIONAL candidate analysis. No edge is a causal discovery. Identifiability audit (analysis 7) is expected to mark almost all edges not identifiable (unmeasured confounding, no randomization)."
+ },
+ "analysis_1_lagged_skill": {
+  "emotional_intensity": {
+   "1": 0.05308478271055839,
+   "2": 0.059695899422230525,
+   "3": 0.061738280181234395
+  },
+  "joy": {
+   "1": 0.1923855846773711,
+   "2": 0.2533359129610714,
+   "3": 0.2657870007953592
+  },
+  "sadness": {
+   "1": 0.06975026953242325,
+   "2": 0.08284092059028081,
+   "3": 0.08589161185535221
+  },
+  "fear": {
+   "1": 0.08937821563586634,
+   "2": 0.09156985115724747,
+   "3": 0.1014664889518101
+  },
+  "anger": {
+   "1": 0.04010007021576212,
+   "2": 0.034428016342249124,
+   "3": 0.021636444422409196
+  },
+  "disgust": {
+   "1": 0.053237389326237006,
+   "2": 0.0039418357120066805,
+   "3": 0.0046152663121488136
+  },
+  "surprise": {
+   "1": -0.047821127952318854,
+   "2": -0.03314242413736457,
+   "3": -0.02577231811427949
+  },
+  "anxiety": {
+   "1": 0.15486375469254343,
+   "2": 0.17433164226938602,
+   "3": 0.18388050409400492
+  },
+  "vision": {
+   "1": 0.05252901801554166,
+   "2": 0.08835610199183774,
+   "3": 0.0865673347689978
+  },
+  "audition": {
+   "1": -0.00722634907174502,
+   "2": -0.004983340970762473,
+   "3": -0.007747916430404844
+  },
+  "olfaction": {
+   "1": 0.0,
+   "2": 0.0,
+   "3": 0.0
+  },
+  "gustation": {
+   "1": 0.17498820052420627,
+   "2": 0.20364519695497774,
+   "3": 0.20078403824876867
+  },
+  "somatosensation": {
+   "1": -0.0011339564809143,
+   "2": -0.0180522003762682,
+   "3": -0.007450762779720677
+  },
+  "interoception": {
+   "1": 0.03932025714111609,
+   "2": 0.0425724458346608,
+   "3": 0.047736999473785624
+  },
+  "n_words": {
+   "1": 0.019589638687189326,
+   "2": 0.03952079991980917,
+   "3": 0.04966034573479017
+  },
+  "duration": {
+   "1": 0.010223437171910321,
+   "2": 0.02055795119237447,
+   "3": 0.017287510578531173
+  },
+  "gap": {
+   "1": 0.007133734423519611,
+   "2": 0.02125007384750932,
+   "3": 0.01566048269724718
+  },
+  "semantic_state": {
+   "1": {
+    "r2": -0.05632890964378132,
+    "cosine": 0.3025640364254837
+   },
+   "2": {
+    "r2": -0.17772105476116815,
+    "cosine": 0.25788072602990986
+   },
+   "3": {
+    "r2": -0.35191252808586587,
+    "cosine": 0.21790640674385367
+   }
+  }
+ },
+ "analysis_2_ci_structure": [
+  {
+   "src": "emotional_intensity",
+   "dst": "joy",
+   "p": 0.0,
+   "r_partial": 0.18808003493616102,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0,
+   "fdr_significant": true
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "sadness",
+   "p": 0.1318449304860705,
+   "r_partial": -0.02428057620509999,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3898024031762084,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "fear",
+   "p": 0.8889345885873483,
+   "r_partial": 0.0022506994057903897,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9738608986596125,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "anger",
+   "p": 0.04772868716762413,
+   "r_partial": -0.03189615846142611,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.19747316445637808,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "disgust",
+   "p": 2.068383596398604e-06,
+   "r_partial": -0.07634992048114034,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 3.516252113877627e-05,
+   "fdr_significant": true
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "surprise",
+   "p": 0.7705580661233189,
+   "r_partial": -0.004700250137159402,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "anxiety",
+   "p": 0.05289905162940789,
+   "r_partial": -0.031187223550168855,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.206821940182642,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "vision",
+   "p": 0.9680465461802976,
+   "r_partial": 0.0006455999067074044,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.984779829988201,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "audition",
+   "p": 0.01592630807101747,
+   "r_partial": 0.0388308010366153,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.09845354080265345,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "olfaction",
+   "p": 0.116471995900987,
+   "r_partial": 0.02529350514326552,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3561839395620191,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "gustation",
+   "p": 0.22762640446546323,
+   "r_partial": -0.019441989119289297,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5202889244924873,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "somatosensation",
+   "p": 0.8558202685154725,
+   "r_partial": 0.0029283091050407357,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9579551976798705,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "interoception",
+   "p": 0.5587926591706887,
+   "r_partial": 0.009421979553397136,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8305552092591657,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "n_words",
+   "p": 0.9089408807683863,
+   "r_partial": 0.0018433108319023603,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "duration",
+   "p": 0.599486865794826,
+   "r_partial": 0.008463172298873995,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.858212776295751,
+   "fdr_significant": false
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "gap",
+   "p": 0.4235824663557963,
+   "r_partial": 0.0128960224929776,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7605927138997693,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "emotional_intensity",
+   "p": 0.0,
+   "r_partial": 0.1598786884069336,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0,
+   "fdr_significant": true
+  },
+  {
+   "src": "joy",
+   "dst": "sadness",
+   "p": 0.31611831232623677,
+   "r_partial": 0.01615480582725084,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6416729921846,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "fear",
+   "p": 0.09062085960988453,
+   "r_partial": -0.0272644134716052,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.30430708412208135,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "anger",
+   "p": 0.6781595985252302,
+   "r_partial": -0.00668784131876942,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9222970539943132,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "disgust",
+   "p": 0.08394539947587498,
+   "r_partial": 0.027845891580748117,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.29273267509535894,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "surprise",
+   "p": 0.18543613331116426,
+   "r_partial": 0.021338200084288685,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.47200903072737543,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "anxiety",
+   "p": 0.051674351752103886,
+   "r_partial": -0.031349722579336776,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.20669740700841555,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "vision",
+   "p": 0.005344791941626514,
+   "r_partial": -0.04486200257454379,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.03929144346276789,
+   "fdr_significant": true
+  },
+  {
+   "src": "joy",
+   "dst": "audition",
+   "p": 0.020329725407906674,
+   "r_partial": -0.03737608967913124,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.11405585938720486,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "olfaction",
+   "p": 0.461539589482314,
+   "r_partial": -0.011866218625881003,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7797439027278845,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "gustation",
+   "p": 0.0009420795711700958,
+   "r_partial": 0.05325116175901677,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.009151630119938073,
+   "fdr_significant": true
+  },
+  {
+   "src": "joy",
+   "dst": "somatosensation",
+   "p": 0.7227673476433321,
+   "r_partial": -0.005717456878536128,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9497232780627359,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "interoception",
+   "p": 0.03298900936904281,
+   "r_partial": -0.034350268884648816,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.15742123769087094,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "n_words",
+   "p": 0.947055100328817,
+   "r_partial": 0.0010702189251435418,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9832022415627413,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "duration",
+   "p": 0.8812048882232728,
+   "r_partial": -0.0024084709315857038,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9738608986596125,
+   "fdr_significant": false
+  },
+  {
+   "src": "joy",
+   "dst": "gap",
+   "p": 0.0011820293279067862,
+   "r_partial": -0.05222105333461652,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.010583983334045812,
+   "fdr_significant": true
+  },
+  {
+   "src": "sadness",
+   "dst": "emotional_intensity",
+   "p": 0.7980097518927494,
+   "r_partial": -0.004124560543498732,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "joy",
+   "p": 0.0001777596208913934,
+   "r_partial": 0.06034223349454132,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0021022007340199566,
+   "fdr_significant": true
+  },
+  {
+   "src": "sadness",
+   "dst": "fear",
+   "p": 0.04791628255191527,
+   "r_partial": 0.03186933558292927,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.19747316445637808,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "anger",
+   "p": 0.9336087526543049,
+   "r_partial": -0.0013425863476412355,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "disgust",
+   "p": 0.4176778211084746,
+   "r_partial": -0.013060947414445905,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7591497308654019,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "surprise",
+   "p": 0.2579788334408155,
+   "r_partial": 0.018228616315410798,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5662618306352795,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "anxiety",
+   "p": 5.506077815908839e-10,
+   "r_partial": 0.09965395856458675,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 1.664059073252449e-08,
+   "fdr_significant": true
+  },
+  {
+   "src": "sadness",
+   "dst": "vision",
+   "p": 0.30511003213489607,
+   "r_partial": -0.016526515127288078,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6239844266217422,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "audition",
+   "p": 0.8261919716782351,
+   "r_partial": -0.0035389676569788876,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "olfaction",
+   "p": 0.7411777213232318,
+   "r_partial": -0.0053231217577822685,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "gustation",
+   "p": 0.6752624527560385,
+   "r_partial": 0.0067516723900677865,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9222970539943132,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "somatosensation",
+   "p": 0.07868193585511496,
+   "r_partial": 0.0283313647094741,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.28159850727093777,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "interoception",
+   "p": 0.6697136399799026,
+   "r_partial": -0.006874223238255945,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9222970539943132,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "n_words",
+   "p": 0.43762665254421296,
+   "r_partial": 0.012509059295082578,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7644633478936252,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "duration",
+   "p": 0.970297773664845,
+   "r_partial": -0.0006000934255648415,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.984779829988201,
+   "fdr_significant": false
+  },
+  {
+   "src": "sadness",
+   "dst": "gap",
+   "p": 0.0002616016759746653,
+   "r_partial": -0.0587673757713902,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0029648189943795407,
+   "fdr_significant": true
+  },
+  {
+   "src": "fear",
+   "dst": "emotional_intensity",
+   "p": 0.42783340156862026,
+   "r_partial": -0.012778119311337549,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7605927138997693,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "joy",
+   "p": 0.4146998393679002,
+   "r_partial": -0.013144647088245595,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7591497308654019,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "sadness",
+   "p": 0.005748208389493081,
+   "r_partial": 0.044481211880183114,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.04114507057742416,
+   "fdr_significant": true
+  },
+  {
+   "src": "fear",
+   "dst": "anger",
+   "p": 0.028424117366065982,
+   "r_partial": -0.0353026517941795,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.143173331917962,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "disgust",
+   "p": 0.18568002311701903,
+   "r_partial": -0.02132637282212285,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.47200903072737543,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "surprise",
+   "p": 0.27583151320643706,
+   "r_partial": 0.017560805045032362,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5877294649430684,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "anxiety",
+   "p": 1.0220572610464274e-07,
+   "r_partial": 0.08557420343416089,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 2.316663125038569e-06,
+   "fdr_significant": true
+  },
+  {
+   "src": "fear",
+   "dst": "vision",
+   "p": 0.5382670455962979,
+   "r_partial": -0.009918318548896871,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8179253430290113,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "audition",
+   "p": 0.02096615062264795,
+   "r_partial": 0.0371891937544017,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.11405585938720486,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "olfaction",
+   "p": 0.46830140291704003,
+   "r_partial": 0.011687858129551278,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7814600097756741,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "gustation",
+   "p": 0.7157741194453338,
+   "r_partial": -0.005868134407549292,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9455843297721798,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "somatosensation",
+   "p": 0.20316477452694892,
+   "r_partial": -0.02050671493338264,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4890337935515939,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "interoception",
+   "p": 0.3820662933348822,
+   "r_partial": -0.014086391374280572,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7117947382677257,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "n_words",
+   "p": 0.5028553784908527,
+   "r_partial": 0.01079766902845374,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8074526048394859,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "duration",
+   "p": 0.4579485705620403,
+   "r_partial": 0.011961533733889964,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7797439027278845,
+   "fdr_significant": false
+  },
+  {
+   "src": "fear",
+   "dst": "gap",
+   "p": 0.03575420599936452,
+   "r_partial": 0.033827007564407784,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.16767489710046807,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "emotional_intensity",
+   "p": 0.020873910623089964,
+   "r_partial": -0.03721597249690923,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.11405585938720486,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "joy",
+   "p": 0.9561657757971254,
+   "r_partial": 0.0008858525194207418,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.984779829988201,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "sadness",
+   "p": 0.1592319641540505,
+   "r_partial": 0.0226825933284887,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.42984928827227603,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "fear",
+   "p": 0.21703599893803371,
+   "r_partial": -0.019892307053568398,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5002863704334337,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "disgust",
+   "p": 0.9813562688527775,
+   "r_partial": -0.0003766187266425638,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9886255745479832,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "surprise",
+   "p": 0.41864874863900847,
+   "r_partial": -0.013033734417553037,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7591497308654019,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "anxiety",
+   "p": 0.48306123325008166,
+   "r_partial": 0.011303401322887338,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7963191239031648,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "vision",
+   "p": 0.29910147522320507,
+   "r_partial": -0.016733159598665153,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6210351241275708,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "audition",
+   "p": 0.15363224348208337,
+   "r_partial": 0.022991208487986078,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4259322135062666,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "olfaction",
+   "p": 0.9684348993585472,
+   "r_partial": 0.0006377493493688125,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.984779829988201,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "gustation",
+   "p": 0.19585444766228588,
+   "r_partial": -0.020842862755125122,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.48323388829645414,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "somatosensation",
+   "p": 0.9388294051381703,
+   "r_partial": 0.001236796263572035,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783969279600854,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "interoception",
+   "p": 0.8333123316959012,
+   "r_partial": -0.0033917813505424266,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "n_words",
+   "p": 0.33316779424686693,
+   "r_partial": 0.015595485565942587,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6566785509793319,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "duration",
+   "p": 0.25911574115247693,
+   "r_partial": 0.018185154903826654,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5662618306352795,
+   "fdr_significant": false
+  },
+  {
+   "src": "anger",
+   "dst": "gap",
+   "p": 1.6864291616514038e-06,
+   "r_partial": 0.07700915974849339,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 3.0580582131278784e-05,
+   "fdr_significant": true
+  },
+  {
+   "src": "disgust",
+   "dst": "emotional_intensity",
+   "p": 0.18780069625788443,
+   "r_partial": -0.021224012911752653,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4729795313161534,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "joy",
+   "p": 0.4803172315827582,
+   "r_partial": 0.011374384362955747,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7963191239031648,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "sadness",
+   "p": 0.7859404618536574,
+   "r_partial": 0.00437697473636756,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "fear",
+   "p": 0.09429466652740293,
+   "r_partial": -0.026958974042398724,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3072009248053789,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "anger",
+   "p": 0.8439884018876969,
+   "r_partial": -0.0031716189521875187,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9565201888060564,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "surprise",
+   "p": 0.4650305405800377,
+   "r_partial": 0.011773955649891253,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7807920187516681,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "anxiety",
+   "p": 0.10507979751362662,
+   "r_partial": -0.026114171894279642,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3323454060896097,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "vision",
+   "p": 0.1840716531575779,
+   "r_partial": 0.021404582611289517,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.47200903072737543,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "audition",
+   "p": 0.4608659087734228,
+   "r_partial": -0.011884068198495705,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7797439027278845,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "olfaction",
+   "p": 0.9303445275396329,
+   "r_partial": 0.0014087609441592425,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "gustation",
+   "p": 1.3971292123216017e-08,
+   "r_partial": 0.0911865966514927,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 3.4547195068315967e-07,
+   "fdr_significant": true
+  },
+  {
+   "src": "disgust",
+   "dst": "somatosensation",
+   "p": 0.4095044001002959,
+   "r_partial": -0.013291526360808145,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7577224273964659,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "interoception",
+   "p": 0.5046578780246787,
+   "r_partial": -0.010752146924317064,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8074526048394859,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "n_words",
+   "p": 0.807643333209257,
+   "r_partial": -0.003923812367808413,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "duration",
+   "p": 0.7646265587662646,
+   "r_partial": 0.0048254058643988065,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "disgust",
+   "dst": "gap",
+   "p": 0.32380190589843894,
+   "r_partial": -0.01590037002352823,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6476038117968779,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "emotional_intensity",
+   "p": 0.03070647728319531,
+   "r_partial": -0.03481127314893867,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.15185748765507498,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "joy",
+   "p": 0.9196383822167173,
+   "r_partial": -0.0016259759470227952,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "sadness",
+   "p": 0.34206302353620277,
+   "r_partial": 0.015311001228881169,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6598662581691287,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "fear",
+   "p": 2.0977236566244173e-05,
+   "r_partial": 0.06845584272507999,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.00028529041730092076,
+   "fdr_significant": true
+  },
+  {
+   "src": "surprise",
+   "dst": "anger",
+   "p": 0.7430832850438267,
+   "r_partial": 0.005282491463056978,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "disgust",
+   "p": 0.7730911368624362,
+   "r_partial": 0.004646888598529304,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "anxiety",
+   "p": 0.06678697587869431,
+   "r_partial": 0.029534568045674954,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.24885010190417606,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "vision",
+   "p": 0.09487087383695525,
+   "r_partial": 0.02691193782976844,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3072009248053789,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "audition",
+   "p": 0.0035266531925142175,
+   "r_partial": 0.046987769703445904,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.02664582412121853,
+   "fdr_significant": true
+  },
+  {
+   "src": "surprise",
+   "dst": "olfaction",
+   "p": 0.5924026165861629,
+   "r_partial": -0.008627854559466817,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.855969948727139,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "gustation",
+   "p": 0.252256636382989,
+   "r_partial": -0.018449405085221728,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5624082384932213,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "somatosensation",
+   "p": 0.62369101973487,
+   "r_partial": -0.007906988568938322,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8835622779577325,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "interoception",
+   "p": 0.020827611548766667,
+   "r_partial": 0.037229452732879496,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.11405585938720486,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "n_words",
+   "p": 0.55413602199526,
+   "r_partial": -0.009533786205802136,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8305552092591657,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "duration",
+   "p": 0.34851063481171596,
+   "r_partial": -0.015107742274643352,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6675696666815967,
+   "fdr_significant": false
+  },
+  {
+   "src": "surprise",
+   "dst": "gap",
+   "p": 0.5578451706138556,
+   "r_partial": 0.00944469203868935,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8305552092591657,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "emotional_intensity",
+   "p": 0.0011934629879772896,
+   "r_partial": -0.05217695720149729,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.010583983334045812,
+   "fdr_significant": true
+  },
+  {
+   "src": "anxiety",
+   "dst": "joy",
+   "p": 0.5127739483162814,
+   "r_partial": -0.010548226202123657,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8083675868607771,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "sadness",
+   "p": 2.655043631616394e-07,
+   "r_partial": 0.08275239628869827,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 5.158370484283279e-06,
+   "fdr_significant": true
+  },
+  {
+   "src": "anxiety",
+   "dst": "fear",
+   "p": 4.4403813959092986e-11,
+   "r_partial": 0.10578736973691197,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 1.5097296746091615e-09,
+   "fdr_significant": true
+  },
+  {
+   "src": "anxiety",
+   "dst": "anger",
+   "p": 0.018695125029959847,
+   "r_partial": 0.03788060615523362,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.11054508713367561,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "disgust",
+   "p": 0.05322623460582698,
+   "r_partial": -0.031144343788439634,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.206821940182642,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "surprise",
+   "p": 0.29237579257583457,
+   "r_partial": 0.016967779275513118,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6148366557402699,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "vision",
+   "p": 0.0008360426487679096,
+   "r_partial": -0.0537863278395247,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.008422355572773016,
+   "fdr_significant": true
+  },
+  {
+   "src": "anxiety",
+   "dst": "audition",
+   "p": 0.7050146402254742,
+   "r_partial": 0.006100970915283198,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9446501583316699,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "olfaction",
+   "p": 0.826985119285212,
+   "r_partial": 0.003522557969578893,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "gustation",
+   "p": 0.017587483828588324,
+   "r_partial": -0.03824487822756247,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.1063065689194672,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "somatosensation",
+   "p": 0.3686995468392764,
+   "r_partial": -0.01448626485551031,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6964324773630777,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "interoception",
+   "p": 0.021786458664961206,
+   "r_partial": 0.03695545401356682,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.11619444621312643,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "n_words",
+   "p": 0.27657857173791456,
+   "r_partial": -0.017533514308792235,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5877294649430684,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "duration",
+   "p": 0.07043829970553461,
+   "r_partial": -0.02914773403754316,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.25545623359873887,
+   "fdr_significant": false
+  },
+  {
+   "src": "anxiety",
+   "dst": "gap",
+   "p": 0.15488403550632812,
+   "r_partial": -0.022921487564371422,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4259322135062666,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "emotional_intensity",
+   "p": 0.9779882667240152,
+   "r_partial": -0.0004446710813530211,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9886255745479832,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "joy",
+   "p": 0.0016703704544662745,
+   "r_partial": -0.05061606777595303,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.01376790192772202,
+   "fdr_significant": true
+  },
+  {
+   "src": "vision",
+   "dst": "sadness",
+   "p": 0.08232547093960063,
+   "r_partial": -0.027992610076888396,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.2908120531892386,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "fear",
+   "p": 0.8212810646148774,
+   "r_partial": -0.003640653384724092,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "anger",
+   "p": 0.8172762369823665,
+   "r_partial": -0.0037236849256173403,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "disgust",
+   "p": 0.013941892113638499,
+   "r_partial": 0.039605730022116765,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.09029034892642075,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "surprise",
+   "p": 4.562039529254491e-06,
+   "r_partial": 0.07374344360959671,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 6.893748621984564e-05,
+   "fdr_significant": true
+  },
+  {
+   "src": "vision",
+   "dst": "anxiety",
+   "p": 0.0026111577329199775,
+   "r_partial": -0.048474991884261534,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.02088926186335982,
+   "fdr_significant": true
+  },
+  {
+   "src": "vision",
+   "dst": "audition",
+   "p": 0.24235097947564999,
+   "r_partial": -0.018840017666669137,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5447889786560066,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "olfaction",
+   "p": 0.7514127707225038,
+   "r_partial": 0.0051052802587436665,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "gustation",
+   "p": 0.007809866793075493,
+   "r_partial": -0.042846450496294416,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.05181179921259839,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "somatosensation",
+   "p": 0.04658156732341756,
+   "r_partial": 0.0320621314859844,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.19747316445637808,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "interoception",
+   "p": 0.4962311207640431,
+   "r_partial": -0.010965711088317101,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8074526048394859,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "n_words",
+   "p": 0.7535836918081176,
+   "r_partial": 0.005059195587153347,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "duration",
+   "p": 0.7472931428810194,
+   "r_partial": 0.005192847589753925,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "vision",
+   "dst": "gap",
+   "p": 0.00017103676419982783,
+   "r_partial": 0.06049734483375563,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0021022007340199566,
+   "fdr_significant": true
+  },
+  {
+   "src": "audition",
+   "dst": "emotional_intensity",
+   "p": 0.6149406426355462,
+   "r_partial": 0.008106943070211722,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8757269884652803,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "joy",
+   "p": 0.15135314596648164,
+   "r_partial": -0.023119263799731456,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4259322135062666,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "sadness",
+   "p": 0.5226850526173814,
+   "r_partial": -0.010301469105132527,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8094862862080128,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "fear",
+   "p": 0.014904132548678062,
+   "r_partial": 0.03921862066731045,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.09427730356373099,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "anger",
+   "p": 0.9215679295877153,
+   "r_partial": 0.0015868070498469852,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "disgust",
+   "p": 0.635087691025463,
+   "r_partial": 0.007648370111003484,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8950458650721551,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "surprise",
+   "p": 0.0012062628064537506,
+   "r_partial": 0.052128052634694035,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.010583983334045812,
+   "fdr_significant": true
+  },
+  {
+   "src": "audition",
+   "dst": "anxiety",
+   "p": 0.2655971145687499,
+   "r_partial": 0.017939871958846013,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5733525012912696,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "vision",
+   "p": 0.8703033557483131,
+   "r_partial": -0.0026313793615215667,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9701742326374637,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "olfaction",
+   "p": 0.7091654829848255,
+   "r_partial": -0.006010997949458082,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9455539773131006,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "gustation",
+   "p": 0.6448745253110513,
+   "r_partial": -0.007427845724577168,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9041539736319893,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "somatosensation",
+   "p": 0.21577118369746184,
+   "r_partial": 0.019947134689804122,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5002863704334337,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "interoception",
+   "p": 0.5141455607607148,
+   "r_partial": 0.010513930711643584,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8083675868607771,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "n_words",
+   "p": 0.9001294546311971,
+   "r_partial": 0.0020225776694802987,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "duration",
+   "p": 0.32689253652473393,
+   "r_partial": 0.015799136935730908,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6490129192315885,
+   "fdr_significant": false
+  },
+  {
+   "src": "audition",
+   "dst": "gap",
+   "p": 0.1075367394756297,
+   "r_partial": 0.025931437004813263,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.33620681767093424,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "emotional_intensity",
+   "p": 0.5231729381199455,
+   "r_partial": -0.010289384790874437,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8094862862080128,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "joy",
+   "p": 0.9165217148499365,
+   "r_partial": -0.0016892631992485954,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "sadness",
+   "p": 0.590266222204689,
+   "r_partial": -0.008677694181104801,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.855969948727139,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "fear",
+   "p": 0.7723334434596552,
+   "r_partial": -0.004662844765793097,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "anger",
+   "p": 0.7021449843914298,
+   "r_partial": -0.006163284223534337,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9446501583316699,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "disgust",
+   "p": 0.7491288969014123,
+   "r_partial": -0.005153807795552637,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "surprise",
+   "p": 0.3021018273067302,
+   "r_partial": -0.016629630704531714,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6225128562684137,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "anxiety",
+   "p": 0.9351803943708255,
+   "r_partial": -0.0013107330910068125,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "vision",
+   "p": 0.6556420777695813,
+   "r_partial": -0.007186816861430632,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9145366418119287,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "audition",
+   "p": 0.7499419997150545,
+   "r_partial": -0.00513652573159246,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "gustation",
+   "p": 0.5755588289811047,
+   "r_partial": -0.009023096513449578,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8462270350424891,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "somatosensation",
+   "p": 0.8072502494114127,
+   "r_partial": 0.003931991487579285,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "interoception",
+   "p": 0.7985420466172422,
+   "r_partial": -0.0041134519627622716,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "n_words",
+   "p": 0.1050370547131727,
+   "r_partial": -0.026117380729247817,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3323454060896097,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "duration",
+   "p": 0.16856060324282152,
+   "r_partial": -0.022186202747735237,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4408508084812255,
+   "fdr_significant": false
+  },
+  {
+   "src": "olfaction",
+   "dst": "gap",
+   "p": 0.45970748801769146,
+   "r_partial": -0.011914795375010664,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7797439027278845,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "emotional_intensity",
+   "p": 0.003371636013300927,
+   "r_partial": 0.04721273412078277,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.02620242844622435,
+   "fdr_significant": true
+  },
+  {
+   "src": "gustation",
+   "dst": "joy",
+   "p": 0.000639819254477203,
+   "r_partial": 0.054968505576414944,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.006961233488711969,
+   "fdr_significant": true
+  },
+  {
+   "src": "gustation",
+   "dst": "sadness",
+   "p": 0.08607112866375588,
+   "r_partial": -0.0276567981550814,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.2963461645131848,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "fear",
+   "p": 0.5032150614873201,
+   "r_partial": -0.010788578370230572,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8074526048394859,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "anger",
+   "p": 0.5947732364317253,
+   "r_partial": -0.008572647072055567,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.855969948727139,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "disgust",
+   "p": 4.4940612295985005e-06,
+   "r_partial": 0.0737937172095582,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 6.893748621984564e-05,
+   "fdr_significant": true
+  },
+  {
+   "src": "gustation",
+   "dst": "surprise",
+   "p": 0.8361501978804196,
+   "r_partial": -0.0033331986798404646,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "anxiety",
+   "p": 0.007153634992985047,
+   "r_partial": -0.04331980253045479,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.04989201841261366,
+   "fdr_significant": true
+  },
+  {
+   "src": "gustation",
+   "dst": "vision",
+   "p": 0.039320225775695494,
+   "r_partial": -0.03320091270909573,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.17849235804739802,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "audition",
+   "p": 0.19200773016950845,
+   "r_partial": -0.021023444998919453,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.47913855601932387,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "olfaction",
+   "p": 0.5497555301802501,
+   "r_partial": -0.009639382789695235,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8305552092591657,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "somatosensation",
+   "p": 0.45545085058999635,
+   "r_partial": -0.012028077095148575,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7797439027278845,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "interoception",
+   "p": 0.5308347355034719,
+   "r_partial": -0.010100361902671122,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8155378169482448,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "n_words",
+   "p": 0.993838635198993,
+   "r_partial": 0.00012445455922398493,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.993838635198993,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "duration",
+   "p": 0.8514007854029284,
+   "r_partial": -0.0030191101119843174,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9569463373123823,
+   "fdr_significant": false
+  },
+  {
+   "src": "gustation",
+   "dst": "gap",
+   "p": 0.3725161316369676,
+   "r_partial": -0.014371188204040267,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6987888814155531,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "emotional_intensity",
+   "p": 0.8252322229062197,
+   "r_partial": -0.0035588291159940684,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "joy",
+   "p": 0.8915123667876599,
+   "r_partial": -0.002198132815452196,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9738608986596125,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "sadness",
+   "p": 0.9064712969899129,
+   "r_partial": 0.0018935301177307531,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "fear",
+   "p": 0.4384422142331086,
+   "r_partial": -0.012486809980521284,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7644633478936252,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "anger",
+   "p": 0.886409466748395,
+   "r_partial": 0.002302215426919898,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9738608986596125,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "disgust",
+   "p": 0.8751787969456197,
+   "r_partial": 0.002531629418448139,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9716270725273819,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "surprise",
+   "p": 0.4923659881467888,
+   "r_partial": -0.0110643127375176,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8067683661200394,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "anxiety",
+   "p": 0.03937331427516133,
+   "r_partial": -0.03319196272894107,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.17849235804739802,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "vision",
+   "p": 0.7928373091336443,
+   "r_partial": -0.004232608346782006,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "audition",
+   "p": 0.19720206470921475,
+   "r_partial": 0.020780214629301214,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.48323388829645414,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "olfaction",
+   "p": 0.8089692215935438,
+   "r_partial": -0.0038962312837132916,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "gustation",
+   "p": 0.43136954530443994,
+   "r_partial": -0.01268055996192992,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7618994566416082,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "interoception",
+   "p": 2.128074092500043e-07,
+   "r_partial": 0.08341448647349045,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 4.452585793538551e-06,
+   "fdr_significant": true
+  },
+  {
+   "src": "somatosensation",
+   "dst": "n_words",
+   "p": 0.08769714237700632,
+   "r_partial": -0.027514686464364013,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.2981702840818215,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "duration",
+   "p": 0.13563455043632566,
+   "r_partial": -0.02404509345172917,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3966945991255976,
+   "fdr_significant": false
+  },
+  {
+   "src": "somatosensation",
+   "dst": "gap",
+   "p": 0.04467019720811427,
+   "r_partial": 0.0323464822759074,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.19747316445637808,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "emotional_intensity",
+   "p": 0.6690860705471753,
+   "r_partial": 0.006888108619956786,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9222970539943132,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "joy",
+   "p": 0.2125818300365896,
+   "r_partial": -0.0200864231265169,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4984677393961411,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "sadness",
+   "p": 0.6943969483787404,
+   "r_partial": -0.006331993524373243,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9396814425821761,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "fear",
+   "p": 0.3401640375360704,
+   "r_partial": -0.01537133184336929,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6598662581691287,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "anger",
+   "p": 0.1596131548363966,
+   "r_partial": -0.0226618855280647,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.42984928827227603,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "disgust",
+   "p": 0.16680146438952903,
+   "r_partial": -0.022278198834524223,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.44048542052380485,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "surprise",
+   "p": 0.15502679829823673,
+   "r_partial": 0.022913563332790415,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4259322135062666,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "anxiety",
+   "p": 0.1373582163673135,
+   "r_partial": 0.023939665349676408,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.39746207289265184,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "vision",
+   "p": 0.5237852440169495,
+   "r_partial": -0.010274226916299417,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8094862862080128,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "audition",
+   "p": 0.20266921368646895,
+   "r_partial": 0.020529220746738085,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4890337935515939,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "olfaction",
+   "p": 0.8252773762330028,
+   "r_partial": -0.0035578945725129613,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "gustation",
+   "p": 0.1469340958917713,
+   "r_partial": 0.02337180224568502,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4206955166585452,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "somatosensation",
+   "p": 1.43457864842933e-05,
+   "r_partial": 0.06980754828860124,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.00020537125914356724,
+   "fdr_significant": true
+  },
+  {
+   "src": "interoception",
+   "dst": "n_words",
+   "p": 0.9312838909073142,
+   "r_partial": 0.001389715145863461,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "duration",
+   "p": 0.676675023094129,
+   "r_partial": 0.006720536914237417,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9222970539943132,
+   "fdr_significant": false
+  },
+  {
+   "src": "interoception",
+   "dst": "gap",
+   "p": 0.839933314518998,
+   "r_partial": 0.0032551712627992054,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9559073704986086,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "emotional_intensity",
+   "p": 0.0013658594508516586,
+   "r_partial": -0.05155544742045662,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.011609805332239098,
+   "fdr_significant": true
+  },
+  {
+   "src": "n_words",
+   "dst": "joy",
+   "p": 0.06841791884567039,
+   "r_partial": -0.029359686475921874,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.25148208008138306,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "sadness",
+   "p": 0.06602828747442868,
+   "r_partial": 0.029617120138005385,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.24885010190417606,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "fear",
+   "p": 0.8085294046995553,
+   "r_partial": -0.0039053790713676085,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "anger",
+   "p": 0.04901685448092197,
+   "r_partial": 0.031713725697301326,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.19899379729568323,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "disgust",
+   "p": 0.7733220540883861,
+   "r_partial": 0.004642026648321645,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "surprise",
+   "p": 0.5946482971689682,
+   "r_partial": 0.008575554169211201,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.855969948727139,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "anxiety",
+   "p": 0.007793955158861499,
+   "r_partial": 0.042857498885480294,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.05181179921259839,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "vision",
+   "p": 0.716141073283342,
+   "r_partial": -0.0058602153018170325,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9455843297721798,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "audition",
+   "p": 0.23695891962131244,
+   "r_partial": -0.019057374536250928,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5371068844749748,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "olfaction",
+   "p": 0.8316564504194859,
+   "r_partial": -0.0034259847124664847,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "gustation",
+   "p": 0.9925339208226278,
+   "r_partial": 0.00015080943041861103,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.993838635198993,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "somatosensation",
+   "p": 0.06080421403761771,
+   "r_partial": -0.030207821784969568,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.23294008758073262,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "interoception",
+   "p": 0.3420579082484756,
+   "r_partial": -0.015311163452937414,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6598662581691287,
+   "fdr_significant": false
+  },
+  {
+   "src": "n_words",
+   "dst": "duration",
+   "p": 0.0,
+   "r_partial": 0.15905892449632836,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0,
+   "fdr_significant": true
+  },
+  {
+   "src": "n_words",
+   "dst": "gap",
+   "p": 0.0,
+   "r_partial": -0.1566393024895709,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0,
+   "fdr_significant": true
+  },
+  {
+   "src": "duration",
+   "dst": "emotional_intensity",
+   "p": 8.08953643700594e-05,
+   "r_partial": 0.06344144240395752,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0010477875766026741,
+   "fdr_significant": true
+  },
+  {
+   "src": "duration",
+   "dst": "joy",
+   "p": 0.046060556174907674,
+   "r_partial": 0.03213865256437733,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.19747316445637808,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "sadness",
+   "p": 0.03148229014442916,
+   "r_partial": -0.03465138157799977,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.15291398070151305,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "fear",
+   "p": 0.8500965715370303,
+   "r_partial": -0.003045924175491276,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9569463373123823,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "anger",
+   "p": 0.027680635092665273,
+   "r_partial": -0.03547006079444198,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.14205910840009348,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "disgust",
+   "p": 0.5123084845477637,
+   "r_partial": -0.010559875405746546,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8083675868607771,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "surprise",
+   "p": 0.3221520145056438,
+   "r_partial": -0.01595466958300399,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6476038117968779,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "anxiety",
+   "p": 0.0008286268086385995,
+   "r_partial": -0.05382607168999815,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.008422355572773016,
+   "fdr_significant": true
+  },
+  {
+   "src": "duration",
+   "dst": "vision",
+   "p": 0.5336975419734837,
+   "r_partial": 0.010030090383564247,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8155378169482448,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "audition",
+   "p": 0.11757195112184626,
+   "r_partial": 0.02521766440032507,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3561839395620191,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "olfaction",
+   "p": 0.9653483168153232,
+   "r_partial": -0.0007001489280656008,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.984779829988201,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "gustation",
+   "p": 0.9535045449228157,
+   "r_partial": -0.0009396929466808903,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.984779829988201,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "somatosensation",
+   "p": 0.09476321211936223,
+   "r_partial": 0.02692070891638894,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3072009248053789,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "interoception",
+   "p": 0.42578379324669147,
+   "r_partial": 0.012834881149554894,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.7605927138997693,
+   "fdr_significant": false
+  },
+  {
+   "src": "duration",
+   "dst": "n_words",
+   "p": 0.0,
+   "r_partial": 0.1606988157709432,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0,
+   "fdr_significant": true
+  },
+  {
+   "src": "duration",
+   "dst": "gap",
+   "p": 0.0,
+   "r_partial": 0.8279176904534339,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.0,
+   "fdr_significant": true
+  },
+  {
+   "src": "gap",
+   "dst": "emotional_intensity",
+   "p": 0.3670760196057996,
+   "r_partial": 0.01453544142371095,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6964324773630777,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "joy",
+   "p": 0.11785498000213868,
+   "r_partial": -0.02519823995313937,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3561839395620191,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "sadness",
+   "p": 0.16234545547565227,
+   "r_partial": -0.0225145393839232,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4329212146017394,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "fear",
+   "p": 0.7713721996018816,
+   "r_partial": 0.004683094054011832,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "anger",
+   "p": 0.12652821433183603,
+   "r_partial": -0.024619956044766227,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.3781942230577956,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "disgust",
+   "p": 0.7903790532576629,
+   "r_partial": 0.004284025597743707,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9556002261490508,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "surprise",
+   "p": 0.26023062069636005,
+   "r_partial": -0.01814266361513781,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.5662618306352795,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "anxiety",
+   "p": 0.04692974422819951,
+   "r_partial": -0.03201139504026493,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.19747316445637808,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "vision",
+   "p": 0.026995825717311295,
+   "r_partial": 0.03562772339940455,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 0.14120893452132063,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "audition",
+   "p": 0.9237081208955638,
+   "r_partial": 0.0015433731257075086,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.9783425664187098,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "olfaction",
+   "p": 0.20732153516522267,
+   "r_partial": -0.020319490394645676,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4946619084643909,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "gustation",
+   "p": 0.2938557545817466,
+   "r_partial": -0.01691584439824034,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.6148366557402699,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "somatosensation",
+   "p": 0.21208339908882823,
+   "r_partial": -0.02010832700518224,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.4984677393961411,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "interoception",
+   "p": 0.5741732325795357,
+   "r_partial": -0.009055849226039091,
+   "n": 3868,
+   "conditionally_dependent": false,
+   "q_fdr": 0.8462270350424891,
+   "fdr_significant": false
+  },
+  {
+   "src": "gap",
+   "dst": "n_words",
+   "p": 7.771044030491225e-09,
+   "r_partial": 0.09277838212031077,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 2.1137239762936131e-07,
+   "fdr_significant": true
+  },
+  {
+   "src": "gap",
+   "dst": "duration",
+   "p": 4.141131881851834e-12,
+   "r_partial": 0.11126124669071148,
+   "n": 3868,
+   "conditionally_dependent": true,
+   "q_fdr": 1.6091255312338553e-10,
+   "fdr_significant": true
+  }
+ ],
+ "analysis_3_incremental_value": [
+  {
+   "src": "emotional_intensity",
+   "dst": "joy",
+   "incremental_r2": 0.03198764679221899
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "sadness",
+   "incremental_r2": 0.0011741540345057144
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "fear",
+   "incremental_r2": 0.0003010362382117604
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "anger",
+   "incremental_r2": 0.0026672882124965103
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "disgust",
+   "incremental_r2": -0.005365367501014351
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "surprise",
+   "incremental_r2": -0.0004355580238633028
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "anxiety",
+   "incremental_r2": 0.001870483335833395
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "vision",
+   "incremental_r2": -3.973561979220275e-05
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "audition",
+   "incremental_r2": -0.007433083631733117
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "gustation",
+   "incremental_r2": -0.004654661217169065
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "somatosensation",
+   "incremental_r2": 2.438952491523594e-05
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "interoception",
+   "incremental_r2": -0.0023980977414688187
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "n_words",
+   "incremental_r2": 0.0001535428914439807
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "duration",
+   "incremental_r2": 0.0006142788542906619
+  },
+  {
+   "src": "emotional_intensity",
+   "dst": "gap",
+   "incremental_r2": -9.601481488574759e-05
+  },
+  {
+   "src": "joy",
+   "dst": "emotional_intensity",
+   "incremental_r2": 0.024173338973967784
+  },
+  {
+   "src": "joy",
+   "dst": "sadness",
+   "incremental_r2": 0.0007325236049126049
+  },
+  {
+   "src": "joy",
+   "dst": "fear",
+   "incremental_r2": 0.00407147381402051
+  },
+  {
+   "src": "joy",
+   "dst": "anger",
+   "incremental_r2": -0.0005103155852516084
+  },
+  {
+   "src": "joy",
+   "dst": "disgust",
+   "incremental_r2": -0.001881965262735319
+  },
+  {
+   "src": "joy",
+   "dst": "surprise",
+   "incremental_r2": -0.006705611925459154
+  },
+  {
+   "src": "joy",
+   "dst": "anxiety",
+   "incremental_r2": 0.0013096916500890954
+  },
+  {
+   "src": "joy",
+   "dst": "vision",
+   "incremental_r2": -0.004682190472093173
+  },
+  {
+   "src": "joy",
+   "dst": "audition",
+   "incremental_r2": -0.005236396384705078
+  },
+  {
+   "src": "joy",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "joy",
+   "dst": "gustation",
+   "incremental_r2": -0.005950000975795344
+  },
+  {
+   "src": "joy",
+   "dst": "somatosensation",
+   "incremental_r2": -0.0009080081699384124
+  },
+  {
+   "src": "joy",
+   "dst": "interoception",
+   "incremental_r2": -0.006721642906835301
+  },
+  {
+   "src": "joy",
+   "dst": "n_words",
+   "incremental_r2": -5.524488808050787e-05
+  },
+  {
+   "src": "joy",
+   "dst": "duration",
+   "incremental_r2": 0.0001374175669858202
+  },
+  {
+   "src": "joy",
+   "dst": "gap",
+   "incremental_r2": -0.0005505080344286872
+  },
+  {
+   "src": "sadness",
+   "dst": "emotional_intensity",
+   "incremental_r2": -0.0002849987740001225
+  },
+  {
+   "src": "sadness",
+   "dst": "joy",
+   "incremental_r2": 0.009040711800797907
+  },
+  {
+   "src": "sadness",
+   "dst": "fear",
+   "incremental_r2": 0.001122364877319093
+  },
+  {
+   "src": "sadness",
+   "dst": "anger",
+   "incremental_r2": 0.00012209761351167359
+  },
+  {
+   "src": "sadness",
+   "dst": "disgust",
+   "incremental_r2": 0.0011628281264011164
+  },
+  {
+   "src": "sadness",
+   "dst": "surprise",
+   "incremental_r2": 0.0012316111222061554
+  },
+  {
+   "src": "sadness",
+   "dst": "anxiety",
+   "incremental_r2": -0.0037795927161241583
+  },
+  {
+   "src": "sadness",
+   "dst": "vision",
+   "incremental_r2": -0.00031467503304183353
+  },
+  {
+   "src": "sadness",
+   "dst": "audition",
+   "incremental_r2": 9.871469083577722e-05
+  },
+  {
+   "src": "sadness",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "sadness",
+   "dst": "gustation",
+   "incremental_r2": 0.0006290641091908356
+  },
+  {
+   "src": "sadness",
+   "dst": "somatosensation",
+   "incremental_r2": -0.004000990136341365
+  },
+  {
+   "src": "sadness",
+   "dst": "interoception",
+   "incremental_r2": 0.0002566334980800278
+  },
+  {
+   "src": "sadness",
+   "dst": "n_words",
+   "incremental_r2": -0.00010038425785063865
+  },
+  {
+   "src": "sadness",
+   "dst": "duration",
+   "incremental_r2": 1.787880622627913e-05
+  },
+  {
+   "src": "sadness",
+   "dst": "gap",
+   "incremental_r2": 0.00014070169251256814
+  },
+  {
+   "src": "fear",
+   "dst": "emotional_intensity",
+   "incremental_r2": 0.00020905903388057645
+  },
+  {
+   "src": "fear",
+   "dst": "joy",
+   "incremental_r2": 0.0014251328971117694
+  },
+  {
+   "src": "fear",
+   "dst": "sadness",
+   "incremental_r2": 0.003644550397304047
+  },
+  {
+   "src": "fear",
+   "dst": "anger",
+   "incremental_r2": -0.0010114834960801566
+  },
+  {
+   "src": "fear",
+   "dst": "disgust",
+   "incremental_r2": -0.0018757427239004532
+  },
+  {
+   "src": "fear",
+   "dst": "surprise",
+   "incremental_r2": -0.000962948108289563
+  },
+  {
+   "src": "fear",
+   "dst": "anxiety",
+   "incremental_r2": 0.025080456423791753
+  },
+  {
+   "src": "fear",
+   "dst": "vision",
+   "incremental_r2": 0.000324481629565776
+  },
+  {
+   "src": "fear",
+   "dst": "audition",
+   "incremental_r2": -0.000739743393344483
+  },
+  {
+   "src": "fear",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "fear",
+   "dst": "gustation",
+   "incremental_r2": -0.0001571971404131789
+  },
+  {
+   "src": "fear",
+   "dst": "somatosensation",
+   "incremental_r2": 0.00036353345595241393
+  },
+  {
+   "src": "fear",
+   "dst": "interoception",
+   "incremental_r2": 0.000657937374587414
+  },
+  {
+   "src": "fear",
+   "dst": "n_words",
+   "incremental_r2": 2.4546333754482674e-07
+  },
+  {
+   "src": "fear",
+   "dst": "duration",
+   "incremental_r2": 0.00038834941437315695
+  },
+  {
+   "src": "fear",
+   "dst": "gap",
+   "incremental_r2": -6.744807354763793e-05
+  },
+  {
+   "src": "anger",
+   "dst": "emotional_intensity",
+   "incremental_r2": 0.0015157701147400227
+  },
+  {
+   "src": "anger",
+   "dst": "joy",
+   "incremental_r2": 5.8203893021691044e-05
+  },
+  {
+   "src": "anger",
+   "dst": "sadness",
+   "incremental_r2": 0.00012439163947564058
+  },
+  {
+   "src": "anger",
+   "dst": "fear",
+   "incremental_r2": -0.0002861811234593503
+  },
+  {
+   "src": "anger",
+   "dst": "disgust",
+   "incremental_r2": -3.449761755525138e-05
+  },
+  {
+   "src": "anger",
+   "dst": "surprise",
+   "incremental_r2": 0.00013819907811951637
+  },
+  {
+   "src": "anger",
+   "dst": "anxiety",
+   "incremental_r2": 0.0008429571034419547
+  },
+  {
+   "src": "anger",
+   "dst": "vision",
+   "incremental_r2": 4.4922430823768345e-05
+  },
+  {
+   "src": "anger",
+   "dst": "audition",
+   "incremental_r2": -0.001633616367620494
+  },
+  {
+   "src": "anger",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "anger",
+   "dst": "gustation",
+   "incremental_r2": -0.001421102960991294
+  },
+  {
+   "src": "anger",
+   "dst": "somatosensation",
+   "incremental_r2": 8.860767234364353e-05
+  },
+  {
+   "src": "anger",
+   "dst": "interoception",
+   "incremental_r2": 0.00013553907220575923
+  },
+  {
+   "src": "anger",
+   "dst": "n_words",
+   "incremental_r2": -0.0004049626543036755
+  },
+  {
+   "src": "anger",
+   "dst": "duration",
+   "incremental_r2": -0.0007088703739535074
+  },
+  {
+   "src": "anger",
+   "dst": "gap",
+   "incremental_r2": -0.00012549003447559492
+  },
+  {
+   "src": "disgust",
+   "dst": "emotional_intensity",
+   "incremental_r2": -0.0005004998020220475
+  },
+  {
+   "src": "disgust",
+   "dst": "joy",
+   "incremental_r2": 2.0436284835056995e-05
+  },
+  {
+   "src": "disgust",
+   "dst": "sadness",
+   "incremental_r2": -3.261205351001717e-05
+  },
+  {
+   "src": "disgust",
+   "dst": "fear",
+   "incremental_r2": 4.435001214420087e-05
+  },
+  {
+   "src": "disgust",
+   "dst": "anger",
+   "incremental_r2": -4.230420531892154e-05
+  },
+  {
+   "src": "disgust",
+   "dst": "surprise",
+   "incremental_r2": 0.001181841592518884
+  },
+  {
+   "src": "disgust",
+   "dst": "anxiety",
+   "incremental_r2": 0.0013118509271727863
+  },
+  {
+   "src": "disgust",
+   "dst": "vision",
+   "incremental_r2": -0.0003293670748658606
+  },
+  {
+   "src": "disgust",
+   "dst": "audition",
+   "incremental_r2": 0.00036430089233197016
+  },
+  {
+   "src": "disgust",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "disgust",
+   "dst": "gustation",
+   "incremental_r2": 0.010675330847685571
+  },
+  {
+   "src": "disgust",
+   "dst": "somatosensation",
+   "incremental_r2": -0.000153309585503969
+  },
+  {
+   "src": "disgust",
+   "dst": "interoception",
+   "incremental_r2": 0.00022087614639709763
+  },
+  {
+   "src": "disgust",
+   "dst": "n_words",
+   "incremental_r2": -2.303412123483284e-06
+  },
+  {
+   "src": "disgust",
+   "dst": "duration",
+   "incremental_r2": -0.00010118523719337968
+  },
+  {
+   "src": "disgust",
+   "dst": "gap",
+   "incremental_r2": 4.2410594586428374e-05
+  },
+  {
+   "src": "surprise",
+   "dst": "emotional_intensity",
+   "incremental_r2": -0.0023299910869949425
+  },
+  {
+   "src": "surprise",
+   "dst": "joy",
+   "incremental_r2": 1.3632575415201131e-06
+  },
+  {
+   "src": "surprise",
+   "dst": "sadness",
+   "incremental_r2": 3.8022180566477104e-05
+  },
+  {
+   "src": "surprise",
+   "dst": "fear",
+   "incremental_r2": -0.0030348130299973075
+  },
+  {
+   "src": "surprise",
+   "dst": "anger",
+   "incremental_r2": -7.312188201291647e-05
+  },
+  {
+   "src": "surprise",
+   "dst": "disgust",
+   "incremental_r2": 0.000495589800678875
+  },
+  {
+   "src": "surprise",
+   "dst": "anxiety",
+   "incremental_r2": -0.0018508309112555965
+  },
+  {
+   "src": "surprise",
+   "dst": "vision",
+   "incremental_r2": 0.0011239179953309586
+  },
+  {
+   "src": "surprise",
+   "dst": "audition",
+   "incremental_r2": -0.0008790523923138949
+  },
+  {
+   "src": "surprise",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "surprise",
+   "dst": "gustation",
+   "incremental_r2": 0.0006228118497819679
+  },
+  {
+   "src": "surprise",
+   "dst": "somatosensation",
+   "incremental_r2": -0.0003693244588980349
+  },
+  {
+   "src": "surprise",
+   "dst": "interoception",
+   "incremental_r2": -0.0013870411615313216
+  },
+  {
+   "src": "surprise",
+   "dst": "n_words",
+   "incremental_r2": 0.0005237484953424243
+  },
+  {
+   "src": "surprise",
+   "dst": "duration",
+   "incremental_r2": 0.001043122720727152
+  },
+  {
+   "src": "surprise",
+   "dst": "gap",
+   "incremental_r2": -9.118537303454133e-05
+  },
+  {
+   "src": "anxiety",
+   "dst": "emotional_intensity",
+   "incremental_r2": 0.00753927588133807
+  },
+  {
+   "src": "anxiety",
+   "dst": "joy",
+   "incremental_r2": 0.0013823663952312604
+  },
+  {
+   "src": "anxiety",
+   "dst": "sadness",
+   "incremental_r2": 0.011100677142486082
+  },
+  {
+   "src": "anxiety",
+   "dst": "fear",
+   "incremental_r2": 0.04586084008360569
+  },
+  {
+   "src": "anxiety",
+   "dst": "anger",
+   "incremental_r2": 0.0048807410634190695
+  },
+  {
+   "src": "anxiety",
+   "dst": "disgust",
+   "incremental_r2": 0.0005002296959255581
+  },
+  {
+   "src": "anxiety",
+   "dst": "surprise",
+   "incremental_r2": -0.001005039564310417
+  },
+  {
+   "src": "anxiety",
+   "dst": "vision",
+   "incremental_r2": 0.003324651930659228
+  },
+  {
+   "src": "anxiety",
+   "dst": "audition",
+   "incremental_r2": -0.0009258874006272677
+  },
+  {
+   "src": "anxiety",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "anxiety",
+   "dst": "gustation",
+   "incremental_r2": -0.0002718101784978666
+  },
+  {
+   "src": "anxiety",
+   "dst": "somatosensation",
+   "incremental_r2": -0.0019389569329326672
+  },
+  {
+   "src": "anxiety",
+   "dst": "interoception",
+   "incremental_r2": -0.010483946218647677
+  },
+  {
+   "src": "anxiety",
+   "dst": "n_words",
+   "incremental_r2": -0.0009810414253392796
+  },
+  {
+   "src": "anxiety",
+   "dst": "duration",
+   "incremental_r2": -0.002403968693576064
+  },
+  {
+   "src": "anxiety",
+   "dst": "gap",
+   "incremental_r2": -3.070203282462547e-05
+  },
+  {
+   "src": "vision",
+   "dst": "emotional_intensity",
+   "incremental_r2": 9.287919036315984e-06
+  },
+  {
+   "src": "vision",
+   "dst": "joy",
+   "incremental_r2": -0.002613969751458667
+  },
+  {
+   "src": "vision",
+   "dst": "sadness",
+   "incremental_r2": 0.000723938125475776
+  },
+  {
+   "src": "vision",
+   "dst": "fear",
+   "incremental_r2": 6.174286895610503e-05
+  },
+  {
+   "src": "vision",
+   "dst": "anger",
+   "incremental_r2": -5.7955189367797644e-05
+  },
+  {
+   "src": "vision",
+   "dst": "disgust",
+   "incremental_r2": -0.007868011792047325
+  },
+  {
+   "src": "vision",
+   "dst": "surprise",
+   "incremental_r2": -0.021990034820575488
+  },
+  {
+   "src": "vision",
+   "dst": "anxiety",
+   "incremental_r2": 0.0026300715379440343
+  },
+  {
+   "src": "vision",
+   "dst": "audition",
+   "incremental_r2": -0.004813437317559455
+  },
+  {
+   "src": "vision",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "vision",
+   "dst": "gustation",
+   "incremental_r2": 0.004120224910434178
+  },
+  {
+   "src": "vision",
+   "dst": "somatosensation",
+   "incremental_r2": 0.0010125921848203046
+  },
+  {
+   "src": "vision",
+   "dst": "interoception",
+   "incremental_r2": 0.00071758218107143
+  },
+  {
+   "src": "vision",
+   "dst": "n_words",
+   "incremental_r2": -0.00033738612537148605
+  },
+  {
+   "src": "vision",
+   "dst": "duration",
+   "incremental_r2": 9.150512825639723e-05
+  },
+  {
+   "src": "vision",
+   "dst": "gap",
+   "incremental_r2": 0.0010019747389048428
+  },
+  {
+   "src": "audition",
+   "dst": "emotional_intensity",
+   "incremental_r2": 0.00026093612836319835
+  },
+  {
+   "src": "audition",
+   "dst": "joy",
+   "incremental_r2": -0.001994113684547494
+  },
+  {
+   "src": "audition",
+   "dst": "sadness",
+   "incremental_r2": 0.00011858911991502463
+  },
+  {
+   "src": "audition",
+   "dst": "fear",
+   "incremental_r2": -0.0034743526812807124
+  },
+  {
+   "src": "audition",
+   "dst": "anger",
+   "incremental_r2": -5.287071828607992e-05
+  },
+  {
+   "src": "audition",
+   "dst": "disgust",
+   "incremental_r2": -0.0006890129801788714
+  },
+  {
+   "src": "audition",
+   "dst": "surprise",
+   "incremental_r2": 0.0031515906839287844
+  },
+  {
+   "src": "audition",
+   "dst": "anxiety",
+   "incremental_r2": -0.0026303557977409575
+  },
+  {
+   "src": "audition",
+   "dst": "vision",
+   "incremental_r2": -0.00042532598704814184
+  },
+  {
+   "src": "audition",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "audition",
+   "dst": "gustation",
+   "incremental_r2": -0.0001606811253230811
+  },
+  {
+   "src": "audition",
+   "dst": "somatosensation",
+   "incremental_r2": -0.0015868858495720062
+  },
+  {
+   "src": "audition",
+   "dst": "interoception",
+   "incremental_r2": 0.0011299320610469454
+  },
+  {
+   "src": "audition",
+   "dst": "n_words",
+   "incremental_r2": -0.00013144471290471582
+  },
+  {
+   "src": "audition",
+   "dst": "duration",
+   "incremental_r2": -0.0008882530446880921
+  },
+  {
+   "src": "audition",
+   "dst": "gap",
+   "incremental_r2": 0.0004018756989008221
+  },
+  {
+   "src": "olfaction",
+   "dst": "emotional_intensity",
+   "incremental_r2": 2.9832386179151626e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "joy",
+   "incremental_r2": 9.928050833662994e-06
+  },
+  {
+   "src": "olfaction",
+   "dst": "sadness",
+   "incremental_r2": -6.444782899395207e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "fear",
+   "incremental_r2": -1.2022714908077603e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "anger",
+   "incremental_r2": 3.776035547176093e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "disgust",
+   "incremental_r2": -0.00013802914878713324
+  },
+  {
+   "src": "olfaction",
+   "dst": "surprise",
+   "incremental_r2": -0.00122451429785575
+  },
+  {
+   "src": "olfaction",
+   "dst": "anxiety",
+   "incremental_r2": -6.84707135434337e-08
+  },
+  {
+   "src": "olfaction",
+   "dst": "vision",
+   "incremental_r2": 2.9470159218836223e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "audition",
+   "incremental_r2": 9.28939430129283e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "gustation",
+   "incremental_r2": -2.1534524913491282e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "somatosensation",
+   "incremental_r2": -1.922018346722787e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "interoception",
+   "incremental_r2": -4.446134923319356e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "n_words",
+   "incremental_r2": 9.773829569681425e-06
+  },
+  {
+   "src": "olfaction",
+   "dst": "duration",
+   "incremental_r2": 9.380030018779628e-05
+  },
+  {
+   "src": "olfaction",
+   "dst": "gap",
+   "incremental_r2": 3.648360761476788e-05
+  },
+  {
+   "src": "gustation",
+   "dst": "emotional_intensity",
+   "incremental_r2": 0.003561550298685434
+  },
+  {
+   "src": "gustation",
+   "dst": "joy",
+   "incremental_r2": -0.000545354834537215
+  },
+  {
+   "src": "gustation",
+   "dst": "sadness",
+   "incremental_r2": 0.0001699759116609023
+  },
+  {
+   "src": "gustation",
+   "dst": "fear",
+   "incremental_r2": 8.142433384539238e-06
+  },
+  {
+   "src": "gustation",
+   "dst": "anger",
+   "incremental_r2": -0.00020808106094383216
+  },
+  {
+   "src": "gustation",
+   "dst": "disgust",
+   "incremental_r2": -0.0005297641779586915
+  },
+  {
+   "src": "gustation",
+   "dst": "surprise",
+   "incremental_r2": 0.00013458299221236203
+  },
+  {
+   "src": "gustation",
+   "dst": "anxiety",
+   "incremental_r2": 0.0019041384080243917
+  },
+  {
+   "src": "gustation",
+   "dst": "vision",
+   "incremental_r2": 0.0014805425099271297
+  },
+  {
+   "src": "gustation",
+   "dst": "audition",
+   "incremental_r2": 0.0003932810445046453
+  },
+  {
+   "src": "gustation",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "gustation",
+   "dst": "somatosensation",
+   "incremental_r2": 0.000444061562735687
+  },
+  {
+   "src": "gustation",
+   "dst": "interoception",
+   "incremental_r2": 0.0003108561273619248
+  },
+  {
+   "src": "gustation",
+   "dst": "n_words",
+   "incremental_r2": -6.456061098503163e-06
+  },
+  {
+   "src": "gustation",
+   "dst": "duration",
+   "incremental_r2": 0.0001306646502209352
+  },
+  {
+   "src": "gustation",
+   "dst": "gap",
+   "incremental_r2": 5.965575735766837e-05
+  },
+  {
+   "src": "somatosensation",
+   "dst": "emotional_intensity",
+   "incremental_r2": 0.0001962684287734051
+  },
+  {
+   "src": "somatosensation",
+   "dst": "joy",
+   "incremental_r2": -0.00014764310782144907
+  },
+  {
+   "src": "somatosensation",
+   "dst": "sadness",
+   "incremental_r2": 0.00023858092421047417
+  },
+  {
+   "src": "somatosensation",
+   "dst": "fear",
+   "incremental_r2": -0.0011672885858555748
+  },
+  {
+   "src": "somatosensation",
+   "dst": "anger",
+   "incremental_r2": -2.925108757334538e-05
+  },
+  {
+   "src": "somatosensation",
+   "dst": "disgust",
+   "incremental_r2": -0.00015025153251357892
+  },
+  {
+   "src": "somatosensation",
+   "dst": "surprise",
+   "incremental_r2": -0.001208793401065389
+  },
+  {
+   "src": "somatosensation",
+   "dst": "anxiety",
+   "incremental_r2": -0.002193579527722034
+  },
+  {
+   "src": "somatosensation",
+   "dst": "vision",
+   "incremental_r2": -0.0002871237472049648
+  },
+  {
+   "src": "somatosensation",
+   "dst": "audition",
+   "incremental_r2": -0.0012726093511081782
+  },
+  {
+   "src": "somatosensation",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "somatosensation",
+   "dst": "gustation",
+   "incremental_r2": -5.4737765715406894e-05
+  },
+  {
+   "src": "somatosensation",
+   "dst": "interoception",
+   "incremental_r2": 0.006892225424621312
+  },
+  {
+   "src": "somatosensation",
+   "dst": "n_words",
+   "incremental_r2": -0.001013977298728208
+  },
+  {
+   "src": "somatosensation",
+   "dst": "duration",
+   "incremental_r2": -0.0010150139731032182
+  },
+  {
+   "src": "somatosensation",
+   "dst": "gap",
+   "incremental_r2": -0.00016706130223131943
+  },
+  {
+   "src": "interoception",
+   "dst": "emotional_intensity",
+   "incremental_r2": 7.699012140305328e-05
+  },
+  {
+   "src": "interoception",
+   "dst": "joy",
+   "incremental_r2": -0.0007857542798932471
+  },
+  {
+   "src": "interoception",
+   "dst": "sadness",
+   "incremental_r2": -0.00013096655850119987
+  },
+  {
+   "src": "interoception",
+   "dst": "fear",
+   "incremental_r2": 0.0012279652906813654
+  },
+  {
+   "src": "interoception",
+   "dst": "anger",
+   "incremental_r2": 0.0007908724665507405
+  },
+  {
+   "src": "interoception",
+   "dst": "disgust",
+   "incremental_r2": 8.506653487794225e-05
+  },
+  {
+   "src": "interoception",
+   "dst": "surprise",
+   "incremental_r2": -0.001369565608681178
+  },
+  {
+   "src": "interoception",
+   "dst": "anxiety",
+   "incremental_r2": -0.003109511051985203
+  },
+  {
+   "src": "interoception",
+   "dst": "vision",
+   "incremental_r2": 0.000704573642306916
+  },
+  {
+   "src": "interoception",
+   "dst": "audition",
+   "incremental_r2": -9.298710787408737e-05
+  },
+  {
+   "src": "interoception",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "interoception",
+   "dst": "gustation",
+   "incremental_r2": 3.234758297299134e-05
+  },
+  {
+   "src": "interoception",
+   "dst": "somatosensation",
+   "incremental_r2": -0.0046351485349869215
+  },
+  {
+   "src": "interoception",
+   "dst": "n_words",
+   "incremental_r2": -0.00010350160232552863
+  },
+  {
+   "src": "interoception",
+   "dst": "duration",
+   "incremental_r2": -0.0004186147383181682
+  },
+  {
+   "src": "interoception",
+   "dst": "gap",
+   "incremental_r2": 2.2345216620478503e-05
+  },
+  {
+   "src": "n_words",
+   "dst": "emotional_intensity",
+   "incremental_r2": -0.0025966998550717157
+  },
+  {
+   "src": "n_words",
+   "dst": "joy",
+   "incremental_r2": -0.00030758621473681025
+  },
+  {
+   "src": "n_words",
+   "dst": "sadness",
+   "incremental_r2": 0.0016517773216969678
+  },
+  {
+   "src": "n_words",
+   "dst": "fear",
+   "incremental_r2": 3.758932527209158e-05
+  },
+  {
+   "src": "n_words",
+   "dst": "anger",
+   "incremental_r2": -0.0005842746406934385
+  },
+  {
+   "src": "n_words",
+   "dst": "disgust",
+   "incremental_r2": 0.0007339997871786963
+  },
+  {
+   "src": "n_words",
+   "dst": "surprise",
+   "incremental_r2": 0.0011137007049084602
+  },
+  {
+   "src": "n_words",
+   "dst": "anxiety",
+   "incremental_r2": -0.0022413544743361546
+  },
+  {
+   "src": "n_words",
+   "dst": "vision",
+   "incremental_r2": 0.0010500865188938224
+  },
+  {
+   "src": "n_words",
+   "dst": "audition",
+   "incremental_r2": 0.0008931684632456083
+  },
+  {
+   "src": "n_words",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "n_words",
+   "dst": "gustation",
+   "incremental_r2": -2.1383257670093414e-06
+  },
+  {
+   "src": "n_words",
+   "dst": "somatosensation",
+   "incremental_r2": -0.0018569546070807963
+  },
+  {
+   "src": "n_words",
+   "dst": "interoception",
+   "incremental_r2": 0.00020508047497913573
+  },
+  {
+   "src": "n_words",
+   "dst": "duration",
+   "incremental_r2": 0.010078030962298201
+  },
+  {
+   "src": "n_words",
+   "dst": "gap",
+   "incremental_r2": 0.007615007422032138
+  },
+  {
+   "src": "duration",
+   "dst": "emotional_intensity",
+   "incremental_r2": -0.005105299576352862
+  },
+  {
+   "src": "duration",
+   "dst": "joy",
+   "incremental_r2": -0.0012562898186975202
+  },
+  {
+   "src": "duration",
+   "dst": "sadness",
+   "incremental_r2": 0.0011019916198145019
+  },
+  {
+   "src": "duration",
+   "dst": "fear",
+   "incremental_r2": -0.0001416355054396634
+  },
+  {
+   "src": "duration",
+   "dst": "anger",
+   "incremental_r2": -0.0011608695472629105
+  },
+  {
+   "src": "duration",
+   "dst": "disgust",
+   "incremental_r2": 0.0010968498093728574
+  },
+  {
+   "src": "duration",
+   "dst": "surprise",
+   "incremental_r2": 0.0020490121211809154
+  },
+  {
+   "src": "duration",
+   "dst": "anxiety",
+   "incremental_r2": -0.004614264802403123
+  },
+  {
+   "src": "duration",
+   "dst": "vision",
+   "incremental_r2": 0.0015259021741874657
+  },
+  {
+   "src": "duration",
+   "dst": "audition",
+   "incremental_r2": 0.0012937049350740804
+  },
+  {
+   "src": "duration",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "duration",
+   "dst": "gustation",
+   "incremental_r2": 1.819170284056426e-05
+  },
+  {
+   "src": "duration",
+   "dst": "somatosensation",
+   "incremental_r2": -0.0014041815797454227
+  },
+  {
+   "src": "duration",
+   "dst": "interoception",
+   "incremental_r2": -0.000281621825729772
+  },
+  {
+   "src": "duration",
+   "dst": "n_words",
+   "incremental_r2": 0.01799002494721824
+  },
+  {
+   "src": "duration",
+   "dst": "gap",
+   "incremental_r2": 0.21446219481708007
+  },
+  {
+   "src": "gap",
+   "dst": "emotional_intensity",
+   "incremental_r2": -0.0013643209047875526
+  },
+  {
+   "src": "gap",
+   "dst": "joy",
+   "incremental_r2": 0.00011058895170035221
+  },
+  {
+   "src": "gap",
+   "dst": "sadness",
+   "incremental_r2": -0.005381533232311719
+  },
+  {
+   "src": "gap",
+   "dst": "fear",
+   "incremental_r2": 0.0006516839564401078
+  },
+  {
+   "src": "gap",
+   "dst": "anger",
+   "incremental_r2": -0.0013652641713391978
+  },
+  {
+   "src": "gap",
+   "dst": "disgust",
+   "incremental_r2": -8.062475819081705e-05
+  },
+  {
+   "src": "gap",
+   "dst": "surprise",
+   "incremental_r2": -0.0017804902303426573
+  },
+  {
+   "src": "gap",
+   "dst": "anxiety",
+   "incremental_r2": -0.002641535135438855
+  },
+  {
+   "src": "gap",
+   "dst": "vision",
+   "incremental_r2": -0.0007585338236925088
+  },
+  {
+   "src": "gap",
+   "dst": "audition",
+   "incremental_r2": 0.0005145602520595371
+  },
+  {
+   "src": "gap",
+   "dst": "olfaction",
+   "incremental_r2": 0.0
+  },
+  {
+   "src": "gap",
+   "dst": "gustation",
+   "incremental_r2": 0.0015350116349317489
+  },
+  {
+   "src": "gap",
+   "dst": "somatosensation",
+   "incremental_r2": 0.0009370361590961274
+  },
+  {
+   "src": "gap",
+   "dst": "interoception",
+   "incremental_r2": 0.0011506299445318557
+  },
+  {
+   "src": "gap",
+   "dst": "n_words",
+   "incremental_r2": 0.005836749065698976
+  },
+  {
+   "src": "gap",
+   "dst": "duration",
+   "incremental_r2": 0.016753438758381867
+  }
+ ],
+ "analysis_4_transitions": {
+  "category_transition": {
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "matrix": [
+    [
+     0.3117408906882591,
+     0.16464237516869096,
+     0.14979757085020243,
+     0.21322537112010798,
+     0.14035087719298245,
+     0.020242914979757085
+    ],
+    [
+     0.09513742071881606,
+     0.21141649048625794,
+     0.18921775898520085,
+     0.3298097251585624,
+     0.16913319238900634,
+     0.005285412262156448
+    ],
+    [
+     0.09695512820512821,
+     0.13221153846153846,
+     0.16666666666666666,
+     0.36217948717948717,
+     0.21794871794871795,
+     0.02403846153846154
+    ],
+    [
+     0.106763555058692,
+     0.16098378982671885,
+     0.26327557294577975,
+     0.2068194522079374,
+     0.23700391280044716,
+     0.02515371716042482
+    ],
+    [
+     0.06015037593984962,
+     0.10087719298245613,
+     0.15914786967418545,
+     0.2800751879699248,
+     0.3890977443609023,
+     0.010651629072681704
+    ],
+    [
+     0.09565217391304348,
+     0.08695652173913043,
+     0.22608695652173913,
+     0.43478260869565216,
+     0.13043478260869565,
+     0.02608695652173913
+    ]
+   ],
+   "asymmetries": [
+    {
+     "i": 1,
+     "j": 2,
+     "p_ij": 0.16464237516869096,
+     "p_ji": 0.09513742071881606,
+     "asym": 0.0695049544498749
+    },
+    {
+     "i": 1,
+     "j": 3,
+     "p_ij": 0.14979757085020243,
+     "p_ji": 0.09695512820512821,
+     "asym": 0.05284244264507422
+    },
+    {
+     "i": 1,
+     "j": 4,
+     "p_ij": 0.21322537112010798,
+     "p_ji": 0.106763555058692,
+     "asym": 0.10646181606141597
+    },
+    {
+     "i": 1,
+     "j": 5,
+     "p_ij": 0.14035087719298245,
+     "p_ji": 0.06015037593984962,
+     "asym": 0.08020050125313283
+    },
+    {
+     "i": 1,
+     "j": 6,
+     "p_ij": 0.020242914979757085,
+     "p_ji": 0.09565217391304348,
+     "asym": -0.0754092589332864
+    },
+    {
+     "i": 2,
+     "j": 3,
+     "p_ij": 0.18921775898520085,
+     "p_ji": 0.13221153846153846,
+     "asym": 0.05700622052366239
+    },
+    {
+     "i": 2,
+     "j": 4,
+     "p_ij": 0.3298097251585624,
+     "p_ji": 0.16098378982671885,
+     "asym": 0.16882593533184354
+    },
+    {
+     "i": 2,
+     "j": 5,
+     "p_ij": 0.16913319238900634,
+     "p_ji": 0.10087719298245613,
+     "asym": 0.06825599940655021
+    },
+    {
+     "i": 2,
+     "j": 6,
+     "p_ij": 0.005285412262156448,
+     "p_ji": 0.08695652173913043,
+     "asym": -0.08167110947697398
+    },
+    {
+     "i": 3,
+     "j": 4,
+     "p_ij": 0.36217948717948717,
+     "p_ji": 0.26327557294577975,
+     "asym": 0.09890391423370742
+    },
+    {
+     "i": 3,
+     "j": 5,
+     "p_ij": 0.21794871794871795,
+     "p_ji": 0.15914786967418545,
+     "asym": 0.0588008482745325
+    },
+    {
+     "i": 3,
+     "j": 6,
+     "p_ij": 0.02403846153846154,
+     "p_ji": 0.22608695652173913,
+     "asym": -0.2020484949832776
+    },
+    {
+     "i": 4,
+     "j": 5,
+     "p_ij": 0.23700391280044716,
+     "p_ji": 0.2800751879699248,
+     "asym": -0.043071275169477646
+    },
+    {
+     "i": 4,
+     "j": 6,
+     "p_ij": 0.02515371716042482,
+     "p_ji": 0.43478260869565216,
+     "asym": -0.40962889153522736
+    },
+    {
+     "i": 5,
+     "j": 6,
+     "p_ij": 0.010651629072681704,
+     "p_ji": 0.13043478260869565,
+     "asym": -0.11978315353601394
+    }
+   ]
+  },
+  "topic_self_persistence": 0.4006014561570117,
+  "affect_transition": {
+   "threshold": 0.0,
+   "matrix": [
+    [
+     0.7557726465364121,
+     0.24422735346358793
+    ],
+    [
+     0.5696530295183843,
+     0.43034697048161574
+    ]
+   ],
+   "asym_high_to_low_minus_low_to_high": -0.32542567605479633
+  }
+ },
+ "analysis_5_stability": {
+  "per_dimension_ar1": {
+   "emotional_intensity": {
+    "mean": 0.037982855433736196,
+    "std": 0.05169052609970789,
+    "min": 7.666558864194428e-06,
+    "max": 0.28260421345238285,
+    "frac_positive": 1.0,
+    "n_subjects": 118
+   },
+   "joy": {
+    "mean": 0.04718359767431314,
+    "std": 0.07106408656479725,
+    "min": 0.0,
+    "max": 0.4313640451014429,
+    "frac_positive": 0.9915254237288136,
+    "n_subjects": 118
+   },
+   "sadness": {
+    "mean": 0.02920277938806682,
+    "std": 0.05573213649692301,
+    "min": 0.0,
+    "max": 0.3312583669581679,
+    "frac_positive": 0.8220338983050848,
+    "n_subjects": 118
+   },
+   "fear": {
+    "mean": 0.041969405218146814,
+    "std": 0.07311182794954486,
+    "min": 0.0,
+    "max": 0.36974288789542276,
+    "frac_positive": 0.8389830508474576,
+    "n_subjects": 118
+   },
+   "anger": {
+    "mean": 0.025503358954074972,
+    "std": 0.07725561628861587,
+    "min": 0.0,
+    "max": 0.7297123583457417,
+    "frac_positive": 0.711864406779661,
+    "n_subjects": 118
+   },
+   "disgust": {
+    "mean": 0.0103889708576884,
+    "std": 0.05552782787755869,
+    "min": 0.0,
+    "max": 0.5093192197686109,
+    "frac_positive": 0.19491525423728814,
+    "n_subjects": 118
+   },
+   "surprise": {
+    "mean": 0.03643304081654513,
+    "std": 0.09947660672921335,
+    "min": 0.0,
+    "max": 0.6805843148963224,
+    "frac_positive": 0.7627118644067796,
+    "n_subjects": 118
+   },
+   "anxiety": {
+    "mean": 0.06640105895532004,
+    "std": 0.0893101015242826,
+    "min": 0.0,
+    "max": 0.377269664979048,
+    "frac_positive": 0.9915254237288136,
+    "n_subjects": 118
+   },
+   "vision": {
+    "mean": 0.06126811691246791,
+    "std": 0.0968609616975227,
+    "min": 0.0,
+    "max": 0.4478881036107769,
+    "frac_positive": 0.9322033898305084,
+    "n_subjects": 118
+   },
+   "audition": {
+    "mean": 0.029697704664097296,
+    "std": 0.07931215724125051,
+    "min": 0.0,
+    "max": 0.4817362404899377,
+    "frac_positive": 0.711864406779661,
+    "n_subjects": 118
+   },
+   "olfaction": {
+    "mean": 7.299219396494351e-05,
+    "std": 0.0006934145953140928,
+    "min": 0.0,
+    "max": 0.007556938495292154,
+    "frac_positive": 0.05084745762711865,
+    "n_subjects": 118
+   },
+   "gustation": {
+    "mean": 0.03953232233792522,
+    "std": 0.10758772307459831,
+    "min": 0.0,
+    "max": 0.5432420996031679,
+    "frac_positive": 0.4152542372881356,
+    "n_subjects": 118
+   },
+   "somatosensation": {
+    "mean": 0.01998286308888921,
+    "std": 0.05452684269042107,
+    "min": 0.0,
+    "max": 0.34358712576378925,
+    "frac_positive": 0.6610169491525424,
+    "n_subjects": 118
+   },
+   "interoception": {
+    "mean": 0.020575647092687527,
+    "std": 0.060940901288993474,
+    "min": 0.0,
+    "max": 0.4621218910214465,
+    "frac_positive": 0.635593220338983,
+    "n_subjects": 118
+   },
+   "n_words": {
+    "mean": 0.02431026858993052,
+    "std": 0.03721840003350113,
+    "min": 5.321494023213802e-09,
+    "max": 0.24096841892020282,
+    "frac_positive": 1.0,
+    "n_subjects": 118
+   },
+   "duration": {
+    "mean": 0.023981135202916698,
+    "std": 0.03306651624180907,
+    "min": 2.954103091035165e-07,
+    "max": 0.15094092857848496,
+    "frac_positive": 1.0,
+    "n_subjects": 118
+   },
+   "gap": {
+    "mean": 0.025529649922328843,
+    "std": 0.03958852776601546,
+    "min": 7.664494297010549e-07,
+    "max": 0.22350607634213848,
+    "frac_positive": 1.0,
+    "n_subjects": 118
+   }
+  }
+ },
+ "analysis_6_mediator_moderator": [
+  {
+   "antecedent": "vision",
+   "mediator": "audition",
+   "target": "emotional_intensity",
+   "p_a_m": 0.4195886666341577,
+   "p_m_b_given_a": 0.6149406426355462,
+   "p_a_b": 0.899564325447739,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "interoception",
+   "target": "emotional_intensity",
+   "p_a_m": 0.4664016356379297,
+   "p_m_b_given_a": 0.6690860705471753,
+   "p_a_b": 0.899564325447739,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "somatosensation",
+   "target": "emotional_intensity",
+   "p_a_m": 0.07371637667633779,
+   "p_m_b_given_a": 0.8252322229062197,
+   "p_a_b": 0.899564325447739,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "n_words",
+   "target": "emotional_intensity",
+   "p_a_m": 0.38098683068262074,
+   "p_m_b_given_a": 0.0013658594508516586,
+   "p_a_b": 0.899564325447739,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "duration",
+   "target": "emotional_intensity",
+   "p_a_m": 0.29161362711583116,
+   "p_m_b_given_a": 8.08953643700594e-05,
+   "p_a_b": 0.899564325447739,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "gap",
+   "target": "emotional_intensity",
+   "p_a_m": 1.4252608622200569e-06,
+   "p_m_b_given_a": 0.3670760196057996,
+   "p_a_b": 0.899564325447739,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "vision",
+   "target": "emotional_intensity",
+   "p_a_m": 0.9966204551417546,
+   "p_m_b_given_a": 0.9779882667240152,
+   "p_a_b": 0.29100237169046705,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "interoception",
+   "target": "emotional_intensity",
+   "p_a_m": 0.2237460297016467,
+   "p_m_b_given_a": 0.6690860705471753,
+   "p_a_b": 0.29100237169046705,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "somatosensation",
+   "target": "emotional_intensity",
+   "p_a_m": 0.33258115096013974,
+   "p_m_b_given_a": 0.8252322229062197,
+   "p_a_b": 0.29100237169046705,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "n_words",
+   "target": "emotional_intensity",
+   "p_a_m": 0.6395555694188992,
+   "p_m_b_given_a": 0.0013658594508516586,
+   "p_a_b": 0.29100237169046705,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "duration",
+   "target": "emotional_intensity",
+   "p_a_m": 0.26239034876148093,
+   "p_m_b_given_a": 8.08953643700594e-05,
+   "p_a_b": 0.29100237169046705,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "gap",
+   "target": "emotional_intensity",
+   "p_a_m": 0.03449997819971262,
+   "p_m_b_given_a": 0.3670760196057996,
+   "p_a_b": 0.29100237169046705,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "vision",
+   "target": "emotional_intensity",
+   "p_a_m": 0.3917057778985926,
+   "p_m_b_given_a": 0.9779882667240152,
+   "p_a_b": 0.2660414356894678,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "audition",
+   "target": "emotional_intensity",
+   "p_a_m": 0.08085352382950961,
+   "p_m_b_given_a": 0.6149406426355462,
+   "p_a_b": 0.2660414356894678,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "somatosensation",
+   "target": "emotional_intensity",
+   "p_a_m": 2.356768002909071e-05,
+   "p_m_b_given_a": 0.8252322229062197,
+   "p_a_b": 0.2660414356894678,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "n_words",
+   "target": "emotional_intensity",
+   "p_a_m": 0.3333089909490652,
+   "p_m_b_given_a": 0.0013658594508516586,
+   "p_a_b": 0.2660414356894678,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "duration",
+   "target": "emotional_intensity",
+   "p_a_m": 0.47003747161922615,
+   "p_m_b_given_a": 8.08953643700594e-05,
+   "p_a_b": 0.2660414356894678,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "gap",
+   "target": "emotional_intensity",
+   "p_a_m": 0.04617479043339823,
+   "p_m_b_given_a": 0.3670760196057996,
+   "p_a_b": 0.2660414356894678,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "vision",
+   "target": "emotional_intensity",
+   "p_a_m": 0.7525845274937393,
+   "p_m_b_given_a": 0.9779882667240152,
+   "p_a_b": 0.5252413135046059,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "audition",
+   "target": "emotional_intensity",
+   "p_a_m": 0.09559564017547895,
+   "p_m_b_given_a": 0.6149406426355462,
+   "p_a_b": 0.5252413135046059,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "interoception",
+   "target": "emotional_intensity",
+   "p_a_m": 1.5470914505044675e-07,
+   "p_m_b_given_a": 0.6690860705471753,
+   "p_a_b": 0.5252413135046059,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "n_words",
+   "target": "emotional_intensity",
+   "p_a_m": 0.07795290453098147,
+   "p_m_b_given_a": 0.0013658594508516586,
+   "p_a_b": 0.5252413135046059,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "duration",
+   "target": "emotional_intensity",
+   "p_a_m": 0.12795685133480528,
+   "p_m_b_given_a": 8.08953643700594e-05,
+   "p_a_b": 0.5252413135046059,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "gap",
+   "target": "emotional_intensity",
+   "p_a_m": 0.7607017310856896,
+   "p_m_b_given_a": 0.3670760196057996,
+   "p_a_b": 0.5252413135046059,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "vision",
+   "target": "emotional_intensity",
+   "p_a_m": 0.39773001612368386,
+   "p_m_b_given_a": 0.9779882667240152,
+   "p_a_b": 0.24495436779968394,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "audition",
+   "target": "emotional_intensity",
+   "p_a_m": 0.32766729710873443,
+   "p_m_b_given_a": 0.6149406426355462,
+   "p_a_b": 0.24495436779968394,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "interoception",
+   "target": "emotional_intensity",
+   "p_a_m": 0.5488996733329239,
+   "p_m_b_given_a": 0.6690860705471753,
+   "p_a_b": 0.24495436779968394,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "somatosensation",
+   "target": "emotional_intensity",
+   "p_a_m": 0.2631707945967805,
+   "p_m_b_given_a": 0.8252322229062197,
+   "p_a_b": 0.24495436779968394,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "duration",
+   "target": "emotional_intensity",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 8.08953643700594e-05,
+   "p_a_b": 0.24495436779968394,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "gap",
+   "target": "emotional_intensity",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.3670760196057996,
+   "p_a_b": 0.24495436779968394,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "vision",
+   "target": "emotional_intensity",
+   "p_a_m": 0.2466966839227367,
+   "p_m_b_given_a": 0.9779882667240152,
+   "p_a_b": 0.009135479803489721,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "audition",
+   "target": "emotional_intensity",
+   "p_a_m": 0.14981683154637748,
+   "p_m_b_given_a": 0.6149406426355462,
+   "p_a_b": 0.009135479803489721,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "interoception",
+   "target": "emotional_intensity",
+   "p_a_m": 0.7041807064099046,
+   "p_m_b_given_a": 0.6690860705471753,
+   "p_a_b": 0.009135479803489721,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "somatosensation",
+   "target": "emotional_intensity",
+   "p_a_m": 0.6126136164610461,
+   "p_m_b_given_a": 0.8252322229062197,
+   "p_a_b": 0.009135479803489721,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "n_words",
+   "target": "emotional_intensity",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.0013658594508516586,
+   "p_a_b": 0.009135479803489721,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "gap",
+   "target": "emotional_intensity",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.3670760196057996,
+   "p_a_b": 0.009135479803489721,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "vision",
+   "target": "emotional_intensity",
+   "p_a_m": 0.007005540243425923,
+   "p_m_b_given_a": 0.9779882667240152,
+   "p_a_b": 0.10117224136372283,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "audition",
+   "target": "emotional_intensity",
+   "p_a_m": 0.7391952715434942,
+   "p_m_b_given_a": 0.6149406426355462,
+   "p_a_b": 0.10117224136372283,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "interoception",
+   "target": "emotional_intensity",
+   "p_a_m": 0.4648316810822104,
+   "p_m_b_given_a": 0.6690860705471753,
+   "p_a_b": 0.10117224136372283,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "somatosensation",
+   "target": "emotional_intensity",
+   "p_a_m": 0.2251656515339402,
+   "p_m_b_given_a": 0.8252322229062197,
+   "p_a_b": 0.10117224136372283,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "n_words",
+   "target": "emotional_intensity",
+   "p_a_m": 3.6637359812630166e-14,
+   "p_m_b_given_a": 0.0013658594508516586,
+   "p_a_b": 0.10117224136372283,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "duration",
+   "target": "emotional_intensity",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 8.08953643700594e-05,
+   "p_a_b": 0.10117224136372283,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "audition",
+   "target": "joy",
+   "p_a_m": 0.4195886666341577,
+   "p_m_b_given_a": 0.15135314596648164,
+   "p_a_b": 0.02051741042326194,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "interoception",
+   "target": "joy",
+   "p_a_m": 0.4664016356379297,
+   "p_m_b_given_a": 0.2125818300365896,
+   "p_a_b": 0.02051741042326194,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "somatosensation",
+   "target": "joy",
+   "p_a_m": 0.07371637667633779,
+   "p_m_b_given_a": 0.8915123667876599,
+   "p_a_b": 0.02051741042326194,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "n_words",
+   "target": "joy",
+   "p_a_m": 0.38098683068262074,
+   "p_m_b_given_a": 0.06841791884567039,
+   "p_a_b": 0.02051741042326194,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "duration",
+   "target": "joy",
+   "p_a_m": 0.29161362711583116,
+   "p_m_b_given_a": 0.046060556174907674,
+   "p_a_b": 0.02051741042326194,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "gap",
+   "target": "joy",
+   "p_a_m": 1.4252608622200569e-06,
+   "p_m_b_given_a": 0.11785498000213868,
+   "p_a_b": 0.02051741042326194,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "vision",
+   "target": "joy",
+   "p_a_m": 0.9966204551417546,
+   "p_m_b_given_a": 0.0016703704544662745,
+   "p_a_b": 0.008198964062443581,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "interoception",
+   "target": "joy",
+   "p_a_m": 0.2237460297016467,
+   "p_m_b_given_a": 0.2125818300365896,
+   "p_a_b": 0.008198964062443581,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "somatosensation",
+   "target": "joy",
+   "p_a_m": 0.33258115096013974,
+   "p_m_b_given_a": 0.8915123667876599,
+   "p_a_b": 0.008198964062443581,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "n_words",
+   "target": "joy",
+   "p_a_m": 0.6395555694188992,
+   "p_m_b_given_a": 0.06841791884567039,
+   "p_a_b": 0.008198964062443581,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "duration",
+   "target": "joy",
+   "p_a_m": 0.26239034876148093,
+   "p_m_b_given_a": 0.046060556174907674,
+   "p_a_b": 0.008198964062443581,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "gap",
+   "target": "joy",
+   "p_a_m": 0.03449997819971262,
+   "p_m_b_given_a": 0.11785498000213868,
+   "p_a_b": 0.008198964062443581,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "vision",
+   "target": "joy",
+   "p_a_m": 0.3917057778985926,
+   "p_m_b_given_a": 0.0016703704544662745,
+   "p_a_b": 0.0022570009996021323,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "audition",
+   "target": "joy",
+   "p_a_m": 0.08085352382950961,
+   "p_m_b_given_a": 0.15135314596648164,
+   "p_a_b": 0.0022570009996021323,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "somatosensation",
+   "target": "joy",
+   "p_a_m": 2.356768002909071e-05,
+   "p_m_b_given_a": 0.8915123667876599,
+   "p_a_b": 0.0022570009996021323,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "n_words",
+   "target": "joy",
+   "p_a_m": 0.3333089909490652,
+   "p_m_b_given_a": 0.06841791884567039,
+   "p_a_b": 0.0022570009996021323,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "duration",
+   "target": "joy",
+   "p_a_m": 0.47003747161922615,
+   "p_m_b_given_a": 0.046060556174907674,
+   "p_a_b": 0.0022570009996021323,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "gap",
+   "target": "joy",
+   "p_a_m": 0.04617479043339823,
+   "p_m_b_given_a": 0.11785498000213868,
+   "p_a_b": 0.0022570009996021323,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "vision",
+   "target": "joy",
+   "p_a_m": 0.7525845274937393,
+   "p_m_b_given_a": 0.0016703704544662745,
+   "p_a_b": 0.15397340411495608,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "audition",
+   "target": "joy",
+   "p_a_m": 0.09559564017547895,
+   "p_m_b_given_a": 0.15135314596648164,
+   "p_a_b": 0.15397340411495608,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "interoception",
+   "target": "joy",
+   "p_a_m": 1.5470914505044675e-07,
+   "p_m_b_given_a": 0.2125818300365896,
+   "p_a_b": 0.15397340411495608,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "n_words",
+   "target": "joy",
+   "p_a_m": 0.07795290453098147,
+   "p_m_b_given_a": 0.06841791884567039,
+   "p_a_b": 0.15397340411495608,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "duration",
+   "target": "joy",
+   "p_a_m": 0.12795685133480528,
+   "p_m_b_given_a": 0.046060556174907674,
+   "p_a_b": 0.15397340411495608,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "gap",
+   "target": "joy",
+   "p_a_m": 0.7607017310856896,
+   "p_m_b_given_a": 0.11785498000213868,
+   "p_a_b": 0.15397340411495608,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "vision",
+   "target": "joy",
+   "p_a_m": 0.39773001612368386,
+   "p_m_b_given_a": 0.0016703704544662745,
+   "p_a_b": 0.6084014232823975,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "audition",
+   "target": "joy",
+   "p_a_m": 0.32766729710873443,
+   "p_m_b_given_a": 0.15135314596648164,
+   "p_a_b": 0.6084014232823975,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "interoception",
+   "target": "joy",
+   "p_a_m": 0.5488996733329239,
+   "p_m_b_given_a": 0.2125818300365896,
+   "p_a_b": 0.6084014232823975,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "somatosensation",
+   "target": "joy",
+   "p_a_m": 0.2631707945967805,
+   "p_m_b_given_a": 0.8915123667876599,
+   "p_a_b": 0.6084014232823975,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "duration",
+   "target": "joy",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.046060556174907674,
+   "p_a_b": 0.6084014232823975,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "gap",
+   "target": "joy",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.11785498000213868,
+   "p_a_b": 0.6084014232823975,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "vision",
+   "target": "joy",
+   "p_a_m": 0.2466966839227367,
+   "p_m_b_given_a": 0.0016703704544662745,
+   "p_a_b": 0.7700214332359336,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "audition",
+   "target": "joy",
+   "p_a_m": 0.14981683154637748,
+   "p_m_b_given_a": 0.15135314596648164,
+   "p_a_b": 0.7700214332359336,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "interoception",
+   "target": "joy",
+   "p_a_m": 0.7041807064099046,
+   "p_m_b_given_a": 0.2125818300365896,
+   "p_a_b": 0.7700214332359336,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "somatosensation",
+   "target": "joy",
+   "p_a_m": 0.6126136164610461,
+   "p_m_b_given_a": 0.8915123667876599,
+   "p_a_b": 0.7700214332359336,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "n_words",
+   "target": "joy",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.06841791884567039,
+   "p_a_b": 0.7700214332359336,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "gap",
+   "target": "joy",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.11785498000213868,
+   "p_a_b": 0.7700214332359336,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "vision",
+   "target": "joy",
+   "p_a_m": 0.007005540243425923,
+   "p_m_b_given_a": 0.0016703704544662745,
+   "p_a_b": 0.32091598927822274,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "audition",
+   "target": "joy",
+   "p_a_m": 0.7391952715434942,
+   "p_m_b_given_a": 0.15135314596648164,
+   "p_a_b": 0.32091598927822274,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "interoception",
+   "target": "joy",
+   "p_a_m": 0.4648316810822104,
+   "p_m_b_given_a": 0.2125818300365896,
+   "p_a_b": 0.32091598927822274,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "somatosensation",
+   "target": "joy",
+   "p_a_m": 0.2251656515339402,
+   "p_m_b_given_a": 0.8915123667876599,
+   "p_a_b": 0.32091598927822274,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "n_words",
+   "target": "joy",
+   "p_a_m": 3.6637359812630166e-14,
+   "p_m_b_given_a": 0.06841791884567039,
+   "p_a_b": 0.32091598927822274,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "duration",
+   "target": "joy",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.046060556174907674,
+   "p_a_b": 0.32091598927822274,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "audition",
+   "target": "anxiety",
+   "p_a_m": 0.4195886666341577,
+   "p_m_b_given_a": 0.2655971145687499,
+   "p_a_b": 0.00020801830847583247,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "interoception",
+   "target": "anxiety",
+   "p_a_m": 0.4664016356379297,
+   "p_m_b_given_a": 0.1373582163673135,
+   "p_a_b": 0.00020801830847583247,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "somatosensation",
+   "target": "anxiety",
+   "p_a_m": 0.07371637667633779,
+   "p_m_b_given_a": 0.03937331427516133,
+   "p_a_b": 0.00020801830847583247,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "n_words",
+   "target": "anxiety",
+   "p_a_m": 0.38098683068262074,
+   "p_m_b_given_a": 0.007793955158861499,
+   "p_a_b": 0.00020801830847583247,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "duration",
+   "target": "anxiety",
+   "p_a_m": 0.29161362711583116,
+   "p_m_b_given_a": 0.0008286268086385995,
+   "p_a_b": 0.00020801830847583247,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "vision",
+   "mediator": "gap",
+   "target": "anxiety",
+   "p_a_m": 1.4252608622200569e-06,
+   "p_m_b_given_a": 0.04692974422819951,
+   "p_a_b": 0.00020801830847583247,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "vision",
+   "target": "anxiety",
+   "p_a_m": 0.9966204551417546,
+   "p_m_b_given_a": 0.0026111577329199775,
+   "p_a_b": 0.024314875611161524,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "interoception",
+   "target": "anxiety",
+   "p_a_m": 0.2237460297016467,
+   "p_m_b_given_a": 0.1373582163673135,
+   "p_a_b": 0.024314875611161524,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "somatosensation",
+   "target": "anxiety",
+   "p_a_m": 0.33258115096013974,
+   "p_m_b_given_a": 0.03937331427516133,
+   "p_a_b": 0.024314875611161524,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "n_words",
+   "target": "anxiety",
+   "p_a_m": 0.6395555694188992,
+   "p_m_b_given_a": 0.007793955158861499,
+   "p_a_b": 0.024314875611161524,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "duration",
+   "target": "anxiety",
+   "p_a_m": 0.26239034876148093,
+   "p_m_b_given_a": 0.0008286268086385995,
+   "p_a_b": 0.024314875611161524,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "audition",
+   "mediator": "gap",
+   "target": "anxiety",
+   "p_a_m": 0.03449997819971262,
+   "p_m_b_given_a": 0.04692974422819951,
+   "p_a_b": 0.024314875611161524,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "vision",
+   "target": "anxiety",
+   "p_a_m": 0.3917057778985926,
+   "p_m_b_given_a": 0.0026111577329199775,
+   "p_a_b": 0.02449742911185071,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "audition",
+   "target": "anxiety",
+   "p_a_m": 0.08085352382950961,
+   "p_m_b_given_a": 0.2655971145687499,
+   "p_a_b": 0.02449742911185071,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "somatosensation",
+   "target": "anxiety",
+   "p_a_m": 2.356768002909071e-05,
+   "p_m_b_given_a": 0.03937331427516133,
+   "p_a_b": 0.02449742911185071,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "n_words",
+   "target": "anxiety",
+   "p_a_m": 0.3333089909490652,
+   "p_m_b_given_a": 0.007793955158861499,
+   "p_a_b": 0.02449742911185071,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "duration",
+   "target": "anxiety",
+   "p_a_m": 0.47003747161922615,
+   "p_m_b_given_a": 0.0008286268086385995,
+   "p_a_b": 0.02449742911185071,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "interoception",
+   "mediator": "gap",
+   "target": "anxiety",
+   "p_a_m": 0.04617479043339823,
+   "p_m_b_given_a": 0.04692974422819951,
+   "p_a_b": 0.02449742911185071,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "vision",
+   "target": "anxiety",
+   "p_a_m": 0.7525845274937393,
+   "p_m_b_given_a": 0.0026111577329199775,
+   "p_a_b": 0.33790160655210677,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "audition",
+   "target": "anxiety",
+   "p_a_m": 0.09559564017547895,
+   "p_m_b_given_a": 0.2655971145687499,
+   "p_a_b": 0.33790160655210677,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "interoception",
+   "target": "anxiety",
+   "p_a_m": 1.5470914505044675e-07,
+   "p_m_b_given_a": 0.1373582163673135,
+   "p_a_b": 0.33790160655210677,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "n_words",
+   "target": "anxiety",
+   "p_a_m": 0.07795290453098147,
+   "p_m_b_given_a": 0.007793955158861499,
+   "p_a_b": 0.33790160655210677,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "duration",
+   "target": "anxiety",
+   "p_a_m": 0.12795685133480528,
+   "p_m_b_given_a": 0.0008286268086385995,
+   "p_a_b": 0.33790160655210677,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "somatosensation",
+   "mediator": "gap",
+   "target": "anxiety",
+   "p_a_m": 0.7607017310856896,
+   "p_m_b_given_a": 0.04692974422819951,
+   "p_a_b": 0.33790160655210677,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "vision",
+   "target": "anxiety",
+   "p_a_m": 0.39773001612368386,
+   "p_m_b_given_a": 0.0026111577329199775,
+   "p_a_b": 0.1626854347366855,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "audition",
+   "target": "anxiety",
+   "p_a_m": 0.32766729710873443,
+   "p_m_b_given_a": 0.2655971145687499,
+   "p_a_b": 0.1626854347366855,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "interoception",
+   "target": "anxiety",
+   "p_a_m": 0.5488996733329239,
+   "p_m_b_given_a": 0.1373582163673135,
+   "p_a_b": 0.1626854347366855,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "somatosensation",
+   "target": "anxiety",
+   "p_a_m": 0.2631707945967805,
+   "p_m_b_given_a": 0.03937331427516133,
+   "p_a_b": 0.1626854347366855,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "duration",
+   "target": "anxiety",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.0008286268086385995,
+   "p_a_b": 0.1626854347366855,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "n_words",
+   "mediator": "gap",
+   "target": "anxiety",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.04692974422819951,
+   "p_a_b": 0.1626854347366855,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "vision",
+   "target": "anxiety",
+   "p_a_m": 0.2466966839227367,
+   "p_m_b_given_a": 0.0026111577329199775,
+   "p_a_b": 0.0071841428101218074,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "audition",
+   "target": "anxiety",
+   "p_a_m": 0.14981683154637748,
+   "p_m_b_given_a": 0.2655971145687499,
+   "p_a_b": 0.0071841428101218074,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "interoception",
+   "target": "anxiety",
+   "p_a_m": 0.7041807064099046,
+   "p_m_b_given_a": 0.1373582163673135,
+   "p_a_b": 0.0071841428101218074,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "somatosensation",
+   "target": "anxiety",
+   "p_a_m": 0.6126136164610461,
+   "p_m_b_given_a": 0.03937331427516133,
+   "p_a_b": 0.0071841428101218074,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "n_words",
+   "target": "anxiety",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.007793955158861499,
+   "p_a_b": 0.0071841428101218074,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "duration",
+   "mediator": "gap",
+   "target": "anxiety",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.04692974422819951,
+   "p_a_b": 0.0071841428101218074,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "vision",
+   "target": "anxiety",
+   "p_a_m": 0.007005540243425923,
+   "p_m_b_given_a": 0.0026111577329199775,
+   "p_a_b": 0.004695109245253404,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "audition",
+   "target": "anxiety",
+   "p_a_m": 0.7391952715434942,
+   "p_m_b_given_a": 0.2655971145687499,
+   "p_a_b": 0.004695109245253404,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "interoception",
+   "target": "anxiety",
+   "p_a_m": 0.4648316810822104,
+   "p_m_b_given_a": 0.1373582163673135,
+   "p_a_b": 0.004695109245253404,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "somatosensation",
+   "target": "anxiety",
+   "p_a_m": 0.2251656515339402,
+   "p_m_b_given_a": 0.03937331427516133,
+   "p_a_b": 0.004695109245253404,
+   "candidate_mediator": false,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "n_words",
+   "target": "anxiety",
+   "p_a_m": 3.6637359812630166e-14,
+   "p_m_b_given_a": 0.007793955158861499,
+   "p_a_b": 0.004695109245253404,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  },
+  {
+   "antecedent": "gap",
+   "mediator": "duration",
+   "target": "anxiety",
+   "p_a_m": 0.0,
+   "p_m_b_given_a": 0.0008286268086385995,
+   "p_a_b": 0.004695109245253404,
+   "candidate_mediator": true,
+   "q_fdr": 1.0,
+   "fdr_significant": false
+  }
+ ],
+ "analysis_7_identifiability": {
+  "n_candidate_edges": 84,
+  "n_identifiable": 0,
+  "n_not_identifiable": 84,
+  "edges": [
+   {
+    "src": "anger",
+    "dst": "anger",
+    "x": "anger_t",
+    "y": "anger_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anger",
+    "dst": "emotional_intensity",
+    "x": "anger_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anger",
+    "dst": "gap",
+    "x": "anger_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "anger",
+    "x": "anxiety_t",
+    "y": "anger_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "anxiety",
+    "x": "anxiety_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "emotional_intensity",
+    "x": "anxiety_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "fear",
+    "x": "anxiety_t",
+    "y": "fear_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "gustation",
+    "x": "anxiety_t",
+    "y": "gustation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "interoception",
+    "x": "anxiety_t",
+    "y": "interoception_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "sadness",
+    "x": "anxiety_t",
+    "y": "sadness_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "anxiety",
+    "dst": "vision",
+    "x": "anxiety_t",
+    "y": "vision_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "audition",
+    "dst": "audition",
+    "x": "audition_t",
+    "y": "audition_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "audition",
+    "dst": "fear",
+    "x": "audition_t",
+    "y": "fear_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "audition",
+    "dst": "surprise",
+    "x": "audition_t",
+    "y": "surprise_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "disgust",
+    "dst": "disgust",
+    "x": "disgust_t",
+    "y": "disgust_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "disgust",
+    "dst": "gustation",
+    "x": "disgust_t",
+    "y": "gustation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "anger",
+    "x": "duration_t",
+    "y": "anger_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "anxiety",
+    "x": "duration_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "duration",
+    "x": "duration_t",
+    "y": "duration_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "emotional_intensity",
+    "x": "duration_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "gap",
+    "x": "duration_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "joy",
+    "x": "duration_t",
+    "y": "joy_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "n_words",
+    "x": "duration_t",
+    "y": "n_words_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "duration",
+    "dst": "sadness",
+    "x": "duration_t",
+    "y": "sadness_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "emotional_intensity",
+    "dst": "anger",
+    "x": "emotional_intensity_t",
+    "y": "anger_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "emotional_intensity",
+    "dst": "audition",
+    "x": "emotional_intensity_t",
+    "y": "audition_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "emotional_intensity",
+    "dst": "disgust",
+    "x": "emotional_intensity_t",
+    "y": "disgust_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "emotional_intensity",
+    "dst": "emotional_intensity",
+    "x": "emotional_intensity_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "emotional_intensity",
+    "dst": "joy",
+    "x": "emotional_intensity_t",
+    "y": "joy_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "fear",
+    "dst": "anger",
+    "x": "fear_t",
+    "y": "anger_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "fear",
+    "dst": "anxiety",
+    "x": "fear_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "fear",
+    "dst": "audition",
+    "x": "fear_t",
+    "y": "audition_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "fear",
+    "dst": "fear",
+    "x": "fear_t",
+    "y": "fear_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "fear",
+    "dst": "gap",
+    "x": "fear_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "fear",
+    "dst": "sadness",
+    "x": "fear_t",
+    "y": "sadness_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gap",
+    "dst": "anxiety",
+    "x": "gap_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gap",
+    "dst": "duration",
+    "x": "gap_t",
+    "y": "duration_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gap",
+    "dst": "gap",
+    "x": "gap_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gap",
+    "dst": "n_words",
+    "x": "gap_t",
+    "y": "n_words_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gap",
+    "dst": "vision",
+    "x": "gap_t",
+    "y": "vision_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gustation",
+    "dst": "anxiety",
+    "x": "gustation_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gustation",
+    "dst": "disgust",
+    "x": "gustation_t",
+    "y": "disgust_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gustation",
+    "dst": "emotional_intensity",
+    "x": "gustation_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gustation",
+    "dst": "gustation",
+    "x": "gustation_t",
+    "y": "gustation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gustation",
+    "dst": "joy",
+    "x": "gustation_t",
+    "y": "joy_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "gustation",
+    "dst": "vision",
+    "x": "gustation_t",
+    "y": "vision_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "interoception",
+    "dst": "interoception",
+    "x": "interoception_t",
+    "y": "interoception_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "interoception",
+    "dst": "somatosensation",
+    "x": "interoception_t",
+    "y": "somatosensation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "joy",
+    "dst": "audition",
+    "x": "joy_t",
+    "y": "audition_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "joy",
+    "dst": "emotional_intensity",
+    "x": "joy_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "joy",
+    "dst": "gap",
+    "x": "joy_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "joy",
+    "dst": "gustation",
+    "x": "joy_t",
+    "y": "gustation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "joy",
+    "dst": "interoception",
+    "x": "joy_t",
+    "y": "interoception_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "joy",
+    "dst": "joy",
+    "x": "joy_t",
+    "y": "joy_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "joy",
+    "dst": "vision",
+    "x": "joy_t",
+    "y": "vision_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "n_words",
+    "dst": "anger",
+    "x": "n_words_t",
+    "y": "anger_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "n_words",
+    "dst": "anxiety",
+    "x": "n_words_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "n_words",
+    "dst": "duration",
+    "x": "n_words_t",
+    "y": "duration_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "n_words",
+    "dst": "emotional_intensity",
+    "x": "n_words_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "n_words",
+    "dst": "gap",
+    "x": "n_words_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "n_words",
+    "dst": "n_words",
+    "x": "n_words_t",
+    "y": "n_words_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "olfaction",
+    "dst": "olfaction",
+    "x": "olfaction_t",
+    "y": "olfaction_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "sadness",
+    "dst": "anxiety",
+    "x": "sadness_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "sadness",
+    "dst": "fear",
+    "x": "sadness_t",
+    "y": "fear_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "sadness",
+    "dst": "gap",
+    "x": "sadness_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "sadness",
+    "dst": "joy",
+    "x": "sadness_t",
+    "y": "joy_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "sadness",
+    "dst": "sadness",
+    "x": "sadness_t",
+    "y": "sadness_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "somatosensation",
+    "dst": "anxiety",
+    "x": "somatosensation_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "somatosensation",
+    "dst": "gap",
+    "x": "somatosensation_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "somatosensation",
+    "dst": "interoception",
+    "x": "somatosensation_t",
+    "y": "interoception_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "somatosensation",
+    "dst": "somatosensation",
+    "x": "somatosensation_t",
+    "y": "somatosensation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "surprise",
+    "dst": "audition",
+    "x": "surprise_t",
+    "y": "audition_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "surprise",
+    "dst": "emotional_intensity",
+    "x": "surprise_t",
+    "y": "emotional_intensity_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "surprise",
+    "dst": "fear",
+    "x": "surprise_t",
+    "y": "fear_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "surprise",
+    "dst": "interoception",
+    "x": "surprise_t",
+    "y": "interoception_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "surprise",
+    "dst": "surprise",
+    "x": "surprise_t",
+    "y": "surprise_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "anxiety",
+    "x": "vision_t",
+    "y": "anxiety_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "disgust",
+    "x": "vision_t",
+    "y": "disgust_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "gap",
+    "x": "vision_t",
+    "y": "gap_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "gustation",
+    "x": "vision_t",
+    "y": "gustation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "joy",
+    "x": "vision_t",
+    "y": "joy_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "somatosensation",
+    "x": "vision_t",
+    "y": "somatosensation_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "surprise",
+    "x": "vision_t",
+    "y": "surprise_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   },
+   {
+    "src": "vision",
+    "dst": "vision",
+    "x": "vision_t",
+    "y": "vision_t1",
+    "status": "not_identifiable",
+    "adjustment_set": null,
+    "reason": "unmeasured confounding: every backdoor-blocking set requires at least one unobserved node (e.g. a latent common cause of x and y)",
+    "assumptions": [
+     "ignorability given latent_U_t (UNMET: latent_U_t unmeasured)"
+    ]
+   }
+  ]
+ },
+ "candidate_ranking": [
+  {
+   "dimension": "joy",
+   "lag1_skill_r2": 0.1923855846773711,
+   "best_lag_skill_r2": 0.2657870007953592,
+   "mean_incremental_r2": -0.00017358993720917315,
+   "n_conditionally_dependent_out": 6,
+   "stability_frac_positive": 0.9915254237288136,
+   "stability_mean_ar1": 0.04718359767431314,
+   "support_score": 0.821549712659766
+  },
+  {
+   "dimension": "anxiety",
+   "lag1_skill_r2": 0.15486375469254343,
+   "best_lag_skill_r2": 0.18388050409400492,
+   "mean_incremental_r2": 0.0035342143591193184,
+   "n_conditionally_dependent_out": 7,
+   "stability_frac_positive": 0.9915254237288136,
+   "stability_mean_ar1": 0.06640105895532004,
+   "support_score": 0.7673142877540082
+  },
+  {
+   "dimension": "duration",
+   "lag1_skill_r2": 0.010223437171910321,
+   "best_lag_skill_r2": 0.02055795119237447,
+   "mean_incremental_r2": 0.014098356841946089,
+   "n_conditionally_dependent_out": 7,
+   "stability_frac_positive": 1.0,
+   "stability_mean_ar1": 0.023981135202916698,
+   "support_score": 0.661049735402105
+  },
+  {
+   "dimension": "vision",
+   "lag1_skill_r2": 0.05252901801554166,
+   "best_lag_skill_r2": 0.08835610199183774,
+   "mean_incremental_r2": -0.0017069922125925521,
+   "n_conditionally_dependent_out": 7,
+   "stability_frac_positive": 0.9322033898305084,
+   "stability_mean_ar1": 0.06126811691246791,
+   "support_score": 0.6244577969070919
+  },
+  {
+   "dimension": "emotional_intensity",
+   "lag1_skill_r2": 0.05308478271055839,
+   "best_lag_skill_r2": 0.061738280181234395,
+   "mean_incremental_r2": 0.001148143833374353,
+   "n_conditionally_dependent_out": 4,
+   "stability_frac_positive": 1.0,
+   "stability_mean_ar1": 0.037982855433736196,
+   "support_score": 0.6074789993481062
+  },
+  {
+   "dimension": "n_words",
+   "lag1_skill_r2": 0.019589638687189326,
+   "best_lag_skill_r2": 0.04966034573479017,
+   "mean_incremental_r2": 0.0009868395539261998,
+   "n_conditionally_dependent_out": 5,
+   "stability_frac_positive": 1.0,
+   "stability_mean_ar1": 0.02431026858993052,
+   "support_score": 0.6045945435044212
+  },
+  {
+   "dimension": "fear",
+   "lag1_skill_r2": 0.08937821563586634,
+   "best_lag_skill_r2": 0.1014664889518101,
+   "mean_incremental_r2": 0.0017049489471455612,
+   "n_conditionally_dependent_out": 5,
+   "stability_frac_positive": 0.8389830508474576,
+   "stability_mean_ar1": 0.041969405218146814,
+   "support_score": 0.5794827591112668
+  },
+  {
+   "dimension": "gap",
+   "lag1_skill_r2": 0.007133734423519611,
+   "best_lag_skill_r2": 0.02125007384750932,
+   "mean_incremental_r2": 0.000882337279171079,
+   "n_conditionally_dependent_out": 4,
+   "stability_frac_positive": 1.0,
+   "stability_mean_ar1": 0.025529649922328843,
+   "support_score": 0.5656617602433648
+  },
+  {
+   "dimension": "sadness",
+   "lag1_skill_r2": 0.06975026953242325,
+   "best_lag_skill_r2": 0.08589161185535221,
+   "mean_incremental_r2": 0.00033387283873270723,
+   "n_conditionally_dependent_out": 4,
+   "stability_frac_positive": 0.8220338983050848,
+   "stability_mean_ar1": 0.02920277938806682,
+   "support_score": 0.5385779252015581
+  },
+  {
+   "dimension": "gustation",
+   "lag1_skill_r2": 0.17498820052420627,
+   "best_lag_skill_r2": 0.20364519695497774,
+   "mean_incremental_r2": 0.0004567372225960861,
+   "n_conditionally_dependent_out": 5,
+   "stability_frac_positive": 0.4152542372881356,
+   "stability_mean_ar1": 0.03953232233792522,
+   "support_score": 0.463556001712026
+  },
+  {
+   "dimension": "anger",
+   "lag1_skill_r2": 0.04010007021576212,
+   "best_lag_skill_r2": 0.04010007021576212,
+   "mean_incremental_r2": -0.00010413313301169819,
+   "n_conditionally_dependent_out": 2,
+   "stability_frac_positive": 0.711864406779661,
+   "stability_mean_ar1": 0.025503358954074972,
+   "support_score": 0.41603227360559264
+  },
+  {
+   "dimension": "surprise",
+   "lag1_skill_r2": -0.047821127952318854,
+   "best_lag_skill_r2": -0.02577231811427949,
+   "mean_incremental_r2": -0.0003854239997543238,
+   "n_conditionally_dependent_out": 4,
+   "stability_frac_positive": 0.7627118644067796,
+   "stability_mean_ar1": 0.03643304081654513,
+   "support_score": 0.3955836140891103
+  },
+  {
+   "dimension": "interoception",
+   "lag1_skill_r2": 0.03932025714111609,
+   "best_lag_skill_r2": 0.047736999473785624,
+   "mean_incremental_r2": -0.0004816180391970029,
+   "n_conditionally_dependent_out": 1,
+   "stability_frac_positive": 0.635593220338983,
+   "stability_mean_ar1": 0.020575647092687527,
+   "support_score": 0.37553360964327714
+  },
+  {
+   "dimension": "audition",
+   "lag1_skill_r2": -0.00722634907174502,
+   "best_lag_skill_r2": -0.004983340970762473,
+   "mean_incremental_r2": -0.00043564830558846107,
+   "n_conditionally_dependent_out": 2,
+   "stability_frac_positive": 0.711864406779661,
+   "stability_mean_ar1": 0.029697704664097296,
+   "support_score": 0.37094886241906805
+  },
+  {
+   "dimension": "somatosensation",
+   "lag1_skill_r2": -0.0011339564809143,
+   "best_lag_skill_r2": -0.0011339564809143,
+   "mean_incremental_r2": -8.626599393984219e-05,
+   "n_conditionally_dependent_out": 3,
+   "stability_frac_positive": 0.6610169491525424,
+   "stability_mean_ar1": 0.01998286308888921,
+   "support_score": 0.3593745180953569
+  },
+  {
+   "dimension": "disgust",
+   "lag1_skill_r2": 0.053237389326237006,
+   "best_lag_skill_r2": 0.053237389326237006,
+   "mean_incremental_r2": 0.0007937384954458948,
+   "n_conditionally_dependent_out": 1,
+   "stability_frac_positive": 0.19491525423728814,
+   "stability_mean_ar1": 0.0103889708576884,
+   "support_score": 0.16466370892211057
+  },
+  {
+   "dimension": "olfaction",
+   "lag1_skill_r2": 0.0,
+   "best_lag_skill_r2": 0.0,
+   "mean_incremental_r2": -7.402224292398646e-05,
+   "n_conditionally_dependent_out": 0,
+   "stability_frac_positive": 0.05084745762711865,
+   "stability_mean_ar1": 7.299219396494351e-05,
+   "support_score": 0.025423728813559324
+  }
+ ],
+ "label_counts": {
+  "associational": 40,
+  "temporally_precedent": 41,
+  "conditionally_supported": 39,
+  "not_identifiable": 4
+ },
+ "multiplicity": {
+  "method": "Benjamini-Hochberg (1995), q=0.05, applied post-hoc to the p-value families",
+  "ci_family_n": 272,
+  "ci_fdr_significant": 39,
+  "mediator_family_n": 126,
+  "mediator_fdr_significant": 0,
+  "note": "The 272-pair CI family and 126-triple mediator family are large; unadjusted alpha=0.05 yields ~13.6 expected false positives in the CI family. The composite candidate ranking uses arbitrary weights and is HYPOTHESIS-GENERATING, not confirmatory."
+ }
+}

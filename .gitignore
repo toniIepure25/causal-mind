@@ -50,3 +50,4 @@ worktrees/
 data/neural/
 data/derived/cm5_features/
 data/atlases/
+data/embeddings/
