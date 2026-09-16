@@ -51,7 +51,7 @@ experiment. **No criterion may be waived to reach THE ORACLE.**
 
 ## Anti-HARKing / freeze
 
-The six criteria, the gate rule, and THE ORACLE's design are **frozen as of this commit**.
+The six criteria, the gate rule, and THE ORACLE's design are **frozen as of commit f3348dc (CM-6 baseline)**.
 THE ORACLE's conditions, metrics, and hypotheses may not be changed after seeing pre-Oracle
 outcomes without a new ADR + research-log entry. A pre-Oracle null on R3/R4/R5 **stops** THE
 ORACLE; it is not a reason to redesign THE ORACLE to force a positive.

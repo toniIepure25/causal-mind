@@ -92,6 +92,6 @@ candidate antecedents for perturbation.**
 ## 6. Anti-HARKing / freeze note
 
 The candidate graph, the 7 analyses, the edge-label taxonomy, and this identification
-account are **frozen as of this commit**. Any change to the SCM node/edge set, the
+account are **frozen as of commit f3348dc (CM-6 baseline)**. Any change to the SCM node/edge set, the
 assumptions, or the identifiability method after seeing downstream experiment outcomes
 requires a new ADR + research-log entry and must not be used to retrofit a causal claim.

@@ -236,3 +236,7 @@ is the strongest *literature-motivated* cognitive edge and the best public-data 
 ds006583 (affect→affect); the only public dataset with a genuinely randomized `do(X)` →
 future semantic state is **ds005494** (E3, memory cue). The robust *observational* signal is
 the **linguistic-load cluster** and the **semantic embedding**, not the affect family.
+
+---
+
+**Anti-HARKing / freeze.** The candidate node/edge set, the 7 analyses, the edge-label taxonomy, the BH-FDR family, and the hypothesis-generating ranking are frozen as of commit f3348dc (CM-6 baseline). Any change after seeing downstream experiment outcomes requires a new ADR + research-log entry and must not be used to retrofit a causal claim.
