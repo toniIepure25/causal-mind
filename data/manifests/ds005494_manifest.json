@@ -1,0 +1,152 @@
+{
+  "dataset": "ds005494",
+  "version": "v1.0.1",
+  "acquired_utc": "2026-09-18T22:27:36.595319Z",
+  "files": [
+    {
+      "path": "data/raw/ds005494/sub-R1003P/ses-0/beh.tsv",
+      "sha256": "38c790e90f2306135a6296bd5dff77586d625b7dd2f8d103ed28a63b18180adb",
+      "bytes": 129670
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1003P/ses-1/beh.tsv",
+      "sha256": "80394ae6ea3a57fda7d4f3f62ff0401fe20b48a1fea96615eb7345521aac39c1",
+      "bytes": 183698
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1016M/ses-0/beh.tsv",
+      "sha256": "f3a41a0a82555d20a81abb4741f5d8a8c84651e7a50c7c9c1fd0a70ff7e44f21",
+      "bytes": 137044
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1016M/ses-1/beh.tsv",
+      "sha256": "0aef852e47a4f7b49a1f0fe193ba66c4c3187dba0861d924728f85d65372c43e",
+      "bytes": 137387
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1016M/ses-2/beh.tsv",
+      "sha256": "e46ea45f516d3e459d8d3ef99cc244b48ba50e9bfdfba42e9207c7eba3266f3d",
+      "bytes": 172112
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1028M/ses-0/beh.tsv",
+      "sha256": "748cba7b7eaef889fbac83ad271e740bce1d8c4cc78cc29059b95e914d2754e5",
+      "bytes": 179789
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1031M/ses-0/beh.tsv",
+      "sha256": "a73b632cb1722ee2519b7c49bbe660c4ce3395c15c5317a3c3ea3b212115f729",
+      "bytes": 168911
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1031M/ses-1/beh.tsv",
+      "sha256": "8405727b698c43df6edb5bfb8a67c755d047eb3a3461cc7d8713e3bc3855d013",
+      "bytes": 147114
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1036M/ses-0/beh.tsv",
+      "sha256": "fe2ea61fe179bea0d3ba83b5f071b5beaf6d1e741f8ed85c5960408379ced7fb",
+      "bytes": 125740
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1050M/ses-0/beh.tsv",
+      "sha256": "30bdebbae0551a7c429a9e863fad09a231e664a835d0f38a78cf7020bca07369",
+      "bytes": 106710
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1060M/ses-0/beh.tsv",
+      "sha256": "64eb9392c4471974adc866184a7fede6b9fc6eca15ba74a06a636fe5254cbb9e",
+      "bytes": 145673
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1060M/ses-1/beh.tsv",
+      "sha256": "ecd74525155f06d09ea2b7342952f80baf8b5040073d4ab4944fbad55b288fda",
+      "bytes": 183823
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1074M/ses-0/beh.tsv",
+      "sha256": "2409d5c92769fb90c983f713f100473251eb59d1d15387cf1681f6533a0cbca9",
+      "bytes": 136880
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1082N/ses-0/beh.tsv",
+      "sha256": "b5aa768206ca58442f581e67332e071be465cea099d88b9a216fefa97e9a8c21",
+      "bytes": 188681
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1091N/ses-1/beh.tsv",
+      "sha256": "56b556d965df6f1ac1675fd67ee015743ede470af140904babd537e5d5b13b61",
+      "bytes": 175682
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1095N/ses-0/beh.tsv",
+      "sha256": "9c05ad12f3dc81f746388ab15926e306d977651a3a897572837ada37b669318d",
+      "bytes": 184258
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1111M/ses-0/beh.tsv",
+      "sha256": "f35dfc7c4665925576b10c145462180f6e84d6895f94e2a9df0169c5a23b7868",
+      "bytes": 113218
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1111M/ses-1/beh.tsv",
+      "sha256": "5f719ae6b7113a3d735db50dd3d34b9c8b795fc81cfac6367ac40cf5068a59ae",
+      "bytes": 113943
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1112M/ses-0/beh.tsv",
+      "sha256": "1898fea4864f4c66dbe3fee3df8800ac05e0e5ec2102989f03b6a19cbec04104",
+      "bytes": 128746
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1118N/ses-0/beh.tsv",
+      "sha256": "98f2b5125d092e0e13bb27023b029434810b6fa1a93be0fd942f163dfa6b9a1f",
+      "bytes": 181458
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1121M/ses-0/beh.tsv",
+      "sha256": "ef930f36a78580ea3f340641adf3d26a3e68e4e6d329c34be585d4faa2cee185",
+      "bytes": 105845
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1130M/ses-0/beh.tsv",
+      "sha256": "37b849b832cd8b6d27e115d40f2fcaf3413bf6dd61d1c405d18804f0ab4df416",
+      "bytes": 101743
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1136N/ses-0/beh.tsv",
+      "sha256": "8ce45a0fe913be15ef125039c27de7e0b48bc0d60dd3f13b13633b352e09a0f2",
+      "bytes": 181439
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1149N/ses-0/beh.tsv",
+      "sha256": "155f325fd8cdc8255766d3aa5ab72b3b314dff83d5714d63e83046c87d1b57b1",
+      "bytes": 176624
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1162N/ses-0/beh.tsv",
+      "sha256": "eb3f35c4613401a77c8131bcf8e2965f985837e75723a415afd4f09d7ffe7176",
+      "bytes": 183608
+    },
+    {
+      "path": "data/raw/ds005494/sub-R1185N/ses-0/beh.tsv",
+      "sha256": "8bfd0d5e0f8aa0b11e5569839dd892b8057eebad364719d34305cab85c12aa01",
+      "bytes": 178994
+    },
+    {
+      "path": "data/raw/ds005494/participants.tsv",
+      "sha256": "ffd3478bc5c7ceb0aaf8ad23f903b1f7e85b04f066f7eb4eb7bc895f1739b4c4",
+      "bytes": 388
+    },
+    {
+      "path": "data/raw/ds005494/dataset_description.json",
+      "sha256": "3c75c2f56de9ecae5899004816a59ee86ded36136be3d5650859dac8288d7d84",
+      "bytes": 550
+    },
+    {
+      "path": "data/raw/ds005494/wordpool_EN.txt",
+      "sha256": "ed449f1030b2d902f59f5bc9709289acc42fb8427c14a4750c792fd3984aa83b",
+      "bytes": 1554
+    }
+  ]
+}

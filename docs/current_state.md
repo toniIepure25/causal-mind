@@ -2,20 +2,20 @@
 
 ## Project state
 
-`CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`
+`CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT`
 (CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 = `CM5_NULL`;
-CM-6 = `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`. The project has moved from
-FORECAST to EXPLAIN/INTERVENE. CM-6A built an observational candidate SCM of
-thought dynamics: 0/84 candidate edges are causally identifiable (all blocked by
-unmeasured confounding incl. the per-subject GPT-rating baseline); the affect
-family's pooled skill is a between-subject GPT-baseline artifact (within-subject
-R^2 0.01-0.05). CM-6B audited public intervention datasets (best public test =
-ds005494; no public dataset tests voluntary redirection). CM-6D/E built the causal
-metrics + a counterfactual engine that refuses to label an unidentified
-counterfactual as causal. CM-6C/F/G/H/I designed the first own experiment
-(CM-6H pre-Oracle voluntary redirection) and gated THE ORACLE behind 6 unmet
-readiness criteria. Red-team: GO-WITH-CHANGES (all changes applied). No causal
-effect has been measured; no free-will claim.)
+CM-6 = `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`; CM-7 =
+`CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT`. The project has moved from FORECAST to
+EXPLAIN/INTERVENE. CM-7 (2026-09-17) validated the intervention framework on the
+independent public dataset ds005494: the framework correctly identified
+(experimentally_identified) and estimated the site-specific ATE of open-loop
+hippocampal/entorhinal stimulation at encoding on subsequent cued recall. ATE =
+-0.0386 (exact 2-phase randomization p=0.0733; CIs include 0) — a valid null
+(small, non-significant reduction in recall). Destructive controls ~0, leakage
+audit PASS, position confound canceled by balanced phase. The METHOD is validated
+as a causal-inference instrument; the specific effect is a null. Next major phase
+= CM-8 (Pre-Oracle / Break-the-Chain own experiment, IRB-gated). No free-will
+claim.)
 
 ## 2026-09-14 handoff recovery (git)
 
@@ -128,6 +128,43 @@ N1-N3 ladder; red-team GO).
   hash-seal eligibility criteria BEFORE decisive outcomes; project the frozen
   CM-2/CM-3 split (83/18/17) onto eligible subjects; produce the CM5 MRI COHORT
   SEAL; verify storage; then acquire sealed-eligible BOLD only.
+
+## CM-7 (public intervention method validation) — COMPLETE: valid NULL
+
+- **Status:** `CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT` (claim C-010, L6; method
+  validated, null causal effect). Red-team GO-WITH-CHANGES (all 4 changes applied).
+- **What it validated:** that the CAUSAL MIND intervention framework correctly
+  identifies and estimates an experimentally-identified causal effect
+  `P(Y_future | do(X))` in an independent public dataset — a method-validation
+  bridge (FORECAST -> INTERVENE), NOT a claim that "hippocampal stimulation
+  enhances memory."
+- **Dataset:** ds005494 (Herrema & Kahana, CC0, v1.0.1; N=20, 26 sessions, 555
+  lists; 216 encoding-stim). Open-loop stimulation of a targeted
+  hippocampal/entorhinal electrode at encoding -> cued recall. List-level
+  within-subject randomization (10 enc-stim / 10 ret-stim / 5 no-stim; alternating
+  phase 50/50). Minimal acquisition: 26/26 `beh.tsv` (no iEEG), SHA-256 manifest.
+- **Primary result:** site-specific ATE (stim vs no-stim pairs within encoding-stim
+  lists) = **-0.0386**; exact 2-phase randomization p = **0.0733** (20-subset
+  robustness p = 0.0754); list-level bootstrap 95% CI [-0.079, 0.002];
+  subject-level (nesting-aware) CI [-0.087, 0.011]. **counterfactual_status =
+  experimentally_identified.** Corroborating list-level contrast -0.0080 (p=0.712);
+  latency null (p=0.163); semantic CTE 0.046 (negligible). A small NEGATIVE effect
+  down to ~-0.079 is not excluded; positive effects are ruled out.
+- **Method validation (the point):** leakage audit PASS (no post-treatment variable
+  in the adjustment set; retrieval-stim excluded from the future-state estimand;
+  list/subject-level inference); destructive controls NC1/NC2/NC4 ~0 (the machinery
+  does not hallucinate effects); serial-position confound canceled by balanced phase
+  (start-on=109, start-off=107; imbalance term -0.0004); integrity 3328/3330
+  (99.94%), 0 missing official outcomes.
+- **Caveats:** 14/26 sessions truncated (recording ended early; does not bias the
+  within-list ATE); clinical iEEG population; no sham control; retrieved (cued)
+  semantic state, not a free thought state.
+- **Deliverables:** `docs/cm7_protocol.md` (frozen), `docs/cm7_identification.md`,
+  `docs/datasets/ds005494_audit.md`, `docs/cm7_final_report.md`,
+  `data/scripts/cm7_analyze.py`, `data/scripts/cm7_download.sh`,
+  `data/manifests/ds005494_manifest.json`, `reports/cm7_results.{json,md}`.
+- **Next:** CM-8 (Pre-Oracle / Break-the-Chain own experiment, IRB-gated) — the
+  first own experiment (E8 voluntary redirection), NOT THE ORACLE.
 
 ## Blockers
 

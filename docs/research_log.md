@@ -156,3 +156,50 @@
 - **Decision: CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION** (CM-6A); the public test and the
   own experiment are designed, not executed (IRB required). Next: validate the method on
   ds005494, then seek IRB for CM-6H.
+
+## 2026-09-17 — CM-7: Public Intervention Method Validation (ds005494): valid NULL
+
+- **Goal.** Validate that the CAUSAL MIND intervention framework correctly recovers an
+  experimentally-identified causal effect `P(Y_future | do(X))` in an independent public
+  dataset — a method-validation bridge (FORECAST -> INTERVENE), NOT a claim that
+  "hippocampal stimulation enhances memory."
+- **Authoritative audit (RESEARCHER).** ds005494 (Herrema & Kahana, CC0, v1.0.1; N=20,
+  26 sessions) is CONDITIONALLY IDENTIFIABLE (A1-A5): open-loop stimulation of a targeted
+  hippocampal/entorhinal electrode at encoding (X, documented train: 50 Hz, 230 pulses,
+  300 us, 4.6 s, onset -200 ms) -> cued recall (Y: `correct`/`resp_word`/`response_time`),
+  list-level within-subject randomization (10 enc-stim / 10 ret-stim / 5 no-stim;
+  alternating phase 50/50). Post-treatment iEEG/arousal/math-distractor/subjective state
+  excluded from the adjustment set.
+- **Minimal acquisition (DATA).** 26/26 `beh.tsv` (no iEEG, 6.4 MB) + participants +
+  wordpool + dataset_description + sidecars; SHA-256 manifest. No credentials exposed.
+- **Identification (CAUSAL).** `docs/cm7_identification.md`: A1-A5, estimand = site-specific
+  ATE of encoding stimulation on cued recall (pair-level within enc-stim lists).
+  Retrieval-stim (concurrent) kept out of the future-state estimand.
+- **Protocol frozen BEFORE decisive outcomes** (`docs/cm7_protocol.md`, commit `207fce0`).
+- **Primary analysis (CAUSAL/STATS, `data/scripts/cm7_analyze.py`).** ATE = **-0.0386**;
+  exact 2-phase randomization p = **0.0733** (20-subset robustness p = 0.0754); list-level
+  bootstrap 95% CI [-0.079, 0.002]; subject-level (nesting-aware) CI [-0.087, 0.011].
+  **counterfactual_status = experimentally_identified** (CM-6 engine + RandomizedEvidence).
+  Corroborating list-level contrast -0.0080 (p=0.712); latency null (p=0.163); semantic CTE
+  0.046 (MiniLM centroid, negligible vs mean-pairwise 0.981).
+- **Data quirks handled.** 14/26 sessions truncated (555 lists; within-list ATE unbiased);
+  repeated recall attempts (match-any integrity); resp_word NaN vs `<>` encoding; the
+  serial-position confound is canceled by the balanced alternating phase (start-on=109,
+  start-off=107; decomposition: stimulation delta ~ -0.038, position (odd-even) ~ -0.044,
+  imbalance term -0.0004).
+- **Destructive controls (all ~0).** NC1 X-within-list perm null mean 0.0000; NC2 Y-perm
+  0.0005; NC4 no-intervention (fake X on ret-stim lists) 0.0016. The machinery does not
+  hallucinate an effect. Integrity 3328/3330 (99.94%); 0 missing official outcomes; 2
+  unmatched pairs documented (both official_correct=0).
+- **Red-team (REVIEWER): GO-WITH-CHANGES.** Leakage PASS (no post-treatment variable in the
+  adjustment set; retrieval-stim excluded; list/subject-level inference). Overclaiming PASS
+  (site-specific wording respected; no "enhances memory"/free-will/oracle). All 4 changes
+  applied: (1) permutation-null CI + labeled list/subject CIs; (2) decision-mapping bug
+  fixed (failed controls -> BLOCK, not PARTIAL); (3) Y<0 count + mismatched-pair
+  documentation; (4) "small negative effect not excluded" caveat.
+- **Decision: CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT** (claim C-010, L6). The METHOD is
+  validated (leakage PASS, destructive controls ~0, correct inference, correct engine
+  labeling); the specific causal effect is a valid null (small, non-significant reduction
+  in recall; a small negative effect to ~-0.079 is not excluded).
+- **Next.** CM-8 (Pre-Oracle / Break-the-Chain own experiment, IRB-gated) — the first own
+  experiment (E8 voluntary redirection), NOT THE ORACLE.
