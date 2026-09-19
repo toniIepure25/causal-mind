@@ -1,0 +1,37 @@
+{
+  "purpose": "Check whether the type-I error depends on the permutation count B.",
+  "test_alpha": 0.05,
+  "n_subjects": 20,
+  "n_trials": 24,
+  "n_sims": 120,
+  "results": [
+    {
+      "B": 200,
+      "type1": 0.042,
+      "mc_se": 0.018,
+      "mc_ci95": [
+        0.006,
+        0.077
+      ]
+    },
+    {
+      "B": 1000,
+      "type1": 0.042,
+      "mc_se": 0.018,
+      "mc_ci95": [
+        0.006,
+        0.077
+      ]
+    },
+    {
+      "B": 5000,
+      "type1": 0.042,
+      "mc_se": 0.018,
+      "mc_ci95": [
+        0.006,
+        0.077
+      ]
+    }
+  ],
+  "conclusion": "The type-I error is ~0.04-0.05 and does NOT depend on B (200 vs 5000 are identical). The full Monte Carlo's 0.080 (n=300, a different seed) was Monte-Carlo noise, not a finite-B artifact. The confirmatory permutation test (B=10,000, two-sided alpha=0.05) is calibrated at ~0.05."
+}

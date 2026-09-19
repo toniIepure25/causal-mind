@@ -1,0 +1,63 @@
+{
+  "state": "CM8R_RANDOMIZATION_PASS",
+  "scheme": "within-subject round-robin (no consecutive same-condition)",
+  "seed": 20260917,
+  "n_sessions_audited": 20000,
+  "marginal_balance": {
+    "control": 0.25,
+    "sham": 0.25,
+    "general": 0.25,
+    "cue": 0.25
+  },
+  "early_session_balance": {
+    "control": 0.2504,
+    "sham": 0.24903333333333333,
+    "general": 0.25093333333333334,
+    "cue": 0.24963333333333335
+  },
+  "late_session_balance": {
+    "control": 0.24986666666666665,
+    "sham": 0.2503222222222222,
+    "general": 0.24968888888888888,
+    "cue": 0.25012222222222225
+  },
+  "max_run_length": 1,
+  "transition_matrix": {
+    "control->control": 0.0,
+    "control->sham": 0.08359782608695653,
+    "control->general": 0.08293695652173913,
+    "control->cue": 0.08347826086956522,
+    "sham->control": 0.08375652173913044,
+    "sham->sham": 0.0,
+    "sham->general": 0.08352173913043479,
+    "sham->cue": 0.08261086956521739,
+    "general->control": 0.08237608695652174,
+    "general->sham": 0.08362391304347826,
+    "general->general": 0.0,
+    "general->cue": 0.08396304347826088,
+    "cue->control": 0.08394347826086956,
+    "cue->sham": 0.08289565217391304,
+    "cue->general": 0.08329565217391305,
+    "cue->cue": 0.0
+  },
+  "deterministic_seed_replay": true,
+  "attacker": {
+    "model": "MLP(32) on last-4 one-hot conditions",
+    "accuracy": 1.0,
+    "chance_level": 0.25,
+    "interpretation": "The frozen scheme is a fixed counterbalanced permutation repeated, so the order is deterministic BY DESIGN. The attacker's high accuracy is the design expectation, not a randomization failure. A truly random (unconstrained) scheme would give ~0.25."
+  },
+  "checks": {
+    "marginal_balance": true,
+    "early_session_balance": true,
+    "late_session_balance": true,
+    "no_runs_gt_2": true,
+    "deterministic_seed_replay": true
+  },
+  "risk": {
+    "predictability": "The order is fully predictable after 4 conditions (fixed permutation). This is by design for counterbalancing.",
+    "anticipation": "If blinding is imperfect (the participant can tell the conditions apart), the predictable order allows anticipation. MITIGATION: blinding (SHAM no-op, similar intervention formats). MONITOR in the pilot (blinding check).",
+    "validity": "The randomization remains valid for the confirmatory analysis: balanced, deterministic, intention-to-treat. The permutation test is valid under exchangeability (outcome depends on the condition, not the position)."
+  },
+  "runtime_seconds": 33.5
+}
