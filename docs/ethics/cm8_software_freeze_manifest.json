@@ -1,0 +1,49 @@
+{
+  "experiment": "CM-8 (Pre-Oracle / Break the Chain)",
+  "frozen_utc": "2026-09-19T18:26:27.965227Z",
+  "note": "Forecasting model SHA is a placeholder to be filled at the pilot/confirmatory boundary (G8); it is NOT retrained on confirmatory outcomes. No human data is included in this manifest.",
+  "code": {
+    "src/causal_mind/causal/predicted_basin.py": {
+      "sha256": "9f8ccceda05d202cedd4b9da3b35631534d0fefa1462e44f18b524d2bb96f4af",
+      "bytes": 5610,
+      "role": "basin + BRP (semantic basin definition)"
+    },
+    "data/scripts/cm8_synthetic.py": {
+      "sha256": "b61716b51e1b69b6b70ff37bb39a12e4de48514766c077ce868f472e44b398e8",
+      "bytes": 7930,
+      "role": "estimator validation + primary ATE/permutation implementation"
+    },
+    "data/scripts/cm8_power.py": {
+      "sha256": "ad8cac9eb522831af0959ee7caa8bfb4263a386ec3990213cac86576a9be2e23",
+      "bytes": 4771,
+      "role": "power analysis"
+    },
+    "data/scripts/cm8_dry_run.py": {
+      "sha256": "fc94d618e6745e5ab7f51bf23009aab0e603ad60c01b654e9c7c68aaded52ed7",
+      "bytes": 9447,
+      "role": "dry run + randomization manifest generator"
+    },
+    "data/manifests/cm8_randomization_manifest.json": {
+      "sha256": "c6bcd84d7603d0a8e88e3cfdb005cab2a291b9f95ad24d158d9f417e4436032d",
+      "bytes": 7905,
+      "role": "frozen per-subject condition manifest"
+    }
+  },
+  "config": {
+    "basin_tail": 0.1,
+    "primary_horizon_h_star": 2,
+    "test_alpha": 0.05,
+    "b_permutation_confirmatory": 10000,
+    "n_subjects": 20,
+    "trials_per_subject": 24,
+    "min_valid_trials_per_subject": 16,
+    "reference_arm": "pooled CONTROL/SHAM (SHAM-alone sensitivity)",
+    "randomization_seed": 20260917,
+    "semantic_encoder": "sentence-transformers/all-MiniLM-L6-v2 (d=384, frozen)"
+  },
+  "forecasting_model": {
+    "sha256": "HUMAN_INPUT_REQUIRED_AT_PILOT (G8 freeze)",
+    "note": "CM-3-style predictor fit on historical/pilot data; frozen before confirmatory."
+  },
+  "randomization_manifest": "data/manifests/cm8_randomization_manifest.json (generated at seal)"
+}

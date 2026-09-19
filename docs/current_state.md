@@ -2,20 +2,21 @@
 
 ## Project state
 
-`CM8_READY_FOR_ETHICS_SUBMISSION`
+`CM8_ETHICS_PACKAGE_READY`
 (CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 = `CM5_NULL`;
 CM-6 = `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`; CM-7 =
 `CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT` (CLOSED, pushed, C-010 L6); CM-8 =
-`CM8_READY_FOR_ETHICS_SUBMISSION`. The project has moved from FORECAST to
+`CM8_ETHICS_PACKAGE_READY`. The project has moved from FORECAST to
 EXPLAIN/INTERVENE. CM-7 (2026-09-17) validated the intervention framework on
 ds005494 (valid null; method validated). CM-8 (2026-09-17) is the first own
 experiment (Pre-Oracle / Break-the-Chain): a within-subject randomized
 CONTROL/SHAM/GENERAL-REDIRECT/SPECIFIC-CUE test of causal redirection of a PREDICTED
-semantic trajectory, primary outcome BRP. All data-independent gates G1–G8 passed at
-the design level (estimators validated on synthetic known effects/nulls; power N=20;
-prereg + ethics drafted; self + independent red-team GO-WITH-CHANGES). The only
-blocker to human data is ethics/IRB approval + the pilot. NOT THE ORACLE. No
-free-will claim.)
+semantic trajectory, primary outcome BRP. All data-independent gates G1–G8 passed;
+final statistical audit (type-I at α=0.05 = 0.047, independently reproduced →
+CALIBRATION PASS); supervisor-ready University-of-Vienna ethics package produced
+(docs/ethics/); software frozen (manifest); dry run ALL PASS (no human data). The
+only blocker to human data is supervisor sign-off + ethics approval + the pilot.
+NOT THE ORACLE. No free-will claim.)
 
 ## 2026-09-14 handoff recovery (git)
 
@@ -168,11 +169,32 @@ N1-N3 ladder; red-team GO).
 - **Next:** CM-8 (Pre-Oracle / Break-the-Chain own experiment, IRB-gated) — the
   first own experiment (E8 voluntary redirection), NOT THE ORACLE.
 
-## CM-8 (Pre-Oracle / Break-the-Chain) — STAGED: data-independent gates passed
+## CM-8 (Pre-Oracle / Break-the-Chain) — ETHICS PACKAGE READY
 
-- **Status:** `CM8_READY_FOR_ETHICS_SUBMISSION` (all data-independent gates G1–G8
-  satisfied at the design level; the only blocker to human data is ethics/IRB approval +
-  the pilot). NOT THE ORACLE — the participant is not shown the exact prediction.
+- **Status:** `CM8_ETHICS_PACKAGE_READY` (all data-independent gates G1–G8 satisfied;
+  supervisor-ready University-of-Vienna ethics package produced; the only blocker to human
+  data is supervisor sign-off + ethics approval + the pilot). NOT THE ORACLE — the
+  participant is not shown the exact prediction.
+- **Statistical audit (final):** primary test is two-sided α=0.05 (SEPARATE from the
+  basin tail 0.10). Type-I error at α=0.05 = **0.047** (MC 95% CI [0.013, 0.080]);
+  independently reproduced (alt-seed 0.040) → **CALIBRATION PASS**. The earlier cited
+  0.113 was the type-I error at the 0.10 level (basin tail / test level had been conflated)
+  — NOT the α=0.05 type-I error. BRP calibration correct (0.0989 ≈ 0.10); recovery bias
+  < 0.003.
+- **Ethics package (docs/ethics/):** frozen protocol (`cm8_research_plan.md` v1.0),
+  participant information + consent (lay language, no sensational terms), GDPR data-
+  protection plan (pseudonymized ≠ anonymous), risk assessment, recruitment (Vienna
+  Cognitive Science Hub readiness), debrief, compensation (amount = HUMAN INPUT REQUIRED),
+  final preregistration (`cm8_preregistration_final.md`), U-of-Vienna application answers
+  (institutional fields = HUMAN INPUT REQUIRED), submission checklist, software-freeze
+  manifest (SHAs/config hashes), dry-run report (ALL PASS, no human data).
+- **Software freeze:** `docs/ethics/cm8_software_freeze_manifest.json` (basin/estimator/
+  power/dry-run/randomization SHAs + config); randomization manifest frozen
+  (`data/manifests/cm8_randomization_manifest.json`); forecasting-model SHA = placeholder
+  (G8, frozen at pilot/confirmatory boundary).
+- **Submission authority:** for a Master's thesis, the **supervisor / responsible study-law
+  body** submits to the University of Vienna Ethics Committee (deadline 5 Oct 2026 for the
+  5 Nov 2026 meeting). The researcher prepares; does NOT submit.
 - **North-star:** can a deliberate or externally-induced intervention CAUSALLY REDIRECT a
   PREDICTED semantic trajectory?
 - **Design (CM-8A):** within-subject randomized 4-condition experiment — CONTROL / SHAM /

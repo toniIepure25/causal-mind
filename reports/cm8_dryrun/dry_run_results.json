@@ -1,0 +1,43 @@
+{
+  "randomization": {
+    "pass": true,
+    "balance_ok": true,
+    "no_long_runs": true,
+    "seed": 20260917
+  },
+  "condition_display": {
+    "pass": true,
+    "distinct": true,
+    "nonempty": true
+  },
+  "model_latency": {
+    "pass": true,
+    "mean_ms": 0.0021,
+    "max_ms": 0.0395
+  },
+  "brp_computation": {
+    "pass": true,
+    "brp_control": 0.088,
+    "brp_intervened": 1.0
+  },
+  "incomplete_trial": {
+    "pass": true,
+    "n_valid": 2,
+    "excluded": true
+  },
+  "participant_abort": {
+    "pass": true,
+    "completed": 19,
+    "retained": true,
+    "withdrawal_flag": true
+  },
+  "data_export": {
+    "pass": true,
+    "no_identity_in_data": true,
+    "data_sha": "78bedb73ca26045b"
+  },
+  "timestamping": {
+    "pass": true,
+    "timestamp_ns": 1789842169239949002
+  }
+}

@@ -1,6 +1,8 @@
 # CM-8F — Preregistration + Statistical Analysis Plan (DRAFT)
 
-- **Status:** DRAFT for red-team. To be sealed (hash) before the confirmatory experiment.
+- **Status:** DRAFT (superseded). **The frozen final version is
+  `docs/ethics/cm8_preregistration_final.md`** (v1.0, with the final statistical
+  calibration audit: two-sided α=0.05, type-I at α=0.05 = 0.047, independently reproduced).
 - **Primary endpoint:** BRP at the frozen horizon `h*` (see `docs/cm8_basins_brp.md`).
 
 ## 1. Hypotheses

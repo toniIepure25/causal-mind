@@ -1,26 +1,36 @@
 """CM-8D: synthetic participant simulator + causal estimator validation.
 
 Generates synthetic thought-stream data with KNOWN intervention effects and
-validates that the CM-8 BRP/ATE estimators (a) return a null under H0 (no
-false positive at alpha) and (b) recover a known effect (unbiased, CI covers
-the truth). This is the data-independent gate G2.
+validates that the CM-8 BRP/ATE estimators (a) return a null under H0 (no false
+positive at the confirmatory test level) and (b) recover a known effect (unbiased).
+This is the data-independent gate G2.
+
+STATISTICAL AUDIT (2026-09-17): the basin tail and the confirmatory test level are
+SEPARATE parameters.
+  * ``basin_tail`` (design parameter): the basin radius is the (1-basin_tail) quantile
+    of the held-out prediction-error norm, so BRP_control ~= basin_tail (target 0.10).
+  * ``test_alpha`` (confirmatory significance level): the ATE is tested at alpha=0.05.
+The type-I error MUST be measured at the test level (0.05), not the basin tail. The
+earlier reported 0.113 was measured at a 0.10 test level (the two were conflated); this
+script measures the type-I error at the correct 0.05 level with Monte-Carlo uncertainty.
 
 Model (minimal but faithful to the BRP):
-  * Each trial has an "error norm" = distance of the observed future from the
-    frozen predictor's forecast. Under the natural (CONTROL/SHAM) trajectory the
-    error norm has a baseline distribution; the basin radius r_alpha is the
-    (1-alpha) quantile of that baseline, so BRP_control ~= alpha by construction.
-  * An intervention (GENERAL REDIRECT / SPECIFIC CUE) adds a non-negative push to
-    the error norm, increasing the probability of leaving the basin (BRP).
-  * The ATE is the difference in BRP between an intervention arm and the
-    CONTROL/SHAM reference, with a subject-clustered permutation test.
+  * Each trial has an "error norm" = distance of the observed future from the frozen
+    predictor's forecast. Under the natural (CONTROL/SHAM) trajectory the error norm has
+    a baseline distribution; the basin radius r_alpha is the (1-basin_tail) quantile of
+    that baseline, so BRP_control ~= basin_tail by construction.
+  * An intervention (GENERAL REDIRECT / SPECIFIC CUE) adds a non-negative push to the
+    error norm, increasing the probability of leaving the basin (BRP).
+  * The ATE is the difference in BRP between an intervention arm and the CONTROL/SHAM
+    reference, with a subject-clustered permutation test.
 """
 from __future__ import annotations
 
 import numpy as np
 
-B_PERM = 300
+B_PERM = 200
 SEED = 20260917
+BASIN_TAIL = 0.10  # design parameter: BRP_control ~= this
 
 
 def _error_norms(n: int, sigma_e: float, push: float, rng: np.random.Generator) -> np.ndarray:
@@ -29,18 +39,12 @@ def _error_norms(n: int, sigma_e: float, push: float, rng: np.random.Generator) 
     return base + push
 
 
-def simulate_dataset(
-    n_subjects: int,
-    trials_per_subject: int,
-    sigma_e: float,
-    push_general: float,
-    push_cue: float,
-    alpha: float,
-    rng: np.random.Generator,
-):
-    """Simulate a full dataset. Returns (subjects, conditions, leave, err, r_alpha)."""
+def simulate_dataset(n_subjects: int, trials_per_subject: int, sigma_e: float,
+                     push_general: float, push_cue: float, basin_tail: float,
+                     rng: np.random.Generator):
+    """Simulate a full dataset. ``basin_tail`` sets the radius (BRP_control ~ basin_tail)."""
     heldout = _error_norms(4000, sigma_e, 0.0, rng)
-    r_alpha = float(np.quantile(heldout, 1.0 - alpha))
+    r_alpha = float(np.quantile(heldout, 1.0 - basin_tail))
     conds = ["control", "sham", "general", "cue"]
     push = {"control": 0.0, "sham": 0.0, "general": push_general, "cue": push_cue}
     subjects, conditions, leave, err = [], [], [], []
@@ -78,47 +82,60 @@ def _ate_and_p(subjects, conditions, leave, ref=("control", "sham"), arm="genera
     return ate, p
 
 
-def validate_h0(n_sims: int, n_subjects: int, trials: int, sigma_e: float, alpha: float,
-                seed: int = SEED) -> dict:
-    """Type-I error: no push anywhere -> fraction of sims with p < alpha."""
+def type1_error(n_sims: int, n_subjects: int, trials: int, sigma_e: float,
+                test_alpha: float, basin_tail: float, seed: int = SEED) -> dict:
+    """Type-I error at the TEST level ``test_alpha`` (no push anywhere).
+
+    Returns the estimate plus its Monte-Carlo (binomial) standard error and 95% CI.
+    """
     rng = np.random.default_rng(seed)
     rejects = 0
     ates = []
     for _ in range(n_sims):
         subj, cond, leave, err, _ = simulate_dataset(
-            n_subjects, trials, sigma_e, 0.0, 0.0, alpha, rng)
+            n_subjects, trials, sigma_e, 0.0, 0.0, basin_tail, rng)
         ate, p = _ate_and_p(subj, cond, leave, arm="general", rng=rng)
         ates.append(ate)
-        rejects += int(p < alpha)
+        rejects += int(p < test_alpha)
+    ti = rejects / n_sims
+    se = float(np.sqrt(ti * (1.0 - ti) / n_sims))
     ates = np.array(ates)
     return {
-        "type1_error": rejects / n_sims,
-        "nominal_alpha": alpha,
+        "type1_error": ti,
+        "mc_se": se,
+        "mc_ci95": (ti - 1.96 * se, ti + 1.96 * se),
+        "nominal_test_alpha": test_alpha,
         "mean_ate": float(ates.mean()),
         "sd_ate": float(ates.std()),
         "n_sims": n_sims,
     }
 
 
-def validate_recovery(n_sims: int, n_subjects: int, trials: int, sigma_e: float,
-                      push: float, alpha: float, seed: int = SEED) -> dict:
+def brp_calibration(sigma_e: float, basin_tail: float, seed: int = SEED) -> dict:
+    """Check that BRP_control ~= basin_tail (the radius calibration is correct)."""
+    rng = np.random.default_rng(seed)
+    heldout = _error_norms(200000, sigma_e, 0.0, rng)
+    r_alpha = float(np.quantile(heldout, 1.0 - basin_tail))
+    fresh = _error_norms(200000, sigma_e, 0.0, rng)
+    brp_control = float((fresh > r_alpha).mean())
+    return {"brp_control": brp_control, "target_basin_tail": basin_tail, "r_alpha": r_alpha}
+
+
+def recovery(n_sims: int, n_subjects: int, trials: int, sigma_e: float, push: float,
+             basin_tail: float, seed: int = SEED) -> dict:
     """Recovery: a known push on the GENERAL arm -> ATE estimate vs the truth."""
     rng = np.random.default_rng(seed)
-    # true BRP difference for this push (Monte-Carlo truth)
     truth_rng = np.random.default_rng(seed + 1)
     base = _error_norms(200000, sigma_e, 0.0, truth_rng)
     pushed = _error_norms(200000, sigma_e, push, truth_rng)
-    r_alpha = float(np.quantile(base, 1.0 - alpha))
+    r_alpha = float(np.quantile(base, 1.0 - basin_tail))
     true_ate = float((pushed > r_alpha).mean() - (base > r_alpha).mean())
-
-    ates, cis = [], []
+    ates = []
     for _ in range(n_sims):
         subj, cond, leave, err, _ = simulate_dataset(
-            n_subjects, trials, sigma_e, push, 0.0, alpha, rng)
+            n_subjects, trials, sigma_e, push, 0.0, basin_tail, rng)
         ate, p = _ate_and_p(subj, cond, leave, arm="general", rng=rng)
         ates.append(ate)
-        # crude CI via the permutation null (recompute)
-        cis.append(p)
     ates = np.array(ates)
     return {
         "true_ate": true_ate,
@@ -131,21 +148,24 @@ def validate_recovery(n_sims: int, n_subjects: int, trials: int, sigma_e: float,
 
 
 def main() -> None:
-    alpha = 0.10
     sigma_e = 1.0
     n_subjects = 20
     trials = 24
-    print("=== CM-8D synthetic estimator validation ===")
-    print(f"config: alpha={alpha}, sigma_e={sigma_e}, n_subjects={n_subjects}, "
-          f"trials/subject={trials}, B_PERM={B_PERM}")
-    h0 = validate_h0(n_sims=80, n_subjects=n_subjects, trials=trials,
-                     sigma_e=sigma_e, alpha=alpha)
-    print(f"\n[H0 / type-I] nominal alpha={h0['nominal_alpha']}, "
-          f"observed type-I error={h0['type1_error']:.3f} (should be ~{alpha})")
-    print(f"  mean ATE under H0 = {h0['mean_ate']:.4f} (sd {h0['sd_ate']:.4f}, should be ~0)")
+    print("=== CM-8D synthetic estimator validation (statistical audit) ===")
+    print(f"config: basin_tail={BASIN_TAIL} (BRP_control target), sigma_e={sigma_e}, "
+          f"n_subjects={n_subjects}, trials/subject={trials}, B_PERM={B_PERM}")
+    cal = brp_calibration(sigma_e, BASIN_TAIL)
+    print(f"\n[BRP calibration] BRP_control={cal['brp_control']:.4f} "
+          f"(target basin_tail={BASIN_TAIL}), r_alpha={cal['r_alpha']:.4f}")
+    for test_alpha in (0.05, 0.10):
+        t1 = type1_error(n_sims=150, n_subjects=n_subjects, trials=trials,
+                         sigma_e=sigma_e, test_alpha=test_alpha, basin_tail=BASIN_TAIL)
+        print(f"\n[type-I @ test_alpha={test_alpha}] observed={t1['type1_error']:.3f} "
+              f"(MC 95% CI [{t1['mc_ci95'][0]:.3f}, {t1['mc_ci95'][1]:.3f}], "
+              f"SE {t1['mc_se']:.3f}); mean ATE={t1['mean_ate']:+.4f} (sd {t1['sd_ate']:.4f})")
     for push in (0.3, 0.6, 1.0):
-        rec = validate_recovery(n_sims=50, n_subjects=n_subjects, trials=trials,
-                                sigma_e=sigma_e, push=push, alpha=alpha)
+        rec = recovery(n_sims=50, n_subjects=n_subjects, trials=trials,
+                       sigma_e=sigma_e, push=push, basin_tail=BASIN_TAIL)
         print(f"\n[recovery push={push}] true ATE={rec['true_ate']:.4f}, "
               f"mean estimate={rec['mean_ate_estimate']:.4f} (bias {rec['bias']:+.4f})")
 

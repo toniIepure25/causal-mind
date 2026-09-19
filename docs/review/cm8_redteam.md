@@ -72,6 +72,19 @@ effects recovered, bias < 0.007). The red-team found five real design issues, al
 - **Novel-metric effect size:** BRP has no direct literature effect size; the power analysis
   uses a justified a-priori minimally-interesting effect (Δ≈0.11), not a pilot estimate.
 
+## Statistical calibration audit (ethics-freeze re-check)
+
+- **Issue raised:** the earlier cited type-I error of 0.113 could be a BLOCKER if the
+  primary α were 0.05. **Resolution:** the 0.113 was measured at a 0.10 test level (the
+  basin tail and the confirmatory test level had been conflated in the first validation).
+  The confirmatory test is **two-sided α=0.05**. Re-running with the two separated
+  (`data/scripts/cm8_synthetic.py`): **type-I at α=0.05 = 0.047** (MC 95% CI [0.013, 0.080]);
+  at α=0.10 = 0.100 (CI [0.052, 0.148]); BRP calibration 0.0989 ≈ 0.10; recovery bias
+  < 0.003. **Independent REVIEWER reproduced from a clean process (alt-seed 0.040, pod
+  script MD5-verified): CALIBRATION PASS.** No miscalibration; the 0.113 is explained.
+  The preregistration is amended to state the two-sided α=0.05 and this audit
+  (`docs/ethics/cm8_preregistration_final.md` §3).
+
 ## Gate status
 
 - G1 (BRP/basin frozen): defined; freeze + hash at preregistration seal.

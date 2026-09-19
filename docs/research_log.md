@@ -243,3 +243,49 @@
   satisfied at the design level. The only blocker to human data is ethics/IRB approval +
   the pilot (CM-8P, gated) before the confirmatory run (CM-8H, gated). Oracle (CM-9)
   remains gated. No free-will claim.
+
+## 2026-09-17 — CM-8E: Ethics Submission Freeze — `CM8_ETHICS_PACKAGE_READY`
+
+- **Final statistical audit (BLOCKER check).** The earlier cited type-I error of 0.113 was
+  measured at a 0.10 test level (the basin tail and the confirmatory test level had been
+  conflated). Separated the two: the basin tail is a design parameter (0.10, sets
+  BRP_control ≈ 0.10); the confirmatory test is two-sided α=0.05. Re-ran the validation
+  (`data/scripts/cm8_synthetic.py`): **type-I error at α=0.05 = 0.047** (MC 95% CI
+  [0.013, 0.080], SE 0.017, n_sims=150); at α=0.10 = 0.100 (CI [0.052, 0.148]); BRP
+  calibration BRP_control=0.0989 (≈0.10); recovery bias < 0.003. **Independent REVIEWER
+  reproduced from a clean process (alt-seed 0.040, pod script MD5-verified): CALIBRATION
+  PASS.** No miscalibration; the 0.113 is explained.
+- **Frozen protocol (v1.0).** `docs/ethics/cm8_research_plan.md`: title, rationale,
+  hypotheses, the 4 conditions, trial timeline, randomization, N=20/24 trials,
+  inclusion/exclusion, primary BRP endpoint (two-sided α=0.05, B=10,000), secondary
+  (exploratory) endpoints, basin definition, model freeze, stopping rules, failed-trial
+  handling, withdrawal, compensation (HUMAN INPUT REQUIRED), duration, debrief.
+- **Participant materials.** `docs/ethics/cm8_participant_information.md` +
+  `cm8_consent.md` (lay language; clearly states the system analyzes reported-thought
+  sequences, a model predicts broad semantic directions, it does NOT read the brain, no
+  mind-reading/free-will/destiny language; voluntary, may stop, may skip/withhold).
+- **Privacy/GDPR.** `docs/ethics/cm8_data_management_plan.md`: pseudonym (study code) +
+  separate encrypted identity key; encryption at rest/in transit; raw-text retention +
+  deletion; pseudonymized data explicitly NOT anonymous; breach procedure; Git exclusions.
+- **Risk analysis.** `docs/ethics/cm8_risk_assessment.md`: frustration, verbalization
+  discomfort, accidental disclosure, perceived evaluation, "being predicted" concern,
+  fatigue, demand characteristics — each with mitigation + stopping criterion; no induced
+  disclosure; skip/withhold allowed.
+- **Ethics application.** `docs/ethics/cm8_ethics_application_answers.md` mapped to the
+  University of Vienna form; institutional/personal fields marked `HUMAN INPUT REQUIRED`
+  (supervisor, department, funding, compensation, contacts, DPO). Submission by the
+  supervisor / responsible study-law body (Master's thesis), NOT the researcher. Target
+  window: 5 Oct 2026 deadline for the 5 Nov 2026 meeting.
+- **Recruitment.** `docs/ethics/cm8_recruitment_text.md`: Vienna Cognitive Science Hub
+  Study Participant Platform readiness (NOT registered yet).
+- **Software freeze.** `docs/ethics/cm8_software_freeze_manifest.json`: SHAs/config hashes
+  for basin, estimator, power, dry-run, randomization + the frozen randomization manifest
+  (`data/manifests/cm8_randomization_manifest.json`); forecasting-model SHA = placeholder
+  (G8, frozen at pilot/confirmatory boundary).
+- **Dry run (no human data).** `data/scripts/cm8_dry_run.py` → `reports/cm8_dryrun/`:
+  randomization, condition display, model latency, BRP, incomplete trial, participant
+  abort, data export, pseudonymization, timestamping — **ALL PASS**.
+- **Status: `CM8_ETHICS_PACKAGE_READY`.** All data-independent gates passed; the package is
+  supervisor-ready. The only blockers to human data are the `HUMAN INPUT REQUIRED`
+  institutional fields + supervisor sign-off + ethics approval + the pilot. No participant
+  collection has begun. Oracle (CM-9) remains gated. No free-will claim.
