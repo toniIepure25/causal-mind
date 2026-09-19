@@ -203,3 +203,43 @@
   in recall; a small negative effect to ~-0.079 is not excluded).
 - **Next.** CM-8 (Pre-Oracle / Break-the-Chain own experiment, IRB-gated) — the first own
   experiment (E8 voluntary redirection), NOT THE ORACLE.
+
+## 2026-09-17 — CM-8: Pre-Oracle / Break-the-Chain — staged, data-independent gates passed
+
+- **Goal.** The first own experiment, engineered around causal redirection of a PREDICTED
+  semantic trajectory: can a deliberate (GENERAL REDIRECT) or externally-induced (SPECIFIC
+  CUE) intervention causally redirect the trajectory? North-star, NOT THE ORACLE (the
+  participant is not shown the exact prediction).
+- **Transition.** CM-2/3 `history -> future`; CM-6 observational structure can't establish
+  causality; CM-7 validated the causal machinery on public data (null effect); CM-8 designs
+  the experiment where intervention + outcome are engineered around redirection.
+- **Design (CM-8A).** Within-subject randomized 4-condition: CONTROL / SHAM (matched
+  attention, no redirection) / GENERAL REDIRECT (endogenous) / SPECIFIC CUE (exogenous).
+  Primary = BRP; ATE_GENERAL and ATE_CUE estimated separately vs pooled CONTROL/SHAM
+  (SHAM-alone sensitivity); subject-clustered permutation test; N=20 (24 trials).
+- **BRP/basin (CM-8B).** Predicted-future basin = ball around the frozen forecast, radius =
+  held-out 90th-pct prediction-error norm (prospective, not tuned to outcomes);
+  `src/causal_mind/causal/predicted_basin.py` (extends the CM-6 SemanticBasin).
+- **Estimator validation (CM-8D, G2 PASS).** `data/scripts/cm8_synthetic.py`: H0 type-I
+  error 0.113 (≈α=0.10); known effects recovered (bias < 0.007 at push 0.3/0.6/1.0).
+- **Power (CM-8E, G4 PASS).** `data/scripts/cm8_power.py`: ICC 0.2, N=20 → 80% power for a
+  BRP difference ≈ 0.11 (α=0.05); larger effects need fewer subjects.
+- **Platform (CM-8C).** `docs/cm8_realtime_platform.md`: capture -> ThoughtState -> frozen
+  predictor -> basin -> randomization -> intervention renderer -> post-capture -> outcome
+  engine; auditable timestamps; outcome engine reuses the CM-6/CM-8B machinery.
+- **Prereg + SAP (CM-8F) + Ethics (CM-8G).** `docs/cm8_preregistration.md` (frozen primary
+  endpoint, exploratory secondaries, pre-specified exclusions, decision rules);
+  `docs/cm8_ethics.md` (minimal risk; privacy-by-design for sensitive thought streams;
+  consent/debrief/data-mgmt drafts).
+- **Literature audit.** `docs/research/cm8_literature_audit.md`: thought suppression /
+  ironic rebound, cognitive control, CBM/ABT, sham/demand best practices, capture-modality
+  reactivity, planning effect sizes, and the novelty gap.
+- **Red-team (G7).** Self GO-WITH-CHANGES (5 fixes: reference-arm rigor, semantic cue-echo
+  guard, fatigue, horizon-fishing, calibration modality) + independent REVIEWER confirmatory
+  pass GO-WITH-CHANGES (primary estimands clean — no leakage, valid inference, ungameable
+  basin; the endogenous-vs-exogenous contrast and the CUE priming confound are disclosed as
+  secondary/exploratory). `docs/review/cm8_redteam.md`.
+- **Status: `CM8_READY_FOR_ETHICS_SUBMISSION`.** All data-independent gates (G1–G8)
+  satisfied at the design level. The only blocker to human data is ethics/IRB approval +
+  the pilot (CM-8P, gated) before the confirmatory run (CM-8H, gated). Oracle (CM-9)
+  remains gated. No free-will claim.

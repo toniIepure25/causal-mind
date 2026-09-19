@@ -2,20 +2,20 @@
 
 ## Project state
 
-`CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT`
+`CM8_READY_FOR_ETHICS_SUBMISSION`
 (CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 = `CM5_NULL`;
 CM-6 = `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`; CM-7 =
-`CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT`. The project has moved from FORECAST to
-EXPLAIN/INTERVENE. CM-7 (2026-09-17) validated the intervention framework on the
-independent public dataset ds005494: the framework correctly identified
-(experimentally_identified) and estimated the site-specific ATE of open-loop
-hippocampal/entorhinal stimulation at encoding on subsequent cued recall. ATE =
--0.0386 (exact 2-phase randomization p=0.0733; CIs include 0) — a valid null
-(small, non-significant reduction in recall). Destructive controls ~0, leakage
-audit PASS, position confound canceled by balanced phase. The METHOD is validated
-as a causal-inference instrument; the specific effect is a null. Next major phase
-= CM-8 (Pre-Oracle / Break-the-Chain own experiment, IRB-gated). No free-will
-claim.)
+`CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT` (CLOSED, pushed, C-010 L6); CM-8 =
+`CM8_READY_FOR_ETHICS_SUBMISSION`. The project has moved from FORECAST to
+EXPLAIN/INTERVENE. CM-7 (2026-09-17) validated the intervention framework on
+ds005494 (valid null; method validated). CM-8 (2026-09-17) is the first own
+experiment (Pre-Oracle / Break-the-Chain): a within-subject randomized
+CONTROL/SHAM/GENERAL-REDIRECT/SPECIFIC-CUE test of causal redirection of a PREDICTED
+semantic trajectory, primary outcome BRP. All data-independent gates G1–G8 passed at
+the design level (estimators validated on synthetic known effects/nulls; power N=20;
+prereg + ethics drafted; self + independent red-team GO-WITH-CHANGES). The only
+blocker to human data is ethics/IRB approval + the pilot. NOT THE ORACLE. No
+free-will claim.)
 
 ## 2026-09-14 handoff recovery (git)
 
@@ -133,6 +133,8 @@ N1-N3 ladder; red-team GO).
 
 - **Status:** `CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT` (claim C-010, L6; method
   validated, null causal effect). Red-team GO-WITH-CHANGES (all 4 changes applied).
+  **CLOSED and pushed to GitHub** (main = `6fdd05b`, 2026-09-17; freeze `207fce0` in
+  history). Immutable except for genuine reproducibility fixes.
 - **What it validated:** that the CAUSAL MIND intervention framework correctly
   identifies and estimates an experimentally-identified causal effect
   `P(Y_future | do(X))` in an independent public dataset — a method-validation
@@ -166,6 +168,40 @@ N1-N3 ladder; red-team GO).
 - **Next:** CM-8 (Pre-Oracle / Break-the-Chain own experiment, IRB-gated) — the
   first own experiment (E8 voluntary redirection), NOT THE ORACLE.
 
+## CM-8 (Pre-Oracle / Break-the-Chain) — STAGED: data-independent gates passed
+
+- **Status:** `CM8_READY_FOR_ETHICS_SUBMISSION` (all data-independent gates G1–G8
+  satisfied at the design level; the only blocker to human data is ethics/IRB approval +
+  the pilot). NOT THE ORACLE — the participant is not shown the exact prediction.
+- **North-star:** can a deliberate or externally-induced intervention CAUSALLY REDIRECT a
+  PREDICTED semantic trajectory?
+- **Design (CM-8A):** within-subject randomized 4-condition experiment — CONTROL / SHAM /
+  GENERAL REDIRECT (endogenous) / SPECIFIC CUE (exogenous). Primary = BRP (P(observed
+  future leaves the frozen predictor's predicted-future basin | intervention)); ATE_GENERAL
+  and ATE_CUE estimated separately vs pooled CONTROL/SHAM (SHAM-alone sensitivity);
+  subject-clustered permutation test; N=20 (24 trials) for 80% power at Δ≈0.11.
+- **BRP/basin (CM-8B):** predicted-future basin = ball around the frozen forecast with
+  radius = held-out 90th-pct prediction-error norm (prospective, not tuned to outcomes);
+  `src/causal_mind/causal/predicted_basin.py`.
+- **Estimator validation (CM-8D, G2 PASS):** `data/scripts/cm8_synthetic.py` — H0 type-I
+  error 0.113 (≈α), known effects recovered (bias < 0.007).
+- **Power (CM-8E, G4 PASS):** `data/scripts/cm8_power.py` — ICC 0.2, N=20 → 80% power for
+  Δ≈0.11; larger effects need fewer.
+- **Platform (CM-8C):** `docs/cm8_realtime_platform.md` (outcome engine reuses the CM-6/
+  CM-8B machinery; capture/UI decided after the pilot modality).
+- **Prereg + SAP (CM-8F) + Ethics (CM-8G):** `docs/cm8_preregistration.md`,
+  `docs/cm8_ethics.md` (privacy-by-design for sensitive thought streams).
+- **Red-team (G7):** self GO-WITH-CHANGES (5 fixes) + independent REVIEWER confirmatory
+  pass GO-WITH-CHANGES (primary estimands clean; endogenous-vs-exogenous contrast + CUE
+  priming disclosed as confounded/secondary). `docs/review/cm8_redteam.md`.
+- **Deliverables:** `docs/cm8_dag.md`, `docs/cm8_basins_brp.md`,
+  `docs/cm8_experiment_design.md`, `docs/cm8_preregistration.md`, `docs/cm8_ethics.md`,
+  `docs/cm8_realtime_platform.md`, `docs/research/cm8_literature_audit.md`,
+  `docs/review/cm8_redteam.md`, `src/causal_mind/causal/predicted_basin.py`,
+  `data/scripts/cm8_synthetic.py`, `data/scripts/cm8_power.py`.
+- **Next:** ethics/IRB submission (CM-8G package) → pilot (CM-8P, gated) → confirmatory
+  (CM-8H, gated). Oracle (CM-9) remains gated.
+
 ## Blockers
 
 - **Token lifecycle:** Run:ai CLI tokens expire ~daily; refresh tokens do NOT
@@ -177,11 +213,12 @@ N1-N3 ladder; red-team GO).
 
 ## Key commit hashes
 
+- `6fdd05b` **GitHub main after CM-7 push (2026-09-17)** — CM-7 valid NULL (C-010, L6);
+  pushed `08456c7..6fdd05b main -> main`, verified on the remote.
+- `207fce0` CM-7 protocol freeze + identification + authoritative ds005494 audit
+  (in the pushed history).
+- `08456c7` previous GitHub main (CM-6).
 - `a61753c` GitHub main after CM-5A integration (2026-09-14 handoff recovery)
-- `5e88f72` pod main before integration (gitignore-data-neural)
-- `ea69195` CM-5A selective OpenNeuro acquisition + real-data minimal smoke
-- `9c59300` CM-5A neural data recovery audit (bundle base)
-- `23d20f1` CM-3 completion anchor (CM-5 protocol anchor)
 
 ## Exact reproducibility commands
 
