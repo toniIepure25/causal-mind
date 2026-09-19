@@ -1,0 +1,84 @@
+{
+  "state": "CM8R_GHOST_PILOT_PASS",
+  "n_ghost_participants": 118,
+  "n_forecasts": 5964,
+  "n_missing_events_total": 0,
+  "h_star": 2,
+  "k": 3,
+  "r_alpha": 0.9910801470279694,
+  "basin_tail": 0.1,
+  "brp_control": {
+    "heldout_test": 0.07847800237812129,
+    "all_subjects": 0.04393024815560027,
+    "target_basin_tail": 0.1,
+    "note": "fraction of NATURAL (non-intervened) futures outside the frozen basin; ~= basin_tail if calibration is correct"
+  },
+  "forecast_reproducibility": {
+    "max_online_vs_batch_diff": 0.0
+  },
+  "deterministic_replay": {
+    "run1_hash": "c262da2be65d6907",
+    "run2_hash": "c262da2be65d6907",
+    "identical": true
+  },
+  "crash_recovery": {
+    "subject": "sub-007",
+    "crash_at": 18,
+    "ok": true
+  },
+  "prediction_latency_ms": {
+    "50": 0.196920707821846,
+    "90": 0.21055657416582108,
+    "95": 0.21580597385764122,
+    "99": 0.2663338929414749,
+    "max": 21.778011694550514
+  },
+  "checks": {
+    "brp_control_test_near_basin_tail": true,
+    "forecast_reproducible": true,
+    "deterministic_replay": true,
+    "crash_recovery": true,
+    "latency_p95_ms_below_100": true,
+    "audit_log_written": true,
+    "all_forecasts_computed": true
+  },
+  "per_subject_sample": {
+    "sub-001": {
+      "n_thoughts": 28,
+      "n_forecasts": 24,
+      "brp_control": 0.0,
+      "n_missing_events": 0,
+      "mean_nd": 0.9214003639437486
+    },
+    "sub-002": {
+      "n_thoughts": 50,
+      "n_forecasts": 46,
+      "brp_control": 0.0,
+      "n_missing_events": 0,
+      "mean_nd": 0.9218755712736286
+    },
+    "sub-004": {
+      "n_thoughts": 61,
+      "n_forecasts": 57,
+      "brp_control": 0.0,
+      "n_missing_events": 0,
+      "mean_nd": 0.9086109346361253
+    },
+    "sub-005": {
+      "n_thoughts": 70,
+      "n_forecasts": 66,
+      "brp_control": 0.045454545454545456,
+      "n_missing_events": 0,
+      "mean_nd": 0.9410168823162511
+    },
+    "sub-006": {
+      "n_thoughts": 46,
+      "n_forecasts": 42,
+      "brp_control": 0.0,
+      "n_missing_events": 0,
+      "mean_nd": 0.9280976272057115
+    }
+  },
+  "runtime_seconds": 15.4,
+  "is_causal": false
+}

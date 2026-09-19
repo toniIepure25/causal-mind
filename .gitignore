@@ -21,6 +21,12 @@ data/raw/
 data/derivatives/
 data/cache/
 artifacts/*
+!artifacts/cm8_forecasting_freeze_manifest.json
+!artifacts/cm8_forecaster/
+!artifacts/cm8_forecaster/config.json
+artifacts/cm8_forecaster/ridge_weights.npz
+artifacts/cm8_forecaster/ridge_weights.json
+artifacts/cm8_forecaster/heldout_error_norms.npz
 !artifacts/.gitkeep
 reports/agents/
 reports/reviews/
@@ -51,3 +57,4 @@ data/neural/
 data/derived/cm5_features/
 data/atlases/
 data/embeddings/
+reports/cm8r_ghost_pilot/ghost_audit.jsonl
