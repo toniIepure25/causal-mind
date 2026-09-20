@@ -1,0 +1,57 @@
+{
+  "h_star": 2,
+  "k": 3,
+  "percentile_sensitivity": {
+    "q=0.8": {
+      "radius": 0.9750058687660761,
+      "brp_control_test": 0.16765755053507728,
+      "target": 0.19999999999999996
+    },
+    "q=0.85": {
+      "radius": 0.9821751982642707,
+      "brp_control_test": 0.11890606420927467,
+      "target": 0.15000000000000002
+    },
+    "q=0.9": {
+      "radius": 0.9910801569819717,
+      "brp_control_test": 0.07847800237812129,
+      "target": 0.09999999999999998
+    },
+    "q=0.95": {
+      "radius": 1.0034033884833828,
+      "brp_control_test": 0.03329369797859691,
+      "target": 0.050000000000000044
+    }
+  },
+  "dimensionality_sensitivity": {
+    "dim=16": {
+      "radius": 0.5650495290756226,
+      "brp_control_test": 0.11771700356718193
+    },
+    "dim=32": {
+      "radius": 0.6722837686538696,
+      "brp_control_test": 0.10582639714625446
+    },
+    "dim=64": {
+      "radius": 0.7699488401412964,
+      "brp_control_test": 0.10939357907253269
+    },
+    "dim=128": {
+      "radius": 0.8641868233680725,
+      "brp_control_test": 0.10107015457788347
+    },
+    "dim=384": {
+      "radius": 0.9910801649093628,
+      "brp_control_test": 0.07847800237812129
+    }
+  },
+  "global_vs_subject_basin": {
+    "global_r": 0.9910801569819717,
+    "brp_control_global": 0.08170079657139354,
+    "brp_control_subject": 0.10704725618273105,
+    "subject_error_scale_sd": 0.00708159832440291,
+    "note": "Subject-calibrated basins give BRP_control ~= 0.10 by construction (each subject's own 90th percentile). The global basin gives a similar value, indicating the subjects' baseline dispersion is comparable (low heterogeneity). Exploratory only; the frozen primary is the global 90th-percentile basin."
+  },
+  "conclusion": "The frozen 90th-percentile global basin is well-calibrated (BRP_control ~ 0.10) and robust to the percentile (80-95) and to embedding dimensionality (16-384). Subject-specific basins give a similar BRP_control, so global calibration is adequate. No change to the frozen basin.",
+  "runtime_seconds": 19.3
+}
