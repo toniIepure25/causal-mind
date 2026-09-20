@@ -2,11 +2,12 @@
 
 ## Project state
 
-`CM8_ETHICS_PACKAGE_READY`
+`CM8R_PREHUMAN_HARDENED` (2026-09-20)
 (CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 = `CM5_NULL`;
 CM-6 = `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`; CM-7 =
 `CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT` (CLOSED, pushed, C-010 L6); CM-8 =
-`CM8_ETHICS_PACKAGE_READY`. The project has moved from FORECAST to
+`CM8_ETHICS_PACKAGE_READY`; CM-8R = `CM8R_PREHUMAN_HARDENED` (10/10 gates pass);
+CM-9A = `CM9A_SYNTHETIC_ORACLE_READY`. The project has moved from FORECAST to
 EXPLAIN/INTERVENE. CM-7 (2026-09-17) validated the intervention framework on
 ds005494 (valid null; method validated). CM-8 (2026-09-17) is the first own
 experiment (Pre-Oracle / Break-the-Chain): a within-subject randomized
@@ -14,9 +15,14 @@ CONTROL/SHAM/GENERAL-REDIRECT/SPECIFIC-CUE test of causal redirection of a PREDI
 semantic trajectory, primary outcome BRP. All data-independent gates G1–G8 passed;
 final statistical audit (type-I at α=0.05 = 0.047, independently reproduced →
 CALIBRATION PASS); supervisor-ready University-of-Vienna ethics package produced
-(docs/ethics/); software frozen (manifest); dry run ALL PASS (no human data). The
-only blocker to human data is supervisor sign-off + ethics approval + the pilot.
-NOT THE ORACLE. No free-will claim.)
+(docs/ethics/); software frozen (manifest); dry run ALL PASS (no human data).
+CM-8R (2026-09-20) is the PRE-HUMAN HARDENING of the CM-8 confirmatory experiment
+(NO human data): the participant-facing forecaster is frozen + reproducible
+(clean-room bit-identical), the ghost pilot passes, the Monte Carlo is calibrated,
+the realtime engine is offline + transactional + chaos-tested, the randomization is
+audited, privacy is hardened, and the synthetic Oracle lab is ready. The ONLY
+remaining blockers to human data are the EXTERNAL ones: supervisor sign-off, ethics
+approval, and the pilot. NOT THE ORACLE. No free-will claim.)
 
 ## 2026-09-14 handoff recovery (git)
 
@@ -224,6 +230,65 @@ N1-N3 ladder; red-team GO).
 - **Next:** ethics/IRB submission (CM-8G package) → pilot (CM-8P, gated) → confirmatory
   (CM-8H, gated). Oracle (CM-9) remains gated.
 
+## CM-8R (Pre-Human Hardening) — COMPLETE: CM8R_PREHUMAN_HARDENED (2026-09-20)
+
+- **Status:** `CM8R_PREHUMAN_HARDENED` (10/10 readiness gates pass; pushed to GitHub
+  main = `a15cbc5`). NO human data collected; NO change to the frozen CM-8 confirmatory
+  protocol (Workstream A). Workstream B per `docs/cm8r_confirmatory_boundary.md`.
+- **Readiness scorecard (10/10):** CM8R_GHOST_PILOT_PASS, CM8R_MONTE_CARLO_PASS,
+  CM8R_REALTIME_ENGINE_PASS, CM8R_RANDOMIZATION_PASS, CM8R_PRIVACY_PASS,
+  CM8R_CHAOS_PASS, CM8R_REPRODUCIBILITY_PASS, CM9A_SYNTHETIC_ORACLE_READY,
+  CM8R_FORECASTER_FROZEN, CM8_CONFIRMATORY_INTACT.
+- **Forecasting freeze (S3):** `LinearMultiHorizon` (k=3, α=100, horizons 1-10) fitted on
+  CM-2 TRAIN (83 subjects, seal verified); basin r_alpha calibrated on VAL (h*=2: r=0.9911).
+  Weights = 28MB `.npz` (gitignored, SHA in manifest). `artifacts/cm8_forecasting_freeze_manifest.json`.
+- **Ghost pilot (S2):** `CM8R_GHOST_PILOT_PASS`. Prospective replay of ds006067 through the
+  frozen forecaster. BRP_control held-out TEST = 0.0785 (target 0.10); forecast repro exact;
+  deterministic replay; crash recovery; latency p95 = 0.21 ms.
+- **Synthetic world (S4):** `src/causal_mind/sim/` — 21 scenarios S0-S20 with ground-truth
+  causal parameters; the frozen ATE + subject-clustered permutation estimator.
+- **Monte Carlo (S5):** `CM8R_MONTE_CARLO_PASS`. Type-I under the null (S0) = 0.080 (n=300);
+  a B-check (B=200/1000/5000 → 0.042) confirms it is MC noise, NOT a finite-B artifact.
+  Power/bias per scenario reported.
+- **Randomization red team (S16):** `CM8R_RANDOMIZATION_PASS`. Perfect balance, max run 1,
+  deterministic; the fixed permutation is predictable BY DESIGN (mitigation = blinding).
+- **Power surface (S6):** grid over N (12-60), trials (12-48), ICC, effect; power rises with
+  N more than trials; high ICC reduces power. The frozen N=20 is under-powered for small
+  effects (documented, not changed).
+- **BRP red team (S7):** 9 adversarial cases; 7/9 produce a misleading high BRP (magnitude-
+  only change, lexical echo, tiny-basin miscalibration, volatility). Secondary diagnostics
+  (cosine-direction, Mahalanobis, persistence, novelty) reveal the modes. BRP stays PRIMARY.
+- **Basin robustness (S8/9):** BRP_control stable across percentiles (0.03-0.17) and
+  dimensions (0.08-0.12); global vs subject-calibrated basins are similar.
+- **Realtime engine (S10-15):** `src/causal_mind/engine/` — OFFLINE (no Qwen/LLM/internet),
+  transactional (append-only JSONL, atomic finalization, no duplicate finalization),
+  event timestamps (wall-clock UTC + monotonic), full trial lifecycle. `CM8R_REALTIME_ENGINE_PASS`.
+  Latency: total p95 ~478 ms, cold max ~876 ms. Chaos: 7/7 faults handled loudly
+  (`CM8R_CHAOS_PASS`).
+- **Privacy (S23-25):** `src/causal_mind/privacy/` — PII/sensitive-content detection (13
+  categories) + redaction; data minimization (embeddings, not raw text); pseudonymization
+  (salted hash, encrypted salt); encryption at rest; access audit; complete deletion; no
+  remote telemetry / no external LLM. `CM8R_PRIVACY_PASS` (12/12).
+- **Clean-room reproduction (S26/27):** `CM8R_REPRODUCIBILITY_PASS`. The forecaster weights
+  SHA matches the manifest; the split seal verifies; a CLEAN-ROOM re-fit from source + data
+  is BIT-IDENTICAL to the frozen artifact. Artifact hash manifest = the reproducibility anchor.
+- **Analysis (S17/18/21):** sham ATE ~0 (believable no-op); cue effect partly a lexical echo;
+  burden ~28 min / 96 thoughts (feasible).
+- **Operational design (S19/20/22/28/29):** manipulation check, report-reactivity, pilot
+  GO/ITERATE/STOP (operational, not the ATE), analysis blinding, experimenter blinding.
+  `docs/cm8r_operational_design.md`.
+- **Publication plan (S30-32):** Paper 1 (forecasting), Paper 2 (causal inference), novelty
+  matrix. `docs/cm8r_publication_plan.md`.
+- **CM-9A synthetic Oracle lab (S33-42):** `src/causal_mind/oracle/` — 4 conditions
+  (HIDDEN/REVEAL/VETO/REDIRECT), 11 policies (O0-O10), RPR/PIE metrics. `CM9A_SYNTHETIC_ORACLE_READY`.
+  VETO+O0 most predictable (RPR=0.16); HIDDEN+O5 least (RPR=1.48).
+- **Deliverables:** `src/causal_mind/{sim,engine,privacy,oracle}/`, `data/scripts/cm8r_*.py`,
+  `data/scripts/cm9a_oracle_lab.py`, `reports/cm8r_*/`, `reports/cm9a_oracle_lab/`,
+  `docs/cm8r_confirmatory_boundary.md`, `docs/cm8r_operational_design.md`,
+  `docs/cm8r_publication_plan.md`, `artifacts/cm8_forecaster/`.
+- **Next:** the EXTERNAL blockers only — supervisor sign-off, ethics approval, the pilot
+  (CM-8P, gated). Then the confirmatory run (CM-8H, gated). Oracle (CM-9) remains gated.
+
 ## Blockers
 
 - **Token lifecycle:** Run:ai CLI tokens expire ~daily; refresh tokens do NOT
@@ -235,6 +300,13 @@ N1-N3 ladder; red-team GO).
 
 ## Key commit hashes
 
+- `a15cbc5` **GitHub main after CM-8R push (2026-09-20)** — CM-8R pre-human hardening
+  (CM8R_PREHUMAN_HARDENED, 10/10 gates) + CM-9A synthetic Oracle lab; pushed
+  `b77d5f9..a15cbc5 main -> main`, verified on the remote.
+- `b77d5f9` GitHub main after the first CM-8R push (2026-09-20) — forecasting freeze +
+  ghost pilot + Monte Carlo + randomization + power surface + BRP red team + basin
+  robustness + realtime engine + chaos + privacy.
+- `feb3257` GitHub main after the CM-8E ethics freeze (2026-09-19) — CM8_ETHICS_PACKAGE_READY.
 - `6fdd05b` **GitHub main after CM-7 push (2026-09-17)** — CM-7 valid NULL (C-010, L6);
   pushed `08456c7..6fdd05b main -> main`, verified on the remote.
 - `207fce0` CM-7 protocol freeze + identification + authoritative ds005494 audit

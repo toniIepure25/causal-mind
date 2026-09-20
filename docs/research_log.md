@@ -289,3 +289,52 @@
   supervisor-ready. The only blockers to human data are the `HUMAN INPUT REQUIRED`
   institutional fields + supervisor sign-off + ethics approval + the pilot. No participant
   collection has begun. Oracle (CM-9) remains gated. No free-will claim.
+
+## 2026-09-20
+
+- **CM-8R: Pre-Human Hardening (NO human data).** A 48-section mission to exhaust all
+  useful non-human work before ethics approval, in parallel with the CM-9A synthetic
+  Oracle lab. Workstream B per `docs/cm8r_confirmatory_boundary.md`; NO change to the
+  frozen CM-8 confirmatory protocol (Workstream A).
+- **Forecasting freeze (S3):** `LinearMultiHorizon` (k=3, α=100, horizons 1-10) fitted on
+  CM-2 TRAIN (83 subjects, seal verified); basin r_alpha calibrated on VAL (h*=2: r=0.9911).
+  Weights = 28MB `.npz` (gitignored, SHA in manifest). `artifacts/cm8_forecasting_freeze_manifest.json`.
+- **Ghost pilot (S2):** `CM8R_GHOST_PILOT_PASS`. Prospective replay of ds006067 through the
+  frozen forecaster. BRP_control held-out TEST = 0.0785 (target 0.10); forecast repro exact;
+  deterministic replay; crash recovery; latency p95 = 0.21 ms.
+- **Synthetic world (S4):** `src/causal_mind/sim/` — 21 scenarios S0-S20 with ground-truth
+  causal parameters; the frozen ATE + subject-clustered permutation estimator.
+- **Monte Carlo (S5):** `CM8R_MONTE_CARLO_PASS`. Type-I under the null (S0) = 0.080 (n=300);
+  a B-check (B=200/1000/5000 → 0.042) confirms it is MC noise, NOT a finite-B artifact.
+- **Randomization red team (S16):** `CM8R_RANDOMIZATION_PASS`. Perfect balance, max run 1,
+  deterministic; the fixed permutation is predictable BY DESIGN (mitigation = blinding).
+- **Power surface (S6):** grid over N (12-60), trials (12-48), ICC, effect; power rises with
+  N more than trials; high ICC reduces power.
+- **BRP red team (S7):** 9 adversarial cases; 7/9 produce a misleading high BRP; secondary
+  diagnostics (cosine-direction, Mahalanobis, persistence, novelty) reveal the modes.
+- **Basin robustness (S8/9):** BRP_control stable across percentiles (0.03-0.17) and
+  dimensions (0.08-0.12); global vs subject-calibrated basins are similar.
+- **Realtime engine (S10-15):** `src/causal_mind/engine/` — OFFLINE (no Qwen/LLM/internet),
+  transactional (append-only JSONL, atomic finalization), event timestamps (wall-clock UTC +
+  monotonic), full trial lifecycle. `CM8R_REALTIME_ENGINE_PASS`. Latency: total p95 ~478 ms.
+  Chaos: 7/7 faults handled loudly (`CM8R_CHAOS_PASS`).
+- **Privacy (S23-25):** `src/causal_mind/privacy/` — PII/sensitive-content detection (13
+  categories) + redaction; data minimization; pseudonymization; encryption at rest; access
+  audit; complete deletion; no remote telemetry / no external LLM. `CM8R_PRIVACY_PASS` (12/12).
+- **Clean-room reproduction (S26/27):** `CM8R_REPRODUCIBILITY_PASS`. The forecaster weights
+  SHA matches the manifest; the split seal verifies; a CLEAN-ROOM re-fit from source + data is
+  BIT-IDENTICAL to the frozen artifact. Artifact hash manifest = the reproducibility anchor.
+- **Analysis (S17/18/21):** sham ATE ~0 (believable no-op); cue effect partly a lexical echo;
+  burden ~28 min / 96 thoughts (feasible).
+- **Operational design (S19/20/22/28/29):** manipulation check, report-reactivity, pilot
+  GO/ITERATE/STOP (operational, not the ATE), analysis blinding, experimenter blinding.
+- **Publication plan (S30-32):** Paper 1 (forecasting), Paper 2 (causal inference), novelty
+  matrix. `docs/cm8r_publication_plan.md`.
+- **CM-9A synthetic Oracle lab (S33-42):** `src/causal_mind/oracle/` — 4 conditions
+  (HIDDEN/REVEAL/VETO/REDIRECT), 11 policies (O0-O10), RPR/PIE metrics.
+  `CM9A_SYNTHETIC_ORACLE_READY`. VETO+O0 most predictable (RPR=0.16); HIDDEN+O5 least (1.48).
+- **Readiness scorecard (S44):** `CM8R_PREHUMAN_HARDENED` (10/10 gates pass).
+- **Status: `CM8R_PREHUMAN_HARDENED`.** Pushed to GitHub main = `a15cbc5`. NO human data
+  collected; NO change to the frozen CM-8 confirmatory protocol. The ONLY remaining blockers
+  to human data are the EXTERNAL ones: supervisor sign-off, ethics approval, and the pilot.
+  Oracle (CM-9) remains gated. No free-will claim.
