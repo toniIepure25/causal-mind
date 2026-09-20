@@ -1,0 +1,29 @@
+# CITATION.cff — CAUSAL MIND
+# Citation metadata for the CAUSAL MIND program at the pre-human freeze.
+#
+# NOTE: The author name and any institutional affiliation below are PLACEHOLDERS to be
+# completed by the researcher/supervisor before any formal citation. No DOI is claimed
+# (none has been assigned). The canonical source is the GitHub repository at the tagged
+# pre-human freeze.
+
+cff-version: 1.2.0
+message: "If you use this software/data, please cite it as below."
+title: "CAUSAL MIND: Predicting and Causally Modeling the Human Thought Stream (pre-human freeze cm8-prehuman-v1.0)"
+type: software
+authors:
+  - family-names: "[Researcher surname]"
+    given-names: "[Researcher given name]"
+    orcid: "0000-0000-0000-0000"
+    affiliation: "[Institution — to be completed]"
+repository-code: "https://github.com/toniIepure25/causal-mind"
+url: "https://github.com/toniIepure25/causal-mind"
+version: "cm8-prehuman-v1.0"
+date-released: "2026-09-20"
+license: "SEE LICENSE IN docs/science/license_data_use_audit.md"
+keywords:
+  - "spontaneous cognition"
+  - "thought stream"
+  - "multi-horizon forecasting"
+  - "causal inference"
+  - "pre-registered experiment"
+  - "reproducibility"
