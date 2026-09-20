@@ -74,3 +74,6 @@ data/scripts/inspect_*.py
 data/scripts/summarize_cm6.py
 reports/cm8_dryrun/
 scripts/cm5_debug2.js
+# CM-8R privacy store dirs (reproducible)
+reports/cm8r_privacy/store*/
+reports/cm8r_privacy/attacker_store/
