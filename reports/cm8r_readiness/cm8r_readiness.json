@@ -1,0 +1,49 @@
+{
+  "state": "CM8R_PREHUMAN_HARDENED",
+  "n_gates": 10,
+  "n_pass": 10,
+  "gates": {
+    "CM8R_GHOST_PILOT_PASS": {
+      "reported_state": "CM8R_GHOST_PILOT_PASS",
+      "pass": true
+    },
+    "CM8R_MONTE_CARLO_PASS": {
+      "reported_state": "CM8R_MONTE_CARLO_PASS",
+      "pass": true
+    },
+    "CM8R_REALTIME_ENGINE_PASS": {
+      "reported_state": "CM8R_REALTIME_ENGINE_PASS",
+      "pass": true
+    },
+    "CM8R_RANDOMIZATION_PASS": {
+      "reported_state": "CM8R_RANDOMIZATION_PASS",
+      "pass": true
+    },
+    "CM8R_PRIVACY_PASS": {
+      "reported_state": "CM8R_PRIVACY_PASS",
+      "pass": true
+    },
+    "CM8R_CHAOS_PASS": {
+      "reported_state": "CM8R_CHAOS_PASS",
+      "pass": true
+    },
+    "CM8R_REPRODUCIBILITY_PASS": {
+      "reported_state": "CM8R_REPRODUCIBILITY_PASS",
+      "pass": true
+    },
+    "CM9A_SYNTHETIC_ORACLE_READY": {
+      "reported_state": "CM9A_SYNTHETIC_ORACLE_READY",
+      "pass": true
+    },
+    "CM8R_FORECASTER_FROZEN": {
+      "reported_state": "CM8R_FORECASTER_FROZEN",
+      "pass": true
+    },
+    "CM8_CONFIRMATORY_INTACT": {
+      "reported_state": "CM8_CONFIRMATORY_INTACT",
+      "pass": true
+    }
+  },
+  "runtime_seconds": 0.0,
+  "conclusion": "ALL pre-human gates pass. The CM-8 confirmatory experiment is pre-human HARDENED: the forecaster is frozen and reproducible, the ghost pilot passes, the Monte Carlo is calibrated, the realtime engine is offline + transactional + chaos-tested, the randomization is audited, privacy is hardened, and the synthetic Oracle lab is ready. The ONLY remaining blockers to human data are the external ones: supervisor sign-off, ethics approval, and the pilot (per the frozen boundary doc)."
+}
