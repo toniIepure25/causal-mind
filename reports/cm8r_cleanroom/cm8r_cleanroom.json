@@ -1,0 +1,79 @@
+{
+  "state": "CM8R_REPRODUCIBILITY_PASS",
+  "checks": {
+    "frozen_weights_sha_matches_manifest": true,
+    "split_seal_verified": true,
+    "cleanroom_refit_bit_identical": true,
+    "cleanroom_max_coef_diff": 0.0,
+    "cleanroom_max_intercept_diff": 0.0
+  },
+  "artifact_hash_manifest": {
+    "artifacts/cm8_forecaster/config.json": {
+      "sha256": "dbcbe443b6b09a3a33b53cfc1e1f6179a804cb3cef2ee8991444a7089e0cbd6a",
+      "bytes": 2940
+    },
+    "artifacts/cm8_forecaster/ridge_weights.npz": {
+      "sha256": "7b13d52ce520d15793814d3a10b6269a21cc3d54e0e7dfce20d206fb2c0ed094",
+      "bytes": 28340170
+    },
+    "artifacts/cm8_forecasting_freeze_manifest.json": {
+      "sha256": "21bb0bb8c0789772ff47a5d3d1e6e17721088bd86f3b8fa2a5cfa4cce3e29b06",
+      "bytes": 5874
+    },
+    "data/manifests/cm8_randomization_manifest.json": {
+      "sha256": "c6bcd84d7603d0a8e88e3cfdb005cab2a291b9f95ad24d158d9f417e4436032d",
+      "bytes": 7905
+    },
+    "data/manifests/cm2_split_seal.json": {
+      "sha256": "6bac3b4c432bbc42bb5a6ff95e2e5abaa47b5b5cd90e80a15d2c947cea635bd4",
+      "bytes": 2204
+    },
+    "reports/cm8r_basin_robustness/cm8r_basin_robustness.json": {
+      "sha256": "212d05a5b3be2a3b8ac06778efdf05abf2aa559d9c0f6964c6e81f5f2f348b65",
+      "bytes": 2047
+    },
+    "reports/cm8r_brp_redteam/cm8r_brp_redteam.json": {
+      "sha256": "d1f68e77156c897e55c4d4c5d33e0d9160873b788e856c291300637d1b86d430",
+      "bytes": 6416
+    },
+    "reports/cm8r_failure_injection/cm8r_failure_injection.json": {
+      "sha256": "cc4dc342c2265594b1d967f001769631ea060f62823bc8af375006bb8d0e9987",
+      "bytes": 1346
+    },
+    "reports/cm8r_ghost_pilot/cm8r_ghost_pilot.json": {
+      "sha256": "89f2fd9059e45ce8c5ee064cb2ccc77f1db83360de642a7af01c2135b76248a1",
+      "bytes": 2120
+    },
+    "reports/cm8r_latency/cm8r_latency.json": {
+      "sha256": "0a77e4b2546532881874682f971d6ce03a306199f075aad8114f5fe8117adf1d",
+      "bytes": 1350
+    },
+    "reports/cm8r_monte_carlo/cm8r_monte_carlo.json": {
+      "sha256": "cea748727eec33705f253427b9821b0aa7a97919d567358cacb6766625e3462f",
+      "bytes": 8513
+    },
+    "reports/cm8r_monte_carlo/type1_B_check.json": {
+      "sha256": "92cecfbbc583bdac1862eaa25ffcc23d1ade805edf02511b1127c47d25c7b5c3",
+      "bytes": 868
+    },
+    "reports/cm8r_power_surface/cm8r_power_surface.json": {
+      "sha256": "580646db7809bae8d45662334d67ee8571c78151e6586095df742ff2ff4478b3",
+      "bytes": 37752
+    },
+    "reports/cm8r_privacy/cm8r_privacy.json": {
+      "sha256": "79e92098b702f988556c47dc903e62960b9c8da6b8cc9818b5db39e402ca2f2e",
+      "bytes": 2325
+    },
+    "reports/cm8r_randomization/cm8r_randomization.json": {
+      "sha256": "6874dd42df8667feeaf52fefe7c96201f389f3b0e0789f222d1400afc7388746",
+      "bytes": 2516
+    },
+    "reports/cm8r_realtime_engine/cm8r_realtime_engine.json": {
+      "sha256": "406899f6aa67b313966fc8371a52a1d6b131bf98d188532e71a654b75362a98d",
+      "bytes": 1328
+    }
+  },
+  "n_artifacts": 16,
+  "runtime_seconds": 18.4,
+  "conclusion": "The frozen confirmatory artifacts are reproducible: the forecaster weights SHA matches the manifest, the split seal verifies, and a CLEAN-ROOM re-fit from source + data (same code path, same seed) is bit-identical to the frozen artifact. The artifact hash manifest is the reproducibility anchor for the confirmatory experiment."
+}
