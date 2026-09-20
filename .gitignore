@@ -77,3 +77,5 @@ scripts/cm5_debug2.js
 # CM-8R privacy store dirs (reproducible)
 reports/cm8r_privacy/store*/
 reports/cm8r_privacy/attacker_store/
+*_msg.txt
+ci_msg.txt
