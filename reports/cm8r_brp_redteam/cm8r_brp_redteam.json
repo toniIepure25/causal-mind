@@ -1,0 +1,143 @@
+{
+  "n_cases": 9,
+  "n_misleading": 7,
+  "cases": [
+    {
+      "name": "epsilon_crossing",
+      "brp": 1.0,
+      "diagnostics": {
+        "cosine_direction_change": 4.4408920985006264e-17,
+        "angular_deviation_rad": 4.214684851089403e-09,
+        "mahalanobis_distance": 6.946228370272915,
+        "persistence_steps": 10,
+        "semantic_novelty": 12.49778228676332,
+        "auc_divergence": 9.425442664356328,
+        "trajectory_curvature": 1.9634954092651535
+      },
+      "description": "Trajectory hovers just outside the radius (5% over) with no directional shift. BRP ~1.0 but the semantic change is tiny.",
+      "misleading_success": true
+    },
+    {
+      "name": "anisotropic",
+      "brp": 0.5,
+      "diagnostics": {
+        "cosine_direction_change": 1.0,
+        "angular_deviation_rad": 1.5707963267948966,
+        "mahalanobis_distance": 6.536282007959663,
+        "persistence_steps": 3,
+        "semantic_novelty": 6.51072457776975,
+        "auc_divergence": 9.021682047276618,
+        "trajectory_curvature": 2.134023781923969
+      },
+      "description": "Embedding distribution is anisotropic (stretched). A ball basin is a poor fit; Mahalanobis distance (which uses the covariance) disagrees with the Euclidean BRP.",
+      "misleading_success": false
+    },
+    {
+      "name": "high_dim_concentration",
+      "brp": 1.0,
+      "diagnostics": {
+        "cosine_direction_change": 1.0,
+        "angular_deviation_rad": 1.5707963267948966,
+        "mahalanobis_distance": 17.159760984921498,
+        "persistence_steps": 10,
+        "semantic_novelty": 17.006139436142963,
+        "auc_divergence": 23.207008559985148,
+        "trajectory_curvature": 2.118505268404447
+      },
+      "description": "In high dimensions the points concentrate on a large sphere; the Euclidean radius is dominated by dimension, not semantics. Angular deviation is the right measure here.",
+      "misleading_success": true
+    },
+    {
+      "name": "lexical_repetition",
+      "brp": 1.0,
+      "diagnostics": {
+        "cosine_direction_change": 1.1477457415909162,
+        "angular_deviation_rad": 1.7190911542366218,
+        "mahalanobis_distance": 9.060953146208739,
+        "persistence_steps": 10,
+        "semantic_novelty": 6.22821331427113,
+        "auc_divergence": 12.506533618136475,
+        "trajectory_curvature": 2.0154239423893348
+      },
+      "description": "The participant repeats the cue word (all states near the cue). BRP is high (far from the predicted basin) but it is a lexical echo, not a semantic branch change. Persistence + novelty diagnostics reveal it.",
+      "misleading_success": true
+    },
+    {
+      "name": "magnitude_change",
+      "brp": 1.0,
+      "diagnostics": {
+        "cosine_direction_change": 0.00011734691468394676,
+        "angular_deviation_rad": 0.015148353630436604,
+        "mahalanobis_distance": 13.707898021473927,
+        "persistence_steps": 10,
+        "semantic_novelty": 18.130496792987216,
+        "auc_divergence": 18.763087857592613,
+        "trajectory_curvature": 2.0477549519847518
+      },
+      "description": "Embedding magnitude doubles but the direction is unchanged. Euclidean BRP is high, but cosine-direction change ~0 shows no semantic redirection.",
+      "misleading_success": true
+    },
+    {
+      "name": "noisy_forecast_tiny_basin",
+      "brp": 1.0,
+      "diagnostics": {
+        "cosine_direction_change": 0.2880657193981761,
+        "angular_deviation_rad": 0.7710061485986086,
+        "mahalanobis_distance": 5.670208988633762,
+        "persistence_steps": 10,
+        "semantic_novelty": 8.038894025000904,
+        "auc_divergence": 25.88607758372448,
+        "trajectory_curvature": 2.0937331725927164
+      },
+      "description": "A noisy forecast produces an abnormally small basin radius; nearly everything falls outside -> spuriously high BRP. The radius itself is the red flag.",
+      "misleading_success": true
+    },
+    {
+      "name": "volatile_participant",
+      "brp": 1.0,
+      "diagnostics": {
+        "cosine_direction_change": 1.0270839671575633,
+        "angular_deviation_rad": 1.5984074234724646,
+        "mahalanobis_distance": 12.85884737491269,
+        "persistence_steps": 10,
+        "semantic_novelty": 11.342750831402586,
+        "auc_divergence": 17.664501790679832,
+        "trajectory_curvature": 2.0678248916928714
+      },
+      "description": "A naturally volatile participant jumps between topics; BRP is high even without an intervention. The CONTROL BRP would also be high (the ATE, not the raw BRP, is the estimand).",
+      "misleading_success": true
+    },
+    {
+      "name": "encoder_instability",
+      "brp": 1.0,
+      "diagnostics": {
+        "cosine_direction_change": 0.6039781060137603,
+        "angular_deviation_rad": 1.1582686406121259,
+        "mahalanobis_distance": 8.246307670250982,
+        "persistence_steps": 10,
+        "semantic_novelty": 8.961646993888346,
+        "auc_divergence": 11.271772911738143,
+        "trajectory_curvature": 2.050881934958051
+      },
+      "description": "Semantic-encoder instability makes the embeddings drift; BRP is miscalibrated. The CONTROL BRP would be off too (calibration check catches this).",
+      "misleading_success": true
+    },
+    {
+      "name": "one_unusual_thought",
+      "brp": 0.1,
+      "diagnostics": {
+        "cosine_direction_change": 0.08297956897786207,
+        "angular_deviation_rad": 0.3105397467312576,
+        "mahalanobis_distance": 2.8116308214007,
+        "persistence_steps": 1,
+        "semantic_novelty": 6.390216258094125,
+        "auc_divergence": 2.7978613847495835,
+        "trajectory_curvature": 2.1610885365667603
+      },
+      "description": "A single unusual thought creates an apparent branch change. BRP is elevated but persistence is low (it returns) -> not a durable redirection.",
+      "misleading_success": false
+    }
+  ],
+  "conclusion": "The frozen BRP is a valid PRIMARY estimand but has known failure modes (magnitude-only change, lexical echo, tiny-basin miscalibration, volatility). The secondary diagnostics (cosine-direction change, Mahalanobis, persistence, novelty) reveal these modes. The frozen BRP is NOT replaced; these diagnostics are pre-declared SECONDARY robustness analyses. The ATE (intervention vs control BRP), not the raw BRP, is the estimand, which guards against volatility/encoder miscalibration.",
+  "runtime_seconds": 0.0
+}
