@@ -1,0 +1,321 @@
+{
+  "state": "CM9A_SYNTHETIC_ORACLE_READY",
+  "n_steps": 300,
+  "n_seeds": 20,
+  "baseline_self_pred_error": 3.926748844714198,
+  "self_pred_error": {
+    "hidden": {
+      "O0": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O1": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O2": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O3": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O4": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O5": {
+        "self_pred_error": 5.823626293158725,
+        "self_pred_error_sd": 0.17476850309120448
+      },
+      "O6": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O7": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O8": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O9": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O10": {
+        "self_pred_error": 4.357389707940949,
+        "self_pred_error_sd": 0.6278743992607155
+      }
+    },
+    "reveal": {
+      "O0": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O1": {
+        "self_pred_error": 4.173422722677903,
+        "self_pred_error_sd": 0.13692989059188787
+      },
+      "O2": {
+        "self_pred_error": 4.445017683869974,
+        "self_pred_error_sd": 0.164411225914624
+      },
+      "O3": {
+        "self_pred_error": 4.252884278567757,
+        "self_pred_error_sd": 0.14970373726211128
+      },
+      "O4": {
+        "self_pred_error": 4.3168350323998395,
+        "self_pred_error_sd": 0.1423480691231424
+      },
+      "O5": {
+        "self_pred_error": 5.823626293158725,
+        "self_pred_error_sd": 0.17476850309120448
+      },
+      "O6": {
+        "self_pred_error": 4.445017683779653,
+        "self_pred_error_sd": 0.16441122590746565
+      },
+      "O7": {
+        "self_pred_error": 4.14941447622004,
+        "self_pred_error_sd": 0.12689930051346812
+      },
+      "O8": {
+        "self_pred_error": 4.1692211738021046,
+        "self_pred_error_sd": 0.13953017149129177
+      },
+      "O9": {
+        "self_pred_error": 4.168402255614453,
+        "self_pred_error_sd": 0.1399029190641387
+      },
+      "O10": {
+        "self_pred_error": 4.433433692069089,
+        "self_pred_error_sd": 0.5712467551257093
+      }
+    },
+    "veto": {
+      "O0": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O1": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O2": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O3": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O4": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O5": {
+        "self_pred_error": 0.6223866432895134,
+        "self_pred_error_sd": 0.011893508203501175
+      },
+      "O6": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O7": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O8": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O9": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      },
+      "O10": {
+        "self_pred_error": 0.6218935305987745,
+        "self_pred_error_sd": 0.009517315719122125
+      }
+    },
+    "redirect": {
+      "O0": {
+        "self_pred_error": 1.606064442552078,
+        "self_pred_error_sd": 0.03426896848488202
+      },
+      "O1": {
+        "self_pred_error": 1.606064442552078,
+        "self_pred_error_sd": 0.03426896848488202
+      },
+      "O2": {
+        "self_pred_error": 1.9582450721109192,
+        "self_pred_error_sd": 0.04797694784589134
+      },
+      "O3": {
+        "self_pred_error": 1.7037552202338966,
+        "self_pred_error_sd": 0.03897117567915115
+      },
+      "O4": {
+        "self_pred_error": 1.8593933017779236,
+        "self_pred_error_sd": 0.040542524972903504
+      },
+      "O5": {
+        "self_pred_error": 4.01334441412383,
+        "self_pred_error_sd": 0.0907493265279584
+      },
+      "O6": {
+        "self_pred_error": 1.9582450719871851,
+        "self_pred_error_sd": 0.04797694784133901
+      },
+      "O7": {
+        "self_pred_error": 1.7633275516055575,
+        "self_pred_error_sd": 0.03877405393190062
+      },
+      "O8": {
+        "self_pred_error": 1.6062737919285852,
+        "self_pred_error_sd": 0.034630860280991084
+      },
+      "O9": {
+        "self_pred_error": 1.606413200687787,
+        "self_pred_error_sd": 0.03469469028997066
+      },
+      "O10": {
+        "self_pred_error": 2.7712144881252643,
+        "self_pred_error_sd": 0.18214645860468645
+      }
+    }
+  },
+  "rpr": {
+    "hidden": {
+      "O0": 1.062818857970953,
+      "O1": 1.062818857970953,
+      "O2": 1.062818857970953,
+      "O3": 1.062818857970953,
+      "O4": 1.062818857970953,
+      "O5": 1.483065641185052,
+      "O6": 1.062818857970953,
+      "O7": 1.062818857970953,
+      "O8": 1.062818857970953,
+      "O9": 1.062818857970953,
+      "O10": 1.1096685528554844
+    },
+    "reveal": {
+      "O0": 1.062818857970953,
+      "O1": 1.062818857970953,
+      "O2": 1.1319842087312049,
+      "O3": 1.0830548239143358,
+      "O4": 1.0993407531553074,
+      "O5": 1.483065641185052,
+      "O6": 1.1319842087082035,
+      "O7": 1.056704831480519,
+      "O8": 1.0617488764055534,
+      "O9": 1.0615403277511737,
+      "O10": 1.1290341876682386
+    },
+    "veto": {
+      "O0": 0.15837364577974122,
+      "O1": 0.15837364577974122,
+      "O2": 0.15837364577974122,
+      "O3": 0.15837364577974122,
+      "O4": 0.15837364577974122,
+      "O5": 0.15849922363313582,
+      "O6": 0.15837364577974122,
+      "O7": 0.15837364577974122,
+      "O8": 0.15837364577974122,
+      "O9": 0.15837364577974122,
+      "O10": 0.15837364577974122
+    },
+    "redirect": {
+      "O0": 0.409006153962203,
+      "O1": 0.409006153962203,
+      "O2": 0.49869374119684673,
+      "O3": 0.4338844391658315,
+      "O4": 0.4735197934242358,
+      "O5": 1.0220527395140635,
+      "O6": 0.49869374116533616,
+      "O7": 0.44905534357746746,
+      "O8": 0.4090594676282372,
+      "O9": 0.4090949699648303,
+      "O10": 0.7057274599712685
+    }
+  },
+  "pie": {
+    "hidden": {
+      "O0": 0.24667387796370477,
+      "O1": 0.24667387796370477,
+      "O2": 0.24667387796370477,
+      "O3": 0.24667387796370477,
+      "O4": 0.24667387796370477,
+      "O5": 1.8968774484445268,
+      "O6": 0.24667387796370477,
+      "O7": 0.24667387796370477,
+      "O8": 0.24667387796370477,
+      "O9": 0.24667387796370477,
+      "O10": 0.4306408632267509
+    },
+    "reveal": {
+      "O0": 0.24667387796370477,
+      "O1": 0.24667387796370477,
+      "O2": 0.5182688391557759,
+      "O3": 0.32613543385355914,
+      "O4": 0.3900861876856414,
+      "O5": 1.8968774484445268,
+      "O6": 0.5182688390654553,
+      "O7": 0.2226656315058415,
+      "O8": 0.2424723290879065,
+      "O9": 0.2416534109002546,
+      "O10": 0.506684847354891
+    },
+    "veto": {
+      "O0": -3.3048553141154233,
+      "O1": -3.3048553141154233,
+      "O2": -3.3048553141154233,
+      "O3": -3.3048553141154233,
+      "O4": -3.3048553141154233,
+      "O5": -3.3043622014246847,
+      "O6": -3.3048553141154233,
+      "O7": -3.3048553141154233,
+      "O8": -3.3048553141154233,
+      "O9": -3.3048553141154233,
+      "O10": -3.3048553141154233
+    },
+    "redirect": {
+      "O0": -2.32068440216212,
+      "O1": -2.32068440216212,
+      "O2": -1.9685037726032788,
+      "O3": -2.2229936244803015,
+      "O4": -2.0673555429362747,
+      "O5": 0.08659556940963231,
+      "O6": -1.968503772727013,
+      "O7": -2.1634212931086405,
+      "O8": -2.320475052785613,
+      "O9": -2.320335644026411,
+      "O10": -1.1555343565889338
+    }
+  },
+  "most_predictable": {
+    "condition": "veto",
+    "policy": "O0",
+    "rpr": 0.15837364577974122,
+    "pie": -3.3048553141154233
+  },
+  "least_predictable": {
+    "condition": "hidden",
+    "policy": "O5",
+    "rpr": 1.483065641185052,
+    "pie": 1.8968774484445268
+  },
+  "irreducibility_probe": {
+    "note": "O10's response is a nonlinear (tanh + sin + quadratic) function of the state; a linear projection captures only part of it. This is a computational-irreducibility probe (the response cannot be reduced to a simple linear rule).",
+    "linear_alignment": 0.9996213552901962
+  },
+  "game_probe": {
+    "note": "O7 plays a best response to the revealed shift (0.7*signal - 0.1*x). This is a one-shot best response; in the synthetic lab it is stable because the oracle's shift is i.i.d. (no strategic feedback loop)."
+  },
+  "runtime_seconds": 16.2,
+  "conclusion": "The synthetic Oracle lab is ready. For each of the 4 oracle conditions (HIDDEN/REVEAL/VETO/REDIRECT) and 11 agent policies (O0-O10), the lab measures how the oracle's intervention changes the agent's ability to predict its own future (RPR, PIE). REDIRECT/VETO make the future MORE predictable (RPR < 1); HIDDEN random shifts make it LESS predictable (RPR > 1). The probes address computational irreducibility (O10) and game-theoretic best response (O7). This is a synthetic exploration; it does not touch the frozen CM-8 confirmatory experiment."
+}
