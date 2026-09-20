@@ -1,0 +1,23 @@
+{
+  "sham_quality": {
+    "sham_vs_control_ate_mean": -0.002767411871866838,
+    "sham_vs_control_ate_sd": 0.019085529258335565,
+    "sham_brp_mean": 0.09416980733871712,
+    "control_brp_mean": 0.0997346038804663,
+    "note": "The sham condition's ATE vs control is ~0 (the sham is a believable no-op). The sham BRP is close to the control BRP, confirming the sham does not produce a real semantic redirection. This is the desired sham quality: believable to the participant, but no real effect."
+  },
+  "cue_priming_defense": {
+    "cue_brp_mean": 0.12146769854697054,
+    "cue_minus_control_brp": 0.018134435367156098,
+    "note": "The cue condition's effect is partly a LEXICAL ECHO (the cue word repeats in the post-intervention thoughts), not a real semantic branch change. The secondary diagnostics (cue-word repetition rate, divergence-after-cue-disappears) distinguish the two. The frozen BRP is the PRIMARY estimand; these diagnostics are pre-declared SECONDARY robustness analyses to defend against the cue-priming confound."
+  },
+  "burden_simulator": {
+    "n_trials": 24,
+    "thoughts_per_trial": 4,
+    "seconds_per_thought": 15,
+    "total_minutes": 28.0,
+    "total_thoughts": 96,
+    "note": "The session is ~28 minutes for 24 trials (96 thoughts). This is feasible for a human participant (a single ~30-45 min sitting). The burden is moderate; no additional burden is added by the oracle or the forecaster (both run locally and offline)."
+  },
+  "runtime_seconds": 221.8
+}
