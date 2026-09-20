@@ -58,3 +58,19 @@ data/derived/cm5_features/
 data/atlases/
 data/embeddings/
 reports/cm8r_ghost_pilot/ghost_audit.jsonl
+# CM-8R engine session dirs (reproducible from data/scripts)
+reports/cm8r_realtime_engine/session_*/
+reports/cm8r_latency/session_*/
+reports/cm8r_failure_injection/s*/
+# temporary commit-message files + scratch/debug scripts
+*_commit_msg.txt
+data/scripts/check_*.py
+data/scripts/cm7_debug*.py
+data/scripts/cm7_check_minilm.py
+data/scripts/cm6_gitignore.py
+# more scratch/debug + dry-run scratch
+data/scripts/extract_*.py
+data/scripts/inspect_*.py
+data/scripts/summarize_cm6.py
+reports/cm8_dryrun/
+scripts/cm5_debug2.js
