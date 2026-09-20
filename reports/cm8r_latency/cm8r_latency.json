@@ -1,0 +1,65 @@
+{
+  "n_trials": 24,
+  "stage_latency_ms": {
+    "encode": {
+      "p50": 97.161,
+      "p90": 99.099,
+      "p95": 102.087,
+      "p99": 172.527,
+      "max": 193.423
+    },
+    "predict": {
+      "p50": 0.435,
+      "p90": 0.527,
+      "p95": 0.638,
+      "p99": 72.889,
+      "max": 94.464
+    },
+    "randomize": {
+      "p50": 0.011,
+      "p90": 0.015,
+      "p95": 0.016,
+      "p99": 0.016,
+      "max": 0.016
+    },
+    "render": {
+      "p50": 0.005,
+      "p90": 0.006,
+      "p95": 0.006,
+      "p99": 0.006,
+      "max": 0.006
+    },
+    "post_encode": {
+      "p50": 203.509,
+      "p90": 294.483,
+      "p95": 295.81,
+      "p99": 296.585,
+      "max": 296.77
+    },
+    "brp": {
+      "p50": 1.957,
+      "p90": 2.422,
+      "p95": 76.67,
+      "p99": 389.58,
+      "max": 479.135
+    },
+    "total": {
+      "p50": 303.378,
+      "p90": 395.285,
+      "p95": 478.04,
+      "p99": 788.228,
+      "max": 876.542
+    }
+  },
+  "cold_first_trial_ms": {
+    "encode": 99.344,
+    "predict": 94.464,
+    "randomize": 0.013,
+    "render": 0.006,
+    "post_encode": 203.572,
+    "brp": 479.135,
+    "total": 876.542
+  },
+  "runtime_seconds": 21.3,
+  "note": "Latency is LOCAL (frozen MiniLM encoder + ridge forecaster). The participant-facing critical path is encode + predict + render + BRP. No Qwen / no LLM API / no internet in the loop."
+}

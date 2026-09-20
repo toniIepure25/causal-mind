@@ -1,0 +1,45 @@
+{
+  "state": "CM8R_CHAOS_PASS",
+  "n_faults": 7,
+  "n_handled": 7,
+  "logs_parseable": true,
+  "faults": [
+    {
+      "fault": "encoder_crash",
+      "handled": true,
+      "detail": "marked INVALID_TECHNICAL, not analysis-valid"
+    },
+    {
+      "fault": "empty_thought",
+      "handled": true,
+      "detail": "empty thought -> INVALID_TECHNICAL"
+    },
+    {
+      "fault": "prediction_failure",
+      "handled": true,
+      "detail": "prediction failure -> INVALID_TECHNICAL"
+    },
+    {
+      "fault": "invalid_basin_radius",
+      "handled": true,
+      "detail": "invalid basin -> INVALID_TECHNICAL"
+    },
+    {
+      "fault": "duplicate_finalization",
+      "handled": true,
+      "detail": "duplicate finalization prevented"
+    },
+    {
+      "fault": "process_kill_resume",
+      "handled": true,
+      "detail": "partial trial not logged (n_logged=0); session resumed"
+    },
+    {
+      "fault": "concurrent_write",
+      "handled": true,
+      "detail": "concurrent write prevented (single writer)"
+    }
+  ],
+  "runtime_seconds": 16.5,
+  "conclusion": "The engine fails LOUDLY on all injected faults: no partial trial becomes analysis-valid, duplicate finalization and concurrent writes are prevented, the session resumes after a mid-trial kill, and all logs remain parseable JSONL. No silent data loss, no remote fallback."
+}
