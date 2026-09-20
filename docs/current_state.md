@@ -2,7 +2,20 @@
 
 ## Project state
 
-`CM8R_PREHUMAN_HARDENED` (2026-09-20)
+`CMPUB_SUPERVISOR_HANDOFF_READY` (2026-09-21) — pre-human freeze `cm8-prehuman-v1.0`
+(git `8a9d5dd`). CM-PUB (2026-09-21) turned the completed program into a publication-ready,
+supervisor-handoff package: pre-human release freeze + tag, master summary, claim-level
+evidence matrix, supervisor package (one-pager, technical brief, 4 thesis options, pitch,
+contact package, questions), 3 paper drafts + Oracle theory outline, science docs (novelty,
+limitations, negative results, known/unknown, roadmap), claim-language linter (0 BLOCK /
+8 WARN / PASS), publication + statistical + reproducibility + consistency audits, reviewer
+simulation + response bank, venue landscape, thesis timeline, pilot handoff, README rewrite,
+repo hygiene audit, CITATION.cff, license/data-use audit. NO human data; NO change to the
+frozen CM-8 confirmatory protocol; NO optimization from simulation; NO reopening of closed
+phases. The ONLY remaining work is the human experiment, gated on supervisor sign-off,
+ethics approval (submission deadline 5 Oct 2026), and the pilot. No free-will claim.
+
+Underlying research state: `CM8R_PREHUMAN_HARDENED` (2026-09-20)
 (CM-1 = `CM1_PASS`; CM-2 = `CM2_PASS`; CM-3 = `CM3_PASS`; CM-5 = `CM5_NULL`;
 CM-6 = `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION`; CM-7 =
 `CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT` (CLOSED, pushed, C-010 L6); CM-8 =

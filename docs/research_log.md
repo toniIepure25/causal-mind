@@ -338,3 +338,42 @@
   collected; NO change to the frozen CM-8 confirmatory protocol. The ONLY remaining blockers
   to human data are the EXTERNAL ones: supervisor sign-off, ethics approval, and the pilot.
   Oracle (CM-9) remains gated. No free-will claim.
+
+## 2026-09-21
+
+- **CM-PUB: Publication, supervisor handoff, and pre-pilot freeze (NO human data).** A
+  42-section mission to turn the completed CM-1 → CM-9A program into a professional,
+  reproducible, publication-ready research package. NO change to the frozen CM-8
+  confirmatory protocol; NO optimization from simulation; NO reopening of closed phases.
+- **Pre-human release freeze (S1):** `docs/releases/cm8_prehuman_v1.md` + tag
+  `cm8-prehuman-v1.0` (from `8a9d5dd`). Pre-freeze verification: working tree clean,
+  remote/main exact, no credentials (9 hits all false positives), no new participant data
+  (only public OSF `a56rm` transcripts, 3.2 MB), no large raw datasets, all manifest hashes
+  valid (clean-room bit-identical).
+- **Master summary + evidence (S2/S3):** `docs/CAUSAL_MIND_master_summary.md` (single
+  authoritative pre-human summary) + `docs/claims/evidence_matrix.md` (C-001..C-012 → level
+  → exact value → report → code → reproduction command).
+- **Supervisor package (S4/S5/S6/S17/S18/S35/S36):** `docs/supervisor/` — START_HERE,
+  one-pager, technical brief, 4 thesis options + recommendation, 10-min pitch, contact
+  package (email + asks), questions for the supervisor (each with a default).
+- **Papers (S7-S11/S29):** `papers/paper1_predictive_dynamics/` (manuscript + figures +
+  reproducibility), `papers/paper2_prediction_to_intervention/manuscript.md`,
+  `papers/paper3_break_the_chain_protocol/protocol.md`, `papers/oracle_theory/outline.md`.
+- **Science docs (S12-S15/S30):** `docs/novelty_matrix.md`, `docs/science/limitations.md`,
+  `docs/science/negative_results.md`, `docs/science/known_unknowns.md`,
+  `docs/roadmap_post_cm8.md`.
+- **Tooling + audits (S16/S20-S28):** `data/scripts/cm_pub_claim_linter.py` (claim-language
+  linter; verified on the repo: 0 BLOCK, 8 WARN, PASS); `reports/publication_consistency_audit.md`
+  (ALL CONSISTENT); `reports/reproducibility_traceability.md`; `reports/statistical_reporting_audit.md`
+  (ALL COMPLETE); `docs/paper_methods_detail.md`; `reports/story_red_team.md`;
+  `reports/reviewer_simulation.md` (3 simulated reviewers); `docs/reviewer_response_preparation.md`
+  (R1-R12); `docs/venue_landscape.md` (no acceptance probability claimed);
+  `docs/supervisor/thesis_timeline.md`; `docs/cm8/cm8_pilot_handoff.md`.
+- **Repo hygiene + metadata (S31-S34):** `README.md` rewritten (keeps the causal-world-model
+  framing; updates state); `reports/repo_hygiene_audit.md` (HYGIENE PASS); `CITATION.cff`
+  (author/affiliation placeholders; no DOI claimed); `docs/science/license_data_use_audit.md`
+  (3 decisions required).
+- **Status: `CMPUB_SUPERVISOR_HANDOFF_READY`.** The program is a complete, reproducible,
+  honest, publication-ready pre-human research package. The ONLY remaining work is the human
+  experiment, gated on the three external approvals: supervisor sign-off, ethics approval
+  (submission deadline 5 Oct 2026), and the pilot. No free-will claim; no overclaiming.
