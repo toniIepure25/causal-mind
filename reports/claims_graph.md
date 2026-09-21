@@ -22,6 +22,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-010 | L6 | validated (method; null causal effect) | point=-0.0386 | `reports/cm7_results.json` | `.venv/bin/python data/scripts/cm7_analyze.py` |
 | C-011 | L0 | validated (pre-human hardening; no human data) | gates=10/10 | `reports/cm8r_readiness/cm8r_readiness.json` | `.venv/bin/python data/scripts/cm8r_readiness.py` |
 | C-012 | L0 | design-only (synthetic exploration) | rpr_pie | `reports/cm9a_oracle_lab/cm9a_oracle_lab.json` | `.venv/bin/python data/scripts/cm9a_oracle_lab.py` |
+| C-101 | L3 | validated (partial replication) | predictive_gain | `reports/cm_xval/cm_xval_openplay.json` | `.venv/bin/python data/scripts/cm_xval_openplay.py` |
 
 ## Per-claim traceability
 
@@ -180,6 +181,19 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **COMMIT:** `8a9d5dd00c0d`
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm9a_oracle_lab.py`
 - **RED TEAM:** n/a (synthetic)
+
+### C-101 (L3) — validated (partial replication)
+
+> External validation (Open Play gaming-diary free-text, a domain shift from thoughts): the past-text-predicts-future-text-semantics effect PARTIALLY replicates. The linear model beats the strongest frozen baseline (B0-B7) at every horizon h=1..10, out-of-sample, subject-disjoint (gain +0.016..+0.034, subject-level CIs exclude 0). However the absolute test cosine (~0.64) is dominated by within-person similarity (target-shuffle permutation p=0.71), so the model predicts a typical entry for the person rather than the specific next entry. The 'beats-baselines' signal transfers; strong temporal-semantic prediction does not fully transfer to short repetitive activity text.
+
+- **DATASET:** Open Play (openESM 0075_ballou)
+- **PROTOCOL:** `reports/cm_xval/cm_xval_openplay.json`
+- **SCRIPT:** `data/scripts/cm_xval_openplay.py`
+- **REPORT:** `reports/cm_xval/cm_xval_openplay.json`
+- **STATISTIC:** `{"type": "predictive_gain", "h1": {"gain": 0.0164, "ci95": [0.0094, 0.0229]}, "h3": {"gain": 0.0339, "ci95": [0.0144, 0.0508]}, "h10": {"gain": 0.0177, "ci95": [0.0082, 0.0271]}, "permutation_p_h1": 0.707}`
+- **COMMIT:** `cm-lab (post`
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_xval_openplay.py`
+- **RED TEAM:** pending (external-data leakage audit: subject-disjoint, frozen encoder, no test stats in features)
 
 ## Rules
 

@@ -138,6 +138,26 @@
       "transform": "ridge forecaster (k=3, alpha=100) frozen",
       "note": "BRP at h*=2, basin_tail 0.1",
       "sha256": "dbcbe443b6b09a3a33b53cfc1e1f6179a804cb3cef2ee8991444a7089e0cbd6a"
+    },
+    {
+      "id": "openplay_raw",
+      "type": "raw",
+      "parents": [],
+      "output": "reports/cm_xval/cm_xval_openplay.json",
+      "transform": "EXTERNAL: Open Play survey_daily.csv.gz (displaced_activity free-text)",
+      "note": "1284 subjects x 30 waves; Zenodo 10.5281/zenodo.17536656; domain shift",
+      "sha256": "06f153a45e7d162da486343420e4541023a3d4db5af1ce613821a0cf6a3ed7a0"
+    },
+    {
+      "id": "cm_xval_openplay",
+      "type": "result",
+      "parents": [
+        "openplay_raw"
+      ],
+      "output": "reports/cm_xval/cm_xval_openplay.json",
+      "transform": "CM-3 transfer: subject-disjoint horizon prediction + baselines B0-B7",
+      "note": "CMXVAL_PARTIAL (C-101)",
+      "sha256": "06f153a45e7d162da486343420e4541023a3d4db5af1ce613821a0cf6a3ed7a0"
     }
   ]
 }

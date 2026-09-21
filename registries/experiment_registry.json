@@ -114,6 +114,22 @@
       "claim_ids": [
         "C-012"
       ]
+    },
+    {
+      "id": "CM-XVAL-1",
+      "hypothesis": "The past-text-predicts-future-text-semantics effect (C-003/C-004) replicates on an external, domain-shifted dataset (Open Play gaming-diary free-text).",
+      "status": "validated (partial replication)",
+      "design": "external validation (subject-disjoint, out-of-sample)",
+      "dataset": "Open Play (openESM 0075_ballou)",
+      "split": "473/101/102 (seed 20260921)",
+      "primary_endpoint": "predictive_gain_per_horizon",
+      "config": "reports/cm_xval/cm_xval_openplay.json",
+      "code_sha": "cm-lab (post-freeze)",
+      "result": "model beats strongest baseline at all h=1..10 (gain +0.016..+0.034, CI>0); target-shuffle perm p=0.71",
+      "decision": "CMXVAL_PARTIAL",
+      "claim_ids": [
+        "C-101"
+      ]
     }
   ]
 }

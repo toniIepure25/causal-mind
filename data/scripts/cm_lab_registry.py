@@ -111,6 +111,11 @@ LINEAGE_DEFS = [
      "transform": "counterbalanced round-robin (seed 20260917)", "note": "20 subjects x 24 trials"},
     {"id": "cm8_forecaster", "type": "derived", "parents": ["cm2_split"], "output": "artifacts/cm8_forecaster/config.json",
      "transform": "ridge forecaster (k=3, alpha=100) frozen", "note": "BRP at h*=2, basin_tail 0.1"},
+    {"id": "openplay_raw", "type": "raw", "parents": [], "output": "reports/cm_xval/cm_xval_openplay.json",
+     "transform": "EXTERNAL: Open Play survey_daily.csv.gz (displaced_activity free-text)",
+     "note": "1284 subjects x 30 waves; Zenodo 10.5281/zenodo.17536656; domain shift"},
+    {"id": "cm_xval_openplay", "type": "result", "parents": ["openplay_raw"], "output": "reports/cm_xval/cm_xval_openplay.json",
+     "transform": "CM-3 transfer: subject-disjoint horizon prediction + baselines B0-B7", "note": "CMXVAL_PARTIAL (C-101)"},
 ]
 
 
@@ -153,6 +158,12 @@ EXPERIMENT_DEFS = [
      "split": "n/a", "primary_endpoint": "rpr_pie",
      "config": "src/causal_mind/oracle/", "code_sha": FREEZE_SHA,
      "result": "hidden_o5 RPR 1.48; veto_o0 RPR 0.16", "decision": "CM9A_SYNTHETIC_ORACLE_READY", "claim_ids": ["C-012"]},
+    {"id": "CM-XVAL-1", "hypothesis": "The past-text-predicts-future-text-semantics effect (C-003/C-004) replicates on an external, domain-shifted dataset (Open Play gaming-diary free-text).",
+     "status": "validated (partial replication)", "design": "external validation (subject-disjoint, out-of-sample)", "dataset": "Open Play (openESM 0075_ballou)",
+     "split": "473/101/102 (seed 20260921)", "primary_endpoint": "predictive_gain_per_horizon",
+     "config": "reports/cm_xval/cm_xval_openplay.json", "code_sha": "cm-lab (post-freeze)",
+     "result": "model beats strongest baseline at all h=1..10 (gain +0.016..+0.034, CI>0); target-shuffle perm p=0.71",
+     "decision": "CMXVAL_PARTIAL", "claim_ids": ["C-101"]},
 ]
 
 

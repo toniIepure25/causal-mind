@@ -1,0 +1,194 @@
+{
+  "protocol": "CM-3 transfer (subject-disjoint, k-history, horizon prediction)",
+  "source": {
+    "name": "Open Play (digital-wellbeing/open-play)",
+    "openesm_id": "0075_ballou",
+    "zenodo_doi": "10.5281/zenodo.17536656",
+    "url": "https://github.com/digital-wellbeing/open-play",
+    "field": "displaced_activity",
+    "license": "CC (see repo)",
+    "note": "gaming-diary free-text activity descriptions; domain shift from thoughts"
+  },
+  "seed": 20260921,
+  "k": 3,
+  "horizons": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "data": {
+    "n_subjects_total": 1163,
+    "n_subjects_used": 676,
+    "n_entries": 11328,
+    "min_entries": 5,
+    "entries_per_subject": {
+      "mean": 16.76,
+      "median": 17.0,
+      "max": 30
+    }
+  },
+  "split": {
+    "train": 473,
+    "val": 101,
+    "test": 102
+  },
+  "FPC_semantic": {
+    "1": {
+      "model_ci": [
+        0.6413743723698382,
+        0.6128776548845735,
+        0.6709453872329662
+      ],
+      "strong_baseline": "B3_khistory",
+      "strong_baseline_ci": [
+        0.6249922898782666,
+        0.5927319799963892,
+        0.6580936032404879
+      ],
+      "gain_ci": [
+        0.016382082491571557,
+        0.00942878951060345,
+        0.022929915967940744
+      ],
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5396,
+        "B1_persistence": 0.5284,
+        "B2_markov_iterated": 0.5731,
+        "B3_khistory": 0.6034,
+        "B4_drift": 0.596,
+        "B5_nn_anchor": 0.5731,
+        "B6_population_avg": 0.5396,
+        "B7_frozen_lang_history": 0.6007
+      },
+      "n_test_subjects": 102
+    },
+    "2": {
+      "model_ci": [
+        0.6381916187535032,
+        0.609621596358997,
+        0.6671175072487169
+      ],
+      "strong_baseline": "B3_khistory",
+      "strong_baseline_ci": [
+        0.6206874739378987,
+        0.5880968385954051,
+        0.6542113645753308
+      ],
+      "gain_ci": [
+        0.01750414481560448,
+        0.009598710816887355,
+        0.02529478715905382
+      ],
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5413,
+        "B1_persistence": 0.5134,
+        "B2_markov_iterated": 0.5501,
+        "B3_khistory": 0.5969,
+        "B4_drift": 0.586,
+        "B5_nn_anchor": 0.5672,
+        "B6_population_avg": 0.5413,
+        "B7_frozen_lang_history": 0.5937
+      },
+      "n_test_subjects": 102
+    },
+    "3": {
+      "model_ci": [
+        0.6354715615236817,
+        0.6072355308545886,
+        0.664163222255743
+      ],
+      "strong_baseline": "B4_drift",
+      "strong_baseline_ci": [
+        0.6016112424094254,
+        0.5657226774513812,
+        0.6403536283607763
+      ],
+      "gain_ci": [
+        0.033860319114256264,
+        0.014423893603197726,
+        0.050816891532028965
+      ],
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5508,
+        "B1_persistence": 0.5359,
+        "B2_markov_iterated": 0.5602,
+        "B3_khistory": 0.6006,
+        "B4_drift": 0.6051,
+        "B5_nn_anchor": 0.5769,
+        "B6_population_avg": 0.5508,
+        "B7_frozen_lang_history": 0.5987
+      },
+      "n_test_subjects": 99
+    },
+    "5": {
+      "model_ci": [
+        0.6314072737985437,
+        0.5998369811082388,
+        0.6620701399824799
+      ],
+      "strong_baseline": "B3_khistory",
+      "strong_baseline_ci": [
+        0.6010633031184005,
+        0.5665908919938357,
+        0.6350075842228016
+      ],
+      "gain_ci": [
+        0.03034397068014319,
+        0.019335278072123374,
+        0.04285997758996592
+      ],
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5494,
+        "B1_persistence": 0.507,
+        "B2_markov_iterated": 0.5481,
+        "B3_khistory": 0.5953,
+        "B4_drift": 0.5832,
+        "B5_nn_anchor": 0.5656,
+        "B6_population_avg": 0.5494,
+        "B7_frozen_lang_history": 0.5943
+      },
+      "n_test_subjects": 85
+    },
+    "10": {
+      "model_ci": [
+        0.6161416893566338,
+        0.577918850367702,
+        0.6562775141344113
+      ],
+      "strong_baseline": "B3_khistory",
+      "strong_baseline_ci": [
+        0.5984076707139704,
+        0.5574566905439572,
+        0.6407146894570105
+      ],
+      "gain_ci": [
+        0.017734018642663534,
+        0.008208822082065413,
+        0.027075241212644006
+      ],
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5616,
+        "B1_persistence": 0.5329,
+        "B2_markov_iterated": 0.5672,
+        "B3_khistory": 0.6076,
+        "B4_drift": 0.6062,
+        "B5_nn_anchor": 0.5868,
+        "B6_population_avg": 0.5616,
+        "B7_frozen_lang_history": 0.6004
+      },
+      "n_test_subjects": 65
+    }
+  },
+  "permutation_primary_h": {
+    "h": 1,
+    "observed_test_cosine": 0.6509,
+    "null_mean": 0.6531,
+    "null_sd": 0.0043,
+    "p": 0.7073,
+    "B": 1000
+  },
+  "decision": "CMXVAL_PARTIAL",
+  "runtime_s": 655.4
+}

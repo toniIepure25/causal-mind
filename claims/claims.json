@@ -182,6 +182,20 @@
       "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
       "reproduction": ".venv/bin/python data/scripts/cm9a_oracle_lab.py",
       "red_team": "n/a (synthetic)"
+    },
+    {
+      "id": "C-101",
+      "level": "L3",
+      "claim": "External validation (Open Play gaming-diary free-text, a domain shift from thoughts): the past-text-predicts-future-text-semantics effect PARTIALLY replicates. The linear model beats the strongest frozen baseline (B0-B7) at every horizon h=1..10, out-of-sample, subject-disjoint (gain +0.016..+0.034, subject-level CIs exclude 0). However the absolute test cosine (~0.64) is dominated by within-person similarity (target-shuffle permutation p=0.71), so the model predicts a typical entry for the person rather than the specific next entry. The 'beats-baselines' signal transfers; strong temporal-semantic prediction does not fully transfer to short repetitive activity text.",
+      "status": "validated (partial replication)",
+      "dataset": {"id": "Open Play (openESM 0075_ballou)", "zenodo_doi": "10.5281/zenodo.17536656", "n_subjects_used": 676, "n_entries": 11328, "field": "displaced_activity", "note": "external; domain shift; NOT ds006067"},
+      "protocol": {"ref": "reports/cm_xval/cm_xval_openplay.json", "seed": 20260921, "split": "473/101/102", "k": 3, "horizons": [1, 2, 3, 5, 10]},
+      "script": "data/scripts/cm_xval_openplay.py",
+      "report": "reports/cm_xval/cm_xval_openplay.json",
+      "statistic": {"type": "predictive_gain", "h1": {"gain": 0.0164, "ci95": [0.0094, 0.0229]}, "h3": {"gain": 0.0339, "ci95": [0.0144, 0.0508]}, "h10": {"gain": 0.0177, "ci95": [0.0082, 0.0271]}, "permutation_p_h1": 0.707},
+      "commit": "cm-lab (post cm8-prehuman-v1.0 freeze)",
+      "reproduction": ".venv/bin/python data/scripts/cm_xval_openplay.py",
+      "red_team": "pending (external-data leakage audit: subject-disjoint, frozen encoder, no test stats in features)"
     }
   ]
 }
