@@ -377,3 +377,11 @@
   honest, publication-ready pre-human research package. The ONLY remaining work is the human
   experiment, gated on the three external approvals: supervisor sign-off, ethics approval
   (submission deadline 5 Oct 2026), and the pilot. No free-will claim; no overclaiming.
+
+## 2026-09-21 — CM-LAB: research operating system + external validation
+
+- Built the Research OS: reproducible env (S4), one-command validation + lint ratchet (S6), 10 scientific invariants (S7), claim graph (S8), data lineage + artifact + experiment registries (S9-11), CI (S12), validation profiles + recovery runbook (S13/S14), disaster-recovery test (S60/61), security audit + standards (S75-84).
+- Target states: CMLAB_RESEARCH_OS_PASS, CMLAB_DISASTER_RECOVERY_PASS, CMLAB_CLAIM_TRACEABILITY_PASS, CMLAB_SECURITY_PASS.
+- CM-XVAL-1 (first external validation): Open Play (openESM 0075) gaming-diary free-text. Model beats strongest frozen baseline at all horizons h=1..10 (gain +0.016..+0.034, CIs exclude 0); target-shuffle perm p=0.71 -> `CMXVAL_PARTIAL`. New claim C-101 (L3).
+- NO human data; NO change to frozen protocol / C-001..C-012 / cm8-prehuman-v1.0.
+- Final state: `CMLAB_PROFESSIONAL_RESEARCH_PLATFORM_READY`.

@@ -2,6 +2,8 @@
 
 ## Project state
 
+`CMLAB_PROFESSIONAL_RESEARCH_PLATFORM_READY` (2026-09-21) — CM-LAB turned CAUSAL MIND into a professional, reproducible, portable research operating system on top of the immutable `cm8-prehuman-v1.0` freeze. Built: reproducible environment (S4), one-command validation + lint/type ratchet (S6), 10 scientific invariants (S7), claim graph with full traceability (S8), data lineage + artifact + experiment registries (S9-11), CI (S12), validation profiles + recovery runbook (S13/S14), disaster-recovery test (S60/61), and a security audit + standards (S75-84). Target states achieved: CMLAB_RESEARCH_OS_PASS, CMLAB_DISASTER_RECOVERY_PASS, CMLAB_CLAIM_TRACEABILITY_PASS, CMLAB_SECURITY_PASS, plus the first external-validation decision. CM-XVAL-1 (S16/S18-24) externally validated the CM-2/CM-3 predictive-dynamics finding on Open Play (openESM 0075, Zenodo 10.5281/zenodo.17536656): the model beats the strongest frozen baseline at every horizon (gain +0.016..+0.034, CIs exclude 0) but the target-shuffle permutation is not significant (p=0.71) -> `CMXVAL_PARTIAL`, recorded as NEW claim C-101 (L3). NO human data; NO change to C-001..C-012, the frozen CM-8 protocol, or the `cm8-prehuman-v1.0` release; NO result shopping. The human experiment remains gated on supervisor sign-off + ethics (deadline 5 Oct 2026) + pilot authorization. No free-will claim.
+
 `CMPUB_SUPERVISOR_HANDOFF_READY` (2026-09-21) — pre-human freeze `cm8-prehuman-v1.0`
 (git `8a9d5dd`). CM-PUB (2026-09-21) turned the completed program into a publication-ready,
 supervisor-handoff package: pre-human release freeze + tag, master summary, claim-level
