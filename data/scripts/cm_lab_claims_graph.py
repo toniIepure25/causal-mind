@@ -43,11 +43,12 @@ def validate() -> list[str]:
                 errors.append(f"{cid}: missing field {f!r}")
         if c.get("level") not in VALID_LEVELS:
             errors.append(f"{cid}: invalid level {c.get('level')!r}")
-        # Traceability: report + script must exist (unless explicitly n/a).
+        # Traceability: file report + script refs must exist (unless n/a).
+        # Directory-style report refs (trailing "/") are optional log dirs (often
+        # gitignored) and are NOT required to exist in a fresh clone.
         rep = c.get("report", "")
-        if rep and not rep.startswith("n/a") and not (ROOT / rep).exists() and not (ROOT / rep).is_dir():
-            # allow directory-style report refs
-            if not any((ROOT / rep).glob("*")):
+        if rep and not rep.startswith("n/a") and not rep.endswith("/"):
+            if not (ROOT / rep).exists():
                 errors.append(f"{cid}: report path does not exist: {rep}")
         scr = c.get("script", "")
         if scr and not scr.startswith("n/a") and not (ROOT / scr).exists():
