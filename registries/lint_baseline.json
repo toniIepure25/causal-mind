@@ -1,0 +1,5 @@
+{
+  "ruff_count": 32,
+  "mypy_count": 93,
+  "note": "ratchet baseline; fix violations then --rebaseline to lower the bar"
+}
