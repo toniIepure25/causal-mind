@@ -56,6 +56,9 @@ run "registry integrity (--check)" "$PY" data/scripts/cm_lab_registry.py --check
 # 7. Claim linter (no overclaiming language)
 run "claim linter" "$PY" data/scripts/cm_pub_claim_linter.py
 
+# 7b. Security audit (no secrets / credential files / public binds / telemetry)
+run "security audit" "$PY" data/scripts/cm_lab_security.py --check
+
 # 8. Secret scan (conservative: long literals assigned to credential-looking names)
 echo ""
 echo "--- secret scan ---"
