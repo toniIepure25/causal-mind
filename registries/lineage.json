@@ -1,0 +1,143 @@
+{
+  "version": "1.0",
+  "freeze": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+  "lineage": [
+    {
+      "id": "ds006067_raw",
+      "type": "raw",
+      "parents": [],
+      "output": "data/manifests/ds006067_manifest.yaml",
+      "transform": "acquisition + 10/10 integrity checks",
+      "note": "OpenNeuro MRI + OSF a56rm; 118 subjects",
+      "sha256": "bf93e2f99ceec16faa730681cb6b55c841dbb746af8b88322546fd31624f98f8"
+    },
+    {
+      "id": "embeddings_miniLM",
+      "type": "derived",
+      "parents": [
+        "ds006067_raw"
+      ],
+      "output": "artifacts/cm8_forecaster/config.json",
+      "transform": "all-MiniLM-L6-v2 (dim 384) on thought text",
+      "note": "frozen encoder",
+      "sha256": "dbcbe443b6b09a3a33b53cfc1e1f6179a804cb3cef2ee8991444a7089e0cbd6a"
+    },
+    {
+      "id": "cm2_split",
+      "type": "derived",
+      "parents": [
+        "embeddings_miniLM"
+      ],
+      "output": "data/manifests/cm2_split_seal.json",
+      "transform": "subject-disjoint 83/18/17 split (seed 20260911)",
+      "note": "seal 67505261",
+      "sha256": "6bac3b4c432bbc42bb5a6ff95e2e5abaa47b5b5cd90e80a15d2c947cea635bd4"
+    },
+    {
+      "id": "cm2_results",
+      "type": "result",
+      "parents": [
+        "cm2_split"
+      ],
+      "output": "reports/cm2_results.json",
+      "transform": "held-out semantic cosine vs baselines B0-B7",
+      "note": "0.3623 [0.3523,0.3720]",
+      "sha256": "2b9d43671dd5a7483b8d7a629af5d8c1129b43b3996c6f481b59e2fa90975bce"
+    },
+    {
+      "id": "cm3_protocol",
+      "type": "derived",
+      "parents": [
+        "cm2_split"
+      ],
+      "output": "data/manifests/cm3_protocol_seal.json",
+      "transform": "prospective horizons 1..10 (all >0)",
+      "note": "CM-3 protocol seal",
+      "sha256": "80d1ea53d60fb775c863595de469ce0a88f9b7aa8897c241ec3d71474a5aa12b"
+    },
+    {
+      "id": "cm3_results",
+      "type": "result",
+      "parents": [
+        "cm3_protocol"
+      ],
+      "output": "reports/cm3_results.json",
+      "transform": "PredictiveGain per horizon",
+      "note": "monotonic decay",
+      "sha256": "93a4f8eb3c905e0d68d00d7ab83338f4c47312f71b02aa872272d9ca4357ed93"
+    },
+    {
+      "id": "cm5_protocol",
+      "type": "derived",
+      "parents": [
+        "cm2_split"
+      ],
+      "output": "data/manifests/cm5_protocol_seal.json",
+      "transform": "HRF-safe alignment (buffer 6s, window 15s)",
+      "note": "CM-5 protocol seal",
+      "sha256": "234ec031cdd06566bd65de3719b0c376eb76f999a88c35b1bdc7d11b9896e7bf"
+    },
+    {
+      "id": "cm5_results",
+      "type": "result",
+      "parents": [
+        "cm5_protocol"
+      ],
+      "output": "reports/cm5_decisive_results.json",
+      "transform": "incremental neural gain M4-M2",
+      "note": "clean null (0/16 positive)",
+      "sha256": "2b1a8dc99fadca2fbdbed077c6e3e2c2e66c5b87236aa4be8142305988be7493"
+    },
+    {
+      "id": "cm6_results",
+      "type": "result",
+      "parents": [
+        "ds006067_raw"
+      ],
+      "output": "reports/cm6_observational_results.json",
+      "transform": "observational SCM identifiability",
+      "note": "0/84 identifiable",
+      "sha256": "d183c6a21a9fc422cd1335a0b606a00acb2f107cc09d2cbaad28c2edfa859110"
+    },
+    {
+      "id": "ds005494_raw",
+      "type": "raw",
+      "parents": [],
+      "output": "data/manifests/ds005494_manifest.json",
+      "transform": "public intervention dataset v1.0.1",
+      "note": "20 subjects, 3330 pairs",
+      "sha256": "68f05e7a6f8e3cddefd9c9c6f2f12927dcd1cd2d12e8a4460f180f94d8f8ed87"
+    },
+    {
+      "id": "cm7_results",
+      "type": "result",
+      "parents": [
+        "ds005494_raw"
+      ],
+      "output": "reports/cm7_results.json",
+      "transform": "list-level randomized ATE + 2-phase permutation",
+      "note": "valid null, method validated",
+      "sha256": "7fce3fe25ecf370d53c98cc959702a704900266ee6fd0f5634425b7832edbc7c"
+    },
+    {
+      "id": "cm8_randomization",
+      "type": "derived",
+      "parents": [],
+      "output": "data/manifests/cm8_randomization_manifest.json",
+      "transform": "counterbalanced round-robin (seed 20260917)",
+      "note": "20 subjects x 24 trials",
+      "sha256": "c6bcd84d7603d0a8e88e3cfdb005cab2a291b9f95ad24d158d9f417e4436032d"
+    },
+    {
+      "id": "cm8_forecaster",
+      "type": "derived",
+      "parents": [
+        "cm2_split"
+      ],
+      "output": "artifacts/cm8_forecaster/config.json",
+      "transform": "ridge forecaster (k=3, alpha=100) frozen",
+      "note": "BRP at h*=2, basin_tail 0.1",
+      "sha256": "dbcbe443b6b09a3a33b53cfc1e1f6179a804cb3cef2ee8991444a7089e0cbd6a"
+    }
+  ]
+}

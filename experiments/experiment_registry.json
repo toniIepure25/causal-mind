@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "freeze": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+  "experiments": [
+    {
+      "id": "CM-2",
+      "hypothesis": "Past thought history predicts next-thought semantics above baselines.",
+      "status": "validated",
+      "design": "confirmatory (subject-disjoint)",
+      "dataset": "ds006067",
+      "split": "83/18/17",
+      "primary_endpoint": "held_out_semantic_cosine",
+      "config": "data/manifests/cm2_split_seal.json",
+      "code_sha": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "result": "0.3623 [0.3523,0.3720] > 0.3167 (B7)",
+      "decision": "CM2_PASS",
+      "claim_ids": [
+        "C-003"
+      ]
+    },
+    {
+      "id": "CM-3",
+      "hypothesis": "Cognitive history predicts future thought semantics at every horizon.",
+      "status": "validated",
+      "design": "confirmatory (prospective)",
+      "dataset": "ds006067",
+      "split": "83/18/17",
+      "primary_endpoint": "predictive_gain_per_horizon",
+      "config": "data/manifests/cm3_protocol_seal.json",
+      "code_sha": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "result": "gain>0 at all h=1..10, monotonic decay",
+      "decision": "CM3_PASS",
+      "claim_ids": [
+        "C-004"
+      ]
+    },
+    {
+      "id": "CM-5",
+      "hypothesis": "HRF-safe BOLD adds incremental predictive value for target content.",
+      "status": "validated (null)",
+      "design": "confirmatory",
+      "dataset": "ds006067",
+      "split": "73/17/16",
+      "primary_endpoint": "incremental_neural_gain_M4_minus_M2",
+      "config": "data/manifests/cm5_protocol_seal.json",
+      "code_sha": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "result": "N2 ~ -0.09 at all horizons, 0/16 subjects positive",
+      "decision": "CM5_NULL",
+      "claim_ids": [
+        "C-005"
+      ]
+    },
+    {
+      "id": "CM-6",
+      "hypothesis": "An observational SCM of ds006067 yields identifiable causal edges.",
+      "status": "validated (no identification)",
+      "design": "exploratory (observational)",
+      "dataset": "ds006067",
+      "split": "n/a",
+      "primary_endpoint": "n_identifiable_edges",
+      "config": "reports/cm6_observational_results.json",
+      "code_sha": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "result": "0/84 identifiable (unmeasured confounding)",
+      "decision": "CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION",
+      "claim_ids": [
+        "C-006",
+        "C-009"
+      ]
+    },
+    {
+      "id": "CM-7",
+      "hypothesis": "The framework correctly identifies + estimates a randomized causal effect.",
+      "status": "validated (null)",
+      "design": "confirmatory (randomized)",
+      "dataset": "ds005494",
+      "split": "list-level within-subject",
+      "primary_endpoint": "ate_2phase_permutation",
+      "config": "docs/cm7_protocol.md",
+      "code_sha": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "result": "ATE -0.0386, p=0.0733 (valid null)",
+      "decision": "CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT",
+      "claim_ids": [
+        "C-010"
+      ]
+    },
+    {
+      "id": "CM-8",
+      "hypothesis": "Pre-human readiness: forecaster frozen, ghost pilot passes, MC calibrated, engine offline.",
+      "status": "validated (pre-human)",
+      "design": "pre-pilot hardening (NO human data)",
+      "dataset": "ds006067 (ghost replay)",
+      "split": "n/a",
+      "primary_endpoint": "readiness_gates",
+      "config": "docs/ethics/cm8_software_freeze_manifest.json",
+      "code_sha": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "result": "10/10 gates; clean-room bit-identical",
+      "decision": "CM8R_PREHUMAN_HARDENED",
+      "claim_ids": [
+        "C-011"
+      ]
+    },
+    {
+      "id": "CM-9A",
+      "hypothesis": "Synthetic Oracle lab: oracle conditions x agent policies, RPR/PIE measured.",
+      "status": "design-only (synthetic)",
+      "design": "synthetic exploration (NO human data)",
+      "dataset": "synthetic",
+      "split": "n/a",
+      "primary_endpoint": "rpr_pie",
+      "config": "src/causal_mind/oracle/",
+      "code_sha": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "result": "hidden_o5 RPR 1.48; veto_o0 RPR 0.16",
+      "decision": "CM9A_SYNTHETIC_ORACLE_READY",
+      "claim_ids": [
+        "C-012"
+      ]
+    }
+  ]
+}

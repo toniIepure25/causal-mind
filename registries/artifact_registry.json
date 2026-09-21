@@ -1,0 +1,184 @@
+{
+  "version": "1.0",
+  "freeze": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+  "artifacts": [
+    {
+      "name": "cm8_forecaster_config",
+      "version": "1.0",
+      "path": "artifacts/cm8_forecaster/config.json",
+      "status": "frozen",
+      "frozen": true,
+      "command": "cm8_forecaster build (frozen)",
+      "inputs": [
+        "data/manifests/cm2_split_seal.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "dbcbe443b6b09a3a33b53cfc1e1f6179a804cb3cef2ee8991444a7089e0cbd6a",
+      "config_hash": "dbcbe443b6b09a3a33b53cfc1e1f6179a804cb3cef2ee8991444a7089e0cbd6a",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm8_forecasting_freeze_manifest",
+      "version": "1.0",
+      "path": "artifacts/cm8_forecasting_freeze_manifest.json",
+      "status": "frozen",
+      "frozen": true,
+      "command": "cm8_forecaster freeze",
+      "inputs": [
+        "artifacts/cm8_forecaster/config.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "21bb0bb8c0789772ff47a5d3d1e6e17721088bd86f3b8fa2a5cfa4cce3e29b06",
+      "config_hash": "21bb0bb8c0789772ff47a5d3d1e6e17721088bd86f3b8fa2a5cfa4cce3e29b06",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm2_split_seal",
+      "version": "1.0",
+      "path": "data/manifests/cm2_split_seal.json",
+      "status": "frozen",
+      "frozen": true,
+      "command": "data/scripts/run_full_evaluation.py",
+      "inputs": [
+        "data/manifests/ds006067_manifest.yaml"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "6bac3b4c432bbc42bb5a6ff95e2e5abaa47b5b5cd90e80a15d2c947cea635bd4",
+      "config_hash": "6bac3b4c432bbc42bb5a6ff95e2e5abaa47b5b5cd90e80a15d2c947cea635bd4",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm3_protocol_seal",
+      "version": "1.0",
+      "path": "data/manifests/cm3_protocol_seal.json",
+      "status": "frozen",
+      "frozen": true,
+      "command": "data/scripts/seal_cm3_protocol.py",
+      "inputs": [
+        "data/manifests/cm2_split_seal.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "80d1ea53d60fb775c863595de469ce0a88f9b7aa8897c241ec3d71474a5aa12b",
+      "config_hash": "80d1ea53d60fb775c863595de469ce0a88f9b7aa8897c241ec3d71474a5aa12b",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm5_protocol_seal",
+      "version": "1.0",
+      "path": "data/manifests/cm5_protocol_seal.json",
+      "status": "frozen",
+      "frozen": true,
+      "command": "data/scripts/seal_cm5_protocol.py",
+      "inputs": [
+        "data/manifests/cm2_split_seal.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "234ec031cdd06566bd65de3719b0c376eb76f999a88c35b1bdc7d11b9896e7bf",
+      "config_hash": "234ec031cdd06566bd65de3719b0c376eb76f999a88c35b1bdc7d11b9896e7bf",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm8_randomization_manifest",
+      "version": "1.0",
+      "path": "data/manifests/cm8_randomization_manifest.json",
+      "status": "frozen",
+      "frozen": true,
+      "command": "cm8 randomization (seed 20260917)",
+      "inputs": [],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "c6bcd84d7603d0a8e88e3cfdb005cab2a291b9f95ad24d158d9f417e4436032d",
+      "config_hash": "c6bcd84d7603d0a8e88e3cfdb005cab2a291b9f95ad24d158d9f417e4436032d",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm8_software_freeze_manifest",
+      "version": "1.0",
+      "path": "docs/ethics/cm8_software_freeze_manifest.json",
+      "status": "frozen",
+      "frozen": true,
+      "command": "cm8r software freeze",
+      "inputs": [
+        "artifacts/cm8_forecaster/config.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "1881ab5522f63c0e796bb7d74bc628ae42ffeb85450aadb1e3e1a9ca0e005750",
+      "config_hash": "1881ab5522f63c0e796bb7d74bc628ae42ffeb85450aadb1e3e1a9ca0e005750",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm2_results",
+      "version": "1.0",
+      "path": "reports/cm2_results.json",
+      "status": "validated",
+      "frozen": true,
+      "command": "data/scripts/run_full_evaluation.py",
+      "inputs": [
+        "data/manifests/cm2_split_seal.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "2b9d43671dd5a7483b8d7a629af5d8c1129b43b3996c6f481b59e2fa90975bce",
+      "config_hash": "2b9d43671dd5a7483b8d7a629af5d8c1129b43b3996c6f481b59e2fa90975bce",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm3_results",
+      "version": "1.0",
+      "path": "reports/cm3_results.json",
+      "status": "validated",
+      "frozen": true,
+      "command": "data/scripts/run_cm3_evaluation.py",
+      "inputs": [
+        "data/manifests/cm3_protocol_seal.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "93a4f8eb3c905e0d68d00d7ab83338f4c47312f71b02aa872272d9ca4357ed93",
+      "config_hash": "93a4f8eb3c905e0d68d00d7ab83338f4c47312f71b02aa872272d9ca4357ed93",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm5_decisive_results",
+      "version": "1.0",
+      "path": "reports/cm5_decisive_results.json",
+      "status": "validated (null)",
+      "frozen": true,
+      "command": "data/scripts/run_cm5_decisive.py",
+      "inputs": [
+        "data/manifests/cm5_protocol_seal.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "2b1a8dc99fadca2fbdbed077c6e3e2c2e66c5b87236aa4be8142305988be7493",
+      "config_hash": "2b1a8dc99fadca2fbdbed077c6e3e2c2e66c5b87236aa4be8142305988be7493",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm6_observational_results",
+      "version": "1.0",
+      "path": "reports/cm6_observational_results.json",
+      "status": "validated (no identification)",
+      "frozen": true,
+      "command": "data/scripts/cm6_observational_analysis.py",
+      "inputs": [
+        "data/manifests/ds006067_manifest.yaml"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "d183c6a21a9fc422cd1335a0b606a00acb2f107cc09d2cbaad28c2edfa859110",
+      "config_hash": "d183c6a21a9fc422cd1335a0b606a00acb2f107cc09d2cbaad28c2edfa859110",
+      "environment_hash": "uv.lock"
+    },
+    {
+      "name": "cm7_results",
+      "version": "1.0",
+      "path": "reports/cm7_results.json",
+      "status": "validated (null)",
+      "frozen": true,
+      "command": "data/scripts/cm7_analyze.py",
+      "inputs": [
+        "data/manifests/ds005494_manifest.json"
+      ],
+      "commit": "8a9d5dd00c0d62ab6ba18e7a3ae28fbc74a85e14",
+      "sha256": "7fce3fe25ecf370d53c98cc959702a704900266ee6fd0f5634425b7832edbc7c",
+      "config_hash": "7fce3fe25ecf370d53c98cc959702a704900266ee6fd0f5634425b7832edbc7c",
+      "environment_hash": "uv.lock"
+    }
+  ]
+}
