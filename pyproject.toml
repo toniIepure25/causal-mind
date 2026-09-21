@@ -15,9 +15,17 @@ dependencies = [
     "psutil>=6.0",
     "nibabel>=5.2",
     "h5py>=3.11",
+    "networkx>=3.0",
+    "cryptography>=42.0",
 ]
 
 [project.optional-dependencies]
+# Neural / encoder stack (MiniLM sentence embeddings + fMRI analysis). Pulls torch.
+# Install with: uv sync --extra neural   (or the bootstrap script, which does this by default)
+neural = [
+    "sentence-transformers>=3.0",
+    "nilearn>=0.11",
+]
 gpu = [
     "torch==2.11.0",
 ]
