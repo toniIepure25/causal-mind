@@ -26,6 +26,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-102 | L3 | validated (weak calibration; negative result for model-intrinsic uncertainty) | uncertainty_calibration | `reports/cm_uncertainty/cm_uncertainty.json` | `.venv/bin/python data/scripts/cm_uncertainty.py` |
 | C-104 | L3 | validated (partial representation robustness) | representation_robustness | `reports/cm_representation/cm_representation.json` | `.venv/bin/python data/scripts/cm_representation.py` |
 | C-103 | L3 | validated (negative result: personalization does not help) | personalization | `reports/cm_personalization/cm_personalization.json` | `.venv/bin/python data/scripts/cm_personalization.py` |
+| C-105 | L3 | validated (descriptive; linear prediction dominant, high dynamics) | local_dynamics | `reports/cm_dynamics/cm_dynamics.json` | `.venv/bin/python data/scripts/cm_dynamics.py` |
 
 ## Per-claim traceability
 
@@ -236,6 +237,19 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **COMMIT:** `cm-lab (post`
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm_personalization.py`
 - **RED TEAM:** strict chronology (EARLY adapt -> LATE eval); global fit on TRAIN only; no test tuning; negative result reported (S79); no CM-8 change
+
+### C-105 (L3) — validated (descriptive; linear prediction dominant, high dynamics)
+
+> Local dynamics of the measured semantic trajectory (ds006067, frozen MiniLM representation, TRAIN-only fitting): CMDYN_LINEAR_PREDICTION_DOMINANT. The linear model captures most of the accessible predictive structure (residual autocorrelation 0.076; a train-only k-NN predicts residuals only marginally above the random-residual null, 0.021 vs -0.003), consistent with CM-2/CM-3 (linear > GRU). The measured trajectory is HIGHLY DYNAMIC: semantic velocity 0.734, local semantic entropy 0.675, topic-switch 1.0, trajectory curvature 2.06 rad (a high-dim geometry property, NOT a 'thought is linear' claim), and NO attractor-like structure (recurrence 0.0002, dwell 1.0, lag-5 persistence -0.009). Higher local semantic entropy predicts worse forecasting (Spearman 0.57). Effective dimension: low local intrinsic dim (MLE 12.3) but high global participation ratio (109); dimension-vs-accuracy is weak (Spearman -0.087). Descriptive/predictive only; no causal claim. No CM-8 change.
+
+- **DATASET:** ds006067 thought-stream
+- **PROTOCOL:** `reports/cm_dynamics/cm_dynamics.json`
+- **SCRIPT:** `data/scripts/cm_dynamics.py`
+- **REPORT:** `reports/cm_dynamics/cm_dynamics.json`
+- **STATISTIC:** `{"type": "local_dynamics", "residual_autocorr_lag1": 0.0758, "knn_residual_cosine": 0.0211, "null_residual_cosine": -0.0026, "local_entropy_vs_error_spearman": 0.5745, "semantic_velocity": 0.7344, "pca_participation_ratio": 108.79, "mle_intrinsic_dim": 12.3, "recurrence_frac": 0.0002, "dwell_time": 1.001, "state_persistence_lag5": -0.0095, "decision": "CMDYN_LINEAR_PREDICTION_DOMINANT"}`
+- **COMMIT:** `cm-lab (post`
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_dynamics.py`
+- **RED TEAM:** TRAIN-only fitting; descriptive only (no 'thought is linear' claim); no attractor overclaim; no CM-8 change
 
 ## Rules
 

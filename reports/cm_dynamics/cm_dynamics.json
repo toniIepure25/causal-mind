@@ -1,0 +1,53 @@
+{
+  "protocol": "CM-LAB S41,S43-47 local dynamics (descriptive)",
+  "dataset": "ds006067 thought-stream",
+  "seed": 20260911,
+  "k": 3,
+  "h": 1,
+  "split": {
+    "train": 83,
+    "val": 18,
+    "test": 17
+  },
+  "s41_entropy": {
+    "mean_semantic_velocity": 0.7344,
+    "mean_local_semantic_entropy": 0.6748,
+    "mean_topic_switch_rate": 1.0,
+    "local_entropy_vs_forecast_error_spearman": 0.5745,
+    "n_subjects": 118,
+    "note": "higher local entropy -> worse forecasting? (spearman)"
+  },
+  "s43_local_linearity": {
+    "residual_autocorr_lag1_mean": 0.0758,
+    "local_curvature_mean_rad": 2.0581,
+    "local_curvature_median_rad": 2.0472,
+    "note": "residual ACF ~0 and low curvature => locally well-approximated by linear dynamics"
+  },
+  "s44_nonlinear_residual": {
+    "knn_residual_cosine": 0.0211,
+    "null_residual_cosine": -0.0026,
+    "incremental_nonlinear_structure": true,
+    "note": "if k-NN predicts residuals above the random-residual null, incremental nonlinear structure exists"
+  },
+  "s45_effective_dimension": {
+    "pca_participation_ratio": 108.79,
+    "explained_variance_top10": 0.2222,
+    "explained_variance_top20": 0.3358,
+    "mle_intrinsic_dimension": 12.3,
+    "ambient_dim": 384
+  },
+  "s46_dimension_vs_predictability": {
+    "dimension_vs_accuracy_spearman": -0.0872,
+    "n_subjects": 118,
+    "note": "exploratory: higher-dimensional / more diffuse trajectories may be less predictable"
+  },
+  "s47_attractor_like": {
+    "mean_recurrence_frac": 0.0002,
+    "mean_dwell_time": 1.001,
+    "mean_state_persistence_lag5": -0.0095,
+    "note": "descriptive metastability; 'attractor-like' only if warranted, NOT neural attractors"
+  },
+  "high_dynamics": true,
+  "decision": "CMDYN_LINEAR_PREDICTION_DOMINANT",
+  "runtime_s": 15.1
+}
