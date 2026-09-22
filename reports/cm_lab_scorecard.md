@@ -34,8 +34,12 @@ Consolidated status of the CM-LAB target states. Each is backed by a runnable ch
 - No human data collected.
 
 ## Known limitations / not done this phase
-- External validation on a single dataset (Open Play); a second domain (e.g., van Halem
-  "Daily event", openESM 0070) would strengthen the `CMXVAL_PARTIAL` conclusion.
+- External validation so far rests on one compatible dataset (Open Play). The second openESM
+  free-text candidate (van Halem "Daily event", 0070) was audited and is
+  `INCOMPATIBLE_DATASET` (8.2% fill rate, ~4 entries/subject, Dutch text vs the frozen English
+  MiniLM) — see `reports/cm_xval/cm_xval_vanhalem_incompatible.md`. A compatible second domain
+  needs a non-openESM source with >=20 subjects, >=20 well-filled sequential English free-text
+  entries per subject.
 - Dependency vulnerability-DB audit (needs a reachable vuln feed); pinned `uv.lock` is the control.
 - The scientific deep-dive workstreams (uncertainty quantification, dynamics, Oracle theory)
   are queued but not the gate for platform readiness.

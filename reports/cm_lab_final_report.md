@@ -58,8 +58,10 @@ free-text `displaced_activity`).
 - No credentials committed; no public service exposure; no Kubernetes/Run:ai mutation.
 
 ## Limitations & next steps
-1. **Second external domain** — validate on van Halem "Daily event" (openESM 0070) to firm up
-   the `CMXVAL_PARTIAL` conclusion (replicate / partial / null).
+1. **Second external domain** — the second openESM free-text candidate (van Halem "Daily
+   event", 0070) was audited and is `INCOMPATIBLE_DATASET` (8.2% fill, ~4 entries/subject,
+   Dutch text vs the frozen English MiniLM). A compatible second domain needs a non-openESM
+   source with >=20 subjects and >=20 well-filled sequential English free-text entries.
 2. **Uncertainty + dynamics + Oracle theory** (S25-42) — queued scientific deep-dive.
 3. **Dependency vuln-DB audit** — run `pip-audit` when a vulnerability feed is reachable.
 4. **Pre-pilot** — the CM-8 confirmatory protocol remains frozen and ready for the (human-gated)
