@@ -186,16 +186,23 @@
     {
       "id": "C-101",
       "level": "L3",
-      "claim": "External validation (Open Play gaming-diary free-text, a domain shift from thoughts): the past-text-predicts-future-text-semantics effect PARTIALLY replicates. The linear model beats the strongest frozen baseline (B0-B7) at every horizon h=1..10, out-of-sample, subject-disjoint (gain +0.016..+0.034, subject-level CIs exclude 0). However the absolute test cosine (~0.64) is dominated by within-person similarity (target-shuffle permutation p=0.71), so the model predicts a typical entry for the person rather than the specific next entry. The 'beats-baselines' signal transfers; strong temporal-semantic prediction does not fully transfer to short repetitive activity text.",
-      "status": "validated (partial replication)",
+      "claim": "External validation (Open Play gaming-diary free-text, a domain shift from thoughts): the past-text-predicts-future-text-semantics effect PARTIALLY replicates (CMXVAL_PARTIAL_REPLICATION). At the correct subject level the linear model beats the strongest frozen baseline (B0-B7) at every horizon h=1..10, out-of-sample, subject-disjoint (gain +0.016..+0.034; subject-level paired-bootstrap CIs exclude 0; sign test p<=0.006; subject-level permutation p<=0.0015; Cohen's d 0.36-0.55). A predeclared destructive-null family (N0-N6) adjudicates the earlier 'target-shuffle p=0.71' discrepancy: the advantage is SUBJECT-SPECIFIC (N0 across-subject target p=0.0005 and N5 wrong-subject history p=0.0005, both rejected) but does NOT exploit temporal/transition structure (N1 within-subject target p=0.68, N2 circular shift p=0.69, N3 block shuffle p=0.72, N4 history-target mismatch p=0.33, N6 transition-destroyed p=0.30; none rejected). The earlier discrepancy is resolved: the gain CI tests a RELATIVE advantage over the baseline, while the target-shuffle tests ABSOLUTE advantage over high within-person similarity - different nulls. Net: the 'beats-baselines, subject-specific' signal transfers; strong specific next-entry (temporal-semantic) prediction does not transfer to short repetitive activity text.",
+      "status": "validated (partial replication; inference adjudicated)",
       "dataset": {"id": "Open Play (openESM 0075_ballou)", "zenodo_doi": "10.5281/zenodo.17536656", "n_subjects_used": 676, "n_entries": 11328, "field": "displaced_activity", "note": "external; domain shift; NOT ds006067"},
-      "protocol": {"ref": "reports/cm_xval/cm_xval_openplay.json", "seed": 20260921, "split": "473/101/102", "k": 3, "horizons": [1, 2, 3, 5, 10]},
-      "script": "data/scripts/cm_xval_openplay.py",
-      "report": "reports/cm_xval/cm_xval_openplay.json",
-      "statistic": {"type": "predictive_gain", "h1": {"gain": 0.0164, "ci95": [0.0094, 0.0229]}, "h3": {"gain": 0.0339, "ci95": [0.0144, 0.0508]}, "h10": {"gain": 0.0177, "ci95": [0.0082, 0.0271]}, "permutation_p_h1": 0.707},
+      "protocol": {"ref": "reports/cm_xval/cm_xval_inference.json", "seed": 20260921, "split": "473/101/102", "k": 3, "horizons": [1, 2, 3, 5, 10]},
+      "script": "data/scripts/cm_xval_inference.py",
+      "report": "reports/cm_xval/cm_xval_inference.json",
+      "statistic": {"type": "predictive_gain_adjudicated", "h1": {"gain": 0.0164, "ci95": [0.0094, 0.0229], "sign_p": 0.0, "subject_perm_p": 0.0005, "cohens_d": 0.487}, "h3": {"gain": 0.0339, "ci95": [0.0144, 0.0508], "sign_p": 0.0, "subject_perm_p": 0.0005, "cohens_d": 0.357}, "h10": {"gain": 0.0177, "ci95": [0.0082, 0.0271], "sign_p": 0.0059, "subject_perm_p": 0.0015, "cohens_d": 0.448}, "null_family_h1": {"N0_across_subject_target": 0.0005, "N1_within_subject_target": 0.6842, "N2_circular_temporal_shift": 0.6932, "N3_block_shuffle": 0.7211, "N4_history_target_mismatch": 0.3253, "N5_wrong_subject_history": 0.0005, "N6_transition_destroyed": 0.2959}, "decision": "CMXVAL_PARTIAL_REPLICATION"},
       "commit": "cm-lab (post cm8-prehuman-v1.0 freeze)",
-      "reproduction": ".venv/bin/python data/scripts/cm_xval_openplay.py",
-      "red_team": "pending (external-data leakage audit: subject-disjoint, frozen encoder, no test stats in features)"
+      "reproduction": ".venv/bin/python data/scripts/cm_xval_inference.py",
+      "red_team": "inference adjudicated (CM-LAB S25-28): subject-level unit confirmed; predeclared null family N0-N6; no result shopping; leakage audit subject-disjoint + frozen encoder + no test stats in features",
+      "revision": {
+        "old_claim": "External validation (Open Play ...): the past-text-predicts-future-text-semantics effect PARTIALLY replicates. The linear model beats the strongest frozen baseline (B0-B7) at every horizon h=1..10 ... (gain +0.016..+0.034, subject-level CIs exclude 0). However the absolute test cosine (~0.64) is dominated by within-person similarity (target-shuffle permutation p=0.71) ... The 'beats-baselines' signal transfers; strong temporal-semantic prediction does not fully transfer to short repetitive activity text.",
+        "new_claim": "External validation (Open Play ...): CMXVAL_PARTIAL_REPLICATION. Subject-level model-baseline advantage survives (CI excludes 0, sign test p<=0.006, subject permutation p<=0.0015). Predeclared destructive-null family N0-N6 adjudicates the earlier single target-shuffle null: the advantage is subject-specific (N0/N5 rejected) but does NOT exploit temporal/transition structure (N1-N4,N6 not rejected). The earlier discrepancy was a null-hypothesis mismatch (relative vs absolute), not a bug.",
+        "reason": "Inference adjudication (CM-LAB S25-28): the earlier single target-shuffle null was replaced by a predeclared family of destructive nulls and the inference was recomputed at the correct subject level, clarifying WHICH structures the model exploits.",
+        "evidence": "reports/cm_xval/cm_xval_inference.json",
+        "commit": "cm-lab XVAL-1 inference adjudication"
+      }
     }
   ]
 }

@@ -22,7 +22,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-010 | L6 | validated (method; null causal effect) | point=-0.0386 | `reports/cm7_results.json` | `.venv/bin/python data/scripts/cm7_analyze.py` |
 | C-011 | L0 | validated (pre-human hardening; no human data) | gates=10/10 | `reports/cm8r_readiness/cm8r_readiness.json` | `.venv/bin/python data/scripts/cm8r_readiness.py` |
 | C-012 | L0 | design-only (synthetic exploration) | rpr_pie | `reports/cm9a_oracle_lab/cm9a_oracle_lab.json` | `.venv/bin/python data/scripts/cm9a_oracle_lab.py` |
-| C-101 | L3 | validated (partial replication) | predictive_gain | `reports/cm_xval/cm_xval_openplay.json` | `.venv/bin/python data/scripts/cm_xval_openplay.py` |
+| C-101 | L3 | validated (partial replication; inference adjudicated) | predictive_gain_adjudicated | `reports/cm_xval/cm_xval_inference.json` | `.venv/bin/python data/scripts/cm_xval_inference.py` |
 
 ## Per-claim traceability
 
@@ -182,18 +182,18 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm9a_oracle_lab.py`
 - **RED TEAM:** n/a (synthetic)
 
-### C-101 (L3) — validated (partial replication)
+### C-101 (L3) — validated (partial replication; inference adjudicated)
 
-> External validation (Open Play gaming-diary free-text, a domain shift from thoughts): the past-text-predicts-future-text-semantics effect PARTIALLY replicates. The linear model beats the strongest frozen baseline (B0-B7) at every horizon h=1..10, out-of-sample, subject-disjoint (gain +0.016..+0.034, subject-level CIs exclude 0). However the absolute test cosine (~0.64) is dominated by within-person similarity (target-shuffle permutation p=0.71), so the model predicts a typical entry for the person rather than the specific next entry. The 'beats-baselines' signal transfers; strong temporal-semantic prediction does not fully transfer to short repetitive activity text.
+> External validation (Open Play gaming-diary free-text, a domain shift from thoughts): the past-text-predicts-future-text-semantics effect PARTIALLY replicates (CMXVAL_PARTIAL_REPLICATION). At the correct subject level the linear model beats the strongest frozen baseline (B0-B7) at every horizon h=1..10, out-of-sample, subject-disjoint (gain +0.016..+0.034; subject-level paired-bootstrap CIs exclude 0; sign test p<=0.006; subject-level permutation p<=0.0015; Cohen's d 0.36-0.55). A predeclared destructive-null family (N0-N6) adjudicates the earlier 'target-shuffle p=0.71' discrepancy: the advantage is SUBJECT-SPECIFIC (N0 across-subject target p=0.0005 and N5 wrong-subject history p=0.0005, both rejected) but does NOT exploit temporal/transition structure (N1 within-subject target p=0.68, N2 circular shift p=0.69, N3 block shuffle p=0.72, N4 history-target mismatch p=0.33, N6 transition-destroyed p=0.30; none rejected). The earlier discrepancy is resolved: the gain CI tests a RELATIVE advantage over the baseline, while the target-shuffle tests ABSOLUTE advantage over high within-person similarity - different nulls. Net: the 'beats-baselines, subject-specific' signal transfers; strong specific next-entry (temporal-semantic) prediction does not transfer to short repetitive activity text.
 
 - **DATASET:** Open Play (openESM 0075_ballou)
-- **PROTOCOL:** `reports/cm_xval/cm_xval_openplay.json`
-- **SCRIPT:** `data/scripts/cm_xval_openplay.py`
-- **REPORT:** `reports/cm_xval/cm_xval_openplay.json`
-- **STATISTIC:** `{"type": "predictive_gain", "h1": {"gain": 0.0164, "ci95": [0.0094, 0.0229]}, "h3": {"gain": 0.0339, "ci95": [0.0144, 0.0508]}, "h10": {"gain": 0.0177, "ci95": [0.0082, 0.0271]}, "permutation_p_h1": 0.707}`
+- **PROTOCOL:** `reports/cm_xval/cm_xval_inference.json`
+- **SCRIPT:** `data/scripts/cm_xval_inference.py`
+- **REPORT:** `reports/cm_xval/cm_xval_inference.json`
+- **STATISTIC:** `{"type": "predictive_gain_adjudicated", "h1": {"gain": 0.0164, "ci95": [0.0094, 0.0229], "sign_p": 0.0, "subject_perm_p": 0.0005, "cohens_d": 0.487}, "h3": {"gain": 0.0339, "ci95": [0.0144, 0.0508], "sign_p": 0.0, "subject_perm_p": 0.0005, "cohens_d": 0.357}, "h10": {"gain": 0.0177, "ci95": [0.0082, 0.0271], "sign_p": 0.0059, "subject_perm_p": 0.0015, "cohens_d": 0.448}, "null_family_h1": {"N0_across_subject_target": 0.0005, "N1_within_subject_target": 0.6842, "N2_circular_temporal_shift": 0.6932, "N3_block_shuffle": 0.7211, "N4_history_target_mismatch": 0.3253, "N5_wrong_subject_history": 0.0005, "N6_transition_destroyed": 0.2959}, "decision": "CMXVAL_PARTIAL_REPLICATION"}`
 - **COMMIT:** `cm-lab (post`
-- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_xval_openplay.py`
-- **RED TEAM:** pending (external-data leakage audit: subject-disjoint, frozen encoder, no test stats in features)
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_xval_inference.py`
+- **RED TEAM:** inference adjudicated (CM-LAB S25-28): subject-level unit confirmed; predeclared null family N0-N6; no result shopping; leakage audit subject-disjoint + frozen encoder + no test stats in features
 
 ## Rules
 

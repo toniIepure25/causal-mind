@@ -1,0 +1,320 @@
+{
+  "protocol": "CM-XVAL-1 inference adjudication (subject-level)",
+  "source": {
+    "name": "Open Play (digital-wellbeing/open-play)",
+    "openesm_id": "0075_ballou",
+    "zenodo_doi": "10.5281/zenodo.17536656",
+    "url": "https://github.com/digital-wellbeing/open-play",
+    "field": "displaced_activity",
+    "license": "CC (see repo)",
+    "note": "gaming-diary free-text activity descriptions; domain shift from thoughts"
+  },
+  "seed": 20260921,
+  "k": 3,
+  "horizons": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "data": {
+    "n_subjects_total": 1163,
+    "n_subjects_used": 676,
+    "n_entries": 11328,
+    "min_entries": 5,
+    "entries_per_subject": {
+      "mean": 16.76,
+      "median": 17.0,
+      "max": 30
+    }
+  },
+  "split": {
+    "train": 473,
+    "val": 101,
+    "test": 102
+  },
+  "n_boot": 2000,
+  "b_null": 2000,
+  "subject_level_inference": {
+    "1": {
+      "strong_baseline": "B3_khistory",
+      "n_test_subjects": 102,
+      "n_test_events": 1319,
+      "model_mean": 0.6414,
+      "baseline_mean": 0.625,
+      "gain_mean": 0.0164,
+      "gain_median": 0.0182,
+      "gain_sd": 0.0336,
+      "proportion_positive": 0.8137,
+      "n_pos_n_neg_n_zero": [
+        83,
+        19,
+        0
+      ],
+      "subject_paired_bootstrap_ci": [
+        0.0164,
+        0.0094,
+        0.0229
+      ],
+      "sign_test_p": 0.0,
+      "subject_permutation_p": 0.0005,
+      "hierarchical_bootstrap_ci": [
+        0.0176,
+        0.0106,
+        0.0248
+      ],
+      "event_level_gain_secondary": 0.0176,
+      "cohens_d_subject": 0.487,
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5396,
+        "B1_persistence": 0.5284,
+        "B2_markov_iterated": 0.5731,
+        "B3_khistory": 0.6034,
+        "B4_drift": 0.596,
+        "B5_nn_anchor": 0.5731,
+        "B6_population_avg": 0.5396,
+        "B7_frozen_lang_history": 0.6007
+      }
+    },
+    "2": {
+      "strong_baseline": "B3_khistory",
+      "n_test_subjects": 102,
+      "n_test_events": 1217,
+      "model_mean": 0.6382,
+      "baseline_mean": 0.6207,
+      "gain_mean": 0.0175,
+      "gain_median": 0.0205,
+      "gain_sd": 0.0411,
+      "proportion_positive": 0.6863,
+      "n_pos_n_neg_n_zero": [
+        70,
+        32,
+        0
+      ],
+      "subject_paired_bootstrap_ci": [
+        0.0175,
+        0.0096,
+        0.0253
+      ],
+      "sign_test_p": 0.000213,
+      "subject_permutation_p": 0.0005,
+      "hierarchical_bootstrap_ci": [
+        0.0185,
+        0.0117,
+        0.0254
+      ],
+      "event_level_gain_secondary": 0.0185,
+      "cohens_d_subject": 0.4257,
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5413,
+        "B1_persistence": 0.5134,
+        "B2_markov_iterated": 0.5501,
+        "B3_khistory": 0.5969,
+        "B4_drift": 0.586,
+        "B5_nn_anchor": 0.5672,
+        "B6_population_avg": 0.5413,
+        "B7_frozen_lang_history": 0.5937
+      }
+    },
+    "3": {
+      "strong_baseline": "B4_drift",
+      "n_test_subjects": 99,
+      "n_test_events": 1115,
+      "model_mean": 0.6355,
+      "baseline_mean": 0.6016,
+      "gain_mean": 0.0339,
+      "gain_median": 0.0509,
+      "gain_sd": 0.0948,
+      "proportion_positive": 0.7071,
+      "n_pos_n_neg_n_zero": [
+        70,
+        29,
+        0
+      ],
+      "subject_paired_bootstrap_ci": [
+        0.0339,
+        0.0144,
+        0.0508
+      ],
+      "sign_test_p": 4.6e-05,
+      "subject_permutation_p": 0.0005,
+      "hierarchical_bootstrap_ci": [
+        0.0292,
+        0.0073,
+        0.0493
+      ],
+      "event_level_gain_secondary": 0.0293,
+      "cohens_d_subject": 0.3572,
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5508,
+        "B1_persistence": 0.5359,
+        "B2_markov_iterated": 0.5602,
+        "B3_khistory": 0.6006,
+        "B4_drift": 0.6051,
+        "B5_nn_anchor": 0.5769,
+        "B6_population_avg": 0.5508,
+        "B7_frozen_lang_history": 0.5987
+      }
+    },
+    "5": {
+      "strong_baseline": "B3_khistory",
+      "n_test_subjects": 85,
+      "n_test_events": 924,
+      "model_mean": 0.6314,
+      "baseline_mean": 0.6011,
+      "gain_mean": 0.0303,
+      "gain_median": 0.0234,
+      "gain_sd": 0.0556,
+      "proportion_positive": 0.8,
+      "n_pos_n_neg_n_zero": [
+        68,
+        17,
+        0
+      ],
+      "subject_paired_bootstrap_ci": [
+        0.0303,
+        0.0193,
+        0.0429
+      ],
+      "sign_test_p": 0.0,
+      "subject_permutation_p": 0.0005,
+      "hierarchical_bootstrap_ci": [
+        0.0211,
+        0.0132,
+        0.0287
+      ],
+      "event_level_gain_secondary": 0.0212,
+      "cohens_d_subject": 0.5454,
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5494,
+        "B1_persistence": 0.507,
+        "B2_markov_iterated": 0.5481,
+        "B3_khistory": 0.5953,
+        "B4_drift": 0.5832,
+        "B5_nn_anchor": 0.5656,
+        "B6_population_avg": 0.5494,
+        "B7_frozen_lang_history": 0.5943
+      }
+    },
+    "10": {
+      "strong_baseline": "B3_khistory",
+      "n_test_subjects": 65,
+      "n_test_events": 544,
+      "model_mean": 0.6161,
+      "baseline_mean": 0.5984,
+      "gain_mean": 0.0177,
+      "gain_median": 0.0259,
+      "gain_sd": 0.0396,
+      "proportion_positive": 0.6769,
+      "n_pos_n_neg_n_zero": [
+        44,
+        21,
+        0
+      ],
+      "subject_paired_bootstrap_ci": [
+        0.0177,
+        0.0082,
+        0.0271
+      ],
+      "sign_test_p": 0.005918,
+      "subject_permutation_p": 0.0015,
+      "hierarchical_bootstrap_ci": [
+        0.0181,
+        0.0083,
+        0.028
+      ],
+      "event_level_gain_secondary": 0.0184,
+      "cohens_d_subject": 0.4476,
+      "val_baseline_scores": {
+        "B0_marginal_future": 0.5616,
+        "B1_persistence": 0.5329,
+        "B2_markov_iterated": 0.5672,
+        "B3_khistory": 0.6076,
+        "B4_drift": 0.6062,
+        "B5_nn_anchor": 0.5868,
+        "B6_population_avg": 0.5616,
+        "B7_frozen_lang_history": 0.6004
+      }
+    }
+  },
+  "null_family_primary_h": {
+    "h": 1,
+    "observed": 0.6509,
+    "nulls": {
+      "N0_across_subject_target": {
+        "observed": 0.6509,
+        "null_mean": 0.4951,
+        "null_sd": 0.0048,
+        "p": 0.0005,
+        "destroys": "subject identity + temporal alignment",
+        "preserves": "marginal target distribution",
+        "tests": "does prediction match the (subject, temporal) target better than any random target"
+      },
+      "N1_within_subject_target": {
+        "observed": 0.6509,
+        "null_mean": 0.653,
+        "null_sd": 0.0044,
+        "p": 0.6842,
+        "destroys": "temporal alignment (specific next-entry)",
+        "preserves": "subject identity + marginal",
+        "tests": "does prediction beat a random entry of the SAME person"
+      },
+      "N2_circular_temporal_shift": {
+        "observed": 0.6509,
+        "null_mean": 0.6533,
+        "null_sd": 0.0046,
+        "p": 0.6932,
+        "destroys": "specific temporal alignment",
+        "preserves": "temporal autocorrelation + subject identity + marginal",
+        "tests": "does prediction exploit the specific alignment or just autocorrelation"
+      },
+      "N3_block_shuffle": {
+        "observed": 0.6509,
+        "null_mean": 0.6527,
+        "null_sd": 0.0032,
+        "p": 0.7211,
+        "destroys": "long-range temporal structure",
+        "preserves": "short-range autocorrelation (within blocks) + subject + marginal",
+        "tests": "is the signal in short-range autocorrelation or longer-range structure"
+      },
+      "N4_history_target_mismatch": {
+        "observed": 0.6509,
+        "null_mean": 0.6488,
+        "null_sd": 0.0044,
+        "p": 0.3253,
+        "destroys": "specific history->target link",
+        "preserves": "subject identity + marginal",
+        "tests": "does the SPECIFIC history predict the SPECIFIC target"
+      },
+      "N6_transition_destroyed": {
+        "observed": 0.6509,
+        "null_mean": 0.6485,
+        "null_sd": 0.0044,
+        "p": 0.2959,
+        "destroys": "transition structure (history -> immediate next)",
+        "preserves": "subject identity + marginal",
+        "tests": "does prediction exploit the transition or just the marginal"
+      },
+      "N5_wrong_subject_history": {
+        "observed": 0.6509,
+        "null_mean": 0.4937,
+        "null_sd": 0.0027,
+        "p": 0.0005,
+        "destroys": "subject-specificity of the history",
+        "preserves": "target subject identity + marginal",
+        "tests": "is the prediction subject-specific or a population effect"
+      }
+    }
+  },
+  "reconciliation": {
+    "gain_ci_excludes_zero": true,
+    "N1_within_subject_p": 0.6842,
+    "N4_history_target_mismatch_p": 0.3253,
+    "N5_wrong_subject_history_p": 0.0005,
+    "temporal_nulls_rejected": false,
+    "explanation": "The subject-level paired bootstrap tests H0: E_sub[score_model - score_baseline] = 0 (a RELATIVE advantage over the strongest frozen baseline). The target-shuffle permutation tests H0: the model's ABSOLUTE prediction does not exceed a within-subject random-target null. Because within-person entries are highly similar (high marginal), the within-subject null is HIGH, so the model's absolute cosine does not exceed it even though it beats the baseline. The two procedures answer different questions and are not expected to agree."
+  },
+  "decision": "CMXVAL_PARTIAL_REPLICATION",
+  "runtime_s": 1020.7
+}
