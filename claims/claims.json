@@ -203,6 +203,20 @@
         "evidence": "reports/cm_xval/cm_xval_inference.json",
         "commit": "cm-lab XVAL-1 inference adjudication"
       }
+    },
+    {
+      "id": "C-102",
+      "level": "L3",
+      "claim": "Uncertainty calibration (ds006067 thought-stream, subject-disjoint, model fit on TRAIN only): simple interpretable uncertainty sources are only WEAKLY calibrated (CMUNC_WEAK). Distance-from-training-manifold (Spearman 0.158, AUROC 0.572), local residual variance (0.103, 0.538), and neighborhood dispersion (0.135, 0.562) show a weak monotonic positive relationship with forecast error; selective prediction on the least-confident samples beats random abstention modestly (at 10% coverage, error 0.594 vs 0.633). However the model-intrinsic bootstrap disagreement is ANTI-calibrated (Spearman -0.106, AUROC 0.432): the model is more confident when more wrong. The relationship is not operationally useful for reliable abstention (AUROC ~0.57). Consequence: confidence gating must NOT be used in human Oracle work (per S35 guardrail); the synthetic Oracle should default to always-reveal.",
+      "status": "validated (weak calibration; negative result for model-intrinsic uncertainty)",
+      "dataset": {"id": "ds006067 thought-stream", "n_subjects": 118, "split": "83/18/17", "seal": "CM-2 frozen", "n_train_samples": 4308, "n_test_samples": 858},
+      "protocol": {"ref": "reports/cm_uncertainty/cm_uncertainty.json", "seed": 20260911, "k": 3, "h": 1, "b_bootstrap": 100, "k_nn": 20},
+      "script": "data/scripts/cm_uncertainty.py",
+      "report": "reports/cm_uncertainty/cm_uncertainty.json",
+      "statistic": {"type": "uncertainty_calibration", "U1_distance_from_manifold": {"spearman": 0.158, "auroc": 0.572}, "U2_local_residual_var": {"spearman": 0.103, "auroc": 0.538}, "U3_bootstrap_disagreement": {"spearman": -0.106, "auroc": 0.432}, "U4_neighborhood_dispersion": {"spearman": 0.135, "auroc": 0.562}, "selective_cov0.10": {"U1_error": 0.5936, "random_error": 0.6329}, "decision": "CMUNC_WEAK"},
+      "commit": "cm-lab (post cm8-prehuman-v1.0 freeze)",
+      "reproduction": ".venv/bin/python data/scripts/cm_uncertainty.py",
+      "red_team": "all uncertainty from TRAIN only (no test tuning); anti-calibrated U3 reported (negative-result policy S79); no CM-8 change"
     }
   ]
 }

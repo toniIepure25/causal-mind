@@ -23,6 +23,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-011 | L0 | validated (pre-human hardening; no human data) | gates=10/10 | `reports/cm8r_readiness/cm8r_readiness.json` | `.venv/bin/python data/scripts/cm8r_readiness.py` |
 | C-012 | L0 | design-only (synthetic exploration) | rpr_pie | `reports/cm9a_oracle_lab/cm9a_oracle_lab.json` | `.venv/bin/python data/scripts/cm9a_oracle_lab.py` |
 | C-101 | L3 | validated (partial replication; inference adjudicated) | predictive_gain_adjudicated | `reports/cm_xval/cm_xval_inference.json` | `.venv/bin/python data/scripts/cm_xval_inference.py` |
+| C-102 | L3 | validated (weak calibration; negative result for model-intrinsic uncertainty) | uncertainty_calibration | `reports/cm_uncertainty/cm_uncertainty.json` | `.venv/bin/python data/scripts/cm_uncertainty.py` |
 
 ## Per-claim traceability
 
@@ -194,6 +195,19 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **COMMIT:** `cm-lab (post`
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm_xval_inference.py`
 - **RED TEAM:** inference adjudicated (CM-LAB S25-28): subject-level unit confirmed; predeclared null family N0-N6; no result shopping; leakage audit subject-disjoint + frozen encoder + no test stats in features
+
+### C-102 (L3) — validated (weak calibration; negative result for model-intrinsic uncertainty)
+
+> Uncertainty calibration (ds006067 thought-stream, subject-disjoint, model fit on TRAIN only): simple interpretable uncertainty sources are only WEAKLY calibrated (CMUNC_WEAK). Distance-from-training-manifold (Spearman 0.158, AUROC 0.572), local residual variance (0.103, 0.538), and neighborhood dispersion (0.135, 0.562) show a weak monotonic positive relationship with forecast error; selective prediction on the least-confident samples beats random abstention modestly (at 10% coverage, error 0.594 vs 0.633). However the model-intrinsic bootstrap disagreement is ANTI-calibrated (Spearman -0.106, AUROC 0.432): the model is more confident when more wrong. The relationship is not operationally useful for reliable abstention (AUROC ~0.57). Consequence: confidence gating must NOT be used in human Oracle work (per S35 guardrail); the synthetic Oracle should default to always-reveal.
+
+- **DATASET:** ds006067 thought-stream
+- **PROTOCOL:** `reports/cm_uncertainty/cm_uncertainty.json`
+- **SCRIPT:** `data/scripts/cm_uncertainty.py`
+- **REPORT:** `reports/cm_uncertainty/cm_uncertainty.json`
+- **STATISTIC:** `{"type": "uncertainty_calibration", "U1_distance_from_manifold": {"spearman": 0.158, "auroc": 0.572}, "U2_local_residual_var": {"spearman": 0.103, "auroc": 0.538}, "U3_bootstrap_disagreement": {"spearman": -0.106, "auroc": 0.432}, "U4_neighborhood_dispersion": {"spearman": 0.135, "auroc": 0.562}, "selective_cov0.10": {"U1_error": 0.5936, "random_error": 0.6329}, "decision": "CMUNC_WEAK"}`
+- **COMMIT:** `cm-lab (post`
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_uncertainty.py`
+- **RED TEAM:** all uncertainty from TRAIN only (no test tuning); anti-calibrated U3 reported (negative-result policy S79); no CM-8 change
 
 ## Rules
 

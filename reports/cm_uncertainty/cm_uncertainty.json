@@ -1,0 +1,443 @@
+{
+  "protocol": "CM-LAB S32-35 uncertainty/calibration/selective prediction",
+  "dataset": "ds006067 thought-stream",
+  "seed": 20260911,
+  "k": 3,
+  "h": 1,
+  "split": {
+    "train": 83,
+    "val": 18,
+    "test": 17
+  },
+  "n_train_samples": 4308,
+  "n_test_samples": 858,
+  "b_bootstrap": 100,
+  "k_nn": 20,
+  "mean_test_error": 0.6365,
+  "calibration": {
+    "U1_distance_from_manifold": {
+      "spearman": 0.1579,
+      "pearson": 0.1635,
+      "decile_mean_error": [
+        0.5936,
+        0.6335,
+        0.6354,
+        0.6238,
+        0.645,
+        0.639,
+        0.609,
+        0.6566,
+        0.652,
+        0.6763
+      ],
+      "auroc_large_error": 0.5715,
+      "mono": true
+    },
+    "U2_local_residual_var": {
+      "spearman": 0.1026,
+      "pearson": 0.0991,
+      "decile_mean_error": [
+        0.6129,
+        0.6454,
+        0.6272,
+        0.6159,
+        0.6488,
+        0.6318,
+        0.6438,
+        0.6323,
+        0.6504,
+        0.6561
+      ],
+      "auroc_large_error": 0.538,
+      "mono": true
+    },
+    "U3_bootstrap_disagreement": {
+      "spearman": -0.1055,
+      "pearson": -0.0949,
+      "decile_mean_error": [
+        0.6559,
+        0.6549,
+        0.6535,
+        0.6404,
+        0.6264,
+        0.6328,
+        0.6306,
+        0.615,
+        0.6223,
+        0.633
+      ],
+      "auroc_large_error": 0.4315,
+      "mono": false
+    },
+    "U4_neighborhood_dispersion": {
+      "spearman": 0.1349,
+      "pearson": 0.132,
+      "decile_mean_error": [
+        0.6055,
+        0.6307,
+        0.6259,
+        0.6384,
+        0.6531,
+        0.6217,
+        0.6239,
+        0.6529,
+        0.6558,
+        0.6568
+      ],
+      "auroc_large_error": 0.5619,
+      "mono": true
+    }
+  },
+  "best_uncertainty": "U1_distance_from_manifold",
+  "n_mono_positive": 3,
+  "bootstrap_interval_width_90pct": 0.0438,
+  "coverage_note": "predictive-interval coverage not well-defined for a single-embedding target; calibration assessed via rank corr / AUROC / decile monotonicity",
+  "selective_prediction": {
+    "U1_distance_from_manifold": {
+      "curve": [
+        {
+          "coverage": 0.1,
+          "mean_error": 0.5936
+        },
+        {
+          "coverage": 0.2,
+          "mean_error": 0.6136
+        },
+        {
+          "coverage": 0.301,
+          "mean_error": 0.6208
+        },
+        {
+          "coverage": 0.4,
+          "mean_error": 0.6216
+        },
+        {
+          "coverage": 0.5,
+          "mean_error": 0.6263
+        },
+        {
+          "coverage": 0.6,
+          "mean_error": 0.6284
+        },
+        {
+          "coverage": 0.699,
+          "mean_error": 0.6257
+        },
+        {
+          "coverage": 0.8,
+          "mean_error": 0.6295
+        },
+        {
+          "coverage": 0.9,
+          "mean_error": 0.632
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ],
+      "random_abstention": [
+        {
+          "coverage": 0.104,
+          "mean_error": 0.6329
+        },
+        {
+          "coverage": 0.207,
+          "mean_error": 0.6323
+        },
+        {
+          "coverage": 0.284,
+          "mean_error": 0.648
+        },
+        {
+          "coverage": 0.401,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.484,
+          "mean_error": 0.6394
+        },
+        {
+          "coverage": 0.62,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.71,
+          "mean_error": 0.6371
+        },
+        {
+          "coverage": 0.81,
+          "mean_error": 0.6362
+        },
+        {
+          "coverage": 0.878,
+          "mean_error": 0.6393
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ]
+    },
+    "U2_local_residual_var": {
+      "curve": [
+        {
+          "coverage": 0.1,
+          "mean_error": 0.6129
+        },
+        {
+          "coverage": 0.2,
+          "mean_error": 0.6292
+        },
+        {
+          "coverage": 0.301,
+          "mean_error": 0.6285
+        },
+        {
+          "coverage": 0.4,
+          "mean_error": 0.6254
+        },
+        {
+          "coverage": 0.5,
+          "mean_error": 0.6301
+        },
+        {
+          "coverage": 0.6,
+          "mean_error": 0.6304
+        },
+        {
+          "coverage": 0.699,
+          "mean_error": 0.6323
+        },
+        {
+          "coverage": 0.8,
+          "mean_error": 0.6323
+        },
+        {
+          "coverage": 0.9,
+          "mean_error": 0.6343
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ],
+      "random_abstention": [
+        {
+          "coverage": 0.104,
+          "mean_error": 0.6329
+        },
+        {
+          "coverage": 0.207,
+          "mean_error": 0.6323
+        },
+        {
+          "coverage": 0.284,
+          "mean_error": 0.648
+        },
+        {
+          "coverage": 0.401,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.484,
+          "mean_error": 0.6394
+        },
+        {
+          "coverage": 0.62,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.71,
+          "mean_error": 0.6371
+        },
+        {
+          "coverage": 0.81,
+          "mean_error": 0.6362
+        },
+        {
+          "coverage": 0.878,
+          "mean_error": 0.6393
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ]
+    },
+    "U3_bootstrap_disagreement": {
+      "curve": [
+        {
+          "coverage": 0.1,
+          "mean_error": 0.6559
+        },
+        {
+          "coverage": 0.2,
+          "mean_error": 0.6554
+        },
+        {
+          "coverage": 0.301,
+          "mean_error": 0.6548
+        },
+        {
+          "coverage": 0.4,
+          "mean_error": 0.6512
+        },
+        {
+          "coverage": 0.5,
+          "mean_error": 0.6462
+        },
+        {
+          "coverage": 0.6,
+          "mean_error": 0.644
+        },
+        {
+          "coverage": 0.699,
+          "mean_error": 0.6421
+        },
+        {
+          "coverage": 0.8,
+          "mean_error": 0.6387
+        },
+        {
+          "coverage": 0.9,
+          "mean_error": 0.6369
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ],
+      "random_abstention": [
+        {
+          "coverage": 0.104,
+          "mean_error": 0.6329
+        },
+        {
+          "coverage": 0.207,
+          "mean_error": 0.6323
+        },
+        {
+          "coverage": 0.284,
+          "mean_error": 0.648
+        },
+        {
+          "coverage": 0.401,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.484,
+          "mean_error": 0.6394
+        },
+        {
+          "coverage": 0.62,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.71,
+          "mean_error": 0.6371
+        },
+        {
+          "coverage": 0.81,
+          "mean_error": 0.6362
+        },
+        {
+          "coverage": 0.878,
+          "mean_error": 0.6393
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ]
+    },
+    "U4_neighborhood_dispersion": {
+      "curve": [
+        {
+          "coverage": 0.1,
+          "mean_error": 0.6055
+        },
+        {
+          "coverage": 0.2,
+          "mean_error": 0.6181
+        },
+        {
+          "coverage": 0.301,
+          "mean_error": 0.6207
+        },
+        {
+          "coverage": 0.4,
+          "mean_error": 0.6251
+        },
+        {
+          "coverage": 0.5,
+          "mean_error": 0.6307
+        },
+        {
+          "coverage": 0.6,
+          "mean_error": 0.6292
+        },
+        {
+          "coverage": 0.699,
+          "mean_error": 0.6284
+        },
+        {
+          "coverage": 0.8,
+          "mean_error": 0.6315
+        },
+        {
+          "coverage": 0.9,
+          "mean_error": 0.6342
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ],
+      "random_abstention": [
+        {
+          "coverage": 0.104,
+          "mean_error": 0.6329
+        },
+        {
+          "coverage": 0.207,
+          "mean_error": 0.6323
+        },
+        {
+          "coverage": 0.284,
+          "mean_error": 0.648
+        },
+        {
+          "coverage": 0.401,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.484,
+          "mean_error": 0.6394
+        },
+        {
+          "coverage": 0.62,
+          "mean_error": 0.6351
+        },
+        {
+          "coverage": 0.71,
+          "mean_error": 0.6371
+        },
+        {
+          "coverage": 0.81,
+          "mean_error": 0.6362
+        },
+        {
+          "coverage": 0.878,
+          "mean_error": 0.6393
+        },
+        {
+          "coverage": 1.0,
+          "mean_error": 0.6365
+        }
+      ]
+    }
+  },
+  "decision": "CMUNC_WEAK",
+  "runtime_s": 56.2
+}
