@@ -1,0 +1,413 @@
+{
+  "protocol": "CM-LAB S29-31 representation + metric robustness",
+  "dataset": "ds006067 thought-stream",
+  "seed": 20260911,
+  "split": {
+    "train": 83,
+    "val": 18,
+    "test": 17
+  },
+  "representations": {
+    "R0_minilm": {
+      "model": "all-MiniLM-L6-v2",
+      "dim": 384,
+      "frozen": true,
+      "fit_on_train": false,
+      "license": "Apache-2.0"
+    },
+    "R2_tfidf": {
+      "model": "TfidfVectorizer(stop_words=english, max_features=500)",
+      "dim": 500,
+      "frozen": false,
+      "fit_on_train": true,
+      "license": "sklearn (BSD)"
+    },
+    "R3_nmf_topics": {
+      "model": "NMF(n_components=20, max_iter=100) on train TF-IDF(sparse)",
+      "dim": 20,
+      "frozen": false,
+      "fit_on_train": true,
+      "license": "sklearn (BSD)"
+    },
+    "R1_mpnet": {
+      "model": "all-mpnet-base-v2",
+      "dim": 768,
+      "frozen": true,
+      "fit_on_train": false,
+      "license": "Apache-2.0"
+    }
+  },
+  "per_representation": {
+    "R0_minilm": {
+      "gain_h1_k3": 0.0349,
+      "gain_h1_k3_ci": [
+        0.0349,
+        0.0252,
+        0.0445
+      ],
+      "strong_baseline_h1": "B4_drift",
+      "val_baseline_scores_h1": {
+        "B0_marginal_future": 0.3156,
+        "B1_persistence": 0.2731,
+        "B2_markov_iterated": 0.3267,
+        "B3_khistory": 0.3219,
+        "B4_drift": 0.3274,
+        "B5_nn_anchor": 0.3267,
+        "B6_population_avg": 0.3156,
+        "B7_frozen_lang_history": 0.3215
+      },
+      "k_saturation_h1": {
+        "1": {
+          "gain": 0.0266,
+          "ci": [
+            0.0266,
+            0.0207,
+            0.0321
+          ],
+          "strong": "B2_markov_iterated"
+        },
+        "3": {
+          "gain": 0.0349,
+          "ci": [
+            0.0349,
+            0.0252,
+            0.0445
+          ],
+          "strong": "B4_drift"
+        },
+        "5": {
+          "gain": 0.0311,
+          "ci": [
+            0.0311,
+            0.0209,
+            0.0416
+          ],
+          "strong": "B4_drift"
+        }
+      },
+      "h_decay_k3": {
+        "1": {
+          "gain": 0.0349,
+          "ci": [
+            0.0349,
+            0.0252,
+            0.0445
+          ],
+          "strong": "B4_drift"
+        },
+        "2": {
+          "gain": 0.0261,
+          "ci": [
+            0.0261,
+            0.0203,
+            0.0319
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "5": {
+          "gain": 0.0092,
+          "ci": [
+            0.0092,
+            0.0052,
+            0.013
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "10": {
+          "gain": 0.0044,
+          "ci": [
+            0.0044,
+            0.0013,
+            0.0072
+          ],
+          "strong": "B0_marginal_future"
+        }
+      }
+    },
+    "R2_tfidf": {
+      "gain_h1_k3": 0.0059,
+      "gain_h1_k3_ci": [
+        0.0059,
+        0.003,
+        0.009
+      ],
+      "strong_baseline_h1": "B0_marginal_future",
+      "val_baseline_scores_h1": {
+        "B0_marginal_future": 0.1864,
+        "B1_persistence": 0.1069,
+        "B2_markov_iterated": 0.1242,
+        "B3_khistory": 0.1306,
+        "B4_drift": 0.1347,
+        "B5_nn_anchor": 0.1242,
+        "B6_population_avg": 0.1864,
+        "B7_frozen_lang_history": 0.1352
+      },
+      "k_saturation_h1": {
+        "1": {
+          "gain": 0.0043,
+          "ci": [
+            0.0043,
+            0.0022,
+            0.0062
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "3": {
+          "gain": 0.0059,
+          "ci": [
+            0.0059,
+            0.003,
+            0.009
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "5": {
+          "gain": 0.004,
+          "ci": [
+            0.004,
+            0.001,
+            0.0075
+          ],
+          "strong": "B0_marginal_future"
+        }
+      },
+      "h_decay_k3": {
+        "1": {
+          "gain": 0.0059,
+          "ci": [
+            0.0059,
+            0.003,
+            0.009
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "2": {
+          "gain": 0.0029,
+          "ci": [
+            0.0029,
+            0.0004,
+            0.006
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "5": {
+          "gain": 0.0013,
+          "ci": [
+            0.0013,
+            -0.0036,
+            0.0061
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "10": {
+          "gain": -0.0031,
+          "ci": [
+            -0.0031,
+            -0.0061,
+            0.0003
+          ],
+          "strong": "B0_marginal_future"
+        }
+      }
+    },
+    "R3_nmf_topics": {
+      "gain_h1_k3": 0.0059,
+      "gain_h1_k3_ci": [
+        0.0059,
+        0.0036,
+        0.0084
+      ],
+      "strong_baseline_h1": "B0_marginal_future",
+      "val_baseline_scores_h1": {
+        "B0_marginal_future": 0.4312,
+        "B1_persistence": 0.2604,
+        "B2_markov_iterated": 0.3734,
+        "B3_khistory": 0.3855,
+        "B4_drift": 0.3585,
+        "B5_nn_anchor": 0.3734,
+        "B6_population_avg": 0.4312,
+        "B7_frozen_lang_history": 0.3944
+      },
+      "k_saturation_h1": {
+        "1": {
+          "gain": 0.0022,
+          "ci": [
+            0.0022,
+            0.0014,
+            0.0032
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "3": {
+          "gain": 0.0059,
+          "ci": [
+            0.0059,
+            0.0036,
+            0.0084
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "5": {
+          "gain": 0.0082,
+          "ci": [
+            0.0082,
+            0.0051,
+            0.0117
+          ],
+          "strong": "B0_marginal_future"
+        }
+      },
+      "h_decay_k3": {
+        "1": {
+          "gain": 0.0059,
+          "ci": [
+            0.0059,
+            0.0036,
+            0.0084
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "2": {
+          "gain": 0.0051,
+          "ci": [
+            0.0051,
+            0.003,
+            0.0077
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "5": {
+          "gain": 0.0055,
+          "ci": [
+            0.0055,
+            0.0028,
+            0.0082
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "10": {
+          "gain": 0.0033,
+          "ci": [
+            0.0033,
+            0.0014,
+            0.0054
+          ],
+          "strong": "B0_marginal_future"
+        }
+      }
+    },
+    "R1_mpnet": {
+      "gain_h1_k3": 0.0266,
+      "gain_h1_k3_ci": [
+        0.0266,
+        0.0161,
+        0.0378
+      ],
+      "strong_baseline_h1": "B4_drift",
+      "val_baseline_scores_h1": {
+        "B0_marginal_future": 0.308,
+        "B1_persistence": 0.2889,
+        "B2_markov_iterated": 0.3284,
+        "B3_khistory": 0.3299,
+        "B4_drift": 0.3388,
+        "B5_nn_anchor": 0.3284,
+        "B6_population_avg": 0.308,
+        "B7_frozen_lang_history": 0.3226
+      },
+      "k_saturation_h1": {
+        "1": {
+          "gain": 0.016,
+          "ci": [
+            0.016,
+            0.0054,
+            0.0266
+          ],
+          "strong": "B4_drift"
+        },
+        "3": {
+          "gain": 0.0266,
+          "ci": [
+            0.0266,
+            0.0161,
+            0.0378
+          ],
+          "strong": "B4_drift"
+        },
+        "5": {
+          "gain": 0.0241,
+          "ci": [
+            0.0241,
+            0.0128,
+            0.036
+          ],
+          "strong": "B4_drift"
+        }
+      },
+      "h_decay_k3": {
+        "1": {
+          "gain": 0.0266,
+          "ci": [
+            0.0266,
+            0.0161,
+            0.0378
+          ],
+          "strong": "B4_drift"
+        },
+        "2": {
+          "gain": 0.0332,
+          "ci": [
+            0.0332,
+            0.0269,
+            0.0393
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "5": {
+          "gain": 0.0138,
+          "ci": [
+            0.0138,
+            0.0097,
+            0.0173
+          ],
+          "strong": "B0_marginal_future"
+        },
+        "10": {
+          "gain": 0.0063,
+          "ci": [
+            0.0063,
+            0.0027,
+            0.0098
+          ],
+          "strong": "B0_marginal_future"
+        }
+      }
+    }
+  },
+  "metric_robustness_R0": {
+    "cosine": {
+      "model": 0.3635,
+      "baseline": 0.3288,
+      "gain": 0.0347
+    },
+    "euclidean": {
+      "model": 0.2046,
+      "baseline": 0.1863,
+      "gain": 0.0183
+    },
+    "correlation": {
+      "model": 0.3635,
+      "baseline": 0.3288,
+      "gain": 0.0347
+    },
+    "rank": {
+      "model_mean_rank": 24.649,
+      "baseline_mean_rank": 17.784,
+      "note": "lower = better; rank of actual target among same-subject entries"
+    }
+  },
+  "decision": "CMREP_PARTIAL",
+  "n_gain_positive": "4/4",
+  "gain_range_across_reps": 0.029,
+  "runtime_s": 1143.4,
+  "gain_ratio_max_min": 5.915
+}

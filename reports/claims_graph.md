@@ -24,6 +24,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-012 | L0 | design-only (synthetic exploration) | rpr_pie | `reports/cm9a_oracle_lab/cm9a_oracle_lab.json` | `.venv/bin/python data/scripts/cm9a_oracle_lab.py` |
 | C-101 | L3 | validated (partial replication; inference adjudicated) | predictive_gain_adjudicated | `reports/cm_xval/cm_xval_inference.json` | `.venv/bin/python data/scripts/cm_xval_inference.py` |
 | C-102 | L3 | validated (weak calibration; negative result for model-intrinsic uncertainty) | uncertainty_calibration | `reports/cm_uncertainty/cm_uncertainty.json` | `.venv/bin/python data/scripts/cm_uncertainty.py` |
+| C-104 | L3 | validated (partial representation robustness) | representation_robustness | `reports/cm_representation/cm_representation.json` | `.venv/bin/python data/scripts/cm_representation.py` |
 
 ## Per-claim traceability
 
@@ -208,6 +209,19 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **COMMIT:** `cm-lab (post`
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm_uncertainty.py`
 - **RED TEAM:** all uncertainty from TRAIN only (no test tuning); anti-calibrated U3 reported (negative-result policy S79); no CM-8 change
+
+### C-104 (L3) — validated (partial representation robustness)
+
+> Representation robustness (ds006067, subject-disjoint, model fit on TRAIN): the CM-2/CM-3 predictive-dynamics finding is CMREP_PARTIAL. The qualitative finding survives a small predeclared representation set (R0 MiniLM, R1 all-mpnet-base-v2, R2 TF-IDF lexical, R3 NMF topics): the model beats the strongest frozen baseline (CI excludes 0) in ALL 4, with k~3 history-depth saturation and multi-step decay. But the effect SIZE is highly representation-dependent (5.9x larger in semantic encoders R0=0.0349/R1=0.0266 than lexical/topic R2=R3=0.0059) and the strongest baseline changes (B4_drift for semantic, B0_marginal for lexical/topic). Metric robustness (fixed R0 model): model-baseline gain holds for cosine (+0.0347), Euclidean (+0.0183), correlation (+0.0347) but NOT the neighborhood-rank metric (baseline retrieves the actual target better, rank 17.8 vs 24.6), so the conclusion is metric-dependent for rank. The effect is robust in existence but representation-dependent in magnitude; CM-2/CM-3 claims remain tied to their original MiniLM representation.
+
+- **DATASET:** ds006067 thought-stream
+- **PROTOCOL:** `reports/cm_representation/cm_representation.json`
+- **SCRIPT:** `data/scripts/cm_representation.py`
+- **REPORT:** `reports/cm_representation/cm_representation.json`
+- **STATISTIC:** `{"type": "representation_robustness", "R0_minilm": {"gain_h1": 0.0349, "strong": "B4_drift"}, "R1_mpnet": {"gain_h1": 0.0266, "strong": "B4_drift"}, "R2_tfidf": {"gain_h1": 0.0059, "strong": "B0_marginal_future"}, "R3_nmf_topics": {"gain_h1": 0.0059, "strong": "B0_marginal_future"}, "gain_ratio_max_min": 5.915, "metric_gain_cosine": 0.0347, "metric_gain_euclidean": 0.0183, "metric_rank_model_vs_baseline": [24.65, 17.78], "decision": "CMREP_PARTIAL"}`
+- **COMMIT:** `cm-lab (post`
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_representation.py`
+- **RED TEAM:** R2/R3 fit on TRAIN only; R0/R1 frozen; no per-metric tuning; no CM-8 change; CM-2/CM-3 claims unchanged (tied to MiniLM)
 
 ## Rules
 
