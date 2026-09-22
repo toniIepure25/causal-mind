@@ -28,6 +28,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-103 | L3 | validated (negative result: personalization does not help) | personalization | `reports/cm_personalization/cm_personalization.json` | `.venv/bin/python data/scripts/cm_personalization.py` |
 | C-105 | L3 | validated (descriptive; linear prediction dominant, high dynamics) | local_dynamics | `reports/cm_dynamics/cm_dynamics.json` | `.venv/bin/python data/scripts/cm_dynamics.py` |
 | C-106 | L3 | validated (descriptive; weakly predictable; novelty-driven errors) | error_taxonomy | `reports/cm_error_taxonomy/cm_error_taxonomy.json` | `.venv/bin/python data/scripts/cm_error_taxonomy.py` |
+| C-107 | L3 | validated (selective oracle modest; recursive unstable) | oracle | `reports/cm_oracle/cm_oracle.json` | `.venv/bin/python data/scripts/cm_oracle.py` |
 
 ## Per-claim traceability
 
@@ -264,6 +265,19 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **COMMIT:** `cm-lab (post`
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm_error_taxonomy.py`
 - **RED TEAM:** S48 categories algorithmic (thresholds on cosine distances), not hand-labeled; S49 pre-forecast only (no target leakage); TRAIN-only fitting; absent categories reported as absent; no CM-8 change
+
+### C-107 (L3) — validated (selective oracle modest; recursive unstable)
+
+> Oracle selective prediction + recursive depth (ds006067, frozen MiniLM, TRAIN-only): CMORACLE_SELECTIVE_ONLY. (S63) Using the best pre-forecast confidence (1 - nn cosine distance to the TRAIN history manifold) as a selective oracle: full-coverage accuracy 0.364, top-10% most-confident 0.403 (+0.039), top-25% 0.390, top-50% 0.379 - a modest, concave accuracy-vs-coverage gain. (S64) RECURSIVE rollout (feed the model's own prediction back as the next history entry) is UNSTABLE: accuracy degrades L0 (all-real) 0.406 -> L1 0.386 -> L2 0.360 -> L3 (all self-predicted) 0.314, a performative error of 0.092. The direct-horizon ridge map is not a contraction on the prediction-residual subspace, so self-predictions drift toward the training manifold (regression-to-the-manifold) and lose subject/time-specific information. For the human Oracle work (CM-8P) the model must be used in a SELECTIVE, NON-RECURSIVE mode: forecast only when confident, never feed its own prediction back as an input. Theory note (S65-71) frames stability, fixed point, performative prediction, PIE (human-gated, deferred to CM-8P), RPR (negative), the oracle game (concave payoff curve), and the information-gain planner (future direction). No CM-8 change.
+
+- **DATASET:** ds006067 thought-stream
+- **PROTOCOL:** `reports/cm_oracle/cm_oracle.json`
+- **SCRIPT:** `data/scripts/cm_oracle.py`
+- **REPORT:** `reports/cm_oracle/cm_oracle.json`
+- **STATISTIC:** `{"type": "oracle", "full_coverage_accuracy": 0.3635, "cov10_accuracy": 0.4029, "sel_gain_best": 0.0394, "L0_accuracy": 0.4055, "L3_accuracy": 0.3135, "depth_degradation_L0_to_L3": 0.092, "decision": "CMORACLE_SELECTIVE_ONLY"}`
+- **COMMIT:** `cm-lab (post`
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_oracle.py`
+- **RED TEAM:** confidence pre-forecast only (no target leakage); recursion uses model's own predictions (performative setup); TRAIN-only fitting; PIE flagged as human-gated (not tested); no CM-8 change
 
 ## Rules
 

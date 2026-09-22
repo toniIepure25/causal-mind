@@ -1,0 +1,72 @@
+{
+  "protocol": "CM-LAB S63-64 Oracle selective prediction + recursive depth",
+  "dataset": "ds006067 thought-stream",
+  "seed": 20260911,
+  "k": 3,
+  "h": 1,
+  "split": {
+    "train": 83,
+    "val": 18,
+    "test": 17
+  },
+  "s63_selective": {
+    "full_coverage_accuracy": 0.3635,
+    "accuracy_vs_coverage": {
+      "cov_10": {
+        "coverage": 0.1,
+        "selected": 85,
+        "accuracy": 0.4029
+      },
+      "cov_25": {
+        "coverage": 0.25,
+        "selected": 214,
+        "accuracy": 0.39
+      },
+      "cov_50": {
+        "coverage": 0.5,
+        "selected": 429,
+        "accuracy": 0.3787
+      },
+      "cov_75": {
+        "coverage": 0.75,
+        "selected": 643,
+        "accuracy": 0.3731
+      },
+      "cov_90": {
+        "coverage": 0.9,
+        "selected": 772,
+        "accuracy": 0.3684
+      }
+    },
+    "confidence": "distance-from-manifold (1 - nn cosine distance to TRAIN history manifold)"
+  },
+  "s64_recursive": {
+    "accuracy_by_depth": {
+      "L0": {
+        "depth": 0,
+        "n": 17,
+        "accuracy": 0.4055
+      },
+      "L1": {
+        "depth": 1,
+        "n": 17,
+        "accuracy": 0.3855
+      },
+      "L2": {
+        "depth": 2,
+        "n": 17,
+        "accuracy": 0.3596
+      },
+      "L3": {
+        "depth": 3,
+        "n": 807,
+        "accuracy": 0.3135
+      }
+    },
+    "note": "L0 = all-real history; Ld = the d most-recent history entries are the model's own predictions"
+  },
+  "decision": "CMORACLE_SELECTIVE_ONLY",
+  "sel_gain_best": 0.0394,
+  "depth_degradation_L0_to_L3": 0.092,
+  "runtime_s": 25.7
+}
