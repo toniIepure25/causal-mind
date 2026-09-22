@@ -1,0 +1,149 @@
+{
+  "protocol": "CM-LAB S36-40 personalization (prospective) + reliability",
+  "dataset": "ds006067 thought-stream",
+  "seed": 20260911,
+  "k": 3,
+  "h": 1,
+  "split": {
+    "train": 83,
+    "val": 18,
+    "test": 17
+  },
+  "fractions": [
+    0.0,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "mean_p0_error": 0.6413,
+  "mean_p1_error_f0.1": 0.8,
+  "mean_p1_error_f0.25": 0.7491,
+  "mean_p1_error_f0.5": 0.7143,
+  "levels": {
+    "P1_f0.0": {
+      "mean_gain": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "P3_f0.0": {
+      "mean_gain": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "P1_f0.1": {
+      "mean_gain": -0.1587,
+      "ci95": [
+        -0.1836,
+        -0.1342
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "P3_f0.1": {
+      "mean_gain": -0.1587,
+      "ci95": [
+        -0.1836,
+        -0.1342
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "P1_f0.25": {
+      "mean_gain": -0.1078,
+      "ci95": [
+        -0.1252,
+        -0.0898
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "P3_f0.25": {
+      "mean_gain": -0.1078,
+      "ci95": [
+        -0.1253,
+        -0.0898
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "P1_f0.5": {
+      "mean_gain": -0.073,
+      "ci95": [
+        -0.0871,
+        -0.0584
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "P3_f0.5": {
+      "mean_gain": -0.073,
+      "ci95": [
+        -0.0871,
+        -0.0584
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    }
+  },
+  "data_curve_P3": {
+    "0.0": {
+      "mean_gain": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "0.1": {
+      "mean_gain": -0.1587,
+      "ci95": [
+        -0.1836,
+        -0.1342
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "0.25": {
+      "mean_gain": -0.1078,
+      "ci95": [
+        -0.1253,
+        -0.0898
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    },
+    "0.5": {
+      "mean_gain": -0.073,
+      "ci95": [
+        -0.0871,
+        -0.0584
+      ],
+      "proportion_positive": 0.0,
+      "n": 17
+    }
+  },
+  "failure_modes": {
+    "overfitting_at_high_fraction": false,
+    "p3_gain_f0.1": -0.1587,
+    "p3_gain_f0.5": -0.073,
+    "n_low_data_subjects": 1,
+    "low_data_p3_gain_f0.5": -0.1165
+  },
+  "reliability": {
+    "n_subjects": 17,
+    "first_vs_second_half_pearson": 0.1432,
+    "first_vs_second_half_spearman": 0.2402,
+    "note": "session-level predictability stability (NOT a cognitive trait)"
+  },
+  "decision": "CMPERS_NULL",
+  "runtime_s": 3.3
+}

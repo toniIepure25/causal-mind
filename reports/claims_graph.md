@@ -25,6 +25,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-101 | L3 | validated (partial replication; inference adjudicated) | predictive_gain_adjudicated | `reports/cm_xval/cm_xval_inference.json` | `.venv/bin/python data/scripts/cm_xval_inference.py` |
 | C-102 | L3 | validated (weak calibration; negative result for model-intrinsic uncertainty) | uncertainty_calibration | `reports/cm_uncertainty/cm_uncertainty.json` | `.venv/bin/python data/scripts/cm_uncertainty.py` |
 | C-104 | L3 | validated (partial representation robustness) | representation_robustness | `reports/cm_representation/cm_representation.json` | `.venv/bin/python data/scripts/cm_representation.py` |
+| C-103 | L3 | validated (negative result: personalization does not help) | personalization | `reports/cm_personalization/cm_personalization.json` | `.venv/bin/python data/scripts/cm_personalization.py` |
 
 ## Per-claim traceability
 
@@ -222,6 +223,19 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **COMMIT:** `cm-lab (post`
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm_representation.py`
 - **RED TEAM:** R2/R3 fit on TRAIN only; R0/R1 frozen; no per-metric tuning; no CM-8 change; CM-2/CM-3 claims unchanged (tied to MiniLM)
+
+### C-103 (L3) — validated (negative result: personalization does not help)
+
+> Personalization (ds006067, prospective, strict chronology): lightweight personalization provides NO benefit and actively HURTS (CMPERS_NULL). For 17 test subjects, the timeline is split EARLY/LATE; the global model (fit on TRAIN) is adapted using ONLY the subject's EARLIER observations (subject intercept P1, or ridge residual correction P3) and evaluated on LATER observations. All personalization gains are NEGATIVE with CIs excluding 0 in all 17 subjects (P1/P3 gain -0.159 at 10% adaptation, -0.073 at 50%); the personalized error rises from 0.641 (global) to 0.800 (10% adaptation). The harm is worst with the least personal data and improves (toward zero) with more, but never becomes positive. Most parsimonious cause: session drift (early != late behavior) compounded by small adaptation data. Predictability reliability is WEAK (first- vs second-half error Pearson 0.143, Spearman 0.240) -> session-level predictability only, not a cognitive trait. No CM-8 change.
+
+- **DATASET:** ds006067 thought-stream
+- **PROTOCOL:** `reports/cm_personalization/cm_personalization.json`
+- **SCRIPT:** `data/scripts/cm_personalization.py`
+- **REPORT:** `reports/cm_personalization/cm_personalization.json`
+- **STATISTIC:** `{"type": "personalization", "mean_p0_error": 0.6413, "P1_gain_f0.1": -0.1587, "P1_gain_f0.5": -0.073, "P3_gain_f0.1": -0.1587, "P3_gain_f0.5": -0.073, "proportion_positive": 0.0, "reliability_pearson": 0.143, "reliability_spearman": 0.24, "decision": "CMPERS_NULL"}`
+- **COMMIT:** `cm-lab (post`
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_personalization.py`
+- **RED TEAM:** strict chronology (EARLY adapt -> LATE eval); global fit on TRAIN only; no test tuning; negative result reported (S79); no CM-8 change
 
 ## Rules
 
