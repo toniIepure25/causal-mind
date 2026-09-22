@@ -27,6 +27,7 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 | C-104 | L3 | validated (partial representation robustness) | representation_robustness | `reports/cm_representation/cm_representation.json` | `.venv/bin/python data/scripts/cm_representation.py` |
 | C-103 | L3 | validated (negative result: personalization does not help) | personalization | `reports/cm_personalization/cm_personalization.json` | `.venv/bin/python data/scripts/cm_personalization.py` |
 | C-105 | L3 | validated (descriptive; linear prediction dominant, high dynamics) | local_dynamics | `reports/cm_dynamics/cm_dynamics.json` | `.venv/bin/python data/scripts/cm_dynamics.py` |
+| C-106 | L3 | validated (descriptive; weakly predictable; novelty-driven errors) | error_taxonomy | `reports/cm_error_taxonomy/cm_error_taxonomy.json` | `.venv/bin/python data/scripts/cm_error_taxonomy.py` |
 
 ## Per-claim traceability
 
@@ -250,6 +251,19 @@ protocol, script, report, statistic, commit, reproduction command, and red team.
 - **COMMIT:** `cm-lab (post`
 - **REPRODUCTION:** `.venv/bin/python data/scripts/cm_dynamics.py`
 - **RED TEAM:** TRAIN-only fitting; descriptive only (no 'thought is linear' claim); no attractor overclaim; no CM-8 change
+
+### C-106 (L3) — validated (descriptive; weakly predictable; novelty-driven errors)
+
+> Forecast error taxonomy + error prediction (ds006067, frozen MiniLM, TRAIN-only): CMERR_WEAKLY_PREDICTABLE. (S48) An outcome-blind algorithmic taxonomy of large forecast errors (top quartile, err>=0.702, 215/858) shows the dominant failure mode is NOVELTY: rare_state (actual target far from the training manifold) is enriched 1.58x and abrupt_jump (target far from the recent history) 1.09x among large errors; high_local_entropy is common but not enriched (0.998); gradual_drift, weak_history, and representation_ambiguity NEVER occur (the linear model does not drift when the target is near the history; histories are never low-variability; predictions are specific). (S49) Pre-forecast error prediction is WEAK: distance-from-manifold AUROC 0.585 (best), local entropy 0.561, semantic-volatility heuristic 0.518 (worst) - so no simple-heuristic win is preserved. Consistent with CMUNC_WEAK (C-102). No CM-8 change.
+
+- **DATASET:** ds006067 thought-stream
+- **PROTOCOL:** `reports/cm_error_taxonomy/cm_error_taxonomy.json`
+- **SCRIPT:** `data/scripts/cm_error_taxonomy.py`
+- **REPORT:** `reports/cm_error_taxonomy/cm_error_taxonomy.json`
+- **STATISTIC:** `{"type": "error_taxonomy", "n_test_samples": 858, "n_large_error": 215, "large_error_threshold": 0.702, "enrichment_rare_state": 1.583, "enrichment_abrupt_jump": 1.09, "enrichment_high_local_entropy": 0.998, "auroc_distance_from_manifold": 0.5853, "auroc_local_entropy": 0.5606, "auroc_semantic_volatility": 0.5183, "decision": "CMERR_WEAKLY_PREDICTABLE"}`
+- **COMMIT:** `cm-lab (post`
+- **REPRODUCTION:** `.venv/bin/python data/scripts/cm_error_taxonomy.py`
+- **RED TEAM:** S48 categories algorithmic (thresholds on cosine distances), not hand-labeled; S49 pre-forecast only (no target leakage); TRAIN-only fitting; absent categories reported as absent; no CM-8 change
 
 ## Rules
 
