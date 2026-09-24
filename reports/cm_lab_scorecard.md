@@ -1,16 +1,18 @@
 # CM-LAB Scorecard (S86)
 
-**Overall: `CMLAB_PROFESSIONAL_RESEARCH_PLATFORM_READY`**
+**Overall: `CMLAB_SCIENTIFIC_DEEP_DIVE_COMPLETE`** (supersedes `CMLAB_PROFESSIONAL_RESEARCH_PLATFORM_READY`)
 
 Consolidated status of the CM-LAB target states. Each is backed by a runnable check.
 
 | target state | status | evidence / how to verify |
 | --- | --- | --- |
 | **CMLAB_RESEARCH_OS_PASS** | PASS | Env reproducible (S4), one-command validation (S6), invariants (S7), claim graph (S8), registries (S9-11), CI (S12). Verify: `bash scripts/validate_project.sh` |
-| **CMLAB_DISASTER_RECOVERY_PASS** | PASS | Fresh clone -> bootstrap -> validate -> integrity, all green. Verify: `bash scripts/disaster_recovery.sh` |
-| **CMLAB_CLAIM_TRACEABILITY_PASS** | PASS | Every claim (C-001..C-012, C-101) links to dataset/protocol/script/report/statistic/commit/reproduction/red-team. Verify: `python data/scripts/cm_lab_claims_graph.py --check` |
+| **CMLAB_DISASTER_RECOVERY_PASS** | PASS | Fresh clone -> bootstrap -> validate -> integrity, all green (2nd independent run, S60). Verify: `bash scripts/disaster_recovery.sh` |
+| **CMLAB_CLAIM_TRACEABILITY_PASS** | PASS | Every claim (C-001..C-012, C-101..C-107) links to dataset/protocol/script/report/statistic/commit/reproduction/red-team. Verify: `python data/scripts/cm_lab_claims_graph.py --check` |
 | **CMLAB_SECURITY_PASS** | PASS | 0 secrets, 0 tracked credential files, 0 public (0.0.0.0) binds, 0 outbound telemetry, 90 pinned deps. Verify: `python data/scripts/cm_lab_security.py --check` |
-| **External validation decision** | `CMXVAL_PARTIAL` | CM-XVAL-1 on Open Play (openESM 0075): model beats strongest frozen baseline at all horizons (gain +0.016..+0.034, CIs exclude 0); target-shuffle perm p=0.71. New claim C-101. |
+| **CMLAB_SCIENTIFIC_DEEP_DIVE_COMPLETE** | PASS | Sections 25-88: 7 scientific deep-dives (C-101 revised, C-102..C-107 new) + standards + disaster recovery + CM-8 no-drift. Verify: `python data/scripts/cm_deep_dive_runner.py` |
+| **CM8_CONFIRMATORY_INTACT** | PASS | CM-8 no-drift (S83): config, freeze, code SHAs, randomization, registry all intact. Verify: `python data/scripts/cm8_no_drift.py` |
+| **External validation decision** | `CMXVAL_PARTIAL_REPLICATION` | CM-XVAL-1 on Open Play (openESM 0075): subject-level gain survives at all horizons, but driven by subject identity (N0/N5 rejected), not temporal/transition (N1-N4, N6 not rejected). C-101 revised. |
 
 ## Scientific invariants held (S7, `tests/test_invariants.py`)
 - CM-2 subject-disjoint split (83/18/17, no overlap).

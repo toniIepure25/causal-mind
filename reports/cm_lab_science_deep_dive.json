@@ -1,0 +1,47 @@
+{
+  "protocol": "CM-LAB S84-88 scientific deep dive final scorecard",
+  "overall": "CMLAB_SCIENTIFIC_DEEP_DIVE_COMPLETE",
+  "date": "2026-09-24",
+  "scope": "sections 25-88; frozen ds006067 split 83/18/17; TRAIN-only; no human data; no result shopping",
+  "workstreams": [
+    {"section": "25-28", "name": "XVAL-1 inference adjudication", "decision": "CMXVAL_PARTIAL_REPLICATION", "claim": "C-101 (revised)", "report": "reports/cm_xval/cm_xval_inference.json"},
+    {"section": "32-35", "name": "Uncertainty / calibration / selective", "decision": "CMUNC_WEAK", "claim": "C-102", "report": "reports/cm_uncertainty/cm_uncertainty.json"},
+    {"section": "29-31", "name": "Representation + metric robustness", "decision": "CMREP_PARTIAL", "claim": "C-104", "report": "reports/cm_representation/cm_representation.json"},
+    {"section": "36-40", "name": "Personalization + reliability", "decision": "CMPERS_NULL", "claim": "C-103", "report": "reports/cm_personalization/cm_personalization.json"},
+    {"section": "41,43-47", "name": "Local dynamics", "decision": "CMDYN_LINEAR_PREDICTION_DOMINANT", "claim": "C-105", "report": "reports/cm_dynamics/cm_dynamics.json"},
+    {"section": "48-49", "name": "Error taxonomy + error prediction", "decision": "CMERR_WEAKLY_PREDICTABLE", "claim": "C-106", "report": "reports/cm_error_taxonomy/cm_error_taxonomy.json"},
+    {"section": "63-71", "name": "Oracle selective + recursion + theory", "decision": "CMORACLE_SELECTIVE_ONLY", "claim": "C-107", "report": "reports/cm_oracle/cm_oracle.json"},
+    {"section": "50-59", "name": "Standards + leakage scanner", "decision": "CMLEAK_PASS", "claim": null, "report": "reports/cm_leakage_scan/cm_leakage_scan.json"},
+    {"section": "60", "name": "Disaster recovery (2nd independent run)", "decision": "CMLAB_DISASTER_RECOVERY_REPRODUCED", "claim": null, "report": "reports/disaster_recovery_second_run.md"},
+    {"section": "83", "name": "CM-8 confirmatory no-drift", "decision": "CM8_CONFIRMATORY_INTACT", "claim": null, "report": "reports/cm8_no_drift/cm8_no_drift.json"}
+  ],
+  "new_claims": ["C-102", "C-103", "C-104", "C-105", "C-106", "C-107"],
+  "revised_claims": ["C-101"],
+  "net_scientific_picture": {
+    "finding": "CM-2/CM-3 predictive-dynamics finding (linear model over frozen MiniLM beats strongest frozen baseline at every horizon)",
+    "status": "REAL but bounded",
+    "bounds": [
+      "subject-identity-driven, not temporal (N0/N5 rejected; N1-N4, N6 not rejected)",
+      "representation-specific (semantic MiniLM/mpnet >> lexical TF-IDF/NMF, 5.9x ratio)",
+      "not personalizable (personalization hurts, all gains negative)",
+      "weakly confidence-gateable (best AUROC 0.585; dominant large-error mode is novelty)",
+      "oracle-usable only selectively and non-recursively (recursive L0->L3 degradation 0.092)"
+    ]
+  },
+  "platform_integrity": {
+    "cm8_confirmatory": "CM8_CONFIRMATORY_INTACT",
+    "disaster_recovery": "CMLAB_DISASTER_RECOVERY_REPRODUCED",
+    "leakage": "CMLEAK_PASS",
+    "frozen_artifacts_unchanged": 12,
+    "lint_ratchet": "32/32",
+    "full_validation": "PASS"
+  },
+  "not_done": [
+    "no change to C-001..C-012, frozen CM-8 protocol, or cm8-prehuman-v1.0",
+    "no human data collected",
+    "no free-will claim",
+    "no extension to other languages/datasets without dedicated replication"
+  ],
+  "remaining_work": "human experiment (CM-8P pilot + CM-8 confirmatory), gated on supervisor sign-off + ethics (deadline 5 Oct 2026) + pilot authorization",
+  "verification": ["bash scripts/validate_project.sh", ".venv/bin/python data/scripts/cm_deep_dive_runner.py", ".venv/bin/python data/scripts/cm_deep_dive_runner.py --demo"]
+}
