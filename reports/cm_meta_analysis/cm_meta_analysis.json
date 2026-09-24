@@ -1,0 +1,75 @@
+{
+  "protocol": "CM-LAB S76 cross-dataset / cross-representation meta-analysis framework",
+  "n_effect_sizes": 9,
+  "effect_sizes": [
+    {
+      "label": "xval_openplay_h1",
+      "effect": 0.0164,
+      "se": 0.0034438775510204083,
+      "strong": "B3_khistory"
+    },
+    {
+      "label": "xval_openplay_h2",
+      "effect": 0.0175,
+      "se": 0.004005102040816326,
+      "strong": "B3_khistory"
+    },
+    {
+      "label": "xval_openplay_h3",
+      "effect": 0.0339,
+      "se": 0.009285714285714286,
+      "strong": "B4_drift"
+    },
+    {
+      "label": "xval_openplay_h5",
+      "effect": 0.0303,
+      "se": 0.006020408163265306,
+      "strong": "B3_khistory"
+    },
+    {
+      "label": "xval_openplay_h10",
+      "effect": 0.0177,
+      "se": 0.004821428571428571,
+      "strong": "B3_khistory"
+    },
+    {
+      "label": "ds006067_R0_minilm",
+      "effect": 0.0349,
+      "se": 0.004923469387755101,
+      "strong": "B4_drift"
+    },
+    {
+      "label": "ds006067_R2_tfidf",
+      "effect": 0.0059,
+      "se": 0.001530612244897959,
+      "strong": "B0_marginal_future"
+    },
+    {
+      "label": "ds006067_R3_nmf_topics",
+      "effect": 0.0059,
+      "se": 0.0012244897959183673,
+      "strong": "B0_marginal_future"
+    },
+    {
+      "label": "ds006067_R1_mpnet",
+      "effect": 0.0266,
+      "se": 0.005535714285714286,
+      "strong": "B4_drift"
+    }
+  ],
+  "random_effects": {
+    "pooled": 0.0193,
+    "se": 0.0033,
+    "ci": [
+      0.0128,
+      0.0258
+    ],
+    "tau2": 7.7e-05,
+    "i2": 0.9,
+    "Q": 80.069,
+    "df": 8,
+    "k": 9
+  },
+  "note": "FRAMEWORK: pools the model's gain over the strongest frozen baseline across datasets/representations/horizons. Does NOT pool incompatible datasets or representations without an explicit covariate (next-dataset policy).",
+  "runtime_s": 0.0
+}

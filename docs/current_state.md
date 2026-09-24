@@ -2,6 +2,35 @@
 
 ## Project state
 
+`CMLAB_SCIENTIFIC_DEEP_DIVE_COMPLETE` (2026-09-24) — the CM-LAB scientific deep dive
+(sections 25-88) rigorously attacked the remaining assumptions of the CM-2/CM-3
+predictive-dynamics finding, all on the frozen ds006067 split (83/18/17) with TRAIN-only
+fitting and no human data. New claims C-102..C-107; C-101 revised. Decisions:
+- **CMXVAL_PARTIAL_REPLICATION** (C-101 revised): subject-level gain survives at all horizons,
+  but the gain is driven by SUBJECT IDENTITY (N0/N5 rejected), not temporal/transition
+  structure (N1-N4, N6 not rejected).
+- **CMUNC_WEAK** (C-102): confidence gating is unreliable (weak/anti-calibrated) - do NOT use
+  for human Oracle work.
+- **CMREP_PARTIAL** (C-104): the finding is representation-dependent (semantic MiniLM/mpnet >>
+  lexical TF-IDF/NMF, 5.9x effect-size ratio).
+- **CMPERS_NULL** (C-103): personalization actively HURTS (all gains negative).
+- **CMDYN_LINEAR_PREDICTION_DOMINANT** (C-105): linear model captures most accessible structure;
+  trajectory highly dynamic; higher local entropy predicts worse forecasting.
+- **CMERR_WEAKLY_PREDICTABLE** (C-106): dominant large-error mode is NOVELTY (rare state, abrupt
+  jump); pre-forecast error prediction weak (best AUROC 0.585).
+- **CMORACLE_SELECTIVE_ONLY** (C-107): modest selective oracle (top-10% -> +0.039) but UNSTABLE
+  under recursive rollout (L0->L3 degradation 0.092) - use selective + NON-recursive for CM-8P.
+Standards: **CMLEAK_PASS** (new data-leakage scanner, L1-L5, all 7 scripts); **CMSTD_IN_PLACE**
+(S50-59 mapped to runnable tools + PR checklist). **CMLAB_DISASTER_RECOVERY_REPRODUCED**
+(second independent run; fixed a safe.directory fragility). **CM8_CONFIRMATORY_INTACT**
+(CM-8 no-drift: config, freeze, code SHAs, randomization, registry all intact). Net scientific
+picture: the predictive-dynamics finding is REAL but (a) subject-identity-driven, (b)
+representation-specific (semantic), (c) not personalizable, (d) weakly confidence-gateable, and
+(e) oracle-usable only in a selective, non-recursive mode. NO change to C-001..C-012, the frozen
+CM-8 protocol, or the cm8-prehuman-v1.0 release; NO human data; NO result shopping; negative
+results reported. The human experiment remains gated on supervisor sign-off + ethics (deadline
+5 Oct 2026) + pilot authorization. No free-will claim.
+
 `CMLAB_PROFESSIONAL_RESEARCH_PLATFORM_READY` (2026-09-21) — CM-LAB turned CAUSAL MIND into a professional, reproducible, portable research operating system on top of the immutable `cm8-prehuman-v1.0` freeze. Built: reproducible environment (S4), one-command validation + lint/type ratchet (S6), 10 scientific invariants (S7), claim graph with full traceability (S8), data lineage + artifact + experiment registries (S9-11), CI (S12), validation profiles + recovery runbook (S13/S14), disaster-recovery test (S60/61), and a security audit + standards (S75-84). Target states achieved: CMLAB_RESEARCH_OS_PASS, CMLAB_DISASTER_RECOVERY_PASS, CMLAB_CLAIM_TRACEABILITY_PASS, CMLAB_SECURITY_PASS, plus the first external-validation decision. CM-XVAL-1 (S16/S18-24) externally validated the CM-2/CM-3 predictive-dynamics finding on Open Play (openESM 0075, Zenodo 10.5281/zenodo.17536656): the model beats the strongest frozen baseline at every horizon (gain +0.016..+0.034, CIs exclude 0) but the target-shuffle permutation is not significant (p=0.71) -> `CMXVAL_PARTIAL`, recorded as NEW claim C-101 (L3). NO human data; NO change to C-001..C-012, the frozen CM-8 protocol, or the `cm8-prehuman-v1.0` release; NO result shopping. The human experiment remains gated on supervisor sign-off + ethics (deadline 5 Oct 2026) + pilot authorization. No free-will claim.
 
 `CMPUB_SUPERVISOR_HANDOFF_READY` (2026-09-21) — pre-human freeze `cm8-prehuman-v1.0`
