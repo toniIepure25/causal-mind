@@ -165,7 +165,7 @@ def main() -> int:
 
     (OUT / "cm_oracle.json").write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
     print(f"[ora] full_acc={full_acc:.4f}; coverage: " + ", ".join(f"{k}={v['accuracy']}" for k, v in coverage_curve.items()))
-    print(f"[ora] depth: " + ", ".join(f"{k}={v['accuracy']}" for k, v in depth_acc.items()))
+    print("[ora] depth: " + ", ".join(f"{k}={v['accuracy']}" for k, v in depth_acc.items()))
     print(f"[ora] sel_gain={sel_gain:.4f}; depth_degradation={depth_degradation:.4f}")
     print(f"[ora] DECISION: {decision}")
     print(f"[ora] wrote {OUT / 'cm_oracle.json'} in {results['runtime_s']}s")

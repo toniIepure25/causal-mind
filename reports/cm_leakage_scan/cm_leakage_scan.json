@@ -1,0 +1,75 @@
+{
+  "protocol": "CM-LAB S55 data-leakage scanner",
+  "checks": {
+    "L1_subject_disjoint": {
+      "pass": true,
+      "detail": "overlap=none; sizes 83/18/17"
+    },
+    "L2_prospective_targets": {
+      "pass": true,
+      "detail": "event_horizons=[1, 2, 3, 4, 5, 6, 8, 10]"
+    },
+    "L3_fit_on_test_cm_uncertainty.py": {
+      "pass": true,
+      "detail": "3 .fit() calls; test-named fit args: none"
+    },
+    "L4_target_in_history_cm_uncertainty.py": {
+      "pass": true,
+      "detail": "target_index-in-model-input: 0"
+    },
+    "L3_fit_on_test_cm_representation.py": {
+      "pass": true,
+      "detail": "4 .fit() calls; test-named fit args: none"
+    },
+    "L4_target_in_history_cm_representation.py": {
+      "pass": true,
+      "detail": "target_index-in-model-input: 0"
+    },
+    "L3_fit_on_test_cm_personalization.py": {
+      "pass": true,
+      "detail": "2 .fit() calls; test-named fit args: none"
+    },
+    "L4_target_in_history_cm_personalization.py": {
+      "pass": true,
+      "detail": "target_index-in-model-input: 0"
+    },
+    "L3_fit_on_test_cm_dynamics.py": {
+      "pass": true,
+      "detail": "4 .fit() calls; test-named fit args: none"
+    },
+    "L4_target_in_history_cm_dynamics.py": {
+      "pass": true,
+      "detail": "target_index-in-model-input: 0"
+    },
+    "L3_fit_on_test_cm_error_taxonomy.py": {
+      "pass": true,
+      "detail": "4 .fit() calls; test-named fit args: none"
+    },
+    "L4_target_in_history_cm_error_taxonomy.py": {
+      "pass": true,
+      "detail": "target_index-in-model-input: 0"
+    },
+    "L3_fit_on_test_cm_oracle.py": {
+      "pass": true,
+      "detail": "2 .fit() calls; test-named fit args: none"
+    },
+    "L4_target_in_history_cm_oracle.py": {
+      "pass": true,
+      "detail": "target_index-in-model-input: 0"
+    },
+    "L3_fit_on_test_cm_xval_inference.py": {
+      "pass": true,
+      "detail": "2 .fit() calls; test-named fit args: none"
+    },
+    "L4_target_in_history_cm_xval_inference.py": {
+      "pass": true,
+      "detail": "target_index-in-model-input: 0"
+    },
+    "L5_embedding_per_entry": {
+      "pass": true,
+      "detail": "MiniLM embeddings are computed per-entry (no context window spanning the target); see data/scripts/compute_embeddings_cm6.py pattern"
+    }
+  },
+  "decision": "CMLEAK_PASS",
+  "runtime_s": 0.01
+}

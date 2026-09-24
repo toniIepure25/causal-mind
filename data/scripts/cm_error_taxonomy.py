@@ -197,7 +197,7 @@ def main() -> int:
     results["runtime_s"] = round(time.time() - t0, 1)
 
     (OUT / "cm_error_taxonomy.json").write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
-    print(f"[err] taxonomy: " + ", ".join(f"{c}={taxonomy[c]['enrichment']}" for c in cats))
+    print("[err] taxonomy: " + ", ".join(f"{c}={taxonomy[c]['enrichment']}" for c in cats))
     print(f"[err] AUROC: {aucs}")
     print(f"[err] DECISION: {decision} (best={best}, auroc={best_auc})")
     print(f"[err] wrote {OUT / 'cm_error_taxonomy.json'} in {results['runtime_s']}s")

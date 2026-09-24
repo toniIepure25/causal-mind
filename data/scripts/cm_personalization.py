@@ -240,8 +240,8 @@ def main() -> int:
     results["runtime_s"] = round(time.time() - t0, 1)
 
     (OUT / "cm_personalization.json").write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
-    print(f"\n[pers] P1 gains: " + ", ".join(f"f{f}={levels[f'P1_f{f}']['mean_gain']:+.4f}" for f in FRACTIONS if f > 0))
-    print(f"[pers] P3 gains: " + ", ".join(f"f{f}={levels[f'P3_f{f}']['mean_gain']:+.4f}" for f in FRACTIONS if f > 0))
+    print("\n[pers] P1 gains: " + ", ".join(f"f{f}={levels[f'P1_f{f}']['mean_gain']:+.4f}" for f in FRACTIONS if f > 0))
+    print("[pers] P3 gains: " + ", ".join(f"f{f}={levels[f'P3_f{f}']['mean_gain']:+.4f}" for f in FRACTIONS if f > 0))
     print(f"[pers] reliability: pearson={rel_pearson:.3f} spearman={sp:.3f}")
     print(f"[pers] DECISION: {decision}")
     print(f"[pers] wrote {OUT / 'cm_personalization.json'} in {results['runtime_s']}s")
