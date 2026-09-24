@@ -16,10 +16,13 @@
 #
 # Exits 0 only if every stage is green.
 set -uo pipefail
-# NFS ownership maps the repo to 'nobody'; make every git subprocess treat it as safe.
-export GIT_CONFIG_COUNT=1
-export GIT_CONFIG_KEY_0=safe.directory
-export GIT_CONFIG_VALUE_0='*'
+# NFS ownership maps the repo to 'nobody'. git's safe.directory is only honored from
+# protected (system/global) config - NOT from -c or env vars - and a local clone spawns a
+# git-upload-pack subprocess that must also see it. Use a temp HOME with a .gitconfig that
+# has safe.directory=* so every git subprocess (including the clone's upload-pack) honors it.
+GIT_HOME="$(mktemp -d /home/jovyan/work/git_home_XXXXXX)"
+printf '[safe]\n\tdirectory = *\n' > "$GIT_HOME/.gitconfig"
+export HOME="$GIT_HOME"
 cd "$(dirname "$0")/.."
 SRC="${1:-$(git rev-parse --show-toplevel)}"
 WORK="$(mktemp -d /home/jovyan/work/dr_XXXXXX)"
@@ -28,7 +31,7 @@ echo " CM-LAB disaster-recovery test"
 echo " source: $SRC"
 echo " work:   $WORK"
 echo "============================================================"
-trap 'rm -rf "$WORK"' EXIT
+trap 'rm -rf "$WORK" "$GIT_HOME"' EXIT
 
 echo ""
 echo "--- 1. fresh clone (repo is the only surviving artifact) ---"
