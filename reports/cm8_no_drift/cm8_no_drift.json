@@ -1,0 +1,61 @@
+{
+  "protocol": "CM-LAB S83 CM-8 confirmatory no-drift verification",
+  "checks": {
+    "forecaster_config": {
+      "pass": true,
+      "basin_tail": 0.1,
+      "h_star": 2,
+      "horizons": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        10
+      ],
+      "brp_intact": true,
+      "k": 3,
+      "ridge_alpha": 100.0
+    },
+    "freeze_confirmatory_config": {
+      "pass": true,
+      "test_alpha": 0.05,
+      "basin_tail": 0.1,
+      "h_star": 2,
+      "B_permutation": 10000,
+      "N_subjects": 20,
+      "trials_per_subject": 24,
+      "randomization_seed": 20260917
+    },
+    "freeze_code_shas": {
+      "pass": true,
+      "n_code_files": 5,
+      "mismatches": [],
+      "predicted_basin_sha": "9f8ccceda05d202c"
+    },
+    "randomization_manifest": {
+      "pass": true,
+      "seed": 20260917,
+      "n_subjects": 20,
+      "trials_per_subject": 24,
+      "n_manifests": 20,
+      "all_trials_len_ok": true,
+      "scheme": "within-subject round-robin (no consecutive same-condition)"
+    },
+    "registry_shas": {
+      "pass": true,
+      "mismatches": [],
+      "config_sha": "dbcbe443b6b09a3a",
+      "freeze_sha": "1881ab5522f63c0e",
+      "randomization_sha": "c6bcd84d7603d0a8"
+    },
+    "no_real_human_data": {
+      "pass": true,
+      "note": "synthetic pseudonyms only pre-ethics"
+    }
+  },
+  "decision": "CM8_CONFIRMATORY_INTACT",
+  "runtime_s": 0.01
+}
