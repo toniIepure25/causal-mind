@@ -13,9 +13,9 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-from causal_mind.eval.protocol import cosines
 from causal_mind.thought.prospective import Sample
 from causal_mind.thought.state_v1 import ThoughtState
+from causal_mind.utils.metrics import cosines
 
 
 @dataclass

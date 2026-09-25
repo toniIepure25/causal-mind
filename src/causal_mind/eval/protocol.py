@@ -18,6 +18,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from causal_mind import paths
+from causal_mind.utils.metrics import cosines  # noqa: F401  (re-export for back-compat)
 
 SEAL_PATH = paths.cm2_split_seal()
 
@@ -84,16 +85,9 @@ def cosine(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.dot(a, b) / (na * nb))
 
 
-def cosines(a: np.ndarray, B: np.ndarray) -> np.ndarray:
-    """Cosine of vector ``a`` against each row of matrix ``B`` (B: (N, dim))."""
-    B = np.atleast_2d(B)
-    na = np.linalg.norm(a)
-    if na == 0:
-        return np.zeros(B.shape[0], dtype=float)
-    nb = np.linalg.norm(B, axis=1)
-    with np.errstate(divide="ignore", invalid="ignore"):
-        sims = B @ a / (nb * na)
-    return np.where(nb > 0, sims, 0.0)
+# ``cosines`` now lives in causal_mind.utils.metrics (dependency-free) and is
+# re-exported above for back-compat. Moved here to break the eval<->forecast
+# circular import (CM-REPO S3).
 
 
 def cosine_to_actual(pred: np.ndarray, actual: np.ndarray) -> float:
