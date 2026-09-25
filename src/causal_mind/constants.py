@@ -34,11 +34,14 @@ def _load_json(path: Path) -> dict:
     if not path.is_file():
         raise NotFoundError(f"frozen config not found: {path}")
     try:
-        return json.loads(path.read_text())
+        data = json.loads(path.read_text())
     except json.JSONDecodeError as exc:
         raise DataIntegrityError(
             f"frozen config is not valid JSON: {path}", details={"error": str(exc)}
         ) from exc
+    if not isinstance(data, dict):
+        raise DataIntegrityError(f"frozen config root is not a JSON object: {path}")
+    return data
 
 
 def _require(cfg: dict, key: str, path: Path):

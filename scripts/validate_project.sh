@@ -59,6 +59,9 @@ run "claim linter" "$PY" data/scripts/cm_pub_claim_linter.py
 # 7b. Security audit (no secrets / credential files / public binds / telemetry)
 run "security audit" "$PY" data/scripts/cm_lab_security.py --check
 
+# 7c. Human-data guard (no real human participant data may enter Git pre-gate)
+run "human-data guard" "$PY" -c "from causal_mind import human_data_guard; human_data_guard.assert_clean(); print('human-data guard: clean')"
+
 # 8. Secret scan (conservative: long literals assigned to credential-looking names)
 echo ""
 echo "--- secret scan ---"

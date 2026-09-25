@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Causal Mind pre-commit hook (CM-REPO S43).
+#
+# Hard-fails the commit if:
+#   1. real human participant data is staged (human-data guard), or
+#   2. new lint/type debt is introduced (lint ratchet).
+#
+# Install once per clone:
+#   scripts/install_hooks.sh
+# (sets core.hooksPath=scripts/hooks, so the hook is version-controlled and
+# shared by all collaborators instead of living in the untracked .git/hooks.)
+set -uo pipefail
+cd "$(git rev-parse --show-toplevel)"
+
+PY=".venv/bin/python"
+[ -x "$PY" ] || PY="$(command -v python3 || command -v python)"
+
+FAIL=0
+
+echo "pre-commit: human-data guard"
+if ! "$PY" -c "from causal_mind import human_data_guard; human_data_guard.assert_clean()"; then
+  echo "pre-commit: BLOCKED -- real human data staged (human/ethics gate not passed)."
+  FAIL=1
+fi
+
+if [ "$FAIL" -eq 0 ]; then
+  echo "pre-commit: lint/type ratchet"
+  if ! "$PY" data/scripts/cm_lab_lint_gate.py; then
+    echo "pre-commit: BLOCKED -- new lint/type debt introduced."
+    FAIL=1
+  fi
+fi
+
+exit "$FAIL"
