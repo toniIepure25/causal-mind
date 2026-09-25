@@ -55,7 +55,7 @@ class TfidfEncoder:
 
     def fit(self, texts: list[str]) -> TfidfEncoder:
         self._v.fit(list(texts))
-        self.dim = self._v.vocabulary_size_
+        self.dim = len(self._v.vocabulary_)
         self._fitted = True
         return self
 
