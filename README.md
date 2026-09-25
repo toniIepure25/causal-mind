@@ -2,8 +2,8 @@
 
 **A Causal World Model for Forecasting and Redirecting Human Thought.**
 
-**State:** `CM8R_PREHUMAN_HARDENED` · **Pre-human freeze:** `cm8-prehuman-v1.0` (git
-`8a9d5dd`, 2026-09-20) · **No human data collected.**
+**State:** `CMLAB_SCIENTIFIC_DEEP_DIVE_COMPLETE` · **Pre-human freeze:**
+`cm8-prehuman-v1.0` (git `8a9d5dd`, 2026-09-20) · **No human data collected.**
 
 Core scientific question:
 
@@ -41,9 +41,26 @@ where `Z` is a latent cognitive/thought state.
 | CM-5 neural incremental value | `CM5_NULL` | no incremental value (gain −0.088, all subjects negative) |
 | CM-6 causal identification | `CM6_OBSERVATIONAL_ONLY_NO_IDENTIFICATION` | 0/84 edges identifiable |
 | CM-7 public intervention method | `CM7_NULL_NO_RECOVERABLE_CAUSAL_EFFECT` | ATE −0.039, p=0.073 (method validated; null effect) |
-| CM-8 Pre-Oracle / Break-the-Chain | `CM8_ETHICS_PACKAGE_READY` | frozen protocol v1.0; ethics package ready |
+| CM-8 Pre-Oracle / Break-the-Chain | `CM8_CONFIRMATORY_INTACT` | frozen protocol v1.0; no-drift verified; ethics package ready |
 | CM-8R pre-human hardening | `CM8R_PREHUMAN_HARDENED` | 10/10 gates; frozen reproducible forecaster |
 | CM-9A synthetic Oracle lab | `CM9A_SYNTHETIC_ORACLE_READY` | 4 conditions × 11 policies; RPR/PIE |
+| CM-LAB scientific deep dive | `CMLAB_SCIENTIFIC_DEEP_DIVE_COMPLETE` | 9 workstreams; see below |
+
+**CM-LAB deep-dive decisions** (cross-validated, leakage-audited; see
+`reports/cm_lab_science_deep_dive.md`):
+
+- `CMXVAL_PARTIAL_REPLICATION` — the effect partially replicates on held-out external
+  datasets (survey + OpenPlay); not a universal law.
+- `CMUNC_WEAK` — uncertainty estimates are weakly calibrated.
+- `CMREP_PARTIAL` — richer representations give partial, not decisive, gains.
+- `CMPERS_NULL` — no measurable personalization benefit.
+- `CMDYN_LINEAR_PREDICTION_DOMINANT` — dynamics are dominated by linear prediction, not
+  nonlinear structure.
+- `CMERR_WEAKLY_PREDICTABLE` — large forecast errors are weakly predictable (novelty-driven).
+- `CMORACLE_SELECTIVE_ONLY` — oracle selective prediction helps only on the top-decile of
+  confident samples; recursion degrades.
+- `CMLEAK_PASS` — leakage scanner clean across the deep-dive pipeline.
+- `CMLAB_DISASTER_RECOVERY_REPRODUCED` — clean-room disaster recovery reproduced.
 
 The program has moved from **FORECAST** to **EXPLAIN/INTERVENE**. The only remaining
 blockers to human data are external: supervisor sign-off, ethics approval, and the pilot.
@@ -52,8 +69,11 @@ chronology.
 
 ## Where to start
 
+- **New collaborator / maintainer:** `docs/runbooks/maintainer.md`
 - **Supervisor:** `docs/supervisor/START_HERE.md`
+- **Architecture:** `docs/architecture/repository_architecture.md`
 - **Master summary:** `docs/CAUSAL_MIND_master_summary.md`
+- **Glossary:** `docs/glossary.md` · **Docs index:** `docs/README.md`
 - **Pre-human freeze + hashes:** `docs/releases/cm8_prehuman_v1.md`
 - **Claim-level evidence:** `docs/claims/evidence_matrix.md`
 - **Papers:** `papers/paper1_predictive_dynamics/`, `papers/paper2_prediction_to_intervention/`,
@@ -67,35 +87,69 @@ chronology.
 cd /home/jovyan/work/causal-mind-v2
 export HF_HOME=/home/jovyan/work/.hf-home
 
-# verify the frozen forecaster + clean-room bit-identical re-fit
+# 1. Is the environment healthy? (deps, paths, frozen configs, human-data guard)
+cm doctor
+
+# 2. Is the project scientifically intact? (lint, invariants, claims, registry,
+#    security audit, human-data guard)
+cm validate
+
+# 3. Verify the frozen forecaster + clean-room bit-identical re-fit
 .venv/bin/python data/scripts/cm8r_cleanroom.py
 
-# verify the pre-human readiness scorecard (10/10 gates)
-.venv/bin/python data/scripts/cm8r_readiness.py
-
-# full test suite + lint
-.venv/bin/python -m pytest
-.venv/bin/python -m ruff check src tests scripts
+# 4. Full one-command validation (lint + tests + invariants + registries + scans)
+bash scripts/validate_project.sh
 ```
 
 No network access is required at inference (frozen local artifacts). Exact per-result
 commands are in `docs/claims/evidence_matrix.md` and the reproducibility traceability table.
 
+## The `cm` CLI
+
+The single operational entry point (`pyproject.toml` → `cm = "causal_mind.cli:main"`).
+
+**Research commands** (`cm --help`):
+
+| command | what it does |
+| --- | --- |
+| `cm doctor` | environment/dependency/path/data diagnostics |
+| `cm validate [--with-tests]` | scientific-integrity gates (lint, invariants, claims, registry, security, human-data guard) |
+| `cm claims verify` | claim registry schema + traceability |
+| `cm artifacts verify` | frozen-artifact SHA-256 integrity |
+| `cm security scan` | security audit + secret scan + human-data guard |
+| `cm demo` | fast demo pipeline |
+| `cm reproduce <name>` | named reproduction (`cm8`, `deep-dive`, `leakage`, …) |
+
+**Orchestration commands:** `cm status`, `cm task …`, `cm agent …`, `cm coordinator …`,
+`cm review …`, `cm qwen`.
+
+Exit codes are stable and documented (`src/causal_mind/exit_codes.py`); `0` is success.
+
 ## Repository layout
 
 ```
 causal-mind-v2/
-├── docs/            vision, protocol, claims, ethics, supervisor package, science docs
+├── docs/            architecture, protocol, claims, ethics, runbooks, governance, theory
 ├── configs/         data / models / experiments / compute configuration
-├── data/            manifests (seals, randomization, freeze); scripts (cm2..cm9a, cm8r_*)
-├── src/causal_mind/ python package: thought, forecast, causal, sim, engine, privacy, oracle
-├── scripts/         agent supervisor, Qwen tunnel, smoke tests
-├── reports/         committed results (cm2..cm9a, cm8r_*) + publication audits
+├── data/            manifests (seals, randomization, freeze); scripts (cm2..cm9a, cm8r_*, deep-dive)
+├── src/causal_mind/ layered python package (foundation -> domain -> modeling -> eval -> orchestration -> CLI)
+├── scripts/         bootstrap, one-command validation, disaster recovery, git hooks
+├── reports/         committed results (cm2..cm9a, cm8r_*, deep-dive) + audits + scorecards
 ├── papers/          paper drafts (paper1..3, oracle theory)
-├── tests/           pytest suite
-├── artifacts/       git-ignored experiment artifacts (frozen forecaster, SHA-verified)
+├── tests/           pytest suite (per-phase + invariants + security + import boundaries)
+├── artifacts/       frozen experiment artifacts (forecaster, SHA-verified)
+├── registries/      artifact / experiment / lineage registries (frozen JSON)
+├── claims/          claim registry (claims.json, levels 0-8)
 └── orchestration/   task queue state, worker state, orchestrator logs
 ```
+
+## Architecture
+
+The library is layered and the boundaries are machine-enforced
+(`tests/test_import_boundaries.py`): foundation → domain → modeling → evaluation →
+orchestration → CLI. Lower layers never import higher layers. See
+`docs/architecture/repository_architecture.md` and
+`docs/architecture/dependency_boundaries.md`.
 
 ## Compute environment
 
@@ -129,6 +183,7 @@ Six autonomous roles share one Qwen endpoint and one central task queue:
 4. Negative controls and label/permutation controls for every headline result.
 5. Claims are registered at an explicit level (0–8); a lower-level result is never worded as
    a higher-level one. See `docs/claims_registry.md`.
+6. The reviewer's leakage audit must pass before any result is reported as validated.
 
 ## Key results (exact values)
 
@@ -151,6 +206,8 @@ Six autonomous roles share one Qwen endpoint and one central task queue:
   software-freeze manifest, dry run ALL PASS).
 - **Privacy-by-design:** no raw thought text leaves the machine; embeddings only;
   pseudonymized; encryption at rest; no remote LLM/telemetry.
+- **Human-data gate:** no real participant data may enter Git before the human/ethics gate
+  is passed; enforced by the pre-commit hook and CI (`cm security scan`).
 - **Submission authority:** for a Master's thesis, the supervisor / responsible study-law
   body submits (the researcher prepares, does not submit).
 
@@ -160,6 +217,14 @@ Six autonomous roles share one Qwen endpoint and one central task queue:
 - No causal claim from the observational data (0/84 edges identifiable).
 - No claim that the (null) public-intervention effect is real.
 - The prediction effects are modest; the test set is small (n=17).
+
+## Governance & professionalization
+
+- **Security:** `SECURITY.md` · **Data classification:** `docs/governance/data_classification.md`
+- **Versioning & releases:** `docs/governance/versioning.md`, `docs/governance/release_process.md`
+- **Runbooks:** `docs/runbooks/` (maintainer, new dataset/experiment/claim, protocol amendment)
+- **Threat models:** `docs/governance/threat_models.md`
+- **Changelog:** `CHANGELOG.md`
 
 ## Citation
 
