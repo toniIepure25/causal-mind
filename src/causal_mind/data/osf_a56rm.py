@@ -9,11 +9,11 @@ data/scripts/build_thought_events.py (data/derived/thought_events/).
 """
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
-DERIVED = Path("/home/jovyan/work/causal-mind-v2/data/derived/thought_events")
+from causal_mind import paths
+
+DERIVED = paths.thought_events_dir()
 RATING_DIMS = (
     "emotional_intensity", "joy", "sadness", "fear", "anger", "disgust",
     "surprise", "anxiety", "vision", "audition", "olfaction", "gustation",

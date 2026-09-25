@@ -85,12 +85,14 @@ def run_bash(command: str, workdir: Path, timeout: int = DEFAULT_TIMEOUT) -> Too
         _check_command(command, workdir)
     except ToolError as exc:
         return ToolResult(ok=False, output=str(exc))
-    env_path = (
-        "/home/jovyan/work/.local/bin:"
-        "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    )
     import os
 
+
+    local_bin = os.environ.get("CM_AGENT_BIN", str(Path.home() / "work" / ".local" / "bin"))
+    env_path = (
+        f"{local_bin}:"
+        "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    )
     env = os.environ.copy()
     env["PATH"] = env_path
     try:

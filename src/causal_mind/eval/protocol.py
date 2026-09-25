@@ -14,11 +14,12 @@ from __future__ import annotations
 import hashlib
 import json
 from dataclasses import dataclass
-from pathlib import Path
 
 import numpy as np
 
-SEAL_PATH = Path("/home/jovyan/work/causal-mind-v2/data/manifests/cm2_split_seal.json")
+from causal_mind import paths
+
+SEAL_PATH = paths.cm2_split_seal()
 
 
 @dataclass(frozen=True)

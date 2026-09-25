@@ -25,7 +25,9 @@ from pathlib import Path
 
 import numpy as np
 
-DEFAULT_DATA_ROOT = Path("/home/jovyan/work/causal-mind-v2/data/raw/ds006067")
+from causal_mind import paths
+
+DEFAULT_DATA_ROOT = paths.raw_dir() / "ds006067"
 
 _MNI = "space-MNI152NLin2009cAsym"
 BOLD_REL = f"{{sub}}/func/{{sub}}_task-thinkaloud_{_MNI}_desc-preproc_bold.nii.gz"

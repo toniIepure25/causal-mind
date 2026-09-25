@@ -19,10 +19,12 @@ from pathlib import Path
 
 import numpy as np
 
-os.environ.setdefault("HF_HOME", "/home/jovyan/work/.hf-home")
-os.environ.setdefault("TRANSFORMERS_CACHE", "/home/jovyan/work/.hf-home")
+from causal_mind import paths
 
-CACHE_DIR = Path("/home/jovyan/work/causal-mind-v2/data/embeddings")
+os.environ.setdefault("HF_HOME", paths.hf_home())
+os.environ.setdefault("TRANSFORMERS_CACHE", paths.hf_home())
+
+CACHE_DIR = paths.embeddings_dir()
 
 
 class MiniLMEncoder:
