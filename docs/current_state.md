@@ -2,6 +2,23 @@
 
 ## Project state
 
+`CMREPO_EXPERT_GRADE_READY` (2026-09-25) — CM-REPO professionalized the repository
+(engineering/governance only; **no scientific change**). Added: full architecture audit
+(P0-P3, no P0); centralized path discovery + scientific constants (read from frozen
+configs); domain error taxonomy + stable exit codes + run IDs + structured logging; a
+research CLI (`cm doctor/validate/claims/artifacts/security/demo/reproduce`); a
+human-data guard wired into the pre-commit hook + CI; removal of dead modules; the
+`eval<->forecast` import cycle broken + an enforced import-boundary test; architecture,
+governance (versioning, release, data classification, env-var registry, threat models,
+SECURITY, CHANGELOG), runbooks (maintainer, new dataset/experiment/claim, protocol
+amendment), a docs index + glossary, a rewritten professional README, a critical code
+review (found + fixed a real `TfidfEncoder.fit` bug), and a project-health scorecard.
+Full validation: `cm validate --with-tests` 8/8, `validate_project.sh` PASS,
+`cm reproduce cm8` PASS (CM-8 no-drift), 12/12 frozen artifacts SHA-verified, lint ratchet
+32/32 ruff + 93/93 mypy, clean tree. The scientific state below is UNCHANGED; no human
+data; no CM-8 protocol change; no reinterpretation; no result shopping. Non-blocking
+follow-ups F2-F7 tracked in `reports/cm_repo_scorecard.md`.
+
 `CMLAB_SCIENTIFIC_DEEP_DIVE_COMPLETE` (2026-09-24) — the CM-LAB scientific deep dive
 (sections 25-88) rigorously attacked the remaining assumptions of the CM-2/CM-3
 predictive-dynamics finding, all on the frozen ds006067 split (83/18/17) with TRAIN-only
