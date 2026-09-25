@@ -59,8 +59,16 @@ def raw_dir() -> Path:
     return data_root() / "raw"
 
 
+def artifacts_dir() -> Path:
+    return repo_root() / "artifacts"
+
+
 def cm2_split_seal() -> Path:
     return manifests_dir() / "cm2_split_seal.json"
+
+
+def cm8_config() -> Path:
+    return artifacts_dir() / "cm8_forecaster" / "config.json"
 
 
 def hf_home() -> str:
