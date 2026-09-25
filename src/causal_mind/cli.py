@@ -5,6 +5,7 @@ import os
 import sys
 from pathlib import Path
 
+from causal_mind import cli_research
 from causal_mind.orchestrator.coordinator import run_coordinator_once
 from causal_mind.orchestrator.queue import TaskQueue
 from causal_mind.orchestrator.qwen_client import QwenClient
@@ -184,6 +185,9 @@ def main(argv: list[str] | None = None) -> int:
     review_parser.set_defaults(func=_review)
 
     sub.add_parser("qwen", help="Qwen endpoint health").set_defaults(func=_qwen)
+
+    # Research-facing commands (validate/doctor/claims/artifacts/security/demo/reproduce)
+    cli_research.register(sub)
 
     args = parser.parse_args(argv)
     return args.func(args)
